@@ -1,0 +1,10 @@
+.Showcase-Item {
+    white-space: nowrap;
+    margin: 20px 0;
+}
+
+.Showcase-Item .Button2,
+.Showcase-Item .Checkbox,
+.Showcase-Item .Radiobox-Radio {
+    margin-right: 10px;
+}
