@@ -1,25 +1,32 @@
 {
-  "name": "my-app",
+  "name": "yandex-ui-themer",
+  "homepage": "",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
-    "@types/jest": "^24.0.0",
-    "@types/node": "^12.0.0",
-    "@types/react": "^16.9.0",
-    "@types/react-dom": "^16.9.0",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
+    "@bem-react/classname": "1.5.8",
+    "@bem-react/core": "2.0.10",
+    "@bem-react/di": "2.2.4",
+    "@types/react": "16.9.0",
+    "@types/react-color": "3.0.4",
+    "@types/react-dom": "16.9.0",
+    "@yandex/themekit": "1.6.2",
+    "@yandex/ui": "2.55.1",
+    "deepmerge": "4.2.2",
+    "effector": "21.6.0",
+    "effector-react": "21.0.8",
+    "react": "16.13.1",
+    "react-color": "2.18.1",
+    "react-dom": "16.13.1",
     "react-scripts": "3.4.1",
-    "typescript": "~3.7.2"
+    "typescript": "3.7.2",
+    "yaml": "1.10.0"
   },
   "scripts": {
-    "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "react-scripts start",
+    "tokens:build": "themekit build",
+    "format:js": "prettier --write src/**/*.{ts,tsx}"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -35,5 +42,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "prettier": "2.1.2"
   }
 }
