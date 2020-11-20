@@ -10,6 +10,9 @@ import { Textinput } from '@yandex/ui/Textinput/Textinput.bundle/desktop'
 import { toDeepToken } from '../../utils/toDeepToken'
 import { TextinputField } from '../TextinputField/TextinputField'
 import { Showcase } from '../Showcase/Showcase'
+
+import { metricaGoal } from '../YaMetrika/YaMetrika'
+
 import { $cssVariables, $designTokens } from './Sandbox.model'
 import './Sandbox.css'
 
@@ -59,8 +62,14 @@ const SandboxExample: FC<any> = ({ includes }) => {
                 layout="horiz"
                 activeTab={activeTab}
                 tabs={[
-                  { id: 'jsx', onClick: () => setActiveTab('jsx'), content: 'JSX' },
-                  { id: 'yml', onClick: () => setActiveTab('yml'), content: 'YML' },
+                  { id: 'jsx', onClick: () => {
+                    setActiveTab('jsx');
+                    metricaGoal('jsx');
+                  }, content: 'JSX' },
+                  { id: 'yml', onClick: () => {
+                    setActiveTab('yml');
+                    metricaGoal('yml');
+                  }, content: 'YML' },
                 ]}
               />
               <div className="Tumbler-Wrapper">
@@ -68,7 +77,10 @@ const SandboxExample: FC<any> = ({ includes }) => {
                   size="m"
                   view="default"
                   checked={shownDiff}
-                  onChange={() => setDiff(!shownDiff)}
+                  onChange={() => {
+                    setDiff(!shownDiff)
+                    metricaGoal('show-hide-changes')
+                  }}
                   labelAfter={'Показать изменения'}
                 />
               </div>
@@ -115,13 +127,19 @@ export const Sandbox: React.FC<SandboxProps> = ({ components, globals }) => {
             style={{ width: 150, marginRight: 20 }}
             size="m"
             view="default"
-            onChange={(event) => setActiveTab(event.target.value)}
+            onChange={(event) => {
+              setActiveTab(event.target.value)
+              metricaGoal('select')
+            }}
             value={activeTab}
             options={tabs.map((tab) => ({ value: tab, content: tab }))}
           />
           <Textinput
             hasClear
-            onChange={(event) => setFilter(event.target.value)}
+            onChange={(event) => {
+              setFilter(event.target.value)
+              metricaGoal('search')
+            }}
             view="default"
             size="m"
             placeholder="Поиск по токенам"
