@@ -1,210 +1,5 @@
 {
   "globals": {
-    "slider-font-family": {
-      "value": "'Helvetica Neue', Helvetica, Arial, sans-serif",
-      "path": [
-        "slider",
-        "fontFamily"
-      ],
-      "description": "Шрифт слайдера"
-    },
-    "slider-view-default-typo-color-base": {
-      "value": "#000",
-      "path": [
-        "slider",
-        "viewDefault",
-        "typoColor",
-        "base"
-      ],
-      "description": "Цвет типографики внутри слайдера"
-    },
-    "slider-view-default-height": {
-      "value": "32px",
-      "path": [
-        "slider",
-        "viewDefault",
-        "height"
-      ],
-      "description": "Высота слайдера, без учета подписей"
-    },
-    "slider-view-default-track-border-radius": {
-      "value": "2px",
-      "path": [
-        "slider",
-        "viewDefault",
-        "track",
-        "borderRadius"
-      ],
-      "description": "Внешний радиус скругления трека"
-    },
-    "slider-view-default-track-height": {
-      "value": "2px",
-      "path": [
-        "slider",
-        "viewDefault",
-        "track",
-        "height"
-      ],
-      "description": "Высота трека"
-    },
-    "slider-view-default-track-fill-color-base": {
-      "value": "rgba(0, 0, 0, 0.15)",
-      "path": [
-        "slider",
-        "viewDefault",
-        "track",
-        "fillColor",
-        "base"
-      ],
-      "description": "Цвет заливки трека в обычном состоянии"
-    },
-    "slider-view-default-track-fill-color-hovered": {
-      "value": "rgba(0, 0, 0, 0.25)",
-      "path": [
-        "slider",
-        "viewDefault",
-        "track",
-        "fillColor",
-        "hovered"
-      ],
-      "description": "Цвет заливки трека в состоянии наведения"
-    },
-    "slider-view-default-range-fill-color-base": {
-      "value": "#fc0",
-      "path": [
-        "slider",
-        "viewDefault",
-        "range",
-        "fillColor",
-        "base"
-      ],
-      "description": "Цвет заливки диапазона в обычном состоянии"
-    },
-    "slider-view-default-range-fill-color-hovered": {
-      "value": "rgb(250, 192, 0)",
-      "path": [
-        "slider",
-        "viewDefault",
-        "range",
-        "fillColor",
-        "hovered"
-      ],
-      "description": "Цвет заливки диапазона в состоянии наведения"
-    },
-    "slider-view-default-range-fill-color-disabled": {
-      "value": "rgba(0, 0, 0, 0.15)",
-      "path": [
-        "slider",
-        "viewDefault",
-        "range",
-        "fillColor",
-        "disabled"
-      ],
-      "description": "Цвет заливки диапазона в неактивном состоянии"
-    },
-    "slider-view-default-thumb-width": {
-      "value": "16px",
-      "path": [
-        "slider",
-        "viewDefault",
-        "thumb",
-        "width"
-      ],
-      "description": "Ширина бегунка"
-    },
-    "slider-view-default-thumb-height": {
-      "value": "16px",
-      "path": [
-        "slider",
-        "viewDefault",
-        "thumb",
-        "height"
-      ],
-      "description": "Высота бегунка"
-    },
-    "slider-view-default-thumb-border-radius": {
-      "value": "50%",
-      "path": [
-        "slider",
-        "viewDefault",
-        "thumb",
-        "borderRadius"
-      ],
-      "description": "Внешний радиус скругления бегунка"
-    },
-    "slider-view-default-thumb-fill-color-base": {
-      "value": "#fff",
-      "path": [
-        "slider",
-        "viewDefault",
-        "thumb",
-        "fillColor",
-        "base"
-      ],
-      "description": "Цвет заливки бегунка в обычном состоянии"
-    },
-    "slider-view-default-thumb-fill-color-disabled": {
-      "value": "#000",
-      "path": [
-        "slider",
-        "viewDefault",
-        "thumb",
-        "fillColor",
-        "disabled"
-      ],
-      "description": "Цвет заливки бегунка в неактивном состоянии"
-    },
-    "slider-view-default-tick-fill-color-base": {
-      "value": "#fff",
-      "path": [
-        "slider",
-        "viewDefault",
-        "tick",
-        "fillColor",
-        "base"
-      ],
-      "description": "Цвет заливки метки в обычном состоянии"
-    },
-    "slider-view-default-tick-width": {
-      "value": "2px",
-      "path": [
-        "slider",
-        "viewDefault",
-        "tick",
-        "width"
-      ],
-      "description": "Ширина метки"
-    },
-    "slider-view-default-tick-height": {
-      "value": "2px",
-      "path": [
-        "slider",
-        "viewDefault",
-        "tick",
-        "height"
-      ],
-      "description": "Высота метки"
-    },
-    "slider-view-default-tick-label-font-size": {
-      "value": "13px",
-      "path": [
-        "slider",
-        "viewDefault",
-        "tickLabel",
-        "fontSize"
-      ],
-      "description": "Размер шрифта подписи метки"
-    },
-    "slider-view-default-tick-label-line-height": {
-      "value": "16px",
-      "path": [
-        "slider",
-        "viewDefault",
-        "tickLabel",
-        "lineHeight"
-      ],
-      "description": "Высота шрифта подписи метки"
-    },
     "typography-font-family": {
       "value": "'YS Text', 'Helvetica Neue', Helvetica, Arial, sans-serif",
       "path": [
@@ -3903,6 +3698,213 @@
           "disabled",
           "opacity"
         ]
+      }
+    },
+    "slider": {
+      "slider-font-family": {
+        "value": "'Helvetica Neue', Helvetica, Arial, sans-serif",
+        "path": [
+          "slider",
+          "fontFamily"
+        ],
+        "description": "Шрифт слайдера"
+      },
+      "slider-view-default-typo-color-base": {
+        "value": "#000",
+        "path": [
+          "slider",
+          "viewDefault",
+          "typoColor",
+          "base"
+        ],
+        "description": "Цвет типографики внутри слайдера"
+      },
+      "slider-view-default-height": {
+        "value": "32px",
+        "path": [
+          "slider",
+          "viewDefault",
+          "height"
+        ],
+        "description": "Высота слайдера, без учета подписей"
+      },
+      "slider-view-default-track-border-radius": {
+        "value": "2px",
+        "path": [
+          "slider",
+          "viewDefault",
+          "track",
+          "borderRadius"
+        ],
+        "description": "Внешний радиус скругления трека"
+      },
+      "slider-view-default-track-height": {
+        "value": "2px",
+        "path": [
+          "slider",
+          "viewDefault",
+          "track",
+          "height"
+        ],
+        "description": "Высота трека"
+      },
+      "slider-view-default-track-fill-color-base": {
+        "value": "rgba(0, 0, 0, 0.15)",
+        "path": [
+          "slider",
+          "viewDefault",
+          "track",
+          "fillColor",
+          "base"
+        ],
+        "description": "Цвет заливки трека в обычном состоянии"
+      },
+      "slider-view-default-track-fill-color-hovered": {
+        "value": "rgba(0, 0, 0, 0.25)",
+        "path": [
+          "slider",
+          "viewDefault",
+          "track",
+          "fillColor",
+          "hovered"
+        ],
+        "description": "Цвет заливки трека в состоянии наведения"
+      },
+      "slider-view-default-range-fill-color-base": {
+        "value": "#fc0",
+        "path": [
+          "slider",
+          "viewDefault",
+          "range",
+          "fillColor",
+          "base"
+        ],
+        "description": "Цвет заливки диапазона в обычном состоянии"
+      },
+      "slider-view-default-range-fill-color-hovered": {
+        "value": "rgb(250, 192, 0)",
+        "path": [
+          "slider",
+          "viewDefault",
+          "range",
+          "fillColor",
+          "hovered"
+        ],
+        "description": "Цвет заливки диапазона в состоянии наведения"
+      },
+      "slider-view-default-range-fill-color-disabled": {
+        "value": "rgba(0, 0, 0, 0.15)",
+        "path": [
+          "slider",
+          "viewDefault",
+          "range",
+          "fillColor",
+          "disabled"
+        ],
+        "description": "Цвет заливки диапазона в неактивном состоянии"
+      },
+      "slider-view-default-thumb-width": {
+        "value": "16px",
+        "path": [
+          "slider",
+          "viewDefault",
+          "thumb",
+          "width"
+        ],
+        "description": "Ширина бегунка"
+      },
+      "slider-view-default-thumb-height": {
+        "value": "16px",
+        "path": [
+          "slider",
+          "viewDefault",
+          "thumb",
+          "height"
+        ],
+        "description": "Высота бегунка"
+      },
+      "slider-view-default-thumb-border-radius": {
+        "value": "50%",
+        "path": [
+          "slider",
+          "viewDefault",
+          "thumb",
+          "borderRadius"
+        ],
+        "description": "Внешний радиус скругления бегунка"
+      },
+      "slider-view-default-thumb-fill-color-base": {
+        "value": "#fff",
+        "path": [
+          "slider",
+          "viewDefault",
+          "thumb",
+          "fillColor",
+          "base"
+        ],
+        "description": "Цвет заливки бегунка в обычном состоянии"
+      },
+      "slider-view-default-thumb-fill-color-disabled": {
+        "value": "#000",
+        "path": [
+          "slider",
+          "viewDefault",
+          "thumb",
+          "fillColor",
+          "disabled"
+        ],
+        "description": "Цвет заливки бегунка в неактивном состоянии"
+      },
+      "slider-view-default-tick-fill-color-base": {
+        "value": "#fff",
+        "path": [
+          "slider",
+          "viewDefault",
+          "tick",
+          "fillColor",
+          "base"
+        ],
+        "description": "Цвет заливки метки в обычном состоянии"
+      },
+      "slider-view-default-tick-width": {
+        "value": "2px",
+        "path": [
+          "slider",
+          "viewDefault",
+          "tick",
+          "width"
+        ],
+        "description": "Ширина метки"
+      },
+      "slider-view-default-tick-height": {
+        "value": "2px",
+        "path": [
+          "slider",
+          "viewDefault",
+          "tick",
+          "height"
+        ],
+        "description": "Высота метки"
+      },
+      "slider-view-default-tick-label-font-size": {
+        "value": "13px",
+        "path": [
+          "slider",
+          "viewDefault",
+          "tickLabel",
+          "fontSize"
+        ],
+        "description": "Размер шрифта подписи метки"
+      },
+      "slider-view-default-tick-label-line-height": {
+        "value": "16px",
+        "path": [
+          "slider",
+          "viewDefault",
+          "tickLabel",
+          "lineHeight"
+        ],
+        "description": "Высота шрифта подписи метки"
       }
     },
     "spin": {

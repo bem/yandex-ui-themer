@@ -31,6 +31,7 @@ const componentsList = [
   "tooltip",
   "tumbler",
   "userPic",
+  "slider",
 ]
 
 Api.registerFormat({

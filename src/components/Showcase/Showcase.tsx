@@ -19,6 +19,7 @@ import { Textinput } from '@yandex/ui/Textinput/Textinput.bundle/desktop'
 import { Tooltip } from '@yandex/ui/Tooltip/Tooltip.bundle/desktop'
 import { Tumbler } from '@yandex/ui/Tumbler/Tumbler.bundle/desktop'
 import { UserPic } from '@yandex/ui/UserPic/UserPic.bundle/desktop'
+import { Slider, useSliderState } from '@yandex/ui/Slider/desktop/bundle';
 
 import { Headline } from '../Headline/Headline'
 import './Showcase.css'
@@ -787,6 +788,40 @@ const UserPicShowcase = () => {
   )
 }
 
+const SliderShowcase = () => {
+  const state1 = useSliderState({ value: [20] });
+  const state2 = useSliderState({ value: [20, 50] });
+
+  const state3 = useSliderState({ value: [20] });
+  const state4 = useSliderState({ value: [20, 50] });
+
+  const state5 = useSliderState({ value: [20] });
+  const state6 = useSliderState({ value: [20, 50] });
+
+  const state7 = useSliderState({ value: [20] });
+  const state8 = useSliderState({ value: [20, 50] });
+
+  const state9 = useSliderState({ value: [20] });
+  const state10 = useSliderState({ value: [20, 50] });
+
+
+  return (
+    <>
+      <Headline>Slider</Headline>
+      <Slider view="default" {...state1} />
+      <Slider view="default" {...state2} />
+      <Slider filled view="default" {...state3} />
+      <Slider filled view="default" {...state4} />
+      <Slider reverse filled view="default" {...state5} />
+      <Slider reverse filled view="default" {...state6} />
+      <Slider filled step={25} view="default" {...state7} />
+      <Slider filled step={25} view="default" {...state8} />
+      <Slider filled step={20} showTicks showTickValues view="default" {...state9} />
+      <Slider filled showTicks showTickValues step={20} view="default" {...state10} />
+    </>
+  );
+}
+
 const componentsMap: Record<string, ComponentType> = {
   button: ButtonShowcase,
   attach: AttachShowcase,
@@ -807,6 +842,7 @@ const componentsMap: Record<string, ComponentType> = {
   tooltip: TooltipShowcase,
   tumbler: TumblerShowcase,
   userPic: UserPicShowcase,
+  slider: SliderShowcase
 }
 
 export const Showcase: React.FC<{ includes: string[] }> = ({ includes }) => {
