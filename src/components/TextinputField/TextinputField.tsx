@@ -10,6 +10,8 @@ import { isColor } from '../../utils/isColor'
 import { variablesChanged } from '../Sandbox/Sandbox.model'
 import { IconBack } from '../IconBack/IconBack'
 
+import { metricaGoal } from '../YaMetrika/YaMetrika'
+
 export const TextinputField: React.FC<{
   label: string
   value: string
@@ -109,9 +111,15 @@ export const TextinputField: React.FC<{
       <div style={{ display: 'flex' }}>
         <Textinput
           debounceTimeout={500}
-          onChange={onChange}
+          onChange={(event) => {
+            onChange(event)
+            metricaGoal('change-tokens')
+          }}
           // @ts-ignore
-          iconRight={isChanged && <IconBack onClick={onClearClick} />}
+          iconRight={isChanged && <IconBack onClick={() => {
+            onClearClick()
+            metricaGoal('clear-textinput')
+          }} />}
           view="default"
           size="s"
           style={{ width: 200, marginBottom: 8 }}
@@ -123,7 +131,10 @@ export const TextinputField: React.FC<{
           <div style={{ position: 'relative' }} ref={scopeRef}>
             <div
               ref={anchorRef}
-              onClick={handleClick}
+              onClick={() => {
+                handleClick();
+                metricaGoal('picker');
+              }}
               style={{
                 boxSizing: 'border-box',
                 background: val,
@@ -143,7 +154,10 @@ export const TextinputField: React.FC<{
               scope={scopeRef}
               onClose={handleClose}
             >
-              <ChromePicker color={val} onChange={onColorChange} />
+              <ChromePicker color={val} onChange={(event) => {
+                onColorChange(event)
+                metricaGoal('change-tokens')
+              }} />
             </Popup>
           </div>
         )}
