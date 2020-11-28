@@ -58,6 +58,7 @@ export const TextinputField: React.FC<{
       }
 
       setVal(colorValue)
+      console.log('=>>>', label, path);
       variablesChanged({
         path,
         name: label,
