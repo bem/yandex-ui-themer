@@ -180,9 +180,9 @@ const DividerShowcase = () => {
     <>
       <Headline>Divider</Headline>
       <div className="Showcase-Item">
-        Content
-        <Divider style={{ margin: '8px 0' }}>Section</Divider>
-        Content
+        <p>Content</p>
+        <Divider style={{ margin: '8px 0' }}><p>Section</p></Divider>
+        <p>Content</p>
       </div>
     </>
   )

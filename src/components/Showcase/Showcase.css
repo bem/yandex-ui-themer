@@ -16,3 +16,7 @@
 .Showcase-Item .Radiobox-Radio {
     margin-right: 10px;
 }
+
+.Showcase p {
+    color: var(--color-typo-primary);
+}
