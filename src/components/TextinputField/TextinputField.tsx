@@ -26,7 +26,7 @@ export const TextinputField: React.FC<{
   const anchorRef = useRef<HTMLDivElement>(null)
 
   const isColorValue = isColor(value)
-  const isChanged2 = value !== val
+  const isChanged = value !== val
 
   // Update internal value when showcase is changed.
   useEffect(() => {
@@ -123,7 +123,7 @@ export const TextinputField: React.FC<{
             metricaGoal('change-tokens')
           }}
           // @ts-ignore
-          iconRight={isChanged2 && <IconBack onClick={() => {
+          iconRight={isChanged && <IconBack onClick={() => {
             onClearClick()
             metricaGoal('clear-textinput')
           }} />}
@@ -132,7 +132,7 @@ export const TextinputField: React.FC<{
           style={{ width: 200, marginBottom: 8 }}
           value={val}
           // @ts-ignore
-          hint={isChanged2 && `Оригинальное значение - ${value}`}
+          hint={isChanged && `Оригинальное значение - ${value}`}
         />
         {isColorValue && (
           <div style={{ position: 'relative' }} ref={scopeRef}>
