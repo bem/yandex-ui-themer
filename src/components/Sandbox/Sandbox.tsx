@@ -42,6 +42,61 @@ const CustomThemeDownloader: React.FC<any> = () => {
   const [error, setError] = useState('')
   const [progress, setProgress] = useState(false)
 
+  const tokenProcessing = () => {
+    setProgress(true)
+    setError('')
+
+    const body = JSON.stringify({
+      config: {
+        output: {
+          css: {
+            transforms: ['name/cti/kebab'],
+            buildPath: './themes',
+            files: [
+              {
+                destination: 'tokens.json',
+                format: 'json/extended',
+              },
+            ],
+          },
+        },
+      },
+      tokens: {
+        language: 'yaml',
+        content: value1
+      }
+    });
+
+    fetch('https://themebox.now.sh', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body,
+    })
+      .then(response => response.json())
+      .then(response => {
+        if (response.error) {
+          setProgress(false)
+          setError(response.error)
+          return;
+        }
+
+        const res = JSON.parse(response.data[0].content);
+        const tokens = Object.entries(res).map(([_, item]:any) => {
+          return {
+              path: item.path,
+              name: item.name,
+              value: item.value,
+              changed: true,
+            }
+        })
+
+        variablesChangedBatch(tokens)
+        setProgress(false)
+      });
+  }
+
   return (
     <form style={{
       margin: '0 14px 0 0'
@@ -57,58 +112,7 @@ const CustomThemeDownloader: React.FC<any> = () => {
         onChange={(event) => setValue1(event.target.value)}
       />
       <Spacer all={10} />
-      <Button view="action" size="m" progress={progress} onClick={() => {
-        setProgress(true)
-        setError('')
-        const body = JSON.stringify({
-          config: {
-            output: {
-              css: {
-                transforms: ['name/cti/kebab'],
-                buildPath: './themes',
-                files: [
-                  {
-                    destination: 'tokens.json',
-                    format: 'json/extended',
-                  },
-                ],
-              },
-            },
-          },
-          tokens: {
-            language: 'yaml',
-            content: value1
-          }
-        });
-
-        fetch('https://themebox.now.sh', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body,
-        })
-        .then(response => response.json())
-        .then(response => {
-          if (response.error) {
-            setProgress(false)
-            setError(response.error)
-            return;
-          }
-          const res = JSON.parse(response.data[0].content);
-          const tokens = Object.entries(res).map(([_, item]:any) => {
-            return {
-                path: item.path,
-                name: item.name,
-                value: item.value,
-                changed: true,
-              }
-          })
-
-          variablesChangedBatch(tokens)
-          setProgress(false)
-        });
-      }}>Загрузить</Button>
+      <Button view="action" size="m" progress={progress} onClick={tokenProcessing}>Загрузить</Button>
     </form>
   )
 }
