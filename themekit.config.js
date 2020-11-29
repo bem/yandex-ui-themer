@@ -83,13 +83,6 @@ module.exports = {
       "actions": ["process-color"],
       "files": [
         {
-          "destination": "[entry]/root.css",
-          "format": "css/variables",
-          "options": {
-            "selector": ".Theme_root_[entry]"
-          }
-        },
-        {
           "destination": "[entry]/root.json",
           "format": "json/extended"
         }
