@@ -58,7 +58,7 @@ const CustomThemeDownloader: React.FC<any> = () => {
                 files: [
                   {
                     destination: 'tokens.json',
-                    format: 'json/flat',
+                    format: 'json/extended',
                   },
                 ],
               },
@@ -79,25 +79,17 @@ const CustomThemeDownloader: React.FC<any> = () => {
         })
         .then(response => response.json())
         .then(response => {
-          console.log('>>> data', JSON.parse(response.data[0].content));
+          // TODO: error
           const res = JSON.parse(response.data[0].content);
-          const paths = {
-            'button-view-action-fill-color-base': ["button", "viewAction", "fillColor", "base"],
-            'button-view-action-fill-color-progress-base': ["button", "viewAction", "fillColor", "progress", "base"],
-            'button-view-action-fill-color-progress-process': ["button", "viewAction", "fillColor", "progress", "process"],
-            'button-view-default-fill-color-base': ["button", "viewDefault", "fillColor", "base"]
-          }
-          const tokens = Object.keys(res).map((value) => {
+          const tokens = Object.entries(res).map(([_, item]:any) => {
             return {
-              // @ts-ignore
-                path: paths[value],
-                name: value,
-                value: res[value],
+                path: item.path,
+                name: item.name,
+                value: item.value,
                 changed: true,
               }
           })
 
-          console.log('>>> tokens', tokens)
           variablesChangedBatch(tokens)
         });
       }}>Загрузить</Button>
@@ -110,7 +102,6 @@ export const Sandbox: React.FC<SandboxProps> = ({ components, globals, theme }) 
   const tabs = ['globals', ...Object.keys(components)]
   const [activeTab, setActiveTab] = useState('globals')
   const [activeTab1, setActiveTab1] = useState('tokens')
-  // @ts-ignore
   const values = activeTab === 'globals' ? globals : components[activeTab]
   const [filter, setFilter] = useState('')
 
@@ -153,7 +144,8 @@ export const Sandbox: React.FC<SandboxProps> = ({ components, globals, theme }) 
           <TextinputField
             key={index}
             label={groupName}
-            value={(designTokens[groupName] || {}).value || groupTokens.value}
+            value={groupTokens.value}
+            customTokens={(designTokens[groupName] || {}).value}
             path={groupTokens.path}
             description={groupTokens.description}
           />

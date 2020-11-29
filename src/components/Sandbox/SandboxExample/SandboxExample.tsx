@@ -1,4 +1,4 @@
-import React, { FC, useState, useEffect, useRef } from 'react'
+import React, { FC, useState, useEffect } from 'react'
 import { useStore } from 'effector-react'
 import deepmerge from 'deepmerge'
 import YAML from 'yaml'

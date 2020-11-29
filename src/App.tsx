@@ -40,32 +40,25 @@ export default () => {
     return (
         <div className="Site">
             <div className="Header">
-                <div className="Tumbler-Wrapper">
-                    <ListTile
-                        leftSpace="m"
-                        rightSpace="m"
-                        alignItems="center"
-                        leading={
-                            <Text typography="control-m" color="secondary">
-                                Тема из пресетов @yandex/ui:
-                            </Text>
-                        }
-                    >
-                        <Select
-                            size="m"
-                            view="default"
-                            options={menuItems}
-                            value={theme}
-                            onChange={(event: any) => {
-                                console.log('ya tyt', event.target.value);
-                                chooseTheme(event.target.value)
-                                if (event.target.value === 'custom') {
-                                    console.log('>>> custom')
-                                }
-                        }}/>
-                    </ListTile>
-                </div>
-        </div>
+                <ListTile
+                    leftSpace="m"
+                    rightSpace="m"
+                    alignItems="center"
+                    leading={
+                        <Text typography="control-m" color="secondary">
+                            Тема из пресетов @yandex/ui:
+                        </Text>
+                    }
+                >
+                    <Select
+                        size="m"
+                        view="default"
+                        options={menuItems}
+                        value={theme}
+                        onChange={(event: any) => chooseTheme(event.target.value)}
+                    />
+                </ListTile>
+            </div>
             <div className="Content">
                 <Sandbox theme={themes[theme].preset} globals={themes[theme].tokens.globals} components={themes[theme].tokens.components} />
             </div>
