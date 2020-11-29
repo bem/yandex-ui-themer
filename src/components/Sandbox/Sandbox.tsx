@@ -38,7 +38,7 @@ const CustomThemeDownloader: React.FC<any> = () => {
       base:
         value: "#ecb6ea"`
 
-  const [value1, setValue1] = useState(tokensDefault)
+  const [value, setValue] = useState(tokensDefault)
   const [error, setError] = useState('')
   const [progress, setProgress] = useState(false)
 
@@ -63,7 +63,7 @@ const CustomThemeDownloader: React.FC<any> = () => {
       },
       tokens: {
         language: 'yaml',
-        content: value1
+        content: value
       }
     });
 
@@ -108,8 +108,8 @@ const CustomThemeDownloader: React.FC<any> = () => {
         hint={error}
         view="default"
         size="m"
-        value={value1}
-        onChange={(event) => setValue1(event.target.value)}
+        value={value}
+        onChange={(event) => setValue(event.target.value)}
       />
       <Spacer all={10} />
       <Button view="action" size="m" progress={progress} onClick={tokenProcessing}>Загрузить</Button>
