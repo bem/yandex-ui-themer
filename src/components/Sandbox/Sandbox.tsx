@@ -38,7 +38,9 @@ const CustomThemeDownloader: React.FC<any> = () => {
       base:
         value: "#ecb6ea"`
 
-  const [value1, setValue1] = useState(tokensDefault);
+  const [value1, setValue1] = useState(tokensDefault)
+  const [error, setError] = useState('')
+  const [progress, setProgress] = useState(false)
 
   return (
     <form style={{
@@ -46,9 +48,18 @@ const CustomThemeDownloader: React.FC<any> = () => {
     }}>
       Токены:
       <Spacer all={10} />
-      <TextareaWithAutoResize view="default" size="m" value={value1} onChange={(event) => setValue1(event.target.value)}></TextareaWithAutoResize>
+      <TextareaWithAutoResize
+        state={error ? 'error' : undefined}
+        hint={error}
+        view="default"
+        size="m"
+        value={value1}
+        onChange={(event) => setValue1(event.target.value)}
+      />
       <Spacer all={10} />
-      <Button view="action" size="m" onClick={() => {
+      <Button view="action" size="m" progress={progress} onClick={() => {
+        setProgress(true)
+        setError('')
         const body = JSON.stringify({
           config: {
             output: {
@@ -79,7 +90,11 @@ const CustomThemeDownloader: React.FC<any> = () => {
         })
         .then(response => response.json())
         .then(response => {
-          // TODO: error
+          if (response.error) {
+            setProgress(false)
+            setError(response.error)
+            return;
+          }
           const res = JSON.parse(response.data[0].content);
           const tokens = Object.entries(res).map(([_, item]:any) => {
             return {
@@ -91,6 +106,7 @@ const CustomThemeDownloader: React.FC<any> = () => {
           })
 
           variablesChangedBatch(tokens)
+          setProgress(false)
         });
       }}>Загрузить</Button>
     </form>
