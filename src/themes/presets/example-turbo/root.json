@@ -63,7 +63,7 @@
       ]
     },
     "typography-controls-size-m-font-size": {
-      "value": "15px",
+      "value": "18px",
       "path": [
         "typography",
         "controls",
@@ -531,7 +531,7 @@
       ]
     },
     "color-control-bg-default": {
-      "value": "rgb(230, 230, 230)",
+      "value": "rgba(0, 0, 0, 0.1)",
       "path": [
         "color",
         "control",
@@ -543,7 +543,7 @@
       "description": "цвет фона контрола"
     },
     "color-control-bg-default-hover": {
-      "value": "rgb(219, 219, 219)",
+      "value": "#c3c3c3",
       "path": [
         "color",
         "control",
@@ -555,7 +555,7 @@
       "description": "цвет фона контрола по ховеру"
     },
     "color-control-bg-default-press": {
-      "value": "rgb(219, 219, 219)",
+      "value": "#c3c3c3",
       "path": [
         "color",
         "control",
@@ -567,7 +567,7 @@
       "description": "цвет фона контрола по нажатию"
     },
     "color-control-bg-default-disable": {
-      "value": "rgb(242, 242, 242)",
+      "value": "rgba(0, 0, 0, 0.1)",
       "path": [
         "color",
         "control",
@@ -687,7 +687,7 @@
       "description": "цвет бордеров псевдо контрола"
     },
     "color-control-bg-action": {
-      "value": "#fc0",
+      "value": "#0679ff",
       "path": [
         "color",
         "control",
@@ -699,7 +699,7 @@
       "description": "цвет фона активного контрола"
     },
     "color-control-bg-action-hover": {
-      "value": "rgb(250, 192, 0)",
+      "value": "#0868d9",
       "path": [
         "color",
         "control",
@@ -711,7 +711,7 @@
       "description": "цвет фона активного контрола по ховеру"
     },
     "color-control-bg-action-press": {
-      "value": "rgb(250, 192, 0)",
+      "value": "#0868d9",
       "path": [
         "color",
         "control",
@@ -721,6 +721,17 @@
         "press"
       ],
       "description": "цвет фон активного контролы по нажатию"
+    },
+    "color-control-type-action-fill-color-disable": {
+      "value": "#0679ff",
+      "path": [
+        "color",
+        "control",
+        "type",
+        "action",
+        "fillColor",
+        "disable"
+      ]
     },
     "color-control-bg-passive": {
       "value": "#fff",
@@ -735,7 +746,7 @@
       "description": "цвет фона пассивной части контрола"
     },
     "color-control-bg-progress": {
-      "value": "#fc0",
+      "value": "#067aff",
       "path": [
         "color",
         "control",
@@ -855,7 +866,7 @@
       "description": "цвет фона ослабленной части неактивного контрола"
     },
     "color-control-bg-check": {
-      "value": "rgb(84, 84, 84)",
+      "value": "#0679ff",
       "path": [
         "color",
         "control",
@@ -867,7 +878,7 @@
       "description": "цвет фона чекнутого контрола"
     },
     "color-control-bg-check-hover": {
-      "value": "rgb(84, 84, 84)",
+      "value": "#0868d9",
       "path": [
         "color",
         "control",
@@ -879,7 +890,7 @@
       "description": "цвет фона чекнутого контрола по ховеру"
     },
     "color-control-bg-check-press": {
-      "value": "rgb(82, 82, 82)",
+      "value": "#0868d9",
       "path": [
         "color",
         "control",
@@ -891,7 +902,7 @@
       "description": "цвет фона чекнутого контрола по нажатию"
     },
     "color-control-bg-check-disable": {
-      "value": "rgb(242, 242, 242)",
+      "value": "#0679ff",
       "path": [
         "color",
         "control",
@@ -1210,7 +1221,7 @@
         ]
       },
       "attach-size-m-fontSize": {
-        "value": "15px",
+        "value": "18px",
         "path": [
           "attach",
           "size",
@@ -1353,7 +1364,7 @@
         ]
       },
       "button-borderRadius": {
-        "value": "4px",
+        "value": "12px",
         "path": [
           "button",
           "border",
@@ -1372,7 +1383,7 @@
         "description": "Размер текста у s-button"
       },
       "button-size-s-lineHeight": {
-        "value": "32px",
+        "value": "36px",
         "path": [
           "button",
           "size",
@@ -1382,7 +1393,7 @@
         "description": "Межстрочный интервал текста у s-button"
       },
       "button-size-s-height": {
-        "value": "32px",
+        "value": "36px",
         "path": [
           "button",
           "size",
@@ -1436,7 +1447,7 @@
         "description": "Размер внешнего отступа у s-button"
       },
       "button-size-m-font": {
-        "value": "15px",
+        "value": "14px",
         "path": [
           "button",
           "size",
@@ -1446,7 +1457,7 @@
         "description": "Размер текста у m-button"
       },
       "button-size-m-lineHeight": {
-        "value": "36px",
+        "value": "44px",
         "path": [
           "button",
           "size",
@@ -1456,7 +1467,7 @@
         "description": "Межстрочный интервал текста у m-button"
       },
       "button-size-m-height": {
-        "value": "36px",
+        "value": "44px",
         "path": [
           "button",
           "size",
@@ -1510,7 +1521,7 @@
         "description": "Размер внешнего отступа у m-button"
       },
       "button-size-l-font": {
-        "value": "18px",
+        "value": "14px",
         "path": [
           "button",
           "size",
@@ -1520,7 +1531,7 @@
         "description": "Размер текста у l-button"
       },
       "button-size-l-lineHeight": {
-        "value": "42px",
+        "value": "52px",
         "path": [
           "button",
           "size",
@@ -1530,7 +1541,7 @@
         "description": "Межстрочный интервал текста у l-button"
       },
       "button-size-l-height": {
-        "value": "42px",
+        "value": "52px",
         "path": [
           "button",
           "size",
@@ -1593,7 +1604,7 @@
         ]
       },
       "button-view-action-fill-color-base": {
-        "value": "#fc0",
+        "value": "#0679ff",
         "path": [
           "button",
           "viewAction",
@@ -1602,7 +1613,7 @@
         ]
       },
       "button-view-action-fill-color-disabled": {
-        "value": "rgb(242, 242, 242)",
+        "value": "rgba(0, 0, 0, 0.1)",
         "path": [
           "button",
           "viewAction",
@@ -1611,7 +1622,7 @@
         ]
       },
       "button-view-action-fill-color-hovered": {
-        "value": "rgb(250, 192, 0)",
+        "value": "#0868d9",
         "path": [
           "button",
           "viewAction",
@@ -1620,7 +1631,7 @@
         ]
       },
       "button-view-action-fill-color-progress-base": {
-        "value": "#fc0",
+        "value": "#067aff",
         "path": [
           "button",
           "viewAction",
@@ -1640,7 +1651,7 @@
         ]
       },
       "button-view-action-fill-color-checked-base": {
-        "value": "rgb(84, 84, 84)",
+        "value": "#0679ff",
         "path": [
           "button",
           "viewAction",
@@ -1650,7 +1661,7 @@
         ]
       },
       "button-view-action-fill-color-checked-hovered": {
-        "value": "rgb(84, 84, 84)",
+        "value": "#0868d9",
         "path": [
           "button",
           "viewAction",
@@ -1726,7 +1737,7 @@
         ]
       },
       "button-view-clear-fill-color-disabled": {
-        "value": "rgb(242, 242, 242)",
+        "value": "rgba(0, 0, 0, 0.1)",
         "path": [
           "button",
           "viewClear",
@@ -1735,7 +1746,7 @@
         ]
       },
       "button-view-clear-fill-color-checked-base": {
-        "value": "rgb(84, 84, 84)",
+        "value": "#0679ff",
         "path": [
           "button",
           "viewClear",
@@ -1745,7 +1756,7 @@
         ]
       },
       "button-view-clear-fill-color-checked-hovered": {
-        "value": "rgb(84, 84, 84)",
+        "value": "#0868d9",
         "path": [
           "button",
           "viewClear",
@@ -1792,7 +1803,7 @@
         ]
       },
       "button-view-default-fill-color-base": {
-        "value": "rgb(230, 230, 230)",
+        "value": "rgba(0, 0, 0, 0.1)",
         "path": [
           "button",
           "viewDefault",
@@ -1801,7 +1812,7 @@
         ]
       },
       "button-view-default-fill-color-disabled": {
-        "value": "rgb(242, 242, 242)",
+        "value": "rgba(0, 0, 0, 0.1)",
         "path": [
           "button",
           "viewDefault",
@@ -1810,7 +1821,7 @@
         ]
       },
       "button-view-default-fill-color-hovered": {
-        "value": "rgb(219, 219, 219)",
+        "value": "#c3c3c3",
         "path": [
           "button",
           "viewDefault",
@@ -1819,7 +1830,7 @@
         ]
       },
       "button-view-default-fill-color-checked-base": {
-        "value": "rgb(84, 84, 84)",
+        "value": "#0679ff",
         "path": [
           "button",
           "viewDefault",
@@ -1829,7 +1840,7 @@
         ]
       },
       "button-view-default-fill-color-checked-hovered": {
-        "value": "rgb(84, 84, 84)",
+        "value": "#0868d9",
         "path": [
           "button",
           "viewDefault",
@@ -1904,7 +1915,7 @@
         ]
       },
       "button-view-link-fill-color-disabled": {
-        "value": "rgb(242, 242, 242)",
+        "value": "rgba(0, 0, 0, 0.1)",
         "path": [
           "button",
           "viewLink",
@@ -1922,7 +1933,7 @@
         ]
       },
       "button-view-link-fill-color-checked-base": {
-        "value": "rgb(84, 84, 84)",
+        "value": "#0679ff",
         "path": [
           "button",
           "viewLink",
@@ -1932,7 +1943,7 @@
         ]
       },
       "button-view-link-fill-color-checked-hovered": {
-        "value": "rgb(84, 84, 84)",
+        "value": "#0868d9",
         "path": [
           "button",
           "viewLink",
@@ -1988,7 +1999,7 @@
         ]
       },
       "button-view-pseudo-fill-color-disabled": {
-        "value": "rgb(242, 242, 242)",
+        "value": "rgba(0, 0, 0, 0.1)",
         "path": [
           "button",
           "viewPseudo",
@@ -2006,7 +2017,7 @@
         ]
       },
       "button-view-pseudo-fill-color-checked-base": {
-        "value": "rgb(84, 84, 84)",
+        "value": "#0679ff",
         "path": [
           "button",
           "viewPseudo",
@@ -2016,7 +2027,7 @@
         ]
       },
       "button-view-pseudo-fill-color-checked-hovered": {
-        "value": "rgb(84, 84, 84)",
+        "value": "#0868d9",
         "path": [
           "button",
           "viewPseudo",
@@ -2090,7 +2101,7 @@
         ]
       },
       "button-view-raised-fill-color-checked-base": {
-        "value": "rgb(84, 84, 84)",
+        "value": "#0679ff",
         "path": [
           "button",
           "viewRaised",
@@ -2100,7 +2111,7 @@
         ]
       },
       "button-view-raised-fill-color-checked-hovered": {
-        "value": "rgb(84, 84, 84)",
+        "value": "#0868d9",
         "path": [
           "button",
           "viewRaised",
@@ -2250,7 +2261,7 @@
         ]
       },
       "checkbox-size-m-fontSize": {
-        "value": "15px",
+        "value": "18px",
         "path": [
           "checkbox",
           "size",
@@ -2270,7 +2281,7 @@
         "description": "Размер внешнего левого отступа у m-checkbox (от текста)"
       },
       "checkbox-size-m-width": {
-        "value": "17px",
+        "value": "20px",
         "path": [
           "checkbox",
           "size",
@@ -2280,7 +2291,7 @@
         "description": "Ширина у m-checkbox"
       },
       "checkbox-size-m-height": {
-        "value": "17px",
+        "value": "20px",
         "path": [
           "checkbox",
           "size",
@@ -2290,7 +2301,7 @@
         "description": "Высота у m-checkbox"
       },
       "checkbox-size-m-tick-width": {
-        "value": "13px",
+        "value": "14px",
         "path": [
           "checkbox",
           "size",
@@ -2326,7 +2337,7 @@
         ]
       },
       "checkbox-view-default-fill-color-base": {
-        "value": "rgb(230, 230, 230)",
+        "value": "rgba(0, 0, 0, 0.1)",
         "path": [
           "checkbox",
           "viewDefault",
@@ -2335,7 +2346,7 @@
         ]
       },
       "checkbox-view-default-fill-color-hovered": {
-        "value": "rgb(219, 219, 219)",
+        "value": "#c3c3c3",
         "path": [
           "checkbox",
           "viewDefault",
@@ -2344,7 +2355,7 @@
         ]
       },
       "checkbox-view-default-fill-color-checked-base": {
-        "value": "rgb(84, 84, 84)",
+        "value": "#0679ff",
         "path": [
           "checkbox",
           "viewDefault",
@@ -2354,7 +2365,7 @@
         ]
       },
       "checkbox-view-default-fill-color-checked-hovered": {
-        "value": "rgb(84, 84, 84)",
+        "value": "#0868d9",
         "path": [
           "checkbox",
           "viewDefault",
@@ -2381,6 +2392,14 @@
           "checked",
           "base"
         ]
+      },
+      "checkbox-disable-opacity": {
+        "value": 0.4,
+        "path": [
+          "checkbox",
+          "disable",
+          "opacity"
+        ]
       }
     },
     "divider": {
@@ -2392,7 +2411,7 @@
         ]
       },
       "divider-fill-color": {
-        "value": "#fc0",
+        "value": "#e3e3e3",
         "path": [
           "divider",
           "fillColor"
@@ -2572,7 +2591,7 @@
         "description": "Размер внешнего левого отступа у сущностей после тайтла у s-menu"
       },
       "menu-size-m-fontSize": {
-        "value": "15px",
+        "value": "18px",
         "path": [
           "menu",
           "size",
@@ -2698,7 +2717,7 @@
         ]
       },
       "menu-view-default-fill-color-base": {
-        "value": "rgb(230, 230, 230)",
+        "value": "rgba(0, 0, 0, 0.1)",
         "path": [
           "menu",
           "viewDefault",
@@ -2707,7 +2726,7 @@
         ]
       },
       "menu-view-default-fill-color-hovered": {
-        "value": "rgb(219, 219, 219)",
+        "value": "#c3c3c3",
         "path": [
           "menu",
           "viewDefault",
@@ -2768,7 +2787,7 @@
         ]
       },
       "message-box-lineHeight": {
-        "value": "16px",
+        "value": "20px",
         "path": [
           "messageBox",
           "lineHeight"
@@ -2823,7 +2842,7 @@
         ]
       },
       "message-box-text-indentLeft": {
-        "value": "20px",
+        "value": "12px",
         "path": [
           "messageBox",
           "text",
@@ -2831,7 +2850,7 @@
         ]
       },
       "message-box-text-indentRight": {
-        "value": "20px",
+        "value": "16px",
         "path": [
           "messageBox",
           "text",
@@ -2855,7 +2874,7 @@
         ]
       },
       "message-box-size-s-tail-size": {
-        "value": "22px",
+        "value": "14px",
         "path": [
           "messageBox",
           "size",
@@ -2876,7 +2895,7 @@
         ]
       },
       "message-box-size-s-fontSize": {
-        "value": "13px",
+        "value": "14px",
         "path": [
           "messageBox",
           "size",
@@ -2885,7 +2904,7 @@
         ]
       },
       "message-box-size-s-border-radius": {
-        "value": "7px",
+        "value": "6px",
         "path": [
           "messageBox",
           "size",
@@ -2926,7 +2945,7 @@
         ]
       },
       "message-box-size-m-tail-size": {
-        "value": "22px",
+        "value": "24px",
         "path": [
           "messageBox",
           "size",
@@ -2947,7 +2966,7 @@
         ]
       },
       "message-box-size-m-fontSize": {
-        "value": "13px",
+        "value": "14px",
         "path": [
           "messageBox",
           "size",
@@ -2956,7 +2975,7 @@
         ]
       },
       "message-box-size-m-border-radius": {
-        "value": "7px",
+        "value": "12px",
         "path": [
           "messageBox",
           "size",
@@ -3049,7 +3068,7 @@
         ]
       },
       "message-box-size-l-fontSize": {
-        "value": "13px",
+        "value": "14px",
         "path": [
           "messageBox",
           "size",
@@ -3068,7 +3087,7 @@
         ]
       },
       "message-box-size-l-content-spaceAll": {
-        "value": "15px 20px",
+        "value": "15px 16px",
         "path": [
           "messageBox",
           "size",
@@ -3088,7 +3107,7 @@
         ]
       },
       "message-box-size-l-content-maxWidth": {
-        "value": "380px",
+        "value": "344px",
         "path": [
           "messageBox",
           "size",
@@ -3098,7 +3117,7 @@
         ]
       },
       "message-box-size-l-content-width": {
-        "value": "380px",
+        "value": "344px",
         "path": [
           "messageBox",
           "size",
@@ -3108,7 +3127,7 @@
         ]
       },
       "message-box-size-l-content-functional-width": {
-        "value": "380px",
+        "value": "344px",
         "path": [
           "messageBox",
           "size",
@@ -3119,7 +3138,7 @@
         ]
       },
       "message-box-button-indentRight": {
-        "value": 0,
+        "value": "8px",
         "path": [
           "messageBox",
           "button",
@@ -3127,7 +3146,7 @@
         ]
       },
       "message-box-buttons-indentAll": {
-        "value": 0,
+        "value": "-8px 4px 6px 16px",
         "path": [
           "messageBox",
           "buttons-indentAll"
@@ -3174,7 +3193,7 @@
         ]
       },
       "message-box-view-promo-shadow": {
-        "value": "0 6px 20px -4px rgba(0, 0, 0, .7)",
+        "value": "0px 8px 20px rgba(4, 89, 203, 0.32)",
         "path": [
           "messageBox",
           "viewPromo",
@@ -3204,11 +3223,26 @@
           "viewInverse",
           "shadow"
         ]
+      },
+      "message-box-borderRadius": {
+        "value": "12px",
+        "path": [
+          "messageBox",
+          "borderRadius"
+        ]
+      },
+      "message-box-viewdefault-shadow": {
+        "value": "none",
+        "path": [
+          "messageBox",
+          "viewdefault",
+          "shadow"
+        ]
       }
     },
     "modal": {
       "modal-border-radius": {
-        "value": 0,
+        "value": "16px",
         "path": [
           "modal",
           "border",
@@ -3244,7 +3278,7 @@
     },
     "progress": {
       "progressbar-height": {
-        "value": "2px",
+        "value": "3px",
         "path": [
           "progress",
           "height"
@@ -3252,7 +3286,7 @@
         "description": "Высота у progressbar"
       },
       "progress-border-radius": {
-        "value": 0,
+        "value": "1.5px",
         "path": [
           "progress",
           "border",
@@ -3260,7 +3294,7 @@
         ]
       },
       "progress-outer-fill-color": {
-        "value": "transparent",
+        "value": "rgba(0, 0, 0, 0.1)",
         "path": [
           "progress",
           "outer",
@@ -3268,7 +3302,7 @@
         ]
       },
       "progress-inner-fill-color": {
-        "value": "#fc0",
+        "value": "#067aff",
         "path": [
           "progress",
           "inner",
@@ -3336,7 +3370,7 @@
         ]
       },
       "radioButton-size-m-fontSize": {
-        "value": "15px",
+        "value": "18px",
         "path": [
           "radioButton",
           "size",
@@ -3398,7 +3432,7 @@
         ]
       },
       "radio-button-view-default-fill-color-base": {
-        "value": "rgb(230, 230, 230)",
+        "value": "rgba(0, 0, 0, 0.1)",
         "path": [
           "radioButton",
           "viewDefault",
@@ -3471,7 +3505,7 @@
         ]
       },
       "radiobox-view-default-fill-color-base": {
-        "value": "rgb(230, 230, 230)",
+        "value": "rgba(0, 0, 0, 0.1)",
         "path": [
           "radiobox",
           "viewDefault",
@@ -3480,7 +3514,7 @@
         ]
       },
       "radiobox-view-default-fill-color-hovered": {
-        "value": "rgb(219, 219, 219)",
+        "value": "#c3c3c3",
         "path": [
           "radiobox",
           "viewDefault",
@@ -3489,7 +3523,7 @@
         ]
       },
       "radiobox-view-default-fill-color-checked-base": {
-        "value": "rgb(84, 84, 84)",
+        "value": "#0679ff",
         "path": [
           "radiobox",
           "viewDefault",
@@ -3499,7 +3533,7 @@
         ]
       },
       "radiobox-view-default-fill-color-checked-hovered": {
-        "value": "rgb(84, 84, 84)",
+        "value": "#0868d9",
         "path": [
           "radiobox",
           "viewDefault",
@@ -3632,7 +3666,7 @@
         ]
       },
       "radiobox-size-m-fontSize": {
-        "value": "15px",
+        "value": "18px",
         "path": [
           "radiobox",
           "size",
@@ -3652,7 +3686,7 @@
         "description": "Межстрочный интервал текста у m-radio"
       },
       "radiobox-size-m-size": {
-        "value": "17px",
+        "value": "20px",
         "path": [
           "radiobox",
           "size",
@@ -3682,7 +3716,7 @@
         "description": "Размер внешнего правого отступа у m-radio (от текста) "
       },
       "radiobox-size-m-after-size": {
-        "value": "7px",
+        "value": "10px",
         "path": [
           "radiobox",
           "size",
@@ -3696,6 +3730,14 @@
         "path": [
           "radiobox",
           "disabled",
+          "opacity"
+        ]
+      },
+      "radiobox-disable-opacity": {
+        "value": 0.4,
+        "path": [
+          "radiobox",
+          "disable",
           "opacity"
         ]
       }
@@ -3771,7 +3813,7 @@
         "description": "Цвет заливки трека в состоянии наведения"
       },
       "slider-view-default-range-fill-color-base": {
-        "value": "#fc0",
+        "value": "#0679ff",
         "path": [
           "slider",
           "viewDefault",
@@ -3782,7 +3824,7 @@
         "description": "Цвет заливки диапазона в обычном состоянии"
       },
       "slider-view-default-range-fill-color-hovered": {
-        "value": "rgb(250, 192, 0)",
+        "value": "#0868d9",
         "path": [
           "slider",
           "viewDefault",
@@ -3954,7 +3996,7 @@
         ]
       },
       "spin-view-default-border-color": {
-        "value": "#fc0",
+        "value": "#067aff",
         "path": [
           "spin",
           "viewDefault",
@@ -3989,7 +4031,7 @@
         ]
       },
       "tabsMenu-size-m-font": {
-        "value": "15px",
+        "value": "18px",
         "path": [
           "tabsMenu",
           "size",
@@ -5494,7 +5536,7 @@
         ]
       },
       "textarea-size-m-fontSize": {
-        "value": "15px",
+        "value": "18px",
         "path": [
           "textarea",
           "size",
@@ -5835,7 +5877,7 @@
         ]
       },
       "textinput-size-m-fontSize": {
-        "value": "15px",
+        "value": "18px",
         "path": [
           "textinput",
           "size",
@@ -6406,7 +6448,7 @@
         "description": "Размер хвоста s-tooltip"
       },
       "tooltip-size-m-fontSize": {
-        "value": "15px",
+        "value": "18px",
         "path": [
           "tooltip",
           "size",
@@ -6498,7 +6540,7 @@
         ]
       },
       "tooltip-view-default-fill-color-base": {
-        "value": "rgb(230, 230, 230)",
+        "value": "rgba(0, 0, 0, 0.1)",
         "path": [
           "tooltip",
           "viewDefault",
@@ -6578,12 +6620,30 @@
         ]
       },
       "tumbler-button-opacity-disabled": {
-        "value": 1,
+        "value": 0.4,
         "path": [
           "tumbler",
           "button",
           "opacity",
           "disabled"
+        ]
+      },
+      "tumbler-button-color-disabled": {
+        "value": "rgba(0, 0, 0, 0.1)",
+        "path": [
+          "tumbler",
+          "button",
+          "color",
+          "disabled"
+        ]
+      },
+      "tumbler-button-color-disabled-active": {
+        "value": "#0679ff",
+        "path": [
+          "tumbler",
+          "button",
+          "color",
+          "disabledActive"
         ]
       },
       "tumbler-size-s-fontSize": {
@@ -6699,7 +6759,7 @@
         ]
       },
       "tumbler-size-m-fontSize": {
-        "value": "15px",
+        "value": "18px",
         "path": [
           "tumbler",
           "size",
@@ -6728,7 +6788,7 @@
         ]
       },
       "tumbler-size-m-width": {
-        "value": "40px",
+        "value": "34px",
         "path": [
           "tumbler",
           "size",
@@ -6925,7 +6985,7 @@
         ]
       },
       "tumbler-view-default-fill-color-base": {
-        "value": "rgb(230, 230, 230)",
+        "value": "rgba(0, 0, 0, 0.1)",
         "path": [
           "tumbler",
           "viewDefault",
@@ -6934,7 +6994,7 @@
         ]
       },
       "tumbler-view-default-fill-color-disabled": {
-        "value": "rgb(242, 242, 242)",
+        "value": "rgba(0, 0, 0, 0.1)",
         "path": [
           "tumbler",
           "viewDefault",
@@ -6943,7 +7003,7 @@
         ]
       },
       "tumbler-view-default-fill-color-hovered": {
-        "value": "rgb(219, 219, 219)",
+        "value": "#c3c3c3",
         "path": [
           "tumbler",
           "viewDefault",
@@ -6952,7 +7012,7 @@
         ]
       },
       "tumbler-view-default-fill-color-checked-base": {
-        "value": "#fc0",
+        "value": "#0679ff",
         "path": [
           "tumbler",
           "viewDefault",
@@ -6962,7 +7022,7 @@
         ]
       },
       "tumbler-view-default-fill-color-checked-disabled": {
-        "value": "rgb(242, 242, 242)",
+        "value": "rgba(0, 0, 0, 0.1)",
         "path": [
           "tumbler",
           "viewDefault",
@@ -6972,7 +7032,7 @@
         ]
       },
       "tumbler-view-default-fill-color-checked-hovered": {
-        "value": "rgb(250, 192, 0)",
+        "value": "#0868d9",
         "path": [
           "tumbler",
           "viewDefault",
@@ -7012,7 +7072,7 @@
     },
     "userPic": {
       "user-pic-size-m-size": {
-        "value": "42px",
+        "value": "48px",
         "path": [
           "userPic",
           "size",
@@ -7021,7 +7081,7 @@
         ]
       },
       "user-pic-size-m-size-plus": {
-        "value": "52px",
+        "value": "58px",
         "path": [
           "userPic",
           "size",

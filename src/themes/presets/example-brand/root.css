@@ -1,6 +1,6 @@
-.Theme_root_example {
+.Theme_root_example-brand {
     --attach-font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    --attach-typo-color: #000;
+    --attach-typo-color: #fff;
     --attach-reset-width: 12px;
     --attach-reset-height: 12px;
     --attach-reset-indentLeft: 5px;
@@ -19,10 +19,10 @@
     --badge-size-large: 16px;
     --badge-font-size: 12px;
     --badge-border-radius: 8px;
-    --badge-border-color: #fff;
+    --badge-border-color: #c62828;
     --badge-border-width: 2px;
-    --badge-fill-color: #f33;
-    --badge-typo-color: #fff;
+    --badge-fill-color: #feb35e;
+    --badge-typo-color: #c62828;
     --button-font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     --button-border-width: 1px;
     --button-borderRadius: 4px; /* Радиус внутреннего блока */
@@ -47,65 +47,65 @@
     --button-size-l-icon-indentLeft: 35px; /* Размер внешнего левого отступа текста от иконки у l-button */
     --button-size-l-icon-indentRight: 35px; /* Размер внешнего правого отступа текста от иконки у l-button */
     --button-size-l-text-indentAll: 0 18px; /* Размер внешнего отступа у l-button */
-    --button-view-action-border-color-focused: #fc0;
-    --button-view-action-fill-color-base: #fc0;
-    --button-view-action-fill-color-disabled: rgb(242, 242, 242);
-    --button-view-action-fill-color-hovered: rgb(250, 192, 0);
-    --button-view-action-fill-color-progress-base: #fc0;
-    --button-view-action-fill-color-progress-process: rgb(255, 213, 0);
-    --button-view-action-fill-color-checked-base: rgb(84, 84, 84);
-    --button-view-action-fill-color-checked-hovered: rgb(84, 84, 84);
-    --button-view-action-typo-color-base: #000;
-    --button-view-action-typo-color-disabled: rgb(128, 128, 128);
-    --button-view-action-typo-color-hovered: #000;
-    --button-view-action-typo-color-progress-base: #000;
-    --button-view-action-typo-color-checked-base: rgb(255, 255, 255);
-    --button-view-action-typo-color-checked-hovered: rgb(255, 255, 255);
-    --button-view-clear-border-color-focused: #fc0;
-    --button-view-clear-fill-color-disabled: rgb(242, 242, 242);
-    --button-view-clear-fill-color-checked-base: rgb(84, 84, 84);
-    --button-view-clear-fill-color-checked-hovered: rgb(84, 84, 84);
-    --button-view-clear-typo-color-base: #000;
-    --button-view-clear-typo-color-disabled: rgb(128, 128, 128);
-    --button-view-clear-typo-color-checked-base: rgb(255, 255, 255);
-    --button-view-default-border-color-focused: #fc0;
-    --button-view-default-fill-color-base: rgb(230, 230, 230);
-    --button-view-default-fill-color-disabled: rgb(242, 242, 242);
-    --button-view-default-fill-color-hovered: rgb(219, 219, 219);
-    --button-view-default-fill-color-checked-base: rgb(84, 84, 84);
-    --button-view-default-fill-color-checked-hovered: rgb(84, 84, 84);
-    --button-view-default-typo-color-base: #000;
-    --button-view-default-typo-color-disabled: rgb(128, 128, 128);
-    --button-view-default-typo-color-checked-base: rgb(255, 255, 255);
-    --button-view-default-typo-color-checked-hovered: rgb(255, 255, 255);
-    --button-view-link-border-color-base: rgba(0, 68, 187, 0.6);
-    --button-view-link-border-color-focused: #fc0;
-    --button-view-link-fill-color-base: #fff;
-    --button-view-link-fill-color-disabled: rgb(242, 242, 242);
-    --button-view-link-fill-color-hovered: rgba(0, 68, 187, 0.3);
-    --button-view-link-fill-color-checked-base: rgb(84, 84, 84);
-    --button-view-link-fill-color-checked-hovered: rgb(84, 84, 84);
-    --button-view-link-typo-color-base: #04b;
-    --button-view-link-typo-color-disabled: rgb(128, 128, 128);
-    --button-view-link-typo-color-checked-base: rgb(255, 255, 255);
-    --button-view-pseudo-border-color-base: rgb(204, 204, 204);
-    --button-view-pseudo-border-color-focused: #fc0;
-    --button-view-pseudo-fill-color-disabled: rgb(242, 242, 242);
-    --button-view-pseudo-fill-color-hovered: rgb(247, 247, 247);
-    --button-view-pseudo-fill-color-checked-base: rgb(84, 84, 84);
-    --button-view-pseudo-fill-color-checked-hovered: rgb(84, 84, 84);
-    --button-view-pseudo-typo-color-base: #000;
-    --button-view-pseudo-typo-color-disabled: rgb(128, 128, 128);
-    --button-view-pseudo-typo-color-checked-base: rgb(255, 255, 255);
-    --button-view-raised-border-color-focused: #fc0;
-    --button-view-raised-fill-color-base: #fff;
-    --button-view-raised-fill-color-disabled: #f5f5f5;
-    --button-view-raised-fill-color-hovered: #f5f5f5;
-    --button-view-raised-fill-color-checked-base: rgb(84, 84, 84);
-    --button-view-raised-fill-color-checked-hovered: rgb(84, 84, 84);
-    --button-view-raised-typo-color-base: #000;
-    --button-view-raised-typo-color-disabled: #7f7f7f;
-    --button-view-raised-typo-color-checked-base: rgb(255, 255, 255);
+    --button-view-action-border-color-focused: #fff;
+    --button-view-action-fill-color-base: #fff;
+    --button-view-action-fill-color-disabled: rgb(178, 36, 36);
+    --button-view-action-fill-color-hovered: rgb(230, 230, 230);
+    --button-view-action-fill-color-progress-base: #fff;
+    --button-view-action-fill-color-progress-process: rgb(255, 255, 255);
+    --button-view-action-fill-color-checked-base: #fff;
+    --button-view-action-fill-color-checked-hovered: #fff;
+    --button-view-action-typo-color-base: #c62828;
+    --button-view-action-typo-color-disabled: rgba(255, 255, 255, 0.6);
+    --button-view-action-typo-color-hovered: #c62828;
+    --button-view-action-typo-color-progress-base: #c62828;
+    --button-view-action-typo-color-checked-base: #c62828;
+    --button-view-action-typo-color-checked-hovered: #c62828;
+    --button-view-clear-border-color-focused: #fff;
+    --button-view-clear-fill-color-disabled: rgb(178, 36, 36);
+    --button-view-clear-fill-color-checked-base: #fff;
+    --button-view-clear-fill-color-checked-hovered: #fff;
+    --button-view-clear-typo-color-base: #fff;
+    --button-view-clear-typo-color-disabled: rgba(255, 255, 255, 0.6);
+    --button-view-clear-typo-color-checked-base: #c62828;
+    --button-view-default-border-color-focused: #fff;
+    --button-view-default-fill-color-base: rgb(157, 32, 32);
+    --button-view-default-fill-color-disabled: rgb(178, 36, 36);
+    --button-view-default-fill-color-hovered: rgb(148, 30, 30);
+    --button-view-default-fill-color-checked-base: #fff;
+    --button-view-default-fill-color-checked-hovered: #fff;
+    --button-view-default-typo-color-base: #fff;
+    --button-view-default-typo-color-disabled: rgba(255, 255, 255, 0.6);
+    --button-view-default-typo-color-checked-base: #c62828;
+    --button-view-default-typo-color-checked-hovered: #c62828;
+    --button-view-link-border-color-base: #fff;
+    --button-view-link-border-color-focused: #fff;
+    --button-view-link-fill-color-base: #c62828;
+    --button-view-link-fill-color-disabled: rgb(178, 36, 36);
+    --button-view-link-fill-color-hovered: rgba(255, 255, 255, 0.2);
+    --button-view-link-fill-color-checked-base: #fff;
+    --button-view-link-fill-color-checked-hovered: #fff;
+    --button-view-link-typo-color-base: #fff;
+    --button-view-link-typo-color-disabled: rgba(255, 255, 255, 0.6);
+    --button-view-link-typo-color-checked-base: #c62828;
+    --button-view-pseudo-border-color-base: rgb(148, 30, 30);
+    --button-view-pseudo-border-color-focused: #fff;
+    --button-view-pseudo-fill-color-disabled: rgb(178, 36, 36);
+    --button-view-pseudo-fill-color-hovered: rgb(165, 34, 34);
+    --button-view-pseudo-fill-color-checked-base: #fff;
+    --button-view-pseudo-fill-color-checked-hovered: #fff;
+    --button-view-pseudo-typo-color-base: #fff;
+    --button-view-pseudo-typo-color-disabled: rgba(255, 255, 255, 0.6);
+    --button-view-pseudo-typo-color-checked-base: #c62828;
+    --button-view-raised-border-color-focused: #fff;
+    --button-view-raised-fill-color-base: #d62b2b;
+    --button-view-raised-fill-color-disabled: #b22424;
+    --button-view-raised-fill-color-hovered: #d62b2b;
+    --button-view-raised-fill-color-checked-base: #fff;
+    --button-view-raised-fill-color-checked-hovered: #fff;
+    --button-view-raised-typo-color-base: #fff;
+    --button-view-raised-typo-color-disabled: #e29393;
+    --button-view-raised-typo-color-checked-base: #c62828;
     --checkbox-view-outline-border-color: rgba(0, 0, 0, 0.1);
     --checkbox-view-outline-fill-color-base: transparent;
     --checkbox-view-outline-fill-color-hovered: #d2d2d2;
@@ -125,19 +125,19 @@
     --checkbox-size-m-tick-width: 13px;
     --checkbox-size-m-tick-height: 10px;
     --checkbox-disabled-opacity: 0.6;
-    --checkbox-view-default-outline-color: #fc0;
-    --checkbox-view-default-fill-color-base: rgb(230, 230, 230);
-    --checkbox-view-default-fill-color-hovered: rgb(219, 219, 219);
-    --checkbox-view-default-fill-color-checked-base: rgb(84, 84, 84);
-    --checkbox-view-default-fill-color-checked-hovered: rgb(84, 84, 84);
-    --checkbox-view-default-typo-color-base: #000;
-    --checkbox-view-default-typo-color-checked-base: #fff;
+    --checkbox-view-default-outline-color: #fff;
+    --checkbox-view-default-fill-color-base: rgb(157, 32, 32);
+    --checkbox-view-default-fill-color-hovered: rgb(148, 30, 30);
+    --checkbox-view-default-fill-color-checked-base: #fff;
+    --checkbox-view-default-fill-color-checked-hovered: #fff;
+    --checkbox-view-default-typo-color-base: #fff;
+    --checkbox-view-default-typo-color-checked-base: #c62828;
     --divider-indent-all: 16px;
     --divider-fill-color: #fc0;
-    --link-view-default-outline-color: #fc0;
-    --link-view-default-typo-color-base: #04b;
-    --link-view-default-typo-color-disabled: rgba(0, 0, 0, 0.3);
-    --link-view-default-typo-color-hovered: #c00;
+    --link-view-default-outline-color: #fff;
+    --link-view-default-typo-color-base: #fff;
+    --link-view-default-typo-color-disabled: rgba(255, 255, 255, 0.3);
+    --link-view-default-typo-color-hovered: rgb(237, 237, 237);
     --menu-font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     --menu-group-borderWidth: 1px; /* Бордер у menu-group меню */
     --menu-size-s-fontSize: 13px; /* Размер текста у s-menu */
@@ -162,13 +162,13 @@
     --menu-size-m-item-indentBottom: 5px; /* Размер нижнего внешнего отступа от пунктов до группы у m-menu */
     --menu-size-m-item-icon-indentRight: 6px;
     --menu-size-m-titleSibling-indentLeft: 20px; /* Размер внешнего левого отступа у сущностей после тайтла у m-menu */
-    --menu-view-default-border-color-base: rgb(179, 179, 179);
-    --menu-view-default-fill-color-base: rgb(230, 230, 230);
-    --menu-view-default-fill-color-hovered: rgb(219, 219, 219);
-    --menu-view-default-typo-color-base: #000;
-    --menu-view-default-typo-color-secondary: rgba(0, 0, 0, 0.6);
-    --menu-view-default-typo-color-disabled: rgb(128, 128, 128);
-    --menu-view-default-typo-color-hovered: #000;
+    --menu-view-default-border-color-base: rgb(157, 32, 32);
+    --menu-view-default-fill-color-base: rgb(157, 32, 32);
+    --menu-view-default-fill-color-hovered: rgb(148, 30, 30);
+    --menu-view-default-typo-color-base: #fff;
+    --menu-view-default-typo-color-secondary: rgba(255, 255, 255, 0.6);
+    --menu-view-default-typo-color-disabled: rgba(255, 255, 255, 0.6);
+    --menu-view-default-typo-color-hovered: #fff;
     --message-box-fontSize: 13px;
     --message-box-font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     --message-box-lineHeight: 16px;
@@ -210,23 +210,23 @@
     --message-box-size-l-content-functional-width: 380px;
     --message-box-button-indentRight: 0;
     --message-box-buttons-indentAll: 0;
-    --message-box-view-default-typo-color: #fff;
-    --message-box-view-default-fill-color: #000;
+    --message-box-view-default-typo-color: #c62828;
+    --message-box-view-default-fill-color: #fff;
     --message-box-view-default-shadow: 0 6px 20px -4px rgba(0, 0, 0, .7);
-    --message-box-view-promo-typo-color: #fff;
-    --message-box-view-promo-fill-color: #0057d3;
+    --message-box-view-promo-typo-color: #c62828;
+    --message-box-view-promo-fill-color: #000;
     --message-box-view-promo-shadow: 0 6px 20px -4px rgba(0, 0, 0, .7);
-    --message-box-view-inverse-typo-color: #000;
-    --message-box-view-inverse-fill-color: #fff;
+    --message-box-view-inverse-typo-color: #fff;
+    --message-box-view-inverse-fill-color: #c62828;
     --message-box-view-inverse-shadow: 0 6px 20px -4px rgba(0, 0, 0, .7);
     --modal-border-radius: 0;
     --popup-borderRadius: 4px;
-    --popup-view-default-typo-color: #000;
-    --popup-view-default-fill-color: #fff;
+    --popup-view-default-typo-color: #fff;
+    --popup-view-default-fill-color: #c62828;
     --progressbar-height: 2px; /* Высота у progressbar */
     --progress-border-radius: 0;
     --progress-outer-fill-color: transparent;
-    --progress-inner-fill-color: #fc0;
+    --progress-inner-fill-color: #fff;
     --radio-button-font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     --radioButton-indent: 3px;
     --radioButton-borderRadius: 4px;
@@ -240,20 +240,20 @@
     --radioButton-size-l-fontSize: 18px;
     --radioButton-size-l-lineHeight: 38px;
     --radioButton-size-l-space: 0 18px;
-    --radio-button-view-default-outline-color: #fc0;
-    --radio-button-view-default-fill-color-base: rgb(230, 230, 230);
-    --radio-button-view-default-fill-color-checked-base: #fff;
-    --radio-button-view-default-typo-color-base: rgba(0, 0, 0, 0.6);
-    --radio-button-view-default-typo-color-hovered: #000;
-    --radio-button-view-default-typo-color-checked-base: #000;
+    --radio-button-view-default-outline-color: #fff;
+    --radio-button-view-default-fill-color-base: rgb(157, 32, 32);
+    --radio-button-view-default-fill-color-checked-base: #c62828;
+    --radio-button-view-default-typo-color-base: rgba(255, 255, 255, 0.6);
+    --radio-button-view-default-typo-color-hovered: #fff;
+    --radio-button-view-default-typo-color-checked-base: #fff;
     --radiobox-font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    --radiobox-view-default-dot-fill-color: #fff;
-    --radiobox-view-default-outline-color: #fc0;
-    --radiobox-view-default-fill-color-base: rgb(230, 230, 230);
-    --radiobox-view-default-fill-color-hovered: rgb(219, 219, 219);
-    --radiobox-view-default-fill-color-checked-base: rgb(84, 84, 84);
-    --radiobox-view-default-fill-color-checked-hovered: rgb(84, 84, 84);
-    --radiobox-view-default-typo-color-base: #000;
+    --radiobox-view-default-dot-fill-color: #c62828;
+    --radiobox-view-default-outline-color: #fff;
+    --radiobox-view-default-fill-color-base: rgb(157, 32, 32);
+    --radiobox-view-default-fill-color-hovered: rgb(148, 30, 30);
+    --radiobox-view-default-fill-color-checked-base: #fff;
+    --radiobox-view-default-fill-color-checked-hovered: #fff;
+    --radiobox-view-default-typo-color-base: #fff;
     --radiobox-view-outline-border-color: rgba(0, 0, 0, 0.1);
     --radiobox-view-outline-fill-color-base: transparent;
     --radiobox-view-outline-fill-color-hovered: #d9d9d9;
@@ -274,19 +274,19 @@
     --radiobox-size-m-after-size: 7px;
     --radiobox-disabled-opacity: 0.6;
     --slider-font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Шрифт слайдера */
-    --slider-view-default-typo-color-base: #000; /* Цвет типографики внутри слайдера */
+    --slider-view-default-typo-color-base: #fff; /* Цвет типографики внутри слайдера */
     --slider-view-default-height: 32px; /* Высота слайдера, без учета подписей */
     --slider-view-default-track-border-radius: 2px; /* Внешний радиус скругления трека */
     --slider-view-default-track-height: 2px; /* Высота трека */
     --slider-view-default-track-fill-color-base: rgba(0, 0, 0, 0.15); /* Цвет заливки трека в обычном состоянии */
     --slider-view-default-track-fill-color-hovered: rgba(0, 0, 0, 0.25); /* Цвет заливки трека в состоянии наведения */
-    --slider-view-default-range-fill-color-base: #fc0; /* Цвет заливки диапазона в обычном состоянии */
-    --slider-view-default-range-fill-color-hovered: rgb(250, 192, 0); /* Цвет заливки диапазона в состоянии наведения */
+    --slider-view-default-range-fill-color-base: #fff; /* Цвет заливки диапазона в обычном состоянии */
+    --slider-view-default-range-fill-color-hovered: rgb(230, 230, 230); /* Цвет заливки диапазона в состоянии наведения */
     --slider-view-default-range-fill-color-disabled: rgba(0, 0, 0, 0.15); /* Цвет заливки диапазона в неактивном состоянии */
     --slider-view-default-thumb-width: 16px; /* Ширина бегунка */
     --slider-view-default-thumb-height: 16px; /* Высота бегунка */
     --slider-view-default-thumb-border-radius: 50%; /* Внешний радиус скругления бегунка */
-    --slider-view-default-thumb-fill-color-base: #fff; /* Цвет заливки бегунка в обычном состоянии */
+    --slider-view-default-thumb-fill-color-base: #d62b2b; /* Цвет заливки бегунка в обычном состоянии */
     --slider-view-default-thumb-fill-color-disabled: #000; /* Цвет заливки бегунка в неактивном состоянии */
     --slider-view-default-tick-fill-color-base: #fff; /* Цвет заливки метки в обычном состоянии */
     --slider-view-default-tick-width: 2px; /* Ширина метки */
@@ -298,15 +298,15 @@
     --spin-size-s: 28px;
     --spin-size-m: 32px;
     --spin-size-l: 38px;
-    --spin-view-default-border-color: #fc0;
+    --spin-view-default-border-color: #fff;
     --tabs-menu-font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     --tabsMenu-size-s-font: 13px;
     --tabsMenu-size-s-lineHeight: 28px;
     --tabsMenu-size-m-font: 15px;
     --tabsMenu-size-m-lineHeight: 36px;
-    --tabs-menu-view-default-outline-color: #fc0;
-    --tabs-menu-view-default-active-line-fill-color-active: #000;
-    --tabs-menu-view-default-typo-color-base: #000;
+    --tabs-menu-view-default-outline-color: #fff;
+    --tabs-menu-view-default-active-line-fill-color-active: #fff;
+    --tabs-menu-view-default-typo-color-base: #fff;
     --text-display-size-xl-font-size: 3.5rem;
     --text-display-size-xl-line-height: 4rem;
     --text-display-size-xl-letter-spacing: normal;
@@ -460,23 +460,23 @@
     --textarea-size-m-clear-width: 36px; /* Ширина очищающего контрола у m-textarea */
     --textarea-size-m-clear-height: 36px; /* Высота очищающего контрола у m-textarea */
     --textarea-hint-size-m-fontSize: 13px;
-    --textarea-view-default-fill-color-base: #fff;
-    --textarea-view-default-fill-color-disabled: rgb(242, 242, 242);
-    --textarea-view-default-fill-color-hovered: #fff;
-    --textarea-view-default-typo-color-base: #000;
-    --textarea-view-default-typo-color-disabled: rgb(128, 128, 128);
-    --textarea-view-default-placeholder-typo-color-base: rgba(0, 0, 0, 0.3);
-    --textarea-view-default-placeholder-typo-color-disabled: rgb(128, 128, 128);
-    --textarea-view-default-icon-fill-color-base: rgba(0, 0, 0, 0.3);
-    --textarea-view-default-clear-fill-color-base: rgba(0, 0, 0, 0.3);
-    --textarea-view-default-clear-fill-color-hovered: #000;
-    --textarea-view-default-hint-typo-color-state-error-base: rgb(224, 0, 0);
-    --textarea-view-default-border-color-base: rgb(217, 217, 217);
-    --textarea-view-default-border-color-disabled: rgb(242, 242, 242);
-    --textarea-view-default-border-color-focused: rgb(179, 179, 179);
-    --textarea-view-default-border-color-hovered: rgb(204, 204, 204);
-    --textarea-view-default-border-color-state-error-base: #f33;
-    --textarea-view-default-border-color-state-error-hovered: rgb(224, 0, 15);
+    --textarea-view-default-fill-color-base: rgb(157, 32, 32);
+    --textarea-view-default-fill-color-disabled: rgb(178, 36, 36);
+    --textarea-view-default-fill-color-hovered: rgb(148, 30, 30);
+    --textarea-view-default-typo-color-base: #fff;
+    --textarea-view-default-typo-color-disabled: rgba(255, 255, 255, 0.6);
+    --textarea-view-default-placeholder-typo-color-base: rgba(255, 255, 255, 0.3);
+    --textarea-view-default-placeholder-typo-color-disabled: rgba(255, 255, 255, 0.6);
+    --textarea-view-default-icon-fill-color-base: rgba(255, 255, 255, 0.3);
+    --textarea-view-default-clear-fill-color-base: rgba(255, 255, 255, 0.3);
+    --textarea-view-default-clear-fill-color-hovered: #fff;
+    --textarea-view-default-hint-typo-color-state-error-base: rgb(246, 231, 136);
+    --textarea-view-default-border-color-base: rgb(148, 30, 30);
+    --textarea-view-default-border-color-disabled: rgb(178, 36, 36);
+    --textarea-view-default-border-color-focused: rgb(224, 0, 34);
+    --textarea-view-default-border-color-hovered: rgb(190, 39, 39);
+    --textarea-view-default-border-color-state-error-base: #feb35e;
+    --textarea-view-default-border-color-state-error-hovered: rgb(255, 203, 143);
     --textinput-font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     --textinput-borderWidth: 2px;
     --textinput-borderRadius: 4px;
@@ -514,7 +514,7 @@
     --textinput-view-material-hint-typo-color-state-error: #FF3737;
     --textinput-view-material-caret-color-base: #067AFF;
     --textinput-view-material-caret-color-state-error: #FF3737;
-    --textinput-view-material-placeholder-typo-color-base: rgba(0, 0, 0, 0.3);
+    --textinput-view-material-placeholder-typo-color-base: rgba(255, 255, 255, 0.3);
     --textinput-view-material-label-color-base: rgba(0, 0, 0, 0.25);
     --textinput-view-material-label-color-state-error: #FF3737;
     --textinput-view-material-label-color-floated-base: rgba(0, 0, 0, 0.4);
@@ -524,23 +524,23 @@
     --textinput-view-material-variant-outlined-border-color-base: rgba(0, 0, 0, 0.1);
     --textinput-view-material-variant-outlined-border-color-focused: #067AFF;
     --textinput-view-material-variant-outlined-label-color-floated: #067AFF;
-    --textinput-view-default-fill-color-base: #fff;
-    --textinput-view-default-fill-color-disabled: rgb(242, 242, 242);
-    --textinput-view-default-fill-color-hovered: #fff;
-    --textinput-view-default-typo-color-base: #000;
-    --textinput-view-default-typo-color-disabled: rgb(128, 128, 128);
-    --textinput-view-default-placeholder-typo-color-base: rgba(0, 0, 0, 0.3);
-    --textinput-view-default-placeholder-typo-color-disabled: rgb(128, 128, 128);
-    --textinput-view-default-icon-fill-color-base: rgba(0, 0, 0, 0.3);
-    --textinput-view-default-clear-fill-color-base: rgba(0, 0, 0, 0.3);
-    --textinput-view-default-clear-fill-color-hovered: #000;
-    --textinput-view-default-hint-typo-color-state-error-base: rgb(224, 0, 0);
-    --textinput-view-default-border-color-base: rgb(217, 217, 217);
-    --textinput-view-default-border-color-disabled: rgb(242, 242, 242);
-    --textinput-view-default-border-color-focused: rgb(179, 179, 179);
-    --textinput-view-default-border-color-hovered: rgb(204, 204, 204);
-    --textinput-view-default-border-color-state-error-base: #f33;
-    --textinput-view-default-border-color-state-error-hovered: rgb(224, 0, 15);
+    --textinput-view-default-fill-color-base: rgb(157, 32, 32);
+    --textinput-view-default-fill-color-disabled: rgb(178, 36, 36);
+    --textinput-view-default-fill-color-hovered: rgb(148, 30, 30);
+    --textinput-view-default-typo-color-base: #fff;
+    --textinput-view-default-typo-color-disabled: rgba(255, 255, 255, 0.6);
+    --textinput-view-default-placeholder-typo-color-base: rgba(255, 255, 255, 0.3);
+    --textinput-view-default-placeholder-typo-color-disabled: rgba(255, 255, 255, 0.6);
+    --textinput-view-default-icon-fill-color-base: rgba(255, 255, 255, 0.3);
+    --textinput-view-default-clear-fill-color-base: rgba(255, 255, 255, 0.3);
+    --textinput-view-default-clear-fill-color-hovered: #fff;
+    --textinput-view-default-hint-typo-color-state-error-base: rgb(246, 231, 136);
+    --textinput-view-default-border-color-base: rgb(148, 30, 30);
+    --textinput-view-default-border-color-disabled: rgb(178, 36, 36);
+    --textinput-view-default-border-color-focused: rgb(224, 0, 34);
+    --textinput-view-default-border-color-hovered: rgb(190, 39, 39);
+    --textinput-view-default-border-color-state-error-base: #feb35e;
+    --textinput-view-default-border-color-state-error-hovered: rgb(255, 203, 143);
     --tooltip-font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     --tooltip-borderRadius: 4px;
     --tooltip-size-s-fontSize: 13px; /* Размер текста у s-tooltip */
@@ -556,13 +556,13 @@
     --tooltip-size-l-content-spaceAll: 18px; /* Размер внутренних отступов у контента l-tooltip */
     --tooltip-size-l-tail-size: 18px; /* Размер хвоста l-tooltip */
     --tooltip-view-default-shadow: 0 10px 20px -5px rgba(0, 0, 0, .4);
-    --tooltip-view-default-fill-color-base: rgb(230, 230, 230);
+    --tooltip-view-default-fill-color-base: rgb(157, 32, 32);
     --tooltip-view-default-fill-color-state-success: #00985f;
     --tooltip-view-default-fill-color-state-warning: #f90;
-    --tooltip-view-default-fill-color-state-alert: #f33;
-    --tooltip-view-default-typo-color-state-success: rgb(255, 255, 255);
-    --tooltip-view-default-typo-color-state-warning: rgb(255, 255, 255);
-    --tooltip-view-default-typo-color-state-alert: rgb(255, 255, 255);
+    --tooltip-view-default-fill-color-state-alert: #feb35e;
+    --tooltip-view-default-typo-color-state-success: #c62828;
+    --tooltip-view-default-typo-color-state-warning: #c62828;
+    --tooltip-view-default-typo-color-state-alert: #c62828;
     --tumbler-font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     --tumbler-button-space: 2px;
     --tumbler-button-opacity-disabled: 1;
@@ -599,16 +599,16 @@
     --tumbler-size-l-button-press-width: 26px;
     --tumblerLabel-size-l-indentRight: 16px;
     --tumblerLabel-size-l-indentLeft: 16px;
-    --tumbler-view-default-outline-color: #fc0;
-    --tumbler-view-default-fill-color-base: rgb(230, 230, 230);
-    --tumbler-view-default-fill-color-disabled: rgb(242, 242, 242);
-    --tumbler-view-default-fill-color-hovered: rgb(219, 219, 219);
-    --tumbler-view-default-fill-color-checked-base: #fc0;
-    --tumbler-view-default-fill-color-checked-disabled: rgb(242, 242, 242);
-    --tumbler-view-default-fill-color-checked-hovered: rgb(250, 192, 0);
-    --tumbler-view-default-button-fill-color-base: #fff;
-    --tumbler-view-default-typo-color-base: #000;
-    --tumbler-view-default-typo-color-disabled: rgb(128, 128, 128);
+    --tumbler-view-default-outline-color: #fff;
+    --tumbler-view-default-fill-color-base: rgb(157, 32, 32);
+    --tumbler-view-default-fill-color-disabled: rgb(178, 36, 36);
+    --tumbler-view-default-fill-color-hovered: rgb(148, 30, 30);
+    --tumbler-view-default-fill-color-checked-base: #fff;
+    --tumbler-view-default-fill-color-checked-disabled: rgb(178, 36, 36);
+    --tumbler-view-default-fill-color-checked-hovered: rgb(230, 230, 230);
+    --tumbler-view-default-button-fill-color-base: #c62828;
+    --tumbler-view-default-typo-color-base: #fff;
+    --tumbler-view-default-typo-color-disabled: rgba(255, 255, 255, 0.6);
     --user-pic-size-m-size: 42px;
     --user-pic-size-m-size-plus: 52px;
     --user-pic-size-s-size: 24px;
@@ -622,104 +622,103 @@
     --typography-controls-size-s-font-size: 13px;
     --typography-controls-size-m-font-size: 15px;
     --typography-controls-size-l-font-size: 18px;
-    --color-base: #000; /* базовый цвет содержимого, от которого выстраиваются цвета текста, иконок, ... */
-    --color-essential: #fff; /* базовый цвет поверхностей */
-    --color-project: #fc0; /* проектный цвет, от которого выстраивают акцентные состояния */
-    --color-phantom: #000; /* тонирующий цвет, от которого выстраиваются бордеры, паранджа, ... */
-    --color-path: #04b; /* ссылочный цвет, от которого выстраиваются все их вариации */
-    --color-success: #00985f; /* цвет успеха, от которого выстраивается как статусный фон так и типографика */
-    --color-alert: #f33; /* цвет ошибки, от которого выстраивается как статусный фон так и типографика */
-    --color-warning: #f90; /* цвет предупреждения, от которого выстраивается как статусный фон так и типографика */
-    --color-normal: #dde3e5; /* нейтральный цвет, от которого выстраивается как статусный фон так и типографика */
-    --color-system: #778a9b; /* системный цвет, от которого выстраивается как статусный фон так и типографика */
-    --color-promo: #0057d3;
-    --color-hover: #c00;
-    --color-bg-brand: #fc0;
-    --color-bg-inverse: #000;
-    --color-bg-action: rgb(255, 219, 77);
-    --color-bg-selection: rgb(255, 234, 158);
-    --color-bg-hover: rgba(0, 0, 0, 0.15);
-    --color-bg-border: rgba(0, 0, 0, 0.05);
-    --color-bg-stripe: rgba(0, 0, 0, 0.04);
-    --color-bg-ghost: rgba(0, 0, 0, 0.08);
-    --color-bg-default: #fff;
-    --color-bg-tone: rgba(0, 0, 0, 0.9);
-    --color-bg-soft: rgba(255, 255, 255, 0.97);
+    --color-base: #fff;
+    --color-essential: #c62828;
+    --color-project: #fff;
+    --color-phantom: #fff;
+    --color-path: #fff;
+    --color-success: #00985f;
+    --color-alert: #feb35e;
+    --color-warning: #f90;
+    --color-normal: #dde3e5;
+    --color-system: #778a9b;
+    --color-promo: #000;
+    --color-bg-brand: #fff;
+    --color-bg-inverse: #fff;
+    --color-bg-action: rgb(255, 255, 255);
+    --color-bg-selection: rgb(255, 255, 255);
+    --color-bg-hover: rgba(255, 255, 255, 0.15);
+    --color-bg-border: rgba(255, 255, 255, 0.05);
+    --color-bg-stripe: rgba(255, 255, 255, 0.04);
+    --color-bg-ghost: rgba(255, 255, 255, 0.08);
+    --color-bg-default: #c62828;
+    --color-bg-tone: rgba(255, 255, 255, 0.9);
+    --color-bg-soft: rgba(198, 40, 40, 0.97);
     --color-bg-success: #00985f;
-    --color-bg-alert: #f33;
+    --color-bg-alert: #feb35e;
     --color-bg-warning: #f90;
     --color-bg-normal: #dde3e5;
     --color-bg-system: #778a9b;
-    --color-bg-link: rgba(21, 126, 239, 0.4);
-    --color-bg-promo: #0057d3;
-    --color-typo-brand: #fc0;
-    --color-typo-primary: #000; /* цвет основного текста дефолтных контролов */
-    --color-typo-inverse: #fff;
-    --color-typo-promo: rgba(0, 0, 0, 0.8);
-    --color-typo-secondary: rgba(0, 0, 0, 0.6); /* цвет второстепенного текста контрола */
-    --color-typo-ghost: rgba(0, 0, 0, 0.3); /* цвет дополнительного текста контрола */
-    --color-typo-disable: rgba(0, 0, 0, 0.3); /* цвет основного текста неактивного контрола */
+    --color-bg-link: rgba(255, 255, 255, 0.4);
+    --color-bg-promo: #000;
+    --color-typo-brand: #fff;
+    --color-typo-primary: #fff;
+    --color-typo-inverse: #c62828;
+    --color-typo-promo: rgba(255, 255, 255, 0.8);
+    --color-typo-secondary: rgba(255, 255, 255, 0.6);
+    --color-typo-ghost: rgba(255, 255, 255, 0.3);
+    --color-typo-disable: rgba(255, 255, 255, 0.3);
     --color-typo-success: #00985f;
     --color-typo-warning: #f90;
-    --color-typo-alert: rgb(224, 0, 0);
-    --color-link: #04b; /* цвет фона ссылки */
-    --color-link-external: #04b;
-    --color-link-minor: rgb(102, 102, 153);
-    --color-link-hover: #c00; /* цвет фона ссылки по ховеру */
-    --color-control-bg-border-focus: rgb(179, 179, 179); /* цвет фона бордеров контрола при фокусе */
-    --color-control-bg-border-prism: #fc0; /* цвет фона бордера офсетных выделений контрола */
-    --color-control-typo-primary: #000;
-    --color-control-typo-secondary: rgba(0, 0, 0, 0.6);
-    --color-control-typo-ghost: rgba(0, 0, 0, 0.3);
-    --color-control-typo-passive: #000;
-    --color-control-typo-faint: rgb(255, 255, 255);
-    --color-control-typo-disable: rgb(128, 128, 128);
-    --color-control-typo-link: #04b;
-    --color-control-typo-error: rgb(224, 0, 0);
-    --color-control-bg-default: rgb(230, 230, 230); /* цвет фона контрола */
-    --color-control-bg-default-hover: rgb(219, 219, 219); /* цвет фона контрола по ховеру */
-    --color-control-bg-default-press: rgb(219, 219, 219); /* цвет фона контрола по нажатию */
-    --color-control-bg-default-disable: rgb(242, 242, 242); /* цвет фона неактивного контрола */
-    --color-control-bg-border-default: rgb(179, 179, 179); /* цвет фона бордеров контрола */
-    --color-control-bg-border-default-hover: rgb(219, 219, 219); /* цвет фона бордеров контрола по ховеру */
-    --color-control-bg-border-default-press: rgb(179, 179, 179); /* цвет фона бордеров контрола по нажатию */
-    --color-control-bg-border-default-disable: rgb(232, 232, 232); /* цвет фона бордеров неактивного контрола */
-    --color-control-bg-border-default-error: #f33;
-    --color-control-bg-border-default-error-hover: rgb(224, 0, 15);
-    --color-control-bg-pseudo: rgb(255, 255, 255); /* цвет фона псевдо контрола */
-    --color-control-bg-pseudo-hover: rgb(247, 247, 247); /* цвет фона псевдо контрола по ховеру */
-    --color-control-bg-border-pseudo: rgb(204, 204, 204); /* цвет бордеров псевдо контрола */
-    --color-control-bg-action: #fc0; /* цвет фона активного контрола */
-    --color-control-bg-action-hover: rgb(250, 192, 0); /* цвет фона активного контрола по ховеру */
-    --color-control-bg-action-press: rgb(250, 192, 0); /* цвет фон активного контролы по нажатию */
-    --color-control-bg-passive: #fff; /* цвет фона пассивной части контрола */
-    --color-control-bg-progress: #fc0; /* цвет фон активного контрола в прогрессе */
-    --color-control-bg-progress-process: rgb(255, 213, 0); /* цвет фон активного контрола в прогрессе выполнения */
-    --color-control-bg-blank: #fff; /* цвет фона пустого контрола */
-    --color-control-bg-blank-hover: #fff; /* цвет фона пустого контрола по ховеру */
-    --color-control-bg-blank-disable: rgb(242, 242, 242); /* цвет фона пустого неактивного контрола */
-    --color-control-bg-border-blank: rgb(217, 217, 217); /* цвет фона бордеров пустого контрола */
-    --color-control-bg-border-blank-hover: rgb(204, 204, 204); /* цвет фона бордеров пустого контрола по ховеру */
-    --color-control-bg-border-blank-disable: rgb(242, 242, 242); /* цвет фона бордеров пустого неактивного контрола */
-    --color-control-bg-faint: #fff; /* цвет фона ослабленной части контрола */
-    --color-control-bg-faint-disable: rgb(199, 199, 199); /* цвет фона ослабленной части неактивного контрола */
-    --color-control-bg-check: rgb(84, 84, 84); /* цвет фона чекнутого контрола */
-    --color-control-bg-check-hover: rgb(84, 84, 84); /* цвет фона чекнутого контрола по ховеру */
-    --color-control-bg-check-press: rgb(82, 82, 82); /* цвет фона чекнутого контрола по нажатию */
-    --color-control-bg-check-disable: rgb(242, 242, 242); /* цвет фона чекнутого неактивного контрола */
-    --color-control-bg-border-check: rgb(168, 135, 0); /* цвет фона бордеров чекнутого контрола */
-    --color-control-bg-border-check-hover: rgb(168, 135, 0); /* цвет фона бордеров чекнутого контрола по ховеру */
-    --color-control-bg-border-check-press: rgb(168, 135, 0); /* цвет фона бордеров чекнутого контрола при фокусе по нажатию */
-    --color-control-bg-link-default: #04b;
-    --color-control-bg-link-default-hover: rgba(0, 68, 187, 0.3);
-    --color-control-bg-border-link-default: rgba(0, 68, 187, 0.6);
-    --color-control-bg-border-link-default-hover: rgba(0, 68, 187, 0.6);
-    --color-control-typo-raised: #000;
-    --color-control-typo-raised-disable: #7f7f7f;
-    --color-control-bg-raised: #fff;
-    --color-control-bg-raised-hover: #f5f5f5;
-    --color-control-bg-raised-disable: #f5f5f5;
-    --color-control-bg-raised-check: #fff;
+    --color-typo-alert: rgb(246, 231, 136);
+    --color-link: #fff;
+    --color-link-external: #fff;
+    --color-link-minor: rgb(255, 255, 255);
+    --color-link-hover: rgb(237, 237, 237);
+    --color-control-bg-border-focus: rgb(224, 0, 34);
+    --color-control-bg-border-prism: #fff;
+    --color-control-typo-primary: #fff;
+    --color-control-typo-secondary: rgba(255, 255, 255, 0.6);
+    --color-control-typo-ghost: rgba(255, 255, 255, 0.3);
+    --color-control-typo-passive: #c62828;
+    --color-control-typo-faint: #c62828;
+    --color-control-typo-disable: rgba(255, 255, 255, 0.6);
+    --color-control-typo-link: #fff;
+    --color-control-typo-error: rgb(246, 231, 136);
+    --color-control-bg-default: rgb(157, 32, 32);
+    --color-control-bg-default-hover: rgb(148, 30, 30);
+    --color-control-bg-default-press: rgb(165, 34, 34);
+    --color-control-bg-default-disable: rgb(178, 36, 36);
+    --color-control-bg-border-default: rgb(157, 32, 32);
+    --color-control-bg-border-default-hover: rgb(166, 166, 166);
+    --color-control-bg-border-default-press: rgb(179, 179, 179);
+    --color-control-bg-border-default-disable: rgb(128, 128, 128);
+    --color-control-bg-border-default-error: #feb35e;
+    --color-control-bg-border-default-error-hover: rgb(255, 203, 143);
+    --color-control-bg-pseudo: #c62828;
+    --color-control-bg-pseudo-hover: rgb(165, 34, 34);
+    --color-control-bg-border-pseudo: rgb(148, 30, 30);
+    --color-control-bg-action: #fff;
+    --color-control-bg-action-hover: rgb(230, 230, 230);
+    --color-control-bg-action-press: rgb(230, 230, 230);
+    --color-control-bg-passive: #c62828;
+    --color-control-bg-progress: #fff;
+    --color-control-bg-progress-process: rgb(255, 255, 255);
+    --color-control-bg-blank: rgb(157, 32, 32);
+    --color-control-bg-blank-hover: rgb(148, 30, 30);
+    --color-control-bg-blank-disable: rgb(178, 36, 36);
+    --color-control-bg-border-blank: rgb(148, 30, 30);
+    --color-control-bg-border-blank-hover: rgb(190, 39, 39);
+    --color-control-bg-border-blank-disable: rgb(178, 36, 36);
+    --color-control-bg-faint: #c62828;
+    --color-control-bg-faint-disable: rgb(236, 162, 162);
+    --color-control-bg-check: #fff;
+    --color-control-bg-check-hover: #fff;
+    --color-control-bg-check-press: #fff;
+    --color-control-bg-check-disable: #fff;
+    --color-control-bg-border-check: rgb(84, 84, 84);
+    --color-control-bg-border-check-hover: rgb(84, 84, 84);
+    --color-control-bg-border-check-press: rgb(84, 84, 84);
+    --color-control-bg-link-default: #fff;
+    --color-control-bg-link-default-hover: rgba(255, 255, 255, 0.2);
+    --color-control-bg-border-link-default: #fff;
+    --color-control-bg-border-link-default-hover: #fff;
+    --color-control-typo-raised: #fff;
+    --color-control-typo-raised-disable: #e29393;
+    --color-control-bg-raised: #d62b2b;
+    --color-control-bg-raised-hover: #d62b2b;
+    --color-control-bg-raised-disable: #b22424;
+    --color-control-bg-raised-check: #d62b2b;
     --space-3-xs: 2px;
     --space-2-xs: 4px;
     --space-xs: 8px;

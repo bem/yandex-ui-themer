@@ -19,6 +19,7 @@ import { useStore } from 'effector-react'
 type SandboxProps = {
   globals?: any
   components?: any
+  theme?: string
 }
 
 const CustomThemeDownloader: React.FC<any> = () => {
@@ -104,11 +105,12 @@ const CustomThemeDownloader: React.FC<any> = () => {
   )
 }
 
-export const Sandbox: React.FC<SandboxProps> = ({ components, globals }) => {
+export const Sandbox: React.FC<SandboxProps> = ({ components, globals, theme }) => {
   const designTokens = useStore($designTokens)
   const tabs = ['globals', ...Object.keys(components)]
   const [activeTab, setActiveTab] = useState('globals')
   const [activeTab1, setActiveTab1] = useState('custom')
+  // @ts-ignore
   const values = activeTab === 'globals' ? globals : components[activeTab]
   const [filter, setFilter] = useState('')
 
@@ -161,7 +163,7 @@ export const Sandbox: React.FC<SandboxProps> = ({ components, globals }) => {
 
   return (
     <div className="Sandbox">
-      <SandboxExample includes={activeTab === 'globals' ? Object.keys(components) : [activeTab]} />
+      <SandboxExample theme={theme} includes={activeTab === 'globals' ? Object.keys(components) : [activeTab]} />
       <div className="Sandbox-Tokens">
         <TabsMenu
           view="default"

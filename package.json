@@ -11,7 +11,7 @@
     "@types/react-color": "3.0.4",
     "@types/react-dom": "16.9.0",
     "@yandex/themekit": "1.6.2",
-    "@yandex/ui": "2.55.1",
+    "@yandex/ui": "2.59.2",
     "deepmerge": "4.2.2",
     "effector": "21.6.0",
     "effector-react": "21.0.8",

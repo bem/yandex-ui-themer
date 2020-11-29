@@ -1,7 +1,8 @@
-import React, { FC, useState, useEffect } from 'react'
+import React, { FC, useState, useEffect, useRef } from 'react'
 import { useStore } from 'effector-react'
 import deepmerge from 'deepmerge'
 import YAML from 'yaml'
+import { cnTheme } from '@yandex/ui/Theme';
 
 import { TabsMenu } from '@yandex/ui/TabsMenu/TabsMenu.bundle/desktop'
 import { Tumbler } from '@yandex/ui/Tumbler/Tumbler.bundle/desktop'
@@ -12,7 +13,7 @@ import { metricaGoal } from '../../YaMetrika/YaMetrika'
 
 import { $cssVariables, $designTokens } from '../Sandbox.model';
 
-export const SandboxExample: FC<any> = ({ includes }) => {
+export const SandboxExample: FC<any> = ({ includes, theme }) => {
     const [activeTab, setActiveTab] = useState('jsx')
 
     const cssVariables = useStore($cssVariables)
@@ -81,7 +82,7 @@ export const SandboxExample: FC<any> = ({ includes }) => {
                             </div>
                         </div>
                         <div
-                            className="Sandbox-ContentWrapper Theme Theme_color_yandex-default Theme_root_default"
+                            className={cnTheme(theme, ['Sandbox-ContentWrapper'])}
                             style={shownDiff ? cssVariables : {}}
                         >
                             {activeTab === 'jsx' && <Showcase includes={includes} />}
