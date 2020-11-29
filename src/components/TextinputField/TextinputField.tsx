@@ -161,7 +161,7 @@ export const TextinputField: React.FC<{
               scope={scopeRef}
               onClose={handleClose}
             >
-              <ChromePicker color={val} onChange={(event) => {
+              <ChromePicker color={val} onChangeComplete={(event) => {
                 onColorChange(event)
                 metricaGoal('change-tokens')
               }} />

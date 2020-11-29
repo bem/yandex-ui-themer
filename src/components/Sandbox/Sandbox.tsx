@@ -147,6 +147,7 @@ export const Sandbox: React.FC<SandboxProps> = ({ components, globals, theme }) 
           options={tabs.map((tab) => ({ value: tab, content: tab }))}
         />
         <Textinput
+          debounceTimeout={500}
           hasClear
           onChange={(event) => {
             setFilter(event.target.value)
