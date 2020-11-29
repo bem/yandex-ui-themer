@@ -5,7 +5,8 @@
 }
 
 .Sandbox-Tokens {
-  width: 45%;
+  z-index: 100;
+  width: 48%;
   overflow-y: scroll;
   padding-left: 20px;
   padding-top: 10px;
@@ -22,9 +23,10 @@
 }
 
 .Sandbox-Examples {
-    width: 55%;
-    overflow-y: scroll;
-    box-sizing: border-box;
+  padding-top: 45px;
+  width: 52%;
+  overflow-y: scroll;
+  box-sizing: border-box;
 }
 
 .Sandbox-ContentWrapper-YML {
@@ -63,6 +65,10 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px;
+}
+
+.Sandbox-Tokens-Tabs {
+  padding: 10px 0;
 }
 
 .Tumbler-Wrapper {

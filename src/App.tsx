@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { configureRootTheme } from '@yandex/ui/Theme'
 import { theme } from '@yandex/ui/Theme/presets/default'
 import { Select } from '@yandex/ui/Select/desktop/bundle'
+import { ListTile } from '@yandex/ui/ListTile/desktop'
+import { Text } from '@yandex/ui/Text/bundle'
 
 import stylesDataDefault from './themes/presets/example/root.json'
 import stylesDataInverse from './themes/presets/example-inverse/root.json'
@@ -15,7 +17,9 @@ import { theme as themeInverse} from '@yandex/ui/Theme/presets/inverse'
 import { theme as themeBrand} from '@yandex/ui/Theme/presets/brand'
 import { theme as themeTurbo} from '@yandex/ui/Theme/presets/turbo'
 
+import './App.css'
 configureRootTheme({ theme })
+
 
 const themes: Record<string, any> = {
     default: { tokens: stylesDataDefault, preset: themeDefault },
@@ -34,26 +38,37 @@ export default () => {
     }))
 
     return (
-        <>
-            <div>
+        <div className="Site">
+            <div className="Header">
                 <div className="Tumbler-Wrapper">
-                    <Select
-                        size="m"
-                        view="default"
-                        options={menuItems}
-                        value={theme}
-                        onChange={(event: any) => {
-                            console.log('ya tyt', event.target.value);
-                            chooseTheme(event.target.value)
-                            if (event.target.value === 'custom') {
-                                console.log('>>> custom')
-                            }
-                    }}/>
+                    <ListTile
+                        leftSpace="m"
+                        rightSpace="m"
+                        alignItems="center"
+                        leading={
+                            <Text typography="control-m" color="secondary">
+                                Тема из пресетов @yandex/ui:
+                            </Text>
+                        }
+                    >
+                        <Select
+                            size="m"
+                            view="default"
+                            options={menuItems}
+                            value={theme}
+                            onChange={(event: any) => {
+                                console.log('ya tyt', event.target.value);
+                                chooseTheme(event.target.value)
+                                if (event.target.value === 'custom') {
+                                    console.log('>>> custom')
+                                }
+                        }}/>
+                    </ListTile>
                 </div>
         </div>
-            <div>
+            <div className="Content">
                 <Sandbox theme={themes[theme].preset} globals={themes[theme].tokens.globals} components={themes[theme].tokens.components} />
             </div>
-        </>
+        </div>
     )
 }

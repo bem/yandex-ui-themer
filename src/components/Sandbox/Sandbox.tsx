@@ -109,7 +109,7 @@ export const Sandbox: React.FC<SandboxProps> = ({ components, globals, theme }) 
   const designTokens = useStore($designTokens)
   const tabs = ['globals', ...Object.keys(components)]
   const [activeTab, setActiveTab] = useState('globals')
-  const [activeTab1, setActiveTab1] = useState('custom')
+  const [activeTab1, setActiveTab1] = useState('tokens')
   // @ts-ignore
   const values = activeTab === 'globals' ? globals : components[activeTab]
   const [filter, setFilter] = useState('')
@@ -165,16 +165,18 @@ export const Sandbox: React.FC<SandboxProps> = ({ components, globals, theme }) 
     <div className="Sandbox">
       <SandboxExample theme={theme} includes={activeTab === 'globals' ? Object.keys(components) : [activeTab]} />
       <div className="Sandbox-Tokens">
-        <TabsMenu
-          view="default"
-          layout="horiz"
-          size="m"
-          activeTab={activeTab1}
-          tabs={[
-            { id: 'custom', onClick: () => setActiveTab1('custom'), content: 'Загрузить тему' },
-            { id: 'tokens', onClick: () => setActiveTab1('tokens'), content: 'Токены' },
-          ]}
-        />
+        <div className="Sandbox-Tokens-Tabs">
+          <TabsMenu
+            view="default"
+            layout="horiz"
+            size="m"
+            activeTab={activeTab1}
+            tabs={[
+              { id: 'custom', onClick: () => setActiveTab1('custom'), content: 'Загрузить тему' },
+              { id: 'tokens', onClick: () => setActiveTab1('tokens'), content: 'Токены' },
+            ]}
+          />
+        </div>
         <TabsPanes
           activePane={activeTab1}
           panes={[
