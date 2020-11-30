@@ -1,0 +1,14 @@
+{
+  "mappers": [
+    "node_modules/@yandex/ui/theme/tokens/*.mapper.yml",
+    "node_modules/@yandex/ui/**/*.mapper.yml"
+  ],
+  "sources": [
+    "node_modules/@yandex/ui/**/*.tokens/*.tokens.yml",
+    "node_modules/@yandex/ui/Theme/tokens/typography.tokens.yml",
+    "node_modules/@yandex/ui/Theme/tokens/color-light.tokens.yml",
+    "node_modules/@yandex/ui/Theme/tokens/color-turbo-light.tokens.yml",
+    "node_modules/@yandex/ui/Theme/tokens/space.tokens.yml",
+    "node_modules/@yandex/ui/Theme/tokens/turbo.tokens.yml"
+  ]
+}

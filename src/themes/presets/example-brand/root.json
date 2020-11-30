@@ -83,101 +83,84 @@
       ]
     },
     "color-base": {
-      "value": "#000",
-      "path": [
-        "color",
-        "base"
-      ],
-      "description": "базовый цвет содержимого, от которого выстраиваются цвета текста, иконок, ..."
-    },
-    "color-essential": {
       "value": "#fff",
       "path": [
         "color",
+        "base"
+      ]
+    },
+    "color-essential": {
+      "value": "#c62828",
+      "path": [
+        "color",
         "essential"
-      ],
-      "description": "базовый цвет поверхностей"
+      ]
     },
     "color-project": {
-      "value": "#fc0",
+      "value": "#fff",
       "path": [
         "color",
         "project"
-      ],
-      "description": "проектный цвет, от которого выстраивают акцентные состояния"
+      ]
     },
     "color-phantom": {
-      "value": "#000",
+      "value": "#fff",
       "path": [
         "color",
         "phantom"
-      ],
-      "description": "тонирующий цвет, от которого выстраиваются бордеры, паранджа, ..."
+      ]
     },
     "color-path": {
-      "value": "#04b",
+      "value": "#fff",
       "path": [
         "color",
         "path"
-      ],
-      "description": "ссылочный цвет, от которого выстраиваются все их вариации"
+      ]
     },
     "color-success": {
       "value": "#00985f",
       "path": [
         "color",
         "success"
-      ],
-      "description": "цвет успеха, от которого выстраивается как статусный фон так и типографика"
+      ]
     },
     "color-alert": {
-      "value": "#f33",
+      "value": "#feb35e",
       "path": [
         "color",
         "alert"
-      ],
-      "description": "цвет ошибки, от которого выстраивается как статусный фон так и типографика"
+      ]
     },
     "color-warning": {
       "value": "#f90",
       "path": [
         "color",
         "warning"
-      ],
-      "description": "цвет предупреждения, от которого выстраивается как статусный фон так и типографика"
+      ]
     },
     "color-normal": {
       "value": "#dde3e5",
       "path": [
         "color",
         "normal"
-      ],
-      "description": "нейтральный цвет, от которого выстраивается как статусный фон так и типографика"
+      ]
     },
     "color-system": {
       "value": "#778a9b",
       "path": [
         "color",
         "system"
-      ],
-      "description": "системный цвет, от которого выстраивается как статусный фон так и типографика"
+      ]
     },
     "color-promo": {
-      "value": "#0057d3",
+      "value": "#000",
       "path": [
         "color",
         "promo"
       ]
     },
-    "color-hover": {
-      "value": "#c00",
-      "path": [
-        "color",
-        "hover"
-      ]
-    },
     "color-bg-brand": {
-      "value": "#fc0",
+      "value": "#fff",
       "path": [
         "color",
         "fillColor",
@@ -185,7 +168,7 @@
       ]
     },
     "color-bg-inverse": {
-      "value": "#000",
+      "value": "#fff",
       "path": [
         "color",
         "fillColor",
@@ -193,7 +176,7 @@
       ]
     },
     "color-bg-action": {
-      "value": "rgb(255, 219, 77)",
+      "value": "rgb(255, 255, 255)",
       "path": [
         "color",
         "fillColor",
@@ -201,7 +184,7 @@
       ]
     },
     "color-bg-selection": {
-      "value": "rgb(255, 234, 158)",
+      "value": "rgb(255, 255, 255)",
       "path": [
         "color",
         "fillColor",
@@ -209,7 +192,7 @@
       ]
     },
     "color-bg-hover": {
-      "value": "rgba(0, 0, 0, 0.15)",
+      "value": "rgba(255, 255, 255, 0.15)",
       "path": [
         "color",
         "fillColor",
@@ -217,7 +200,7 @@
       ]
     },
     "color-bg-border": {
-      "value": "rgba(0, 0, 0, 0.05)",
+      "value": "rgba(255, 255, 255, 0.05)",
       "path": [
         "color",
         "fillColor",
@@ -225,7 +208,7 @@
       ]
     },
     "color-bg-stripe": {
-      "value": "rgba(0, 0, 0, 0.04)",
+      "value": "rgba(255, 255, 255, 0.04)",
       "path": [
         "color",
         "fillColor",
@@ -233,7 +216,7 @@
       ]
     },
     "color-bg-ghost": {
-      "value": "rgba(0, 0, 0, 0.08)",
+      "value": "rgba(255, 255, 255, 0.08)",
       "path": [
         "color",
         "fillColor",
@@ -241,7 +224,7 @@
       ]
     },
     "color-bg-default": {
-      "value": "#fff",
+      "value": "#c62828",
       "path": [
         "color",
         "fillColor",
@@ -249,7 +232,7 @@
       ]
     },
     "color-bg-tone": {
-      "value": "rgba(0, 0, 0, 0.9)",
+      "value": "rgba(255, 255, 255, 0.9)",
       "path": [
         "color",
         "fillColor",
@@ -257,7 +240,7 @@
       ]
     },
     "color-bg-soft": {
-      "value": "rgba(255, 255, 255, 0.97)",
+      "value": "rgba(198, 40, 40, 0.97)",
       "path": [
         "color",
         "fillColor",
@@ -273,7 +256,7 @@
       ]
     },
     "color-bg-alert": {
-      "value": "#f33",
+      "value": "#feb35e",
       "path": [
         "color",
         "fillColor",
@@ -305,7 +288,7 @@
       ]
     },
     "color-bg-link": {
-      "value": "rgba(21, 126, 239, 0.4)",
+      "value": "rgba(255, 255, 255, 0.4)",
       "path": [
         "color",
         "fillColor",
@@ -313,7 +296,7 @@
       ]
     },
     "color-bg-promo": {
-      "value": "#0057d3",
+      "value": "#000",
       "path": [
         "color",
         "fillColor",
@@ -321,7 +304,7 @@
       ]
     },
     "color-typo-brand": {
-      "value": "#fc0",
+      "value": "#fff",
       "path": [
         "color",
         "typo",
@@ -329,16 +312,15 @@
       ]
     },
     "color-typo-primary": {
-      "value": "#000",
+      "value": "#fff",
       "path": [
         "color",
         "typo",
         "primary"
-      ],
-      "description": "цвет основного текста дефолтных контролов"
+      ]
     },
     "color-typo-inverse": {
-      "value": "#fff",
+      "value": "#c62828",
       "path": [
         "color",
         "typo",
@@ -346,7 +328,7 @@
       ]
     },
     "color-typo-promo": {
-      "value": "rgba(0, 0, 0, 0.8)",
+      "value": "rgba(255, 255, 255, 0.8)",
       "path": [
         "color",
         "typo",
@@ -354,31 +336,28 @@
       ]
     },
     "color-typo-secondary": {
-      "value": "rgba(0, 0, 0, 0.6)",
+      "value": "rgba(255, 255, 255, 0.6)",
       "path": [
         "color",
         "typo",
         "secondary"
-      ],
-      "description": "цвет второстепенного текста контрола"
+      ]
     },
     "color-typo-ghost": {
-      "value": "rgba(0, 0, 0, 0.3)",
+      "value": "rgba(255, 255, 255, 0.3)",
       "path": [
         "color",
         "typo",
         "ghost"
-      ],
-      "description": "цвет дополнительного текста контрола"
+      ]
     },
     "color-typo-disable": {
-      "value": "rgba(0, 0, 0, 0.3)",
+      "value": "rgba(255, 255, 255, 0.3)",
       "path": [
         "color",
         "typo",
         "disable"
-      ],
-      "description": "цвет основного текста неактивного контрола"
+      ]
     },
     "color-typo-success": {
       "value": "#00985f",
@@ -397,7 +376,7 @@
       ]
     },
     "color-typo-alert": {
-      "value": "rgb(224, 0, 0)",
+      "value": "rgb(246, 231, 136)",
       "path": [
         "color",
         "typo",
@@ -405,16 +384,15 @@
       ]
     },
     "color-link": {
-      "value": "#04b",
+      "value": "#fff",
       "path": [
         "color",
         "link",
         "base"
-      ],
-      "description": "цвет фона ссылки"
+      ]
     },
     "color-link-external": {
-      "value": "#04b",
+      "value": "#fff",
       "path": [
         "color",
         "link",
@@ -422,7 +400,7 @@
       ]
     },
     "color-link-minor": {
-      "value": "rgb(102, 102, 153)",
+      "value": "rgb(255, 255, 255)",
       "path": [
         "color",
         "link",
@@ -430,36 +408,33 @@
       ]
     },
     "color-link-hover": {
-      "value": "#c00",
+      "value": "rgb(237, 237, 237)",
       "path": [
         "color",
         "link",
         "hover"
-      ],
-      "description": "цвет фона ссылки по ховеру"
+      ]
     },
     "color-control-bg-border-focus": {
-      "value": "rgb(179, 179, 179)",
+      "value": "rgb(224, 0, 34)",
       "path": [
         "color",
         "control",
         "borderColor",
         "focus"
-      ],
-      "description": "цвет фона бордеров контрола при фокусе"
+      ]
     },
     "color-control-bg-border-prism": {
-      "value": "#fc0",
+      "value": "#fff",
       "path": [
         "color",
         "control",
         "borderColor",
         "prism"
-      ],
-      "description": "цвет фона бордера офсетных выделений контрола"
+      ]
     },
     "color-control-typo-primary": {
-      "value": "#000",
+      "value": "#fff",
       "path": [
         "color",
         "control",
@@ -468,7 +443,7 @@
       ]
     },
     "color-control-typo-secondary": {
-      "value": "rgba(0, 0, 0, 0.6)",
+      "value": "rgba(255, 255, 255, 0.6)",
       "path": [
         "color",
         "control",
@@ -477,7 +452,7 @@
       ]
     },
     "color-control-typo-ghost": {
-      "value": "rgba(0, 0, 0, 0.3)",
+      "value": "rgba(255, 255, 255, 0.3)",
       "path": [
         "color",
         "control",
@@ -486,7 +461,7 @@
       ]
     },
     "color-control-typo-passive": {
-      "value": "#000",
+      "value": "#c62828",
       "path": [
         "color",
         "control",
@@ -495,7 +470,7 @@
       ]
     },
     "color-control-typo-faint": {
-      "value": "rgb(255, 255, 255)",
+      "value": "#c62828",
       "path": [
         "color",
         "control",
@@ -504,7 +479,7 @@
       ]
     },
     "color-control-typo-disable": {
-      "value": "rgb(128, 128, 128)",
+      "value": "rgba(255, 255, 255, 0.6)",
       "path": [
         "color",
         "control",
@@ -513,7 +488,7 @@
       ]
     },
     "color-control-typo-link": {
-      "value": "#04b",
+      "value": "#fff",
       "path": [
         "color",
         "control",
@@ -522,7 +497,7 @@
       ]
     },
     "color-control-typo-error": {
-      "value": "rgb(224, 0, 0)",
+      "value": "rgb(246, 231, 136)",
       "path": [
         "color",
         "control",
@@ -531,7 +506,7 @@
       ]
     },
     "color-control-bg-default": {
-      "value": "rgb(230, 230, 230)",
+      "value": "rgb(157, 32, 32)",
       "path": [
         "color",
         "control",
@@ -539,11 +514,10 @@
         "default",
         "fillColor",
         "base"
-      ],
-      "description": "цвет фона контрола"
+      ]
     },
     "color-control-bg-default-hover": {
-      "value": "rgb(219, 219, 219)",
+      "value": "rgb(148, 30, 30)",
       "path": [
         "color",
         "control",
@@ -551,11 +525,10 @@
         "default",
         "fillColor",
         "hover"
-      ],
-      "description": "цвет фона контрола по ховеру"
+      ]
     },
     "color-control-bg-default-press": {
-      "value": "rgb(219, 219, 219)",
+      "value": "rgb(165, 34, 34)",
       "path": [
         "color",
         "control",
@@ -563,11 +536,10 @@
         "default",
         "fillColor",
         "press"
-      ],
-      "description": "цвет фона контрола по нажатию"
+      ]
     },
     "color-control-bg-default-disable": {
-      "value": "rgb(242, 242, 242)",
+      "value": "rgb(178, 36, 36)",
       "path": [
         "color",
         "control",
@@ -575,11 +547,10 @@
         "default",
         "fillColor",
         "disable"
-      ],
-      "description": "цвет фона неактивного контрола"
+      ]
     },
     "color-control-bg-border-default": {
-      "value": "rgb(179, 179, 179)",
+      "value": "rgb(157, 32, 32)",
       "path": [
         "color",
         "control",
@@ -587,11 +558,10 @@
         "default",
         "borderColor",
         "base"
-      ],
-      "description": "цвет фона бордеров контрола"
+      ]
     },
     "color-control-bg-border-default-hover": {
-      "value": "rgb(219, 219, 219)",
+      "value": "rgb(166, 166, 166)",
       "path": [
         "color",
         "control",
@@ -599,8 +569,7 @@
         "default",
         "borderColor",
         "hover"
-      ],
-      "description": "цвет фона бордеров контрола по ховеру"
+      ]
     },
     "color-control-bg-border-default-press": {
       "value": "rgb(179, 179, 179)",
@@ -611,11 +580,10 @@
         "default",
         "borderColor",
         "press"
-      ],
-      "description": "цвет фона бордеров контрола по нажатию"
+      ]
     },
     "color-control-bg-border-default-disable": {
-      "value": "rgb(232, 232, 232)",
+      "value": "rgb(128, 128, 128)",
       "path": [
         "color",
         "control",
@@ -623,11 +591,10 @@
         "default",
         "borderColor",
         "disable"
-      ],
-      "description": "цвет фона бордеров неактивного контрола"
+      ]
     },
     "color-control-bg-border-default-error": {
-      "value": "#f33",
+      "value": "#feb35e",
       "path": [
         "color",
         "control",
@@ -639,7 +606,7 @@
       ]
     },
     "color-control-bg-border-default-error-hover": {
-      "value": "rgb(224, 0, 15)",
+      "value": "rgb(255, 203, 143)",
       "path": [
         "color",
         "control",
@@ -651,7 +618,7 @@
       ]
     },
     "color-control-bg-pseudo": {
-      "value": "rgb(255, 255, 255)",
+      "value": "#c62828",
       "path": [
         "color",
         "control",
@@ -659,11 +626,10 @@
         "pseudo",
         "fillColor",
         "base"
-      ],
-      "description": "цвет фона псевдо контрола"
+      ]
     },
     "color-control-bg-pseudo-hover": {
-      "value": "rgb(247, 247, 247)",
+      "value": "rgb(165, 34, 34)",
       "path": [
         "color",
         "control",
@@ -671,11 +637,10 @@
         "pseudo",
         "fillColor",
         "hover"
-      ],
-      "description": "цвет фона псевдо контрола по ховеру"
+      ]
     },
     "color-control-bg-border-pseudo": {
-      "value": "rgb(204, 204, 204)",
+      "value": "rgb(148, 30, 30)",
       "path": [
         "color",
         "control",
@@ -683,11 +648,10 @@
         "pseudo",
         "borderColor",
         "base"
-      ],
-      "description": "цвет бордеров псевдо контрола"
+      ]
     },
     "color-control-bg-action": {
-      "value": "#fc0",
+      "value": "#fff",
       "path": [
         "color",
         "control",
@@ -695,11 +659,10 @@
         "action",
         "fillColor",
         "base"
-      ],
-      "description": "цвет фона активного контрола"
+      ]
     },
     "color-control-bg-action-hover": {
-      "value": "rgb(250, 192, 0)",
+      "value": "rgb(230, 230, 230)",
       "path": [
         "color",
         "control",
@@ -707,11 +670,10 @@
         "action",
         "fillColor",
         "hover"
-      ],
-      "description": "цвет фона активного контрола по ховеру"
+      ]
     },
     "color-control-bg-action-press": {
-      "value": "rgb(250, 192, 0)",
+      "value": "rgb(230, 230, 230)",
       "path": [
         "color",
         "control",
@@ -719,11 +681,10 @@
         "action",
         "fillColor",
         "press"
-      ],
-      "description": "цвет фон активного контролы по нажатию"
+      ]
     },
     "color-control-bg-passive": {
-      "value": "#fff",
+      "value": "#c62828",
       "path": [
         "color",
         "control",
@@ -731,11 +692,10 @@
         "passive",
         "fillColor",
         "base"
-      ],
-      "description": "цвет фона пассивной части контрола"
+      ]
     },
     "color-control-bg-progress": {
-      "value": "#fc0",
+      "value": "#fff",
       "path": [
         "color",
         "control",
@@ -743,11 +703,10 @@
         "progress",
         "fillColor",
         "base"
-      ],
-      "description": "цвет фон активного контрола в прогрессе"
+      ]
     },
     "color-control-bg-progress-process": {
-      "value": "rgb(255, 213, 0)",
+      "value": "rgb(255, 255, 255)",
       "path": [
         "color",
         "control",
@@ -755,11 +714,10 @@
         "progress",
         "fillColor",
         "process"
-      ],
-      "description": "цвет фон активного контрола в прогрессе выполнения"
+      ]
     },
     "color-control-bg-blank": {
-      "value": "#fff",
+      "value": "rgb(157, 32, 32)",
       "path": [
         "color",
         "control",
@@ -767,11 +725,10 @@
         "blank",
         "fillColor",
         "base"
-      ],
-      "description": "цвет фона пустого контрола"
+      ]
     },
     "color-control-bg-blank-hover": {
-      "value": "#fff",
+      "value": "rgb(148, 30, 30)",
       "path": [
         "color",
         "control",
@@ -779,11 +736,10 @@
         "blank",
         "fillColor",
         "hover"
-      ],
-      "description": "цвет фона пустого контрола по ховеру"
+      ]
     },
     "color-control-bg-blank-disable": {
-      "value": "rgb(242, 242, 242)",
+      "value": "rgb(178, 36, 36)",
       "path": [
         "color",
         "control",
@@ -791,11 +747,10 @@
         "blank",
         "fillColor",
         "disable"
-      ],
-      "description": "цвет фона пустого неактивного контрола"
+      ]
     },
     "color-control-bg-border-blank": {
-      "value": "rgb(217, 217, 217)",
+      "value": "rgb(148, 30, 30)",
       "path": [
         "color",
         "control",
@@ -803,11 +758,10 @@
         "blank",
         "borderColor",
         "base"
-      ],
-      "description": "цвет фона бордеров пустого контрола"
+      ]
     },
     "color-control-bg-border-blank-hover": {
-      "value": "rgb(204, 204, 204)",
+      "value": "rgb(190, 39, 39)",
       "path": [
         "color",
         "control",
@@ -815,11 +769,10 @@
         "blank",
         "borderColor",
         "hover"
-      ],
-      "description": "цвет фона бордеров пустого контрола по ховеру"
+      ]
     },
     "color-control-bg-border-blank-disable": {
-      "value": "rgb(242, 242, 242)",
+      "value": "rgb(178, 36, 36)",
       "path": [
         "color",
         "control",
@@ -827,47 +780,43 @@
         "blank",
         "borderColor",
         "disable"
-      ],
-      "description": "цвет фона бордеров пустого неактивного контрола"
+      ]
     },
     "color-control-bg-faint": {
+      "value": "#c62828",
+      "path": [
+        "color",
+        "control",
+        "type",
+        "faint",
+        "fillColor",
+        "base"
+      ]
+    },
+    "color-control-bg-faint-disable": {
+      "value": "rgb(236, 162, 162)",
+      "path": [
+        "color",
+        "control",
+        "type",
+        "faint",
+        "fillColor",
+        "disable"
+      ]
+    },
+    "color-control-bg-check": {
       "value": "#fff",
       "path": [
         "color",
         "control",
         "type",
-        "faint",
-        "fillColor",
-        "base"
-      ],
-      "description": "цвет фона ослабленной части контрола"
-    },
-    "color-control-bg-faint-disable": {
-      "value": "rgb(199, 199, 199)",
-      "path": [
-        "color",
-        "control",
-        "type",
-        "faint",
-        "fillColor",
-        "disable"
-      ],
-      "description": "цвет фона ослабленной части неактивного контрола"
-    },
-    "color-control-bg-check": {
-      "value": "rgb(84, 84, 84)",
-      "path": [
-        "color",
-        "control",
-        "type",
         "check",
         "fillColor",
         "base"
-      ],
-      "description": "цвет фона чекнутого контрола"
+      ]
     },
     "color-control-bg-check-hover": {
-      "value": "rgb(84, 84, 84)",
+      "value": "#fff",
       "path": [
         "color",
         "control",
@@ -875,11 +824,10 @@
         "check",
         "fillColor",
         "hover"
-      ],
-      "description": "цвет фона чекнутого контрола по ховеру"
+      ]
     },
     "color-control-bg-check-press": {
-      "value": "rgb(82, 82, 82)",
+      "value": "#fff",
       "path": [
         "color",
         "control",
@@ -887,11 +835,10 @@
         "check",
         "fillColor",
         "press"
-      ],
-      "description": "цвет фона чекнутого контрола по нажатию"
+      ]
     },
     "color-control-bg-check-disable": {
-      "value": "rgb(242, 242, 242)",
+      "value": "#fff",
       "path": [
         "color",
         "control",
@@ -899,11 +846,10 @@
         "check",
         "fillColor",
         "disable"
-      ],
-      "description": "цвет фона чекнутого неактивного контрола"
+      ]
     },
     "color-control-bg-border-check": {
-      "value": "rgb(168, 135, 0)",
+      "value": "rgb(84, 84, 84)",
       "path": [
         "color",
         "control",
@@ -911,11 +857,10 @@
         "check",
         "borderColor",
         "base"
-      ],
-      "description": "цвет фона бордеров чекнутого контрола"
+      ]
     },
     "color-control-bg-border-check-hover": {
-      "value": "rgb(168, 135, 0)",
+      "value": "rgb(84, 84, 84)",
       "path": [
         "color",
         "control",
@@ -923,11 +868,10 @@
         "check",
         "borderColor",
         "hover"
-      ],
-      "description": "цвет фона бордеров чекнутого контрола по ховеру"
+      ]
     },
     "color-control-bg-border-check-press": {
-      "value": "rgb(168, 135, 0)",
+      "value": "rgb(84, 84, 84)",
       "path": [
         "color",
         "control",
@@ -935,11 +879,10 @@
         "check",
         "borderColor",
         "press"
-      ],
-      "description": "цвет фона бордеров чекнутого контрола при фокусе по нажатию"
+      ]
     },
     "color-control-bg-link-default": {
-      "value": "#04b",
+      "value": "#fff",
       "path": [
         "color",
         "control",
@@ -950,7 +893,7 @@
       ]
     },
     "color-control-bg-link-default-hover": {
-      "value": "rgba(0, 68, 187, 0.3)",
+      "value": "rgba(255, 255, 255, 0.2)",
       "path": [
         "color",
         "control",
@@ -961,7 +904,7 @@
       ]
     },
     "color-control-bg-border-link-default": {
-      "value": "rgba(0, 68, 187, 0.6)",
+      "value": "#fff",
       "path": [
         "color",
         "control",
@@ -972,7 +915,7 @@
       ]
     },
     "color-control-bg-border-link-default-hover": {
-      "value": "rgba(0, 68, 187, 0.6)",
+      "value": "#fff",
       "path": [
         "color",
         "control",
@@ -983,7 +926,7 @@
       ]
     },
     "color-control-typo-raised": {
-      "value": "#000",
+      "value": "#fff",
       "path": [
         "color",
         "control",
@@ -994,7 +937,7 @@
       ]
     },
     "color-control-typo-raised-disable": {
-      "value": "#7f7f7f",
+      "value": "#e29393",
       "path": [
         "color",
         "control",
@@ -1005,7 +948,7 @@
       ]
     },
     "color-control-bg-raised": {
-      "value": "#fff",
+      "value": "#d62b2b",
       "path": [
         "color",
         "control",
@@ -1016,7 +959,7 @@
       ]
     },
     "color-control-bg-raised-hover": {
-      "value": "#f5f5f5",
+      "value": "#d62b2b",
       "path": [
         "color",
         "control",
@@ -1027,7 +970,7 @@
       ]
     },
     "color-control-bg-raised-disable": {
-      "value": "#f5f5f5",
+      "value": "#b22424",
       "path": [
         "color",
         "control",
@@ -1038,7 +981,7 @@
       ]
     },
     "color-control-bg-raised-check": {
-      "value": "#fff",
+      "value": "#d62b2b",
       "path": [
         "color",
         "control",
@@ -1143,7 +1086,7 @@
         ]
       },
       "attach-typo-color": {
-        "value": "#000",
+        "value": "#fff",
         "path": [
           "attach",
           "typoColor"
@@ -1306,7 +1249,7 @@
         ]
       },
       "badge-border-color": {
-        "value": "#fff",
+        "value": "#c62828",
         "path": [
           "badge",
           "border",
@@ -1322,14 +1265,14 @@
         ]
       },
       "badge-fill-color": {
-        "value": "#f33",
+        "value": "#feb35e",
         "path": [
           "badge",
           "fillColor"
         ]
       },
       "badge-typo-color": {
-        "value": "#fff",
+        "value": "#c62828",
         "path": [
           "badge",
           "typoColor"
@@ -1584,7 +1527,7 @@
         "description": "Размер внешнего отступа у l-button"
       },
       "button-view-action-border-color-focused": {
-        "value": "#fc0",
+        "value": "#fff",
         "path": [
           "button",
           "viewAction",
@@ -1593,7 +1536,7 @@
         ]
       },
       "button-view-action-fill-color-base": {
-        "value": "#fc0",
+        "value": "#fff",
         "path": [
           "button",
           "viewAction",
@@ -1602,7 +1545,7 @@
         ]
       },
       "button-view-action-fill-color-disabled": {
-        "value": "rgb(242, 242, 242)",
+        "value": "rgb(178, 36, 36)",
         "path": [
           "button",
           "viewAction",
@@ -1611,7 +1554,7 @@
         ]
       },
       "button-view-action-fill-color-hovered": {
-        "value": "rgb(250, 192, 0)",
+        "value": "rgb(230, 230, 230)",
         "path": [
           "button",
           "viewAction",
@@ -1620,7 +1563,7 @@
         ]
       },
       "button-view-action-fill-color-progress-base": {
-        "value": "#fc0",
+        "value": "#fff",
         "path": [
           "button",
           "viewAction",
@@ -1630,7 +1573,7 @@
         ]
       },
       "button-view-action-fill-color-progress-process": {
-        "value": "rgb(255, 213, 0)",
+        "value": "rgb(255, 255, 255)",
         "path": [
           "button",
           "viewAction",
@@ -1640,7 +1583,7 @@
         ]
       },
       "button-view-action-fill-color-checked-base": {
-        "value": "rgb(84, 84, 84)",
+        "value": "#fff",
         "path": [
           "button",
           "viewAction",
@@ -1650,7 +1593,7 @@
         ]
       },
       "button-view-action-fill-color-checked-hovered": {
-        "value": "rgb(84, 84, 84)",
+        "value": "#fff",
         "path": [
           "button",
           "viewAction",
@@ -1660,7 +1603,7 @@
         ]
       },
       "button-view-action-typo-color-base": {
-        "value": "#000",
+        "value": "#c62828",
         "path": [
           "button",
           "viewAction",
@@ -1669,7 +1612,7 @@
         ]
       },
       "button-view-action-typo-color-disabled": {
-        "value": "rgb(128, 128, 128)",
+        "value": "rgba(255, 255, 255, 0.6)",
         "path": [
           "button",
           "viewAction",
@@ -1678,7 +1621,7 @@
         ]
       },
       "button-view-action-typo-color-hovered": {
-        "value": "#000",
+        "value": "#c62828",
         "path": [
           "button",
           "viewAction",
@@ -1687,7 +1630,7 @@
         ]
       },
       "button-view-action-typo-color-progress-base": {
-        "value": "#000",
+        "value": "#c62828",
         "path": [
           "button",
           "viewAction",
@@ -1697,7 +1640,7 @@
         ]
       },
       "button-view-action-typo-color-checked-base": {
-        "value": "rgb(255, 255, 255)",
+        "value": "#c62828",
         "path": [
           "button",
           "viewAction",
@@ -1707,7 +1650,7 @@
         ]
       },
       "button-view-action-typo-color-checked-hovered": {
-        "value": "rgb(255, 255, 255)",
+        "value": "#c62828",
         "path": [
           "button",
           "viewAction",
@@ -1717,7 +1660,7 @@
         ]
       },
       "button-view-clear-border-color-focused": {
-        "value": "#fc0",
+        "value": "#fff",
         "path": [
           "button",
           "viewClear",
@@ -1726,7 +1669,7 @@
         ]
       },
       "button-view-clear-fill-color-disabled": {
-        "value": "rgb(242, 242, 242)",
+        "value": "rgb(178, 36, 36)",
         "path": [
           "button",
           "viewClear",
@@ -1735,7 +1678,7 @@
         ]
       },
       "button-view-clear-fill-color-checked-base": {
-        "value": "rgb(84, 84, 84)",
+        "value": "#fff",
         "path": [
           "button",
           "viewClear",
@@ -1745,7 +1688,7 @@
         ]
       },
       "button-view-clear-fill-color-checked-hovered": {
-        "value": "rgb(84, 84, 84)",
+        "value": "#fff",
         "path": [
           "button",
           "viewClear",
@@ -1755,7 +1698,7 @@
         ]
       },
       "button-view-clear-typo-color-base": {
-        "value": "#000",
+        "value": "#fff",
         "path": [
           "button",
           "viewClear",
@@ -1764,7 +1707,7 @@
         ]
       },
       "button-view-clear-typo-color-disabled": {
-        "value": "rgb(128, 128, 128)",
+        "value": "rgba(255, 255, 255, 0.6)",
         "path": [
           "button",
           "viewClear",
@@ -1773,7 +1716,7 @@
         ]
       },
       "button-view-clear-typo-color-checked-base": {
-        "value": "rgb(255, 255, 255)",
+        "value": "#c62828",
         "path": [
           "button",
           "viewClear",
@@ -1783,7 +1726,7 @@
         ]
       },
       "button-view-default-border-color-focused": {
-        "value": "#fc0",
+        "value": "#fff",
         "path": [
           "button",
           "viewDefault",
@@ -1792,7 +1735,7 @@
         ]
       },
       "button-view-default-fill-color-base": {
-        "value": "rgb(230, 230, 230)",
+        "value": "rgb(157, 32, 32)",
         "path": [
           "button",
           "viewDefault",
@@ -1801,7 +1744,7 @@
         ]
       },
       "button-view-default-fill-color-disabled": {
-        "value": "rgb(242, 242, 242)",
+        "value": "rgb(178, 36, 36)",
         "path": [
           "button",
           "viewDefault",
@@ -1810,7 +1753,7 @@
         ]
       },
       "button-view-default-fill-color-hovered": {
-        "value": "rgb(219, 219, 219)",
+        "value": "rgb(148, 30, 30)",
         "path": [
           "button",
           "viewDefault",
@@ -1819,7 +1762,7 @@
         ]
       },
       "button-view-default-fill-color-checked-base": {
-        "value": "rgb(84, 84, 84)",
+        "value": "#fff",
         "path": [
           "button",
           "viewDefault",
@@ -1829,7 +1772,7 @@
         ]
       },
       "button-view-default-fill-color-checked-hovered": {
-        "value": "rgb(84, 84, 84)",
+        "value": "#fff",
         "path": [
           "button",
           "viewDefault",
@@ -1839,7 +1782,7 @@
         ]
       },
       "button-view-default-typo-color-base": {
-        "value": "#000",
+        "value": "#fff",
         "path": [
           "button",
           "viewDefault",
@@ -1848,7 +1791,7 @@
         ]
       },
       "button-view-default-typo-color-disabled": {
-        "value": "rgb(128, 128, 128)",
+        "value": "rgba(255, 255, 255, 0.6)",
         "path": [
           "button",
           "viewDefault",
@@ -1857,7 +1800,7 @@
         ]
       },
       "button-view-default-typo-color-checked-base": {
-        "value": "rgb(255, 255, 255)",
+        "value": "#c62828",
         "path": [
           "button",
           "viewDefault",
@@ -1867,7 +1810,7 @@
         ]
       },
       "button-view-default-typo-color-checked-hovered": {
-        "value": "rgb(255, 255, 255)",
+        "value": "#c62828",
         "path": [
           "button",
           "viewDefault",
@@ -1877,7 +1820,7 @@
         ]
       },
       "button-view-link-border-color-base": {
-        "value": "rgba(0, 68, 187, 0.6)",
+        "value": "#fff",
         "path": [
           "button",
           "viewLink",
@@ -1886,7 +1829,7 @@
         ]
       },
       "button-view-link-border-color-focused": {
-        "value": "#fc0",
+        "value": "#fff",
         "path": [
           "button",
           "viewLink",
@@ -1895,7 +1838,7 @@
         ]
       },
       "button-view-link-fill-color-base": {
-        "value": "#fff",
+        "value": "#c62828",
         "path": [
           "button",
           "viewLink",
@@ -1904,7 +1847,7 @@
         ]
       },
       "button-view-link-fill-color-disabled": {
-        "value": "rgb(242, 242, 242)",
+        "value": "rgb(178, 36, 36)",
         "path": [
           "button",
           "viewLink",
@@ -1913,7 +1856,7 @@
         ]
       },
       "button-view-link-fill-color-hovered": {
-        "value": "rgba(0, 68, 187, 0.3)",
+        "value": "rgba(255, 255, 255, 0.2)",
         "path": [
           "button",
           "viewLink",
@@ -1922,7 +1865,7 @@
         ]
       },
       "button-view-link-fill-color-checked-base": {
-        "value": "rgb(84, 84, 84)",
+        "value": "#fff",
         "path": [
           "button",
           "viewLink",
@@ -1932,7 +1875,7 @@
         ]
       },
       "button-view-link-fill-color-checked-hovered": {
-        "value": "rgb(84, 84, 84)",
+        "value": "#fff",
         "path": [
           "button",
           "viewLink",
@@ -1942,7 +1885,7 @@
         ]
       },
       "button-view-link-typo-color-base": {
-        "value": "#04b",
+        "value": "#fff",
         "path": [
           "button",
           "viewLink",
@@ -1951,7 +1894,7 @@
         ]
       },
       "button-view-link-typo-color-disabled": {
-        "value": "rgb(128, 128, 128)",
+        "value": "rgba(255, 255, 255, 0.6)",
         "path": [
           "button",
           "viewLink",
@@ -1960,7 +1903,7 @@
         ]
       },
       "button-view-link-typo-color-checked-base": {
-        "value": "rgb(255, 255, 255)",
+        "value": "#c62828",
         "path": [
           "button",
           "viewLink",
@@ -1970,7 +1913,7 @@
         ]
       },
       "button-view-pseudo-border-color-base": {
-        "value": "rgb(204, 204, 204)",
+        "value": "rgb(148, 30, 30)",
         "path": [
           "button",
           "viewPseudo",
@@ -1979,7 +1922,7 @@
         ]
       },
       "button-view-pseudo-border-color-focused": {
-        "value": "#fc0",
+        "value": "#fff",
         "path": [
           "button",
           "viewPseudo",
@@ -1988,7 +1931,7 @@
         ]
       },
       "button-view-pseudo-fill-color-disabled": {
-        "value": "rgb(242, 242, 242)",
+        "value": "rgb(178, 36, 36)",
         "path": [
           "button",
           "viewPseudo",
@@ -1997,7 +1940,7 @@
         ]
       },
       "button-view-pseudo-fill-color-hovered": {
-        "value": "rgb(247, 247, 247)",
+        "value": "rgb(165, 34, 34)",
         "path": [
           "button",
           "viewPseudo",
@@ -2006,7 +1949,7 @@
         ]
       },
       "button-view-pseudo-fill-color-checked-base": {
-        "value": "rgb(84, 84, 84)",
+        "value": "#fff",
         "path": [
           "button",
           "viewPseudo",
@@ -2016,7 +1959,7 @@
         ]
       },
       "button-view-pseudo-fill-color-checked-hovered": {
-        "value": "rgb(84, 84, 84)",
+        "value": "#fff",
         "path": [
           "button",
           "viewPseudo",
@@ -2026,7 +1969,7 @@
         ]
       },
       "button-view-pseudo-typo-color-base": {
-        "value": "#000",
+        "value": "#fff",
         "path": [
           "button",
           "viewPseudo",
@@ -2035,7 +1978,7 @@
         ]
       },
       "button-view-pseudo-typo-color-disabled": {
-        "value": "rgb(128, 128, 128)",
+        "value": "rgba(255, 255, 255, 0.6)",
         "path": [
           "button",
           "viewPseudo",
@@ -2044,7 +1987,7 @@
         ]
       },
       "button-view-pseudo-typo-color-checked-base": {
-        "value": "rgb(255, 255, 255)",
+        "value": "#c62828",
         "path": [
           "button",
           "viewPseudo",
@@ -2054,7 +1997,7 @@
         ]
       },
       "button-view-raised-border-color-focused": {
-        "value": "#fc0",
+        "value": "#fff",
         "path": [
           "button",
           "viewRaised",
@@ -2063,7 +2006,7 @@
         ]
       },
       "button-view-raised-fill-color-base": {
-        "value": "#fff",
+        "value": "#d62b2b",
         "path": [
           "button",
           "viewRaised",
@@ -2072,7 +2015,7 @@
         ]
       },
       "button-view-raised-fill-color-disabled": {
-        "value": "#f5f5f5",
+        "value": "#b22424",
         "path": [
           "button",
           "viewRaised",
@@ -2081,7 +2024,7 @@
         ]
       },
       "button-view-raised-fill-color-hovered": {
-        "value": "#f5f5f5",
+        "value": "#d62b2b",
         "path": [
           "button",
           "viewRaised",
@@ -2090,7 +2033,7 @@
         ]
       },
       "button-view-raised-fill-color-checked-base": {
-        "value": "rgb(84, 84, 84)",
+        "value": "#fff",
         "path": [
           "button",
           "viewRaised",
@@ -2100,7 +2043,7 @@
         ]
       },
       "button-view-raised-fill-color-checked-hovered": {
-        "value": "rgb(84, 84, 84)",
+        "value": "#fff",
         "path": [
           "button",
           "viewRaised",
@@ -2110,7 +2053,7 @@
         ]
       },
       "button-view-raised-typo-color-base": {
-        "value": "#000",
+        "value": "#fff",
         "path": [
           "button",
           "viewRaised",
@@ -2119,7 +2062,7 @@
         ]
       },
       "button-view-raised-typo-color-disabled": {
-        "value": "#7f7f7f",
+        "value": "#e29393",
         "path": [
           "button",
           "viewRaised",
@@ -2128,7 +2071,7 @@
         ]
       },
       "button-view-raised-typo-color-checked-base": {
-        "value": "rgb(255, 255, 255)",
+        "value": "#c62828",
         "path": [
           "button",
           "viewRaised",
@@ -2318,7 +2261,7 @@
         ]
       },
       "checkbox-view-default-outline-color": {
-        "value": "#fc0",
+        "value": "#fff",
         "path": [
           "checkbox",
           "viewDefault",
@@ -2326,7 +2269,7 @@
         ]
       },
       "checkbox-view-default-fill-color-base": {
-        "value": "rgb(230, 230, 230)",
+        "value": "rgb(157, 32, 32)",
         "path": [
           "checkbox",
           "viewDefault",
@@ -2335,7 +2278,7 @@
         ]
       },
       "checkbox-view-default-fill-color-hovered": {
-        "value": "rgb(219, 219, 219)",
+        "value": "rgb(148, 30, 30)",
         "path": [
           "checkbox",
           "viewDefault",
@@ -2344,7 +2287,7 @@
         ]
       },
       "checkbox-view-default-fill-color-checked-base": {
-        "value": "rgb(84, 84, 84)",
+        "value": "#fff",
         "path": [
           "checkbox",
           "viewDefault",
@@ -2354,7 +2297,7 @@
         ]
       },
       "checkbox-view-default-fill-color-checked-hovered": {
-        "value": "rgb(84, 84, 84)",
+        "value": "#fff",
         "path": [
           "checkbox",
           "viewDefault",
@@ -2364,7 +2307,7 @@
         ]
       },
       "checkbox-view-default-typo-color-base": {
-        "value": "#000",
+        "value": "#fff",
         "path": [
           "checkbox",
           "viewDefault",
@@ -2373,7 +2316,7 @@
         ]
       },
       "checkbox-view-default-typo-color-checked-base": {
-        "value": "#fff",
+        "value": "#c62828",
         "path": [
           "checkbox",
           "viewDefault",
@@ -2401,7 +2344,7 @@
     },
     "link": {
       "link-view-default-outline-color": {
-        "value": "#fc0",
+        "value": "#fff",
         "path": [
           "link",
           "viewDefault",
@@ -2409,7 +2352,7 @@
         ]
       },
       "link-view-default-typo-color-base": {
-        "value": "#04b",
+        "value": "#fff",
         "path": [
           "link",
           "viewDefault",
@@ -2418,7 +2361,7 @@
         ]
       },
       "link-view-default-typo-color-disabled": {
-        "value": "rgba(0, 0, 0, 0.3)",
+        "value": "rgba(255, 255, 255, 0.3)",
         "path": [
           "link",
           "viewDefault",
@@ -2427,7 +2370,7 @@
         ]
       },
       "link-view-default-typo-color-hovered": {
-        "value": "#c00",
+        "value": "rgb(237, 237, 237)",
         "path": [
           "link",
           "viewDefault",
@@ -2689,7 +2632,7 @@
         "description": "Размер внешнего левого отступа у сущностей после тайтла у m-menu"
       },
       "menu-view-default-border-color-base": {
-        "value": "rgb(179, 179, 179)",
+        "value": "rgb(157, 32, 32)",
         "path": [
           "menu",
           "viewDefault",
@@ -2698,7 +2641,7 @@
         ]
       },
       "menu-view-default-fill-color-base": {
-        "value": "rgb(230, 230, 230)",
+        "value": "rgb(157, 32, 32)",
         "path": [
           "menu",
           "viewDefault",
@@ -2707,7 +2650,7 @@
         ]
       },
       "menu-view-default-fill-color-hovered": {
-        "value": "rgb(219, 219, 219)",
+        "value": "rgb(148, 30, 30)",
         "path": [
           "menu",
           "viewDefault",
@@ -2716,7 +2659,7 @@
         ]
       },
       "menu-view-default-typo-color-base": {
-        "value": "#000",
+        "value": "#fff",
         "path": [
           "menu",
           "viewDefault",
@@ -2725,7 +2668,7 @@
         ]
       },
       "menu-view-default-typo-color-secondary": {
-        "value": "rgba(0, 0, 0, 0.6)",
+        "value": "rgba(255, 255, 255, 0.6)",
         "path": [
           "menu",
           "viewDefault",
@@ -2734,7 +2677,7 @@
         ]
       },
       "menu-view-default-typo-color-disabled": {
-        "value": "rgb(128, 128, 128)",
+        "value": "rgba(255, 255, 255, 0.6)",
         "path": [
           "menu",
           "viewDefault",
@@ -2743,7 +2686,7 @@
         ]
       },
       "menu-view-default-typo-color-hovered": {
-        "value": "#000",
+        "value": "#fff",
         "path": [
           "menu",
           "viewDefault",
@@ -3134,7 +3077,7 @@
         ]
       },
       "message-box-view-default-typo-color": {
-        "value": "#fff",
+        "value": "#c62828",
         "path": [
           "messageBox",
           "viewDefault",
@@ -3142,7 +3085,7 @@
         ]
       },
       "message-box-view-default-fill-color": {
-        "value": "#000",
+        "value": "#fff",
         "path": [
           "messageBox",
           "viewDefault",
@@ -3158,7 +3101,7 @@
         ]
       },
       "message-box-view-promo-typo-color": {
-        "value": "#fff",
+        "value": "#c62828",
         "path": [
           "messageBox",
           "viewPromo",
@@ -3166,7 +3109,7 @@
         ]
       },
       "message-box-view-promo-fill-color": {
-        "value": "#0057d3",
+        "value": "#000",
         "path": [
           "messageBox",
           "viewPromo",
@@ -3182,7 +3125,7 @@
         ]
       },
       "message-box-view-inverse-typo-color": {
-        "value": "#000",
+        "value": "#fff",
         "path": [
           "messageBox",
           "viewInverse",
@@ -3190,7 +3133,7 @@
         ]
       },
       "message-box-view-inverse-fill-color": {
-        "value": "#fff",
+        "value": "#c62828",
         "path": [
           "messageBox",
           "viewInverse",
@@ -3226,7 +3169,7 @@
         ]
       },
       "popup-view-default-typo-color": {
-        "value": "#000",
+        "value": "#fff",
         "path": [
           "popup",
           "viewDefault",
@@ -3234,7 +3177,7 @@
         ]
       },
       "popup-view-default-fill-color": {
-        "value": "#fff",
+        "value": "#c62828",
         "path": [
           "popup",
           "viewDefault",
@@ -3268,7 +3211,7 @@
         ]
       },
       "progress-inner-fill-color": {
-        "value": "#fc0",
+        "value": "#fff",
         "path": [
           "progress",
           "inner",
@@ -3390,7 +3333,7 @@
         ]
       },
       "radio-button-view-default-outline-color": {
-        "value": "#fc0",
+        "value": "#fff",
         "path": [
           "radioButton",
           "viewDefault",
@@ -3398,7 +3341,7 @@
         ]
       },
       "radio-button-view-default-fill-color-base": {
-        "value": "rgb(230, 230, 230)",
+        "value": "rgb(157, 32, 32)",
         "path": [
           "radioButton",
           "viewDefault",
@@ -3407,7 +3350,7 @@
         ]
       },
       "radio-button-view-default-fill-color-checked-base": {
-        "value": "#fff",
+        "value": "#c62828",
         "path": [
           "radioButton",
           "viewDefault",
@@ -3417,7 +3360,7 @@
         ]
       },
       "radio-button-view-default-typo-color-base": {
-        "value": "rgba(0, 0, 0, 0.6)",
+        "value": "rgba(255, 255, 255, 0.6)",
         "path": [
           "radioButton",
           "viewDefault",
@@ -3426,7 +3369,7 @@
         ]
       },
       "radio-button-view-default-typo-color-hovered": {
-        "value": "#000",
+        "value": "#fff",
         "path": [
           "radioButton",
           "viewDefault",
@@ -3435,7 +3378,7 @@
         ]
       },
       "radio-button-view-default-typo-color-checked-base": {
-        "value": "#000",
+        "value": "#fff",
         "path": [
           "radioButton",
           "viewDefault",
@@ -3454,7 +3397,7 @@
         ]
       },
       "radiobox-view-default-dot-fill-color": {
-        "value": "#fff",
+        "value": "#c62828",
         "path": [
           "radiobox",
           "viewDefault",
@@ -3463,7 +3406,7 @@
         ]
       },
       "radiobox-view-default-outline-color": {
-        "value": "#fc0",
+        "value": "#fff",
         "path": [
           "radiobox",
           "viewDefault",
@@ -3471,7 +3414,7 @@
         ]
       },
       "radiobox-view-default-fill-color-base": {
-        "value": "rgb(230, 230, 230)",
+        "value": "rgb(157, 32, 32)",
         "path": [
           "radiobox",
           "viewDefault",
@@ -3480,7 +3423,7 @@
         ]
       },
       "radiobox-view-default-fill-color-hovered": {
-        "value": "rgb(219, 219, 219)",
+        "value": "rgb(148, 30, 30)",
         "path": [
           "radiobox",
           "viewDefault",
@@ -3489,7 +3432,7 @@
         ]
       },
       "radiobox-view-default-fill-color-checked-base": {
-        "value": "rgb(84, 84, 84)",
+        "value": "#fff",
         "path": [
           "radiobox",
           "viewDefault",
@@ -3499,7 +3442,7 @@
         ]
       },
       "radiobox-view-default-fill-color-checked-hovered": {
-        "value": "rgb(84, 84, 84)",
+        "value": "#fff",
         "path": [
           "radiobox",
           "viewDefault",
@@ -3509,7 +3452,7 @@
         ]
       },
       "radiobox-view-default-typo-color-base": {
-        "value": "#000",
+        "value": "#fff",
         "path": [
           "radiobox",
           "viewDefault",
@@ -3710,7 +3653,7 @@
         "description": "Шрифт слайдера"
       },
       "slider-view-default-typo-color-base": {
-        "value": "#000",
+        "value": "#fff",
         "path": [
           "slider",
           "viewDefault",
@@ -3771,7 +3714,7 @@
         "description": "Цвет заливки трека в состоянии наведения"
       },
       "slider-view-default-range-fill-color-base": {
-        "value": "#fc0",
+        "value": "#fff",
         "path": [
           "slider",
           "viewDefault",
@@ -3782,7 +3725,7 @@
         "description": "Цвет заливки диапазона в обычном состоянии"
       },
       "slider-view-default-range-fill-color-hovered": {
-        "value": "rgb(250, 192, 0)",
+        "value": "rgb(230, 230, 230)",
         "path": [
           "slider",
           "viewDefault",
@@ -3834,7 +3777,7 @@
         "description": "Внешний радиус скругления бегунка"
       },
       "slider-view-default-thumb-fill-color-base": {
-        "value": "#fff",
+        "value": "#d62b2b",
         "path": [
           "slider",
           "viewDefault",
@@ -3954,7 +3897,7 @@
         ]
       },
       "spin-view-default-border-color": {
-        "value": "#fc0",
+        "value": "#fff",
         "path": [
           "spin",
           "viewDefault",
@@ -4007,7 +3950,7 @@
         ]
       },
       "tabs-menu-view-default-outline-color": {
-        "value": "#fc0",
+        "value": "#fff",
         "path": [
           "tabsMenu",
           "viewDefault",
@@ -4015,7 +3958,7 @@
         ]
       },
       "tabs-menu-view-default-active-line-fill-color-active": {
-        "value": "#000",
+        "value": "#fff",
         "path": [
           "tabsMenu",
           "viewDefault",
@@ -4025,7 +3968,7 @@
         ]
       },
       "tabs-menu-view-default-typo-color-base": {
-        "value": "#000",
+        "value": "#fff",
         "path": [
           "tabsMenu",
           "viewDefault",
@@ -5566,7 +5509,7 @@
         ]
       },
       "textarea-view-default-fill-color-base": {
-        "value": "#fff",
+        "value": "rgb(157, 32, 32)",
         "path": [
           "textarea",
           "viewDefault",
@@ -5575,7 +5518,7 @@
         ]
       },
       "textarea-view-default-fill-color-disabled": {
-        "value": "rgb(242, 242, 242)",
+        "value": "rgb(178, 36, 36)",
         "path": [
           "textarea",
           "viewDefault",
@@ -5584,7 +5527,7 @@
         ]
       },
       "textarea-view-default-fill-color-hovered": {
-        "value": "#fff",
+        "value": "rgb(148, 30, 30)",
         "path": [
           "textarea",
           "viewDefault",
@@ -5593,7 +5536,7 @@
         ]
       },
       "textarea-view-default-typo-color-base": {
-        "value": "#000",
+        "value": "#fff",
         "path": [
           "textarea",
           "viewDefault",
@@ -5602,7 +5545,7 @@
         ]
       },
       "textarea-view-default-typo-color-disabled": {
-        "value": "rgb(128, 128, 128)",
+        "value": "rgba(255, 255, 255, 0.6)",
         "path": [
           "textarea",
           "viewDefault",
@@ -5611,7 +5554,7 @@
         ]
       },
       "textarea-view-default-placeholder-typo-color-base": {
-        "value": "rgba(0, 0, 0, 0.3)",
+        "value": "rgba(255, 255, 255, 0.3)",
         "path": [
           "textarea",
           "viewDefault",
@@ -5621,7 +5564,7 @@
         ]
       },
       "textarea-view-default-placeholder-typo-color-disabled": {
-        "value": "rgb(128, 128, 128)",
+        "value": "rgba(255, 255, 255, 0.6)",
         "path": [
           "textarea",
           "viewDefault",
@@ -5631,7 +5574,7 @@
         ]
       },
       "textarea-view-default-icon-fill-color-base": {
-        "value": "rgba(0, 0, 0, 0.3)",
+        "value": "rgba(255, 255, 255, 0.3)",
         "path": [
           "textarea",
           "viewDefault",
@@ -5641,7 +5584,7 @@
         ]
       },
       "textarea-view-default-clear-fill-color-base": {
-        "value": "rgba(0, 0, 0, 0.3)",
+        "value": "rgba(255, 255, 255, 0.3)",
         "path": [
           "textarea",
           "viewDefault",
@@ -5651,7 +5594,7 @@
         ]
       },
       "textarea-view-default-clear-fill-color-hovered": {
-        "value": "#000",
+        "value": "#fff",
         "path": [
           "textarea",
           "viewDefault",
@@ -5661,7 +5604,7 @@
         ]
       },
       "textarea-view-default-hint-typo-color-state-error-base": {
-        "value": "rgb(224, 0, 0)",
+        "value": "rgb(246, 231, 136)",
         "path": [
           "textarea",
           "viewDefault",
@@ -5672,7 +5615,7 @@
         ]
       },
       "textarea-view-default-border-color-base": {
-        "value": "rgb(217, 217, 217)",
+        "value": "rgb(148, 30, 30)",
         "path": [
           "textarea",
           "viewDefault",
@@ -5681,7 +5624,7 @@
         ]
       },
       "textarea-view-default-border-color-disabled": {
-        "value": "rgb(242, 242, 242)",
+        "value": "rgb(178, 36, 36)",
         "path": [
           "textarea",
           "viewDefault",
@@ -5690,7 +5633,7 @@
         ]
       },
       "textarea-view-default-border-color-focused": {
-        "value": "rgb(179, 179, 179)",
+        "value": "rgb(224, 0, 34)",
         "path": [
           "textarea",
           "viewDefault",
@@ -5699,7 +5642,7 @@
         ]
       },
       "textarea-view-default-border-color-hovered": {
-        "value": "rgb(204, 204, 204)",
+        "value": "rgb(190, 39, 39)",
         "path": [
           "textarea",
           "viewDefault",
@@ -5708,7 +5651,7 @@
         ]
       },
       "textarea-view-default-border-color-state-error-base": {
-        "value": "#f33",
+        "value": "#feb35e",
         "path": [
           "textarea",
           "viewDefault",
@@ -5718,7 +5661,7 @@
         ]
       },
       "textarea-view-default-border-color-state-error-hovered": {
-        "value": "rgb(224, 0, 15)",
+        "value": "rgb(255, 203, 143)",
         "path": [
           "textarea",
           "viewDefault",
@@ -6082,7 +6025,7 @@
         ]
       },
       "textinput-view-material-placeholder-typo-color-base": {
-        "value": "rgba(0, 0, 0, 0.3)",
+        "value": "rgba(255, 255, 255, 0.3)",
         "path": [
           "textinput",
           "viewMaterial",
@@ -6185,7 +6128,7 @@
         ]
       },
       "textinput-view-default-fill-color-base": {
-        "value": "#fff",
+        "value": "rgb(157, 32, 32)",
         "path": [
           "textinput",
           "viewDefault",
@@ -6194,7 +6137,7 @@
         ]
       },
       "textinput-view-default-fill-color-disabled": {
-        "value": "rgb(242, 242, 242)",
+        "value": "rgb(178, 36, 36)",
         "path": [
           "textinput",
           "viewDefault",
@@ -6203,7 +6146,7 @@
         ]
       },
       "textinput-view-default-fill-color-hovered": {
-        "value": "#fff",
+        "value": "rgb(148, 30, 30)",
         "path": [
           "textinput",
           "viewDefault",
@@ -6212,7 +6155,7 @@
         ]
       },
       "textinput-view-default-typo-color-base": {
-        "value": "#000",
+        "value": "#fff",
         "path": [
           "textinput",
           "viewDefault",
@@ -6221,7 +6164,7 @@
         ]
       },
       "textinput-view-default-typo-color-disabled": {
-        "value": "rgb(128, 128, 128)",
+        "value": "rgba(255, 255, 255, 0.6)",
         "path": [
           "textinput",
           "viewDefault",
@@ -6230,7 +6173,7 @@
         ]
       },
       "textinput-view-default-placeholder-typo-color-base": {
-        "value": "rgba(0, 0, 0, 0.3)",
+        "value": "rgba(255, 255, 255, 0.3)",
         "path": [
           "textinput",
           "viewDefault",
@@ -6240,7 +6183,7 @@
         ]
       },
       "textinput-view-default-placeholder-typo-color-disabled": {
-        "value": "rgb(128, 128, 128)",
+        "value": "rgba(255, 255, 255, 0.6)",
         "path": [
           "textinput",
           "viewDefault",
@@ -6250,7 +6193,7 @@
         ]
       },
       "textinput-view-default-icon-fill-color-base": {
-        "value": "rgba(0, 0, 0, 0.3)",
+        "value": "rgba(255, 255, 255, 0.3)",
         "path": [
           "textinput",
           "viewDefault",
@@ -6260,7 +6203,7 @@
         ]
       },
       "textinput-view-default-clear-fill-color-base": {
-        "value": "rgba(0, 0, 0, 0.3)",
+        "value": "rgba(255, 255, 255, 0.3)",
         "path": [
           "textinput",
           "viewDefault",
@@ -6270,7 +6213,7 @@
         ]
       },
       "textinput-view-default-clear-fill-color-hovered": {
-        "value": "#000",
+        "value": "#fff",
         "path": [
           "textinput",
           "viewDefault",
@@ -6280,7 +6223,7 @@
         ]
       },
       "textinput-view-default-hint-typo-color-state-error-base": {
-        "value": "rgb(224, 0, 0)",
+        "value": "rgb(246, 231, 136)",
         "path": [
           "textinput",
           "viewDefault",
@@ -6291,7 +6234,7 @@
         ]
       },
       "textinput-view-default-border-color-base": {
-        "value": "rgb(217, 217, 217)",
+        "value": "rgb(148, 30, 30)",
         "path": [
           "textinput",
           "viewDefault",
@@ -6300,7 +6243,7 @@
         ]
       },
       "textinput-view-default-border-color-disabled": {
-        "value": "rgb(242, 242, 242)",
+        "value": "rgb(178, 36, 36)",
         "path": [
           "textinput",
           "viewDefault",
@@ -6309,7 +6252,7 @@
         ]
       },
       "textinput-view-default-border-color-focused": {
-        "value": "rgb(179, 179, 179)",
+        "value": "rgb(224, 0, 34)",
         "path": [
           "textinput",
           "viewDefault",
@@ -6318,7 +6261,7 @@
         ]
       },
       "textinput-view-default-border-color-hovered": {
-        "value": "rgb(204, 204, 204)",
+        "value": "rgb(190, 39, 39)",
         "path": [
           "textinput",
           "viewDefault",
@@ -6327,7 +6270,7 @@
         ]
       },
       "textinput-view-default-border-color-state-error-base": {
-        "value": "#f33",
+        "value": "#feb35e",
         "path": [
           "textinput",
           "viewDefault",
@@ -6337,7 +6280,7 @@
         ]
       },
       "textinput-view-default-border-color-state-error-hovered": {
-        "value": "rgb(224, 0, 15)",
+        "value": "rgb(255, 203, 143)",
         "path": [
           "textinput",
           "viewDefault",
@@ -6498,7 +6441,7 @@
         ]
       },
       "tooltip-view-default-fill-color-base": {
-        "value": "rgb(230, 230, 230)",
+        "value": "rgb(157, 32, 32)",
         "path": [
           "tooltip",
           "viewDefault",
@@ -6525,7 +6468,7 @@
         ]
       },
       "tooltip-view-default-fill-color-state-alert": {
-        "value": "#f33",
+        "value": "#feb35e",
         "path": [
           "tooltip",
           "viewDefault",
@@ -6534,7 +6477,7 @@
         ]
       },
       "tooltip-view-default-typo-color-state-success": {
-        "value": "rgb(255, 255, 255)",
+        "value": "#c62828",
         "path": [
           "tooltip",
           "viewDefault",
@@ -6543,7 +6486,7 @@
         ]
       },
       "tooltip-view-default-typo-color-state-warning": {
-        "value": "rgb(255, 255, 255)",
+        "value": "#c62828",
         "path": [
           "tooltip",
           "viewDefault",
@@ -6552,7 +6495,7 @@
         ]
       },
       "tooltip-view-default-typo-color-state-alert": {
-        "value": "rgb(255, 255, 255)",
+        "value": "#c62828",
         "path": [
           "tooltip",
           "viewDefault",
@@ -6917,7 +6860,7 @@
         ]
       },
       "tumbler-view-default-outline-color": {
-        "value": "#fc0",
+        "value": "#fff",
         "path": [
           "tumbler",
           "viewDefault",
@@ -6925,7 +6868,7 @@
         ]
       },
       "tumbler-view-default-fill-color-base": {
-        "value": "rgb(230, 230, 230)",
+        "value": "rgb(157, 32, 32)",
         "path": [
           "tumbler",
           "viewDefault",
@@ -6934,7 +6877,7 @@
         ]
       },
       "tumbler-view-default-fill-color-disabled": {
-        "value": "rgb(242, 242, 242)",
+        "value": "rgb(178, 36, 36)",
         "path": [
           "tumbler",
           "viewDefault",
@@ -6943,7 +6886,7 @@
         ]
       },
       "tumbler-view-default-fill-color-hovered": {
-        "value": "rgb(219, 219, 219)",
+        "value": "rgb(148, 30, 30)",
         "path": [
           "tumbler",
           "viewDefault",
@@ -6952,7 +6895,7 @@
         ]
       },
       "tumbler-view-default-fill-color-checked-base": {
-        "value": "#fc0",
+        "value": "#fff",
         "path": [
           "tumbler",
           "viewDefault",
@@ -6962,7 +6905,7 @@
         ]
       },
       "tumbler-view-default-fill-color-checked-disabled": {
-        "value": "rgb(242, 242, 242)",
+        "value": "rgb(178, 36, 36)",
         "path": [
           "tumbler",
           "viewDefault",
@@ -6972,7 +6915,7 @@
         ]
       },
       "tumbler-view-default-fill-color-checked-hovered": {
-        "value": "rgb(250, 192, 0)",
+        "value": "rgb(230, 230, 230)",
         "path": [
           "tumbler",
           "viewDefault",
@@ -6982,7 +6925,7 @@
         ]
       },
       "tumbler-view-default-button-fill-color-base": {
-        "value": "#fff",
+        "value": "#c62828",
         "path": [
           "tumbler",
           "viewDefault",
@@ -6992,7 +6935,7 @@
         ]
       },
       "tumbler-view-default-typo-color-base": {
-        "value": "#000",
+        "value": "#fff",
         "path": [
           "tumbler",
           "viewDefault",
@@ -7001,7 +6944,7 @@
         ]
       },
       "tumbler-view-default-typo-color-disabled": {
-        "value": "rgb(128, 128, 128)",
+        "value": "rgba(255, 255, 255, 0.6)",
         "path": [
           "tumbler",
           "viewDefault",

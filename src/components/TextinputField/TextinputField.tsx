@@ -17,8 +17,9 @@ export const TextinputField: React.FC<{
   value: string
   path: string[]
   description: string
-}> = ({ label, value, path, description }) => {
-  const [val, setVal] = useState(value)
+  customTokens: string
+}> = ({ label, value, path, description, customTokens }) => {
+  const [val, setVal] = useState(customTokens)
 
   const [visible, setVisible] = useState(false)
   const scopeRef = useRef<HTMLDivElement>(null)
@@ -29,8 +30,8 @@ export const TextinputField: React.FC<{
 
   // Update internal value when showcase is changed.
   useEffect(() => {
-    setVal(value)
-  }, [value])
+    setVal(customTokens || value)
+  }, [value, customTokens])
 
   const handleClick = useCallback(() => {
     setVisible(!visible)
@@ -42,6 +43,12 @@ export const TextinputField: React.FC<{
 
   const onClearClick = useCallback(() => {
     setVal(value)
+    variablesChanged({
+      path,
+      name: label,
+      value: value,
+      changed: false,
+    })
   }, [value])
 
   const onColorChange = useCallback(
@@ -154,7 +161,7 @@ export const TextinputField: React.FC<{
               scope={scopeRef}
               onClose={handleClose}
             >
-              <ChromePicker color={val} onChange={(event) => {
+              <ChromePicker color={val} onChangeComplete={(event) => {
                 onColorChange(event)
                 metricaGoal('change-tokens')
               }} />
