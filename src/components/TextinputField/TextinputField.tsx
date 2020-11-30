@@ -30,8 +30,8 @@ export const TextinputField: React.FC<{
 
   // Update internal value when showcase is changed.
   useEffect(() => {
-    setVal(value)
-  }, [value])
+    setVal(customTokens || value)
+  }, [value, customTokens])
 
   const handleClick = useCallback(() => {
     setVisible(!visible)
