@@ -16,17 +16,34 @@ import { $cssVariables, $designTokens } from '../Sandbox.model';
 export const SandboxExample: FC<any> = ({ includes, theme }) => {
     const [activeTab, setActiveTab] = useState('jsx')
 
-    const cssVariables = useStore($cssVariables)
+    const cssVariables: Record<string, any> = useStore($cssVariables)
     const designTokens = useStore($designTokens)
 
     const [yml, setYml] = useState('')
+    const [css, setCss] = useState('')
     const [shownDiff, setDiff] = useState(true)
 
     useEffect(() => {
         if (activeTab === 'yml') {
             createYaml()
         }
+
+        if (activeTab === 'css') {
+            createCSS()
+        }
     }, [activeTab, designTokens])
+
+    const createCSS = () => {
+        const a = Object.keys(cssVariables).reduce((acc:string, v: string) => {
+            if(designTokens[v.replace('--', '')].changed) {
+                acc += `  ${v}: ${cssVariables[v]};\n`
+            }
+            return acc
+        }, '')
+        const r = `:root {\n${a}}`
+
+        setCss(r);
+    }
 
     const createYaml = () => {
         const yml = Object.entries(designTokens).reduce((acc, value: any) => {
@@ -66,6 +83,12 @@ export const SandboxExample: FC<any> = ({ includes, theme }) => {
                                             metricaGoal('yml');
                                         }, content: 'YML'
                                     },
+                                    {
+                                        id: 'css', onClick: () => {
+                                            setActiveTab('css');
+                                            metricaGoal('css');
+                                        }, content: 'CSS'
+                                    },
                                 ]}
                             />
                             <div className="Tumbler-Wrapper">
@@ -90,6 +113,13 @@ export const SandboxExample: FC<any> = ({ includes, theme }) => {
                                 <div className="Sandbox-ContentWrapper-YML">
                                     <pre>
                                         <code>{yml}</code>
+                                    </pre>
+                                </div>
+                            )}
+                            {activeTab === 'css' && (
+                                <div className="Sandbox-ContentWrapper-YML">
+                                    <pre>
+                                        <code>{css}</code>
                                     </pre>
                                 </div>
                             )}
