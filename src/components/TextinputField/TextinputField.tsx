@@ -49,7 +49,7 @@ export const TextinputField: React.FC<{
       value: value,
       changed: false,
     })
-  }, [value])
+  }, [value, label, path])
 
   const onColorChange = useCallback(
     (color) => {

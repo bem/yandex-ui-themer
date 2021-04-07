@@ -74,7 +74,6 @@ module.exports = {
     "example": "./src/themes/example.theme.json",
     "example-inverse": "./src/themes/example-inverse.theme.json",
     "example-brand": "./src/themes/example-brand.theme.json",
-    "example-turbo": "./src/themes/example-turbo.theme.json"
   },
   "output": {
     "css": {
