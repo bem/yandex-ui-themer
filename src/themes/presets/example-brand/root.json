@@ -1,5 +1,407 @@
 {
   "globals": {
+    "calendar-font-family": {
+      "value": "'YS Text', 'Helvetica Neue', Helvetica, Arial, sans-serif",
+      "path": [
+        "calendar",
+        "fontFamily"
+      ]
+    },
+    "calendar-size-s-min-width": {
+      "value": "252px",
+      "path": [
+        "calendar",
+        "sizeS",
+        "minWidth"
+      ]
+    },
+    "calendar-size-s-min-height": {
+      "value": "180px",
+      "path": [
+        "calendar",
+        "sizeS",
+        "minHeight"
+      ]
+    },
+    "calendar-size-s-line-height": {
+      "value": "1rem",
+      "path": [
+        "calendar",
+        "sizeS",
+        "lineHeight"
+      ]
+    },
+    "calendar-size-s-font-size": {
+      "value": "0.8125rem",
+      "path": [
+        "calendar",
+        "sizeS",
+        "fontSize"
+      ]
+    },
+    "calendar-size-s-grid-aside-min-width": {
+      "value": "28px",
+      "path": [
+        "calendar",
+        "sizeS",
+        "gridAside",
+        "minWidth"
+      ]
+    },
+    "calendar-size-s-grid-aside-indent-right": {
+      "value": "8px",
+      "path": [
+        "calendar",
+        "sizeS",
+        "gridAside",
+        "indentRight"
+      ]
+    },
+    "calendar-size-s-cell-width": {
+      "value": "36px",
+      "path": [
+        "calendar",
+        "sizeS",
+        "cell",
+        "width"
+      ]
+    },
+    "calendar-size-s-cell-space": {
+      "value": "2px",
+      "path": [
+        "calendar",
+        "sizeS",
+        "cell",
+        "space"
+      ]
+    },
+    "calendar-size-m-min-width": {
+      "value": "308px",
+      "path": [
+        "calendar",
+        "sizeM",
+        "minWidth"
+      ]
+    },
+    "calendar-size-m-min-height": {
+      "value": "220px",
+      "path": [
+        "calendar",
+        "sizeM",
+        "minHeight"
+      ]
+    },
+    "calendar-size-m-line-height": {
+      "value": "1rem",
+      "path": [
+        "calendar",
+        "sizeM",
+        "lineHeight"
+      ]
+    },
+    "calendar-size-m-font-size": {
+      "value": "0.875rem",
+      "path": [
+        "calendar",
+        "sizeM",
+        "fontSize"
+      ]
+    },
+    "calendar-size-m-grid-aside-min-width": {
+      "value": "32px",
+      "path": [
+        "calendar",
+        "sizeM",
+        "gridAside",
+        "minWidth"
+      ]
+    },
+    "calendar-size-m-grid-aside-indent-right": {
+      "value": "12px",
+      "path": [
+        "calendar",
+        "sizeM",
+        "gridAside",
+        "indentRight"
+      ]
+    },
+    "calendar-size-m-cell-width": {
+      "value": "44px",
+      "path": [
+        "calendar",
+        "sizeM",
+        "cell",
+        "width"
+      ]
+    },
+    "calendar-size-m-cell-space": {
+      "value": "4px",
+      "path": [
+        "calendar",
+        "sizeM",
+        "cell",
+        "space"
+      ]
+    },
+    "calendar-size-l-min-width": {
+      "value": "378px",
+      "path": [
+        "calendar",
+        "sizeL",
+        "minWidth"
+      ]
+    },
+    "calendar-size-l-min-height": {
+      "value": "270px",
+      "path": [
+        "calendar",
+        "sizeL",
+        "minHeight"
+      ]
+    },
+    "calendar-size-l-line-height": {
+      "value": "1.25rem",
+      "path": [
+        "calendar",
+        "sizeL",
+        "lineHeight"
+      ]
+    },
+    "calendar-size-l-font-size": {
+      "value": "0.9375rem",
+      "path": [
+        "calendar",
+        "sizeL",
+        "fontSize"
+      ]
+    },
+    "calendar-size-l-grid-aside-min-width": {
+      "value": "36px",
+      "path": [
+        "calendar",
+        "sizeL",
+        "gridAside",
+        "minWidth"
+      ]
+    },
+    "calendar-size-l-grid-aside-indent-right": {
+      "value": "16px",
+      "path": [
+        "calendar",
+        "sizeL",
+        "gridAside",
+        "indentRight"
+      ]
+    },
+    "calendar-size-l-cell-width": {
+      "value": "54px",
+      "path": [
+        "calendar",
+        "sizeL",
+        "cell",
+        "width"
+      ]
+    },
+    "calendar-size-l-cell-space": {
+      "value": "6px",
+      "path": [
+        "calendar",
+        "sizeL",
+        "cell",
+        "space"
+      ]
+    },
+    "calendar-view-default-grid-aside-border-radius": {
+      "value": "4px",
+      "path": [
+        "calendar",
+        "viewDefault",
+        "gridAside",
+        "borderRadius"
+      ]
+    },
+    "calendar-view-default-grid-aside-typo-color-base": {
+      "value": "rgba(0, 0, 0, 0.6)",
+      "path": [
+        "calendar",
+        "viewDefault",
+        "gridAside",
+        "typoColor",
+        "base"
+      ]
+    },
+    "calendar-view-default-grid-aside-fill-color-base": {
+      "value": "rgba(0, 0, 0, 0.05)",
+      "path": [
+        "calendar",
+        "viewDefault",
+        "gridAside",
+        "fillColor",
+        "base"
+      ]
+    },
+    "calendar-view-default-current-border-color": {
+      "value": "#ff3737",
+      "path": [
+        "calendar",
+        "viewDefault",
+        "current",
+        "borderColor"
+      ]
+    },
+    "calendar-view-default-cell-border-width": {
+      "value": "1px",
+      "path": [
+        "calendar",
+        "viewDefault",
+        "cell",
+        "borderWidth"
+      ]
+    },
+    "calendar-view-default-cell-border-radius": {
+      "value": "100px",
+      "path": [
+        "calendar",
+        "viewDefault",
+        "cell",
+        "borderRadius"
+      ]
+    },
+    "calendar-view-default-cell-border-color-hovered": {
+      "value": "rgba(0, 0, 0, 0.1)",
+      "path": [
+        "calendar",
+        "viewDefault",
+        "cell",
+        "borderColor",
+        "hovered"
+      ]
+    },
+    "calendar-view-default-cell-border-color-focused": {
+      "value": "#fdb100",
+      "path": [
+        "calendar",
+        "viewDefault",
+        "cell",
+        "borderColor",
+        "focused"
+      ]
+    },
+    "calendar-view-default-cell-border-color-current": {
+      "value": "rgba(0, 0, 0, 0.05)",
+      "path": [
+        "calendar",
+        "viewDefault",
+        "cell",
+        "borderColor",
+        "current"
+      ]
+    },
+    "calendar-view-default-cell-typo-color-base": {
+      "value": "rgba(0, 0, 0, 0.8)",
+      "path": [
+        "calendar",
+        "viewDefault",
+        "cell",
+        "typoColor",
+        "base"
+      ]
+    },
+    "calendar-view-default-cell-typo-color-disabled": {
+      "value": "rgba(0, 0, 0, 0.45)",
+      "path": [
+        "calendar",
+        "viewDefault",
+        "cell",
+        "typoColor",
+        "disabled"
+      ]
+    },
+    "calendar-view-default-cell-typo-color-selected-base": {
+      "value": "#fff",
+      "path": [
+        "calendar",
+        "viewDefault",
+        "cell",
+        "typoColor",
+        "selected",
+        "base"
+      ]
+    },
+    "calendar-view-default-cell-typo-color-weekend": {
+      "value": "#ff3737",
+      "path": [
+        "calendar",
+        "viewDefault",
+        "cell",
+        "typoColor",
+        "weekend"
+      ]
+    },
+    "calendar-view-default-cell-fill-color-hovered": {
+      "value": "rgba(0, 0, 0, 0.05)",
+      "path": [
+        "calendar",
+        "viewDefault",
+        "cell",
+        "fillColor",
+        "hovered"
+      ]
+    },
+    "calendar-view-default-cell-fill-color-pressed": {
+      "value": "rgba(0, 0, 0, 0.1)",
+      "path": [
+        "calendar",
+        "viewDefault",
+        "cell",
+        "fillColor",
+        "pressed"
+      ]
+    },
+    "calendar-view-default-cell-fill-color-selected-base": {
+      "value": "#ff3737",
+      "path": [
+        "calendar",
+        "viewDefault",
+        "cell",
+        "fillColor",
+        "selected",
+        "base"
+      ]
+    },
+    "calendar-view-default-cell-fill-color-selected-range": {
+      "value": "rgba(0, 0, 0, 0.05)",
+      "path": [
+        "calendar",
+        "viewDefault",
+        "cell",
+        "fillColor",
+        "selected",
+        "range"
+      ]
+    },
+    "calendar-view-default-cell-fill-color-selected-hovered": {
+      "value": "#ff0000",
+      "path": [
+        "calendar",
+        "viewDefault",
+        "cell",
+        "fillColor",
+        "selected",
+        "hovered"
+      ]
+    },
+    "calendar-view-default-cell-fill-color-selected-disabled": {
+      "value": "#f2f2f2",
+      "path": [
+        "calendar",
+        "viewDefault",
+        "cell",
+        "fillColor",
+        "selected",
+        "disabled"
+      ]
+    },
     "typography-font-family": {
       "value": "'YS Text', 'Helvetica Neue', Helvetica, Arial, sans-serif",
       "path": [
@@ -157,6 +559,13 @@
       "path": [
         "color",
         "promo"
+      ]
+    },
+    "color-transparent": {
+      "value": "transparent",
+      "path": [
+        "color",
+        "transparent"
       ]
     },
     "color-bg-brand": {
@@ -1790,6 +2199,15 @@
           "base"
         ]
       },
+      "button-view-default-typo-color-hovered": {
+        "value": "#fff",
+        "path": [
+          "button",
+          "viewDefault",
+          "typoColor",
+          "hovered"
+        ]
+      },
       "button-view-default-typo-color-disabled": {
         "value": "rgba(255, 255, 255, 0.6)",
         "path": [
@@ -2081,6 +2499,64 @@
         ]
       }
     },
+    "buttonGroup": {
+      "button-group-gap-s": {
+        "value": "1px",
+        "path": [
+          "buttonGroup",
+          "gap",
+          "s"
+        ],
+        "description": "Растояние s между кнопками"
+      },
+      "button-group-gap-m": {
+        "value": "4px",
+        "path": [
+          "buttonGroup",
+          "gap",
+          "m"
+        ],
+        "description": "Растояние m между кнопками"
+      },
+      "button-group-gap-l": {
+        "value": "6px",
+        "path": [
+          "buttonGroup",
+          "gap",
+          "l"
+        ],
+        "description": "Растояние l между кнопками"
+      },
+      "button-group-gap-xl": {
+        "value": "8px",
+        "path": [
+          "buttonGroup",
+          "gap",
+          "xl"
+        ],
+        "description": "Растояние xl между кнопками"
+      },
+      "button-group-pin-circle-border-radius": {
+        "value": "100px",
+        "path": [
+          "buttonGroup",
+          "pin",
+          "circle",
+          "borderRadius"
+        ],
+        "description": "Радиус у кнопок с формой circle"
+      },
+      "button-group-pin-round-border-radius": {
+        "value": "4px",
+        "path": [
+          "buttonGroup",
+          "pin",
+          "round",
+          "borderRadius"
+        ],
+        "description": "Радиус у кнопок с формой round"
+      }
+    },
     "checkbox": {
       "checkbox-view-outline-border-color": {
         "value": "rgba(0, 0, 0, 0.1)",
@@ -2340,6 +2816,511 @@
           "divider",
           "fillColor"
         ]
+      }
+    },
+    "header": {
+      "header-font-family": {
+        "value": "'YS Text', arial, sans-serif",
+        "path": [
+          "header",
+          "fontFamily"
+        ],
+        "description": "Шрифт шапки"
+      },
+      "header-fill-color": {
+        "value": "#fff",
+        "path": [
+          "header",
+          "fillColor"
+        ],
+        "description": "Фон шапки"
+      },
+      "header-shadow": {
+        "value": "none",
+        "path": [
+          "header",
+          "shadow"
+        ],
+        "description": "Тень шапки"
+      },
+      "header-space-all": {
+        "value": "0 20px",
+        "path": [
+          "header",
+          "spaceAll"
+        ],
+        "description": "Внутренние отступы шапки"
+      },
+      "header-z-index": {
+        "value": "auto",
+        "path": [
+          "header",
+          "zIndex"
+        ],
+        "description": "Расположение шапки по оси Z"
+      },
+      "header-content-height": {
+        "value": "60px",
+        "path": [
+          "header",
+          "content",
+          "height"
+        ],
+        "description": "Высота шапки"
+      },
+      "header-content-width": {
+        "value": "auto",
+        "path": [
+          "header",
+          "content",
+          "width"
+        ],
+        "description": "Ширина шапки"
+      },
+      "header-content-indent-right": {
+        "value": "auto",
+        "path": [
+          "header",
+          "content",
+          "indentRight"
+        ],
+        "description": "Внешний отступ контента от блока с действиями. По умолчанию контент расположен рядом с логотипом."
+      },
+      "header-content-max-width": {
+        "value": "1400px",
+        "path": [
+          "header",
+          "content",
+          "maxWidth"
+        ],
+        "description": "Максимальная ширина шапки"
+      },
+      "header-content-space-all": {
+        "value": 0,
+        "path": [
+          "header",
+          "content",
+          "spaceAll"
+        ],
+        "description": "Внутренние отступы контента шапки (область между Логотипом и блоком с действиями)"
+      },
+      "header-logo-height": {
+        "value": "32px",
+        "path": [
+          "header",
+          "logo",
+          "height"
+        ],
+        "description": "Высота логотипов"
+      },
+      "header-logo-indent-right": {
+        "value": "29px",
+        "path": [
+          "header",
+          "logo",
+          "indentRight"
+        ],
+        "description": "Внешний отступ справа от основного логотипа"
+      },
+      "header-logo-circle-indent-top": {
+        "value": "-3px",
+        "path": [
+          "header",
+          "logo",
+          "circle",
+          "indentTop"
+        ],
+        "description": "Внешний отступ сверху круглого логотипа"
+      },
+      "header-logoaas-height": {
+        "value": "32px",
+        "path": [
+          "header",
+          "logoaas",
+          "height"
+        ],
+        "description": "Высота Logoaas логотипа"
+      },
+      "header-logoaas-indent": {
+        "value": "-5px auto 5px auto",
+        "path": [
+          "header",
+          "logoaas",
+          "indent"
+        ],
+        "description": "Внешние отступы изображения внутри Logoaas"
+      },
+      "header-icon-width": {
+        "value": "20px",
+        "path": [
+          "header",
+          "icon",
+          "width"
+        ],
+        "description": "Ширина иконки"
+      },
+      "header-icon-height": {
+        "value": "20px",
+        "path": [
+          "header",
+          "icon",
+          "height"
+        ],
+        "description": "Высота иконки"
+      },
+      "header-icon-indent-right": {
+        "value": "8px",
+        "path": [
+          "header",
+          "icon",
+          "indentRight"
+        ],
+        "description": "Внешний отступ справа от иконки"
+      },
+      "header-actions-gap": {
+        "value": "14px",
+        "path": [
+          "header",
+          "actions",
+          "gap"
+        ],
+        "description": "Расстояние между action блоками"
+      },
+      "header-actions-space-left": {
+        "value": "24px",
+        "path": [
+          "header",
+          "actions",
+          "spaceLeft"
+        ],
+        "description": "Внутренний отступ справа в блоке с действиями"
+      },
+      "header-nav-indent": {
+        "value": 0,
+        "path": [
+          "header",
+          "nav",
+          "indent"
+        ],
+        "description": "Внешние отступы в навигационных табах"
+      },
+      "header-nav-space-all": {
+        "value": 0,
+        "path": [
+          "header",
+          "nav",
+          "spaceAll"
+        ],
+        "description": "Внутренние отступы в навигационных табах"
+      },
+      "header-nav-link-font-size": {
+        "value": "16px",
+        "path": [
+          "header",
+          "navLink",
+          "fontSize"
+        ],
+        "description": "Размер шрифта в навигационных табах"
+      },
+      "header-nav-link-font-weight": {
+        "value": 500,
+        "path": [
+          "header",
+          "navLink",
+          "fontWeight"
+        ],
+        "description": "Насыщенность шрифта в навигационных табах"
+      },
+      "header-nav-link-line-height": {
+        "value": "21px",
+        "path": [
+          "header",
+          "navLink",
+          "lineHeight"
+        ],
+        "description": "Межстрочный интервал в навигационных табах"
+      },
+      "header-nav-link-space-all": {
+        "value": "8px 2px",
+        "path": [
+          "header",
+          "navLink",
+          "spaceAll"
+        ],
+        "description": "Внутренний отступ навигационного таба"
+      },
+      "header-nav-link-border": {
+        "value": "2px solid transparent",
+        "path": [
+          "header",
+          "navLink",
+          "border"
+        ],
+        "description": "Граница навигационного таба"
+      },
+      "header-nav-link-gap": {
+        "value": "12px",
+        "path": [
+          "header",
+          "navLink",
+          "gap"
+        ],
+        "description": "Отступ между навигационными табами"
+      },
+      "header-nav-link-color-base": {
+        "value": "#939cb0",
+        "path": [
+          "header",
+          "navLink",
+          "color",
+          "base"
+        ],
+        "description": "Основной цвет текста навигационного таба"
+      },
+      "header-nav-link-color-hover": {
+        "value": "#222426",
+        "path": [
+          "header",
+          "navLink",
+          "color",
+          "hover"
+        ],
+        "description": "Цвет текста навигационного таба при наведении мыши"
+      },
+      "header-nav-link-color-active": {
+        "value": "#d00",
+        "path": [
+          "header",
+          "navLink",
+          "color",
+          "active"
+        ],
+        "description": "Цвет текста навигационного таба при нажатии"
+      },
+      "header-search-font-family": {
+        "value": "Arial, sans-serif",
+        "path": [
+          "header",
+          "search",
+          "fontFamily"
+        ],
+        "description": "Шрифт Button_view_search-arrow"
+      },
+      "header-search-min-width": {
+        "value": "220px",
+        "path": [
+          "header",
+          "search",
+          "minWidth"
+        ],
+        "description": "Минимальная ширина поисковой формы"
+      },
+      "header-search-max-width": {
+        "value": "470px",
+        "path": [
+          "header",
+          "search",
+          "maxWidth"
+        ],
+        "description": "Максимальная ширина поисковой формы"
+      },
+      "header-search-width": {
+        "value": "470px",
+        "path": [
+          "header",
+          "search",
+          "width"
+        ],
+        "description": "Ширина поисковой формы"
+      },
+      "header-search-indent-left": {
+        "value": "29px",
+        "path": [
+          "header",
+          "search",
+          "indentLeft"
+        ],
+        "description": "Внешний отступ слева поисковой формы"
+      },
+      "header-search-fill-color-base": {
+        "value": "#ffdb4d",
+        "path": [
+          "header",
+          "search",
+          "fillColor",
+          "base"
+        ],
+        "description": "Основной цвет заливки и границ Textinput_view_search-arrow и Button_view_search-arrow"
+      },
+      "header-search-fill-color-hover": {
+        "value": "#ffd633",
+        "path": [
+          "header",
+          "search",
+          "fillColor",
+          "hover"
+        ],
+        "description": "Цвет заливки и границ Textinput_view_search-arrow и Button_view_search-arrow при наведении мыши"
+      },
+      "header-search-fill-color-active": {
+        "value": "#fc0",
+        "path": [
+          "header",
+          "search",
+          "fillColor",
+          "active"
+        ],
+        "description": "Цвет заливки и границ Textinput_view_search-arrow и Button_view_search-arrow при нажатии"
+      },
+      "header-search-button-typo-color": {
+        "value": "#000",
+        "path": [
+          "header",
+          "searchButton",
+          "typoColor"
+        ],
+        "description": "Цвет текста Button_view_search-arrow"
+      },
+      "header-search-button-font-size": {
+        "value": "16px",
+        "path": [
+          "header",
+          "searchButton",
+          "fontSize"
+        ],
+        "description": "Размер шрифта Button_view_search-arrow"
+      },
+      "header-search-button-line-height": {
+        "value": "36px",
+        "path": [
+          "header",
+          "searchButton",
+          "lineHeight"
+        ],
+        "description": "Межстрочный интервал Button_view_search-arrow"
+      },
+      "header-search-button-width": {
+        "value": "88px",
+        "path": [
+          "header",
+          "searchButton",
+          "width"
+        ],
+        "description": "Ширина Button_view_search-arrow"
+      },
+      "header-search-button-indent-right": {
+        "value": "9px",
+        "path": [
+          "header",
+          "searchButton",
+          "indentRight"
+        ],
+        "description": "Внешний отступ справа у элемента Text внутри Button_view_search-arrow"
+      },
+      "header-search-button-space-left": {
+        "value": "5px",
+        "path": [
+          "header",
+          "searchButton",
+          "spaceLeft"
+        ],
+        "description": "Внутренний отступ слева у элемента Text внутри Button_view_search-arrow"
+      },
+      "header-search-button-before-border-width": {
+        "value": "22px 0 22px 11px",
+        "path": [
+          "header",
+          "searchButton",
+          "before",
+          "borderWidth"
+        ],
+        "description": "Ширина границы :before Button_view_search-arrow"
+      },
+      "header-search-button-before-top": {
+        "value": "-4px",
+        "path": [
+          "header",
+          "searchButton",
+          "before",
+          "top"
+        ],
+        "description": "Значение top :before Button_view_search-arrow"
+      },
+      "header-search-button-before-right": {
+        "value": "-9px",
+        "path": [
+          "header",
+          "searchButton",
+          "before",
+          "right"
+        ],
+        "description": "Значение right :before Button_view_search-arrow"
+      },
+      "header-search-textinput-height": {
+        "value": "36px",
+        "path": [
+          "header",
+          "searchTextinput",
+          "height"
+        ],
+        "description": "Высота Texinput_view_search-arrow"
+      },
+      "header-search-textinput-typo-color": {
+        "value": "#000",
+        "path": [
+          "header",
+          "searchTextinput",
+          "typoColor"
+        ],
+        "description": "Цвет текста Button_view_search-arrow"
+      },
+      "header-search-textinput-border-radius": {
+        "value": "4px",
+        "path": [
+          "header",
+          "searchTextinput",
+          "borderRadius"
+        ],
+        "description": "Радиус скругления Texinput_view_search-arrow"
+      },
+      "header-search-textinput-fill-color": {
+        "value": "#fff",
+        "path": [
+          "header",
+          "searchTextinput",
+          "fillColor"
+        ],
+        "description": "Цвет заливки Textinput_view_search-arrow Texinput-Box"
+      },
+      "header-search-textinput-control-font-size": {
+        "value": "18px",
+        "path": [
+          "header",
+          "searchTextinput",
+          "control",
+          "fontSize"
+        ],
+        "description": "Размер шрифта Textinput_view_search-arrow Textinput-Control"
+      },
+      "header-search-textinput-control-border-width": {
+        "value": "0 30px 0 13px",
+        "path": [
+          "header",
+          "searchTextinput",
+          "control",
+          "borderWidth"
+        ],
+        "description": "Ширина границы Textinput_view_search-arrow Textinput-Control"
+      },
+      "header-search-textinput-box-border-width": {
+        "value": "2px 0 2px 2px",
+        "path": [
+          "header",
+          "searchTextinput",
+          "box",
+          "borderWidth"
+        ],
+        "description": "Ширина границы Textinput_view_search-arrow Texinput-Box"
       }
     },
     "link": {
@@ -6380,7 +7361,7 @@
         "description": "Размер внутренних отступов у контента m-tooltip"
       },
       "tooltip-size-m-tail-size": {
-        "value": "12px",
+        "value": "24px",
         "path": [
           "tooltip",
           "size",
@@ -6422,7 +7403,7 @@
         "description": "Размер внутренних отступов у контента l-tooltip"
       },
       "tooltip-size-l-tail-size": {
-        "value": "18px",
+        "value": "36px",
         "path": [
           "tooltip",
           "size",
