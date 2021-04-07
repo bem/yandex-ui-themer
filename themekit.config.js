@@ -4,8 +4,11 @@ const componentsList = [
   "attach",
   "badge",
   "button",
+  "buttonGroup",
   "checkbox",
   "divider",
+  // "dropdown", // У дропдауна нет никаких токенов
+  "header",
   "icon",
   "image",
   "layerManager",
@@ -20,6 +23,7 @@ const componentsList = [
   "radiobox",
   "select",
   "showcase",
+  "slider",
   "spacer",
   "spin",
   "tabsMenu",
@@ -31,7 +35,6 @@ const componentsList = [
   "tooltip",
   "tumbler",
   "userPic",
-  "slider",
 ]
 
 Api.registerFormat({

@@ -1,10 +1,15 @@
 import React, { useState, useRef, createElement, ComponentType } from 'react'
-import { Button } from '@yandex/ui/Button/Button.bundle/desktop'
 import { Attach } from '@yandex/ui/Attach/Attach.bundle/desktop'
+import { Badge } from '@yandex/ui/Badge/';
+import { Button } from '@yandex/ui/Button/Button.bundle/desktop';
+import { Button as ButtonBase } from '@yandex/ui/Button';
+import { ButtonGroup } from '@yandex/ui/ButtonGroup/desktop/bundle';
+import { Checkbox } from '@yandex/ui/Checkbox/Checkbox.bundle/desktop';
+import { Divider } from '@yandex/ui/Divider';
+import { Header, HeaderSearch, HeaderNav, HeaderNavItem } from '@yandex/ui/Header/desktop';
+import { withViewSearchArrow as withViewSearchArrowButton } from '@yandex/ui/Header/Button';
+import { withViewSearchArrow as withViewSearchArrowTextinput } from '@yandex/ui/Header/Textinput';
 import { Icon } from '@yandex/ui/Icon/Icon.bundle/desktop'
-import { Badge } from '@yandex/ui/Badge/'
-import { Checkbox } from '@yandex/ui/Checkbox/Checkbox.bundle/desktop'
-import { Divider } from '@yandex/ui/Divider'
 import { Link } from '@yandex/ui/Link/Link.bundle/desktop'
 import { Menu } from '@yandex/ui/Menu/Menu.bundle/desktop'
 import { MessageBox } from '@yandex/ui/MessageBox/MessageBox.bundle/desktop'
@@ -15,7 +20,8 @@ import { Spin } from '@yandex/ui/Spin/Spin.bundle/desktop'
 import { TabsMenu } from '@yandex/ui/TabsMenu/TabsMenu.bundle/desktop'
 import { Text } from '@yandex/ui/Text/Text.bundle/desktop'
 import { Textarea } from '@yandex/ui/Textarea/Textarea.bundle/desktop'
-import { Textinput } from '@yandex/ui/Textinput/Textinput.bundle/desktop'
+import { Textinput } from '@yandex/ui/Textinput/desktop/bundle'
+import { Textinput as TextinputBase, withHasClear } from '@yandex/ui/Textinput/desktop'
 import { Tooltip } from '@yandex/ui/Tooltip/Tooltip.bundle/desktop'
 import { Tumbler } from '@yandex/ui/Tumbler/Tumbler.bundle/desktop'
 import { UserPic } from '@yandex/ui/UserPic/UserPic.bundle/desktop'
@@ -23,6 +29,9 @@ import { Slider, useSliderState } from '@yandex/ui/Slider/desktop/bundle';
 
 import { Headline } from '../Headline/Headline'
 import './Showcase.css'
+
+const SearchButton = withViewSearchArrowButton(ButtonBase);
+const SearchInput = withHasClear(withViewSearchArrowTextinput(TextinputBase));
 
 const ButtonShowcase = () => {
   const view = ['default', 'action', 'pseudo', 'link', 'clear', 'raised']
@@ -91,6 +100,51 @@ const ButtonShowcase = () => {
       </div>
     </>
   )
+}
+
+const ButtonGroupShowcase = () => {
+  const gaps = [undefined, 's', 'm', 'l', 'xl'] as ('s' | 'm' | 'l' | 'xl')[];
+  const pins = ['circle', 'round'] as ('circle' | 'round')[];
+
+  return (
+    <>
+      <Headline>ButtonGroup</Headline>
+      <div className="Showcase-Item">
+        {gaps.map((gap, index) => (
+          <>
+            { index !== 0 && (<> <br /> <br /> </>) }
+            <p> Gap: {gap || 'no gap'} </p>
+            <ButtonGroup gap={gap}>
+                <Button view="default" size="m">
+                    Button 1
+                </Button>
+                <Button view="default" size="m">
+                    Button 2
+                </Button>
+                <Button view="default" size="m">
+                    Button 3
+                </Button>
+            </ButtonGroup>
+          </>
+        ))}
+
+        {pins.map((pin) => (
+          <>
+            <br /> <br />
+            <p> Pin: { pin } </p>
+            <ButtonGroup pin={pin}>
+                <Button view="default" size="m">
+                    Button 1
+                </Button>
+                <Button view="default" size="m">
+                    Button 2
+                </Button>
+            </ButtonGroup>
+          </>
+        ))}
+      </div>
+    </>
+  );
 }
 
 const AttachShowcase = () => {
@@ -186,6 +240,33 @@ const DividerShowcase = () => {
       </div>
     </>
   )
+}
+
+const HeaderShowcase = () => {
+  return (
+    <>
+      <Headline> Header </Headline>
+      <div className="Showcase-Item">
+        <Header className="SearchHeader">
+          <HeaderSearch action="//yandex.ru/search">
+            <SearchInput view="search-arrow" name="text" hasClear value="Yandex" />
+            <SearchButton view="search-arrow"> Найти </SearchButton>
+          </HeaderSearch>
+        </Header>
+        <br /> <br />
+        <Header className="SearchHeader">
+          <HeaderSearch action="//yandex.ru/search">
+            <HeaderNav>
+              <HeaderNavItem href="/"> Таб </HeaderNavItem>
+              <HeaderNavItem href="/"> По </HeaderNavItem>
+              <HeaderNavItem href="/"> Умолчанию </HeaderNavItem>
+              <HeaderNavItem href="/" active> Активный </HeaderNavItem>
+            </HeaderNav>
+          </HeaderSearch>
+        </Header>
+      </div>
+    </>
+  );
 }
 
 const LinkrShowcase = () => {
@@ -588,7 +669,7 @@ const TooltipShowcase = () => {
           </div>
           <Tooltip
             hasTail
-            direction="bottom-center"
+            direction="bottom"
             view="default"
             size="s"
             anchor={anchorRef1}
@@ -599,7 +680,7 @@ const TooltipShowcase = () => {
           </Tooltip>
           <Tooltip
             hasTail
-            direction="bottom-center"
+            direction="bottom"
             view="default"
             size="m"
             anchor={anchorRef2}
@@ -610,7 +691,7 @@ const TooltipShowcase = () => {
           </Tooltip>
           <Tooltip
             hasTail
-            direction="bottom-center"
+            direction="bottom"
             view="default"
             size="l"
             anchor={anchorRef3}
@@ -655,7 +736,7 @@ const TooltipShowcase = () => {
           </div>
           <Tooltip
             hasTail
-            direction="bottom-center"
+            direction="bottom"
             view="default"
             size="s"
             state="warning"
@@ -667,7 +748,7 @@ const TooltipShowcase = () => {
           </Tooltip>
           <Tooltip
             hasTail
-            direction="bottom-center"
+            direction="bottom"
             view="default"
             size="m"
             state="success"
@@ -679,7 +760,7 @@ const TooltipShowcase = () => {
           </Tooltip>
           <Tooltip
             hasTail
-            direction="bottom-center"
+            direction="bottom"
             view="default"
             size="l"
             state="alert"
@@ -823,11 +904,13 @@ const SliderShowcase = () => {
 }
 
 const componentsMap: Record<string, ComponentType> = {
-  button: ButtonShowcase,
   attach: AttachShowcase,
   badge: BadgeShowcase,
+  button: ButtonShowcase,
+  buttonGroup: ButtonGroupShowcase,
   checkbox: CheckboxShowcase,
   divider: DividerShowcase,
+  header: HeaderShowcase,
   link: LinkrShowcase,
   menu: MenuShowcase,
   messageBox: MessageBoxrShowcase,
