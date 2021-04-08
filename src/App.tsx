@@ -8,14 +8,12 @@ import { Text } from '@yandex/ui/Text/bundle'
 import stylesDataDefault from './themes/presets/example/root.json'
 import stylesDataInverse from './themes/presets/example-inverse/root.json'
 import stylesDataBrand from './themes/presets/example-brand/root.json'
-import stylesDataTurbo from './themes/presets/example-turbo/root.json'
 
 import { Sandbox } from './components/Sandbox/Sandbox'
 
 import { theme as themeDefault} from '@yandex/ui/Theme/presets/default'
 import { theme as themeInverse} from '@yandex/ui/Theme/presets/inverse'
 import { theme as themeBrand} from '@yandex/ui/Theme/presets/brand'
-import { theme as themeTurbo} from '@yandex/ui/Theme/presets/turbo'
 
 import './App.css'
 configureRootTheme({ theme })
@@ -25,7 +23,6 @@ const themes: Record<string, any> = {
     default: { tokens: stylesDataDefault, preset: themeDefault },
     inverse: { tokens: stylesDataInverse, preset: themeInverse },
     brand: { tokens: stylesDataBrand, preset: themeBrand },
-    turbo: { tokens: stylesDataTurbo, preset: themeTurbo },
 }
 
 export default () => {

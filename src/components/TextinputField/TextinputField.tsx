@@ -49,7 +49,7 @@ export const TextinputField: React.FC<{
       value: value,
       changed: false,
     })
-  }, [value])
+  }, [value, label, path])
 
   const onColorChange = useCallback(
     (color) => {
@@ -153,7 +153,7 @@ export const TextinputField: React.FC<{
               }}
             />
             <Popup
-              directions={['bottom-right']}
+              direction='bottom-end'
               target="anchor"
               anchor={anchorRef}
               view="default"

@@ -4,8 +4,11 @@ const componentsList = [
   "attach",
   "badge",
   "button",
+  "buttonGroup",
   "checkbox",
   "divider",
+  // "dropdown", // У дропдауна нет никаких токенов
+  "header",
   "icon",
   "image",
   "layerManager",
@@ -20,6 +23,7 @@ const componentsList = [
   "radiobox",
   "select",
   "showcase",
+  "slider",
   "spacer",
   "spin",
   "tabsMenu",
@@ -31,7 +35,6 @@ const componentsList = [
   "tooltip",
   "tumbler",
   "userPic",
-  "slider",
 ]
 
 Api.registerFormat({
@@ -74,7 +77,6 @@ module.exports = {
     "example": "./src/themes/example.theme.json",
     "example-inverse": "./src/themes/example-inverse.theme.json",
     "example-brand": "./src/themes/example-brand.theme.json",
-    "example-turbo": "./src/themes/example-turbo.theme.json"
   },
   "output": {
     "css": {
