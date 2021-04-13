@@ -25,7 +25,8 @@
   "scripts": {
     "build": "react-scripts build",
     "start": "react-scripts start",
-    "tokens:build": "themekit build",
+    "mappings:build": "ts-node --skip-project tools/mappingsGenerator.ts",
+    "tokens:build": "themekit build && npm run mappings:build",
     "format:js": "prettier --write src/**/*.{ts,tsx}",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"

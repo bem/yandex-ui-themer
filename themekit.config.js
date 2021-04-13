@@ -1,4 +1,4 @@
-const { Api } = require('@yandex/themekit');
+const { Api } = require('@yandex/themekit')
 
 const componentsList = [
   "attach",
