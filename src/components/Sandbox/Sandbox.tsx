@@ -3,6 +3,7 @@ import { Select } from '@yandex/ui/Select/Select.bundle/desktop'
 import { Textinput } from '@yandex/ui/Textinput/Textinput.bundle/desktop'
 import { TabsMenu } from '@yandex/ui/TabsMenu/TabsMenu.bundle/desktop'
 import { TabsPanes } from '@yandex/ui/TabsPanes/TabsPanes.bundle/desktop'
+import { Theme } from '@yandex/ui/Theme'
 
 import { TextinputField } from '../TextinputField/TextinputField'
 import { metricaGoal } from '../YaMetrika/YaMetrika'
@@ -17,10 +18,11 @@ import { useStore } from 'effector-react'
 type SandboxProps = {
   globals?: any
   components?: any
-  theme?: string
+  mappings?: Record<string, string>,
+  theme?: Theme
 }
 
-export const Sandbox: React.FC<SandboxProps> = ({ components, globals, theme }) => {
+export const Sandbox: React.FC<SandboxProps> = ({ components, globals, theme, mappings }) => {
   const designTokens = useStore($designTokens)
   const tabs = ['globals', ...Object.keys(components)]
   const [activeTab, setActiveTab] = useState('globals')
@@ -96,7 +98,7 @@ export const Sandbox: React.FC<SandboxProps> = ({ components, globals, theme }) 
         <TabsPanes
           activePane={activeTab1}
           panes={[
-            { id: 'custom', content: <CustomThemeDownloader /> },
+            { id: 'custom', content: <CustomThemeDownloader mappings={mappings} /> },
             { id: 'tokens', content: tokensTab }
           ]}
         />
