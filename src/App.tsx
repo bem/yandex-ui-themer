@@ -15,11 +15,13 @@ import { theme as themeDefault} from '@yandex/ui/Theme/presets/default'
 import { theme as themeInverse} from '@yandex/ui/Theme/presets/inverse'
 import { theme as themeBrand} from '@yandex/ui/Theme/presets/brand'
 
+import { ThemeType } from './types';
+
 import './App.css'
 configureRootTheme({ theme })
 
 
-const themes: Record<string, any> = {
+const themes: Record<string, ThemeType> = {
     default: { tokens: stylesDataDefault, preset: themeDefault },
     inverse: { tokens: stylesDataInverse, preset: themeInverse },
     brand: { tokens: stylesDataBrand, preset: themeBrand },
@@ -57,7 +59,7 @@ export default () => {
                 </ListTile>
             </div>
             <div className="Content">
-                <Sandbox theme={themes[theme].preset} globals={themes[theme].tokens.globals} components={themes[theme].tokens.components} />
+                <Sandbox theme={themes[theme].preset} globals={themes[theme].tokens.globals} components={themes[theme].tokens.components} mappings={themes[theme].tokens.mappings} />
             </div>
         </div>
     )
