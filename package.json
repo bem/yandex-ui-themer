@@ -4,14 +4,14 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@bem-react/classname": "1.5.8",
-    "@bem-react/core": "2.0.10",
-    "@bem-react/di": "2.2.4",
+    "@bem-react/classname": "1.5.9",
+    "@bem-react/core": "3.0.4",
+    "@bem-react/di": "2.2.5",
     "@types/react": "16.9.0",
     "@types/react-color": "3.0.4",
     "@types/react-dom": "16.9.0",
     "@yandex/themekit": "1.6.2",
-    "@yandex/ui": "^3.10.0",
+    "@yandex/ui": "3.10.8",
     "deepmerge": "4.2.2",
     "effector": "21.6.0",
     "effector-react": "21.0.8",
@@ -19,7 +19,7 @@
     "react-color": "2.18.1",
     "react-dom": "16.13.1",
     "react-scripts": "3.4.1",
-    "typescript": "3.7.2",
+    "typescript": "3.9.9",
     "yaml": "1.10.0"
   },
   "scripts": {
