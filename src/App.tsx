@@ -9,20 +9,26 @@ import stylesDataDefault from './themes/presets/example/root.json'
 import stylesDataInverse from './themes/presets/example-inverse/root.json'
 import stylesDataBrand from './themes/presets/example-brand/root.json'
 
+import mappingsDataDefault from './themes/presets/example/mappings.json'
+import mappingsDataInverse from './themes/presets/example-inverse/mappings.json'
+import mappingsDataBrand from './themes/presets/example-brand/mappings.json'
+
 import { Sandbox } from './components/Sandbox/Sandbox'
 
 import { theme as themeDefault} from '@yandex/ui/Theme/presets/default'
 import { theme as themeInverse} from '@yandex/ui/Theme/presets/inverse'
 import { theme as themeBrand} from '@yandex/ui/Theme/presets/brand'
 
+import { ThemeType } from './types';
+
 import './App.css'
 configureRootTheme({ theme })
 
 
-const themes: Record<string, any> = {
-    default: { tokens: stylesDataDefault, preset: themeDefault },
-    inverse: { tokens: stylesDataInverse, preset: themeInverse },
-    brand: { tokens: stylesDataBrand, preset: themeBrand },
+const themes: Record<string, ThemeType> = {
+    default: { tokens: stylesDataDefault, mappings: mappingsDataDefault, preset: themeDefault },
+    inverse: { tokens: stylesDataInverse, mappings: mappingsDataInverse, preset: themeInverse },
+    brand: { tokens: stylesDataBrand, mappings: mappingsDataBrand, preset: themeBrand },
 }
 
 export default () => {
@@ -57,7 +63,7 @@ export default () => {
                 </ListTile>
             </div>
             <div className="Content">
-                <Sandbox theme={themes[theme].preset} globals={themes[theme].tokens.globals} components={themes[theme].tokens.components} />
+                <Sandbox theme={themes[theme].preset} globals={themes[theme].tokens.globals} components={themes[theme].tokens.components} mappings={themes[theme].mappings} />
             </div>
         </div>
     )

@@ -1,26 +1,30 @@
 import React, { useState } from 'react'
 
-import { variablesChangedBatch } from '../../Sandbox/Sandbox.model'
-
 import { TextareaWithAutoResize } from '@yandex/ui/Textarea/desktop/bundle'
 import { Button } from '@yandex/ui/Button/Button.bundle/desktop'
 import { Spacer } from '@yandex/ui/Spacer/desktop'
 
-export const CustomThemeDownloader: React.FC<any> = () => {
-    const tokensDefault = `button:
-    viewAction:
-      fillColor:
+import { variablesChangedBatch } from '../../Sandbox/Sandbox.model'
+import { themeboxConfig } from './themebox.config'
+
+const tokensDefault = `button:
+  viewAction:
+    fillColor:
+      base:
+        value: "#C728B3"
+      progress:
         base:
           value: "#C728B3"
-        progress:
-          base:
-            value: "#C728B3"
-          process:
-            value: "#de1258"
-    viewDefault:
-      fillColor:
-        base:
-          value: "#ecb6ea"`
+        process:
+          value: "#de1258"
+  viewDefault:
+    fillColor:
+      base:
+        value: "#ecb6ea"
+`
+
+export const CustomThemeDownloader: React.FC<{ mappings?: Record<string, string> }> = ({ mappings }) => {
+
 
     const [value, setValue] = useState(tokensDefault)
     const [error, setError] = useState('')
@@ -31,24 +35,12 @@ export const CustomThemeDownloader: React.FC<any> = () => {
       setError('')
 
       const body = JSON.stringify({
-        config: {
-          output: {
-            css: {
-              transforms: ['name/cti/kebab'],
-              buildPath: './themes',
-              files: [
-                {
-                  destination: 'tokens.json',
-                  format: 'json/extended',
-                },
-              ],
-            },
-          },
-        },
+        config: themeboxConfig,
         tokens: {
           language: 'yaml',
           content: value
-        }
+        },
+        mappings,
       })
 
       fetch('https://themebox.now.sh', {
