@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/yandex-ui-themer/static/css/main.6253ffac.chunk.css",
-    "main.js": "/yandex-ui-themer/static/js/main.bb98ccb2.chunk.js",
-    "main.js.map": "/yandex-ui-themer/static/js/main.bb98ccb2.chunk.js.map",
+    "main.css": "/yandex-ui-themer/static/css/main.e01aa188.chunk.css",
+    "main.js": "/yandex-ui-themer/static/js/main.49c1d897.chunk.js",
+    "main.js.map": "/yandex-ui-themer/static/js/main.49c1d897.chunk.js.map",
     "runtime-main.js": "/yandex-ui-themer/static/js/runtime-main.6f514940.js",
     "runtime-main.js.map": "/yandex-ui-themer/static/js/runtime-main.6f514940.js.map",
-    "static/css/2.4af5c297.chunk.css": "/yandex-ui-themer/static/css/2.4af5c297.chunk.css",
-    "static/js/2.5d3056ca.chunk.js": "/yandex-ui-themer/static/js/2.5d3056ca.chunk.js",
-    "static/js/2.5d3056ca.chunk.js.map": "/yandex-ui-themer/static/js/2.5d3056ca.chunk.js.map",
+    "static/css/2.da76980e.chunk.css": "/yandex-ui-themer/static/css/2.da76980e.chunk.css",
+    "static/js/2.ef3b8683.chunk.js": "/yandex-ui-themer/static/js/2.ef3b8683.chunk.js",
+    "static/js/2.ef3b8683.chunk.js.map": "/yandex-ui-themer/static/js/2.ef3b8683.chunk.js.map",
     "index.html": "/yandex-ui-themer/index.html",
-    "precache-manifest.996d50058f431b17ee3605ce0f2b25a4.js": "/yandex-ui-themer/precache-manifest.996d50058f431b17ee3605ce0f2b25a4.js",
+    "precache-manifest.28698936f811ad834edcfd43c90021ed.js": "/yandex-ui-themer/precache-manifest.28698936f811ad834edcfd43c90021ed.js",
     "service-worker.js": "/yandex-ui-themer/service-worker.js",
-    "static/css/2.4af5c297.chunk.css.map": "/yandex-ui-themer/static/css/2.4af5c297.chunk.css.map",
-    "static/css/main.6253ffac.chunk.css.map": "/yandex-ui-themer/static/css/main.6253ffac.chunk.css.map",
-    "static/js/2.5d3056ca.chunk.js.LICENSE.txt": "/yandex-ui-themer/static/js/2.5d3056ca.chunk.js.LICENSE.txt",
+    "static/css/2.da76980e.chunk.css.map": "/yandex-ui-themer/static/css/2.da76980e.chunk.css.map",
+    "static/css/main.e01aa188.chunk.css.map": "/yandex-ui-themer/static/css/main.e01aa188.chunk.css.map",
+    "static/js/2.ef3b8683.chunk.js.LICENSE.txt": "/yandex-ui-themer/static/js/2.ef3b8683.chunk.js.LICENSE.txt",
     "static/media/Icon_type_arrow.css": "/yandex-ui-themer/static/media/arrow-b.a366267e.svg",
     "static/media/UserPic-Camera.css": "/yandex-ui-themer/static/media/camera.cb5d19c8.svg",
     "static/media/Icon_type_close.css": "/yandex-ui-themer/static/media/close.200d6792.svg",
@@ -21,16 +21,21 @@
     "static/media/Icon_type_cross-websearch.css": "/yandex-ui-themer/static/media/cross-websearch.02212f1a.svg",
     "static/media/Icon_type_filter.css": "/yandex-ui-themer/static/media/filter.5ebfc0aa.svg",
     "static/media/Checkbox_indeterminate.css": "/yandex-ui-themer/static/media/indeterminate-black.494103eb.svg",
+    "static/media/Mirror-Icon.css": "/yandex-ui-themer/static/media/mirror.4fa5e871.svg",
+    "static/media/News-Icon.css": "/yandex-ui-themer/static/media/news.44a2d022.svg",
     "static/media/UserPic.css": "/yandex-ui-themer/static/media/plus-circle.30da614f.svg",
     "static/media/Attach-Reset.css": "/yandex-ui-themer/static/media/reset.ad61d919.svg",
+    "static/media/Sport-Icon.css": "/yandex-ui-themer/static/media/sport.d7a790f7.svg",
     "static/media/Checkbox-Tick.css": "/yandex-ui-themer/static/media/tick-s.39998d58.svg",
-    "static/media/Menu_theme_normal.css": "/yandex-ui-themer/static/media/tip.f4b42475.svg"
+    "static/media/Menu_theme_normal.css": "/yandex-ui-themer/static/media/tip.f4b42475.svg",
+    "static/media/Weather-Icon.css": "/yandex-ui-themer/static/media/weather.179091c2.svg",
+    "static/media/Header-Logo.css": "/yandex-ui-themer/static/media/yandex-ru.1111f693.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.6f514940.js",
-    "static/css/2.4af5c297.chunk.css",
-    "static/js/2.5d3056ca.chunk.js",
-    "static/css/main.6253ffac.chunk.css",
-    "static/js/main.bb98ccb2.chunk.js"
+    "static/css/2.da76980e.chunk.css",
+    "static/js/2.ef3b8683.chunk.js",
+    "static/css/main.e01aa188.chunk.css",
+    "static/js/main.49c1d897.chunk.js"
   ]
 }

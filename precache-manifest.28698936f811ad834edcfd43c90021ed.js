@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "bd3f3048b67168e38874dbcc13669af1",
+    "revision": "c4421bae54f45cc434c4053b5840b799",
     "url": "/yandex-ui-themer/index.html"
   },
   {
-    "revision": "cff01346a88768158265",
-    "url": "/yandex-ui-themer/static/css/2.4af5c297.chunk.css"
+    "revision": "c2beec9dc854e16dd34f",
+    "url": "/yandex-ui-themer/static/css/2.da76980e.chunk.css"
   },
   {
-    "revision": "a09e24fd2d240823edca",
-    "url": "/yandex-ui-themer/static/css/main.6253ffac.chunk.css"
+    "revision": "44f636796a860b7b8141",
+    "url": "/yandex-ui-themer/static/css/main.e01aa188.chunk.css"
   },
   {
-    "revision": "cff01346a88768158265",
-    "url": "/yandex-ui-themer/static/js/2.5d3056ca.chunk.js"
+    "revision": "c2beec9dc854e16dd34f",
+    "url": "/yandex-ui-themer/static/js/2.ef3b8683.chunk.js"
   },
   {
     "revision": "41b5c34ece5406700afa290282108676",
-    "url": "/yandex-ui-themer/static/js/2.5d3056ca.chunk.js.LICENSE.txt"
+    "url": "/yandex-ui-themer/static/js/2.ef3b8683.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "a09e24fd2d240823edca",
-    "url": "/yandex-ui-themer/static/js/main.bb98ccb2.chunk.js"
+    "revision": "44f636796a860b7b8141",
+    "url": "/yandex-ui-themer/static/js/main.49c1d897.chunk.js"
   },
   {
     "revision": "779e39900acbaa9c421c",
@@ -64,12 +64,24 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/yandex-ui-themer/static/media/indeterminate-black.494103eb.svg"
   },
   {
+    "revision": "4fa5e871cc219cba15721780da12ae38",
+    "url": "/yandex-ui-themer/static/media/mirror.4fa5e871.svg"
+  },
+  {
+    "revision": "44a2d02256c35892212dcbcfe093d37f",
+    "url": "/yandex-ui-themer/static/media/news.44a2d022.svg"
+  },
+  {
     "revision": "30da614f2803c8c4f2c7b0663346eb2f",
     "url": "/yandex-ui-themer/static/media/plus-circle.30da614f.svg"
   },
   {
     "revision": "ad61d919ecd40e97e3e53a7fd2a9c8ed",
     "url": "/yandex-ui-themer/static/media/reset.ad61d919.svg"
+  },
+  {
+    "revision": "d7a790f7edf4f27ca602e843e33820c7",
+    "url": "/yandex-ui-themer/static/media/sport.d7a790f7.svg"
   },
   {
     "revision": "119f79b7357345359012825016f9c604",
@@ -82,5 +94,25 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "f4b42475aa9c965100cf85e9d4d0367e",
     "url": "/yandex-ui-themer/static/media/tip.f4b42475.svg"
+  },
+  {
+    "revision": "179091c2d0f5452462adb70d88648121",
+    "url": "/yandex-ui-themer/static/media/weather.179091c2.svg"
+  },
+  {
+    "revision": "210dca4333df5dc7efb0bb02134abd23",
+    "url": "/yandex-ui-themer/static/media/yandex-circle-en.210dca43.svg"
+  },
+  {
+    "revision": "87b109af8a0ec9263d919dbf0884e009",
+    "url": "/yandex-ui-themer/static/media/yandex-circle-ru.87b109af.svg"
+  },
+  {
+    "revision": "fb602ef3df719cf0326e1161ad7fbc08",
+    "url": "/yandex-ui-themer/static/media/yandex-en.fb602ef3.svg"
+  },
+  {
+    "revision": "1111f6930c8ab2ec94fd25489a99cd95",
+    "url": "/yandex-ui-themer/static/media/yandex-ru.1111f693.svg"
   }
 ]);
