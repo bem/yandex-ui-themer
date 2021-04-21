@@ -1,3 +1,5 @@
+import { VariablesType } from '../types'
+
 export const downloadTokens = async (tokensHash: string | null) => {
   if (!tokensHash) {
     return
@@ -11,5 +13,5 @@ export const downloadTokens = async (tokensHash: string | null) => {
   })
 
   const rawData = await response.json()
-  return JSON.parse(rawData)
+  return JSON.parse(rawData) as { tokens: VariablesType[]; theme: string }
 }
