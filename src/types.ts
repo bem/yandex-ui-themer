@@ -47,9 +47,18 @@ export type TokensType = {
     components: ComponentsType,
 };
 
+export type MappingsType = Record<string, string>;
+
 export type ThemeType = { 
     tokens: TokensType,
     preset: Theme,
-    mappings: Record<string, string>
-    name?: string
+    mappings: MappingsType,
+    name?: string,
+}
+
+export type VariablesType = {
+  name: string,
+  path: string[],
+  value: string,
+  changed: boolean,
 };
