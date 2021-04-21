@@ -46,10 +46,10 @@ export const downloadTheme = (
 
       const res = JSON.parse(response.data[0].content)
       const tokens = Object.entries(res).map(([_, item]: any) => ({
-          path: item.path,
-          name: item.name,
-          value: item.value,
-          changed: true,
+        path: item.path,
+        name: item.name,
+        value: item.value,
+        changed: true,
       }))
 
       onSuccess?.(tokens)
