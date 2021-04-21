@@ -5,7 +5,7 @@ import { Button } from '@yandex/ui/Button/Button.bundle/desktop'
 import { Spacer } from '@yandex/ui/Spacer/desktop'
 
 import { variablesChangedBatch } from '../../../state/tokens'
-import { downloadTheme } from '../../../utils/downloadTheme'
+import { downloadTheme } from '../../../api/downloadTheme'
 import { MappingsType, VariablesType } from '../../../types'
 
 const tokensDefault = `button:

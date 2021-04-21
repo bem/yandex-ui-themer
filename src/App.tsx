@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { configureRootTheme } from '@yandex/ui/Theme'
 import { theme } from '@yandex/ui/Theme/presets/default'
 import { Select } from '@yandex/ui/Select/desktop/bundle'
@@ -19,11 +19,11 @@ import mappingsDataInverse from './themes/presets/example-inverse/mappings.json'
 import mappingsDataBrand from './themes/presets/example-brand/mappings.json'
 
 import { Sandbox } from './components/Sandbox/Sandbox'
-import { LinkGenerator } from './components/LinkGenerator'
+import { Share } from './components/Share'
+
+import { variablesInitialization } from './state/tokens'
 
 import { ThemeType } from './types'
-
-import { useTokensDownloader } from './utils/useTokensDownloader'
 
 import './App.css'
 
@@ -38,9 +38,10 @@ const themes: Record<string, ThemeType> = {
 export default () => {
   const themesNames = Object.keys(themes)
   const [theme, chooseTheme] = useState('default')
-  const tokensHash = useSearchParam('tokensHash')
 
-  useTokensDownloader(tokensHash || '')
+  useEffect(() => {
+    variablesInitialization()
+  }, [])
 
   const menuItems = themesNames.map((val) => ({
     value: val,
@@ -67,7 +68,7 @@ export default () => {
             value={theme}
             onChange={(event: any) => chooseTheme(event.target.value)}
           />
-          <LinkGenerator />
+          <Share />
         </ListTile>
       </div>
       <div className="Content">
