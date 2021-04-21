@@ -12,18 +12,19 @@ import { metricaGoal } from '../YaMetrika/YaMetrika'
 import { SandboxExample } from './SandboxExample/SandboxExample'
 import { CustomThemeDownloader } from './CustomThemeDownloader/CustomThemeDownloader'
 import { $designTokens } from '../../state/tokens'
+import { $theme } from '../../state/themes'
 import { MappingsType, GlobalsType, ComponentsType } from '../../types'
 
 import './Sandbox.css'
 
-type SandboxProps = {
-  globals: GlobalsType,
-  components: ComponentsType,
-  mappings: MappingsType,
-  theme: Theme
-}
+type SandboxProps = {}
 
-export const Sandbox: React.FC<SandboxProps> = ({ components, globals, theme, mappings }) => {
+export const Sandbox: React.FC<SandboxProps> = (props) => {
+  const {
+    preset,
+    tokens: { globals, components },
+    mappings,
+  } = useStore($theme)
   const designTokens = useStore($designTokens)
   const tabs = ['globals', ...Object.keys(components)]
   const [activeTab, setActiveTab] = useState('globals')
@@ -82,7 +83,10 @@ export const Sandbox: React.FC<SandboxProps> = ({ components, globals, theme, ma
 
   return (
     <div className="Sandbox">
-      <SandboxExample theme={theme} includes={activeTab === 'globals' ? Object.keys(components) : [activeTab]} />
+      <SandboxExample
+        theme={preset}
+        includes={activeTab === 'globals' ? Object.keys(components) : [activeTab]}
+      />
       <div className="Sandbox-Tokens">
         <div className="Sandbox-Tokens-Tabs">
           <TabsMenu
@@ -100,7 +104,7 @@ export const Sandbox: React.FC<SandboxProps> = ({ components, globals, theme, ma
           activePane={activeTab1}
           panes={[
             { id: 'custom', content: <CustomThemeDownloader mappings={mappings} /> },
-            { id: 'tokens', content: tokensTab }
+            { id: 'tokens', content: tokensTab },
           ]}
         />
       </div>
