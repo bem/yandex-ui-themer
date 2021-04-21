@@ -4,22 +4,23 @@ import { Textinput } from '@yandex/ui/Textinput/Textinput.bundle/desktop'
 import { TabsMenu } from '@yandex/ui/TabsMenu/TabsMenu.bundle/desktop'
 import { TabsPanes } from '@yandex/ui/TabsPanes/TabsPanes.bundle/desktop'
 import { Theme } from '@yandex/ui/Theme'
+import { useStore } from 'effector-react'
 
 import { TextinputField } from '../TextinputField/TextinputField'
 import { metricaGoal } from '../YaMetrika/YaMetrika'
 
 import { SandboxExample } from './SandboxExample/SandboxExample'
 import { CustomThemeDownloader } from './CustomThemeDownloader/CustomThemeDownloader'
-import { $designTokens } from '../Sandbox/Sandbox.model'
+import { $designTokens } from '../../state/tokens'
+import { MappingsType, GlobalsType, ComponentsType } from '../../types'
 
 import './Sandbox.css'
-import { useStore } from 'effector-react'
 
 type SandboxProps = {
-  globals?: any
-  components?: any
-  mappings?: Record<string, string>,
-  theme?: Theme
+  globals: GlobalsType,
+  components: ComponentsType,
+  mappings: MappingsType,
+  theme: Theme
 }
 
 export const Sandbox: React.FC<SandboxProps> = ({ components, globals, theme, mappings }) => {
