@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { toast } from 'react-toastify'
 
 import { TextareaWithAutoResize } from '@yandex/ui/Textarea/desktop/bundle'
 import { Button } from '@yandex/ui/Button/Button.bundle/desktop'
@@ -35,11 +36,13 @@ export const CustomThemeDownloader: React.FC<{ mappings: MappingsType }> = ({ ma
 
     const onError = (error: string) => {
       setProgress(false)
+      toast.error(error, { autoClose: 5000 })
       setError(error)
     }
 
     const onSuccess = (tokens: VariablesType[]) => {
       variablesChangedBatch(tokens)
+      toast.success('Токены успешно загружены')
       setProgress(false)
     }
 
