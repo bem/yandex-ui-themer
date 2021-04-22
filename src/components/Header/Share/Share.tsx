@@ -1,18 +1,14 @@
 import React, { FC } from 'react'
 import { Button, IButtonProps as ButtonProps } from '@yandex/ui/Button/desktop/bundle'
-import { useCopyToClipboard } from 'react-use'
-import { toast } from 'react-toastify'
+import { useStore } from 'effector-react'
+
+import { uploadTokensEvent, $loadingTokens } from '../../../state/tokens'
 
 export const Share: FC<ButtonProps> = (props) => {
-  const [, copyToClipboard] = useCopyToClipboard()
-
-  const handleClick = () => {
-    copyToClipboard(window.location.href)
-    toast.success('Ссылка успешно скопирована в буфер обмена')
-  }
+  const loading = useStore($loadingTokens)
 
   return (
-    <Button {...props} view="action" size="m" onClick={handleClick}>
+    <Button {...props} view="action" size="m" onClick={uploadTokensEvent} progress={loading}>
       Поделиться
     </Button>
   )

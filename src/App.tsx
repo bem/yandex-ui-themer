@@ -8,7 +8,7 @@ import 'react-toastify/dist/ReactToastify.min.css'
 import { Header } from './components/Header'
 import { Sandbox } from './components/Sandbox/Sandbox'
 
-import { variablesInitialization } from './state/tokens'
+import { variablesInitializationEvent } from './state/tokens'
 
 import './App.css'
 
@@ -16,7 +16,7 @@ configureRootTheme({ theme })
 
 export default () => {
   useEffect(() => {
-    variablesInitialization()
+    variablesInitializationEvent()
   }, [])
 
   return (

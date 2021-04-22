@@ -7,7 +7,7 @@ import { Badge } from '@yandex/ui/Badge/desktop'
 import { Popup } from '@yandex/ui/Popup/desktop/bundle'
 
 import { isColor } from '../../utils/isColor'
-import { variablesChanged } from '../../state/tokens'
+import { variablesChangedEvent } from '../../state/tokens'
 import { IconBack } from '../IconBack/IconBack'
 
 import { metricaGoal } from '../YaMetrika/YaMetrika'
@@ -43,7 +43,7 @@ export const TextinputField: React.FC<{
 
   const onClearClick = useCallback(() => {
     setVal(value)
-    variablesChanged({
+    variablesChangedEvent({
       path,
       name: label,
       value: value,
@@ -65,7 +65,7 @@ export const TextinputField: React.FC<{
       }
 
       setVal(colorValue)
-      variablesChanged({
+      variablesChangedEvent({
         path,
         name: label,
         value: colorValue,
@@ -78,7 +78,7 @@ export const TextinputField: React.FC<{
   const onChange = useCallback(
     (event) => {
       setVal(event.target.value)
-      variablesChanged({
+      variablesChangedEvent({
         path,
         name: label,
         value: event.target.value,
