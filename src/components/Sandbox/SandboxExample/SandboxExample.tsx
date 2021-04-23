@@ -11,7 +11,7 @@ import { toDeepToken } from '../../../utils/toDeepToken'
 import { Showcase } from '../../Showcase/Showcase'
 import { metricaGoal } from '../../YaMetrika/YaMetrika'
 
-import { $cssVariables, $designTokens } from '../../../state/tokens'
+import { $cssVariables, $designTokens } from '../../../model/tokens'
 
 export const SandboxExample: FC<any> = ({ includes, theme }) => {
   const [activeTab, setActiveTab] = useState('jsx')

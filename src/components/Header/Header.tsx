@@ -7,7 +7,7 @@ import { Text } from '@yandex/ui/Text/bundle'
 import { Clear } from './Clear'
 import { Share } from './Share'
 
-import { $themes, $themesNames, $themeName, changeThemeEvent } from '../../state/themes'
+import { $themes, $themesNames, $themeName, changeThemeEvent } from '../../model/themes'
 
 import { ThemeNames } from '../../types'
 
