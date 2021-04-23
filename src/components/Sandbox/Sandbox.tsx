@@ -3,7 +3,6 @@ import { Select } from '@yandex/ui/Select/Select.bundle/desktop'
 import { Textinput } from '@yandex/ui/Textinput/Textinput.bundle/desktop'
 import { TabsMenu } from '@yandex/ui/TabsMenu/TabsMenu.bundle/desktop'
 import { TabsPanes } from '@yandex/ui/TabsPanes/TabsPanes.bundle/desktop'
-import { Theme } from '@yandex/ui/Theme'
 import { useStore } from 'effector-react'
 
 import { TextinputField } from '../TextinputField/TextinputField'
@@ -13,7 +12,6 @@ import { SandboxExample } from './SandboxExample/SandboxExample'
 import { CustomThemeDownloader } from './CustomThemeDownloader/CustomThemeDownloader'
 import { $designTokens } from '../../model/tokens'
 import { $theme } from '../../model/themes'
-import { MappingsType, GlobalsType, ComponentsType } from '../../types'
 
 import './Sandbox.css'
 
@@ -23,7 +21,6 @@ export const Sandbox: React.FC<SandboxProps> = (props) => {
   const {
     preset,
     tokens: { globals, components },
-    mappings,
   } = useStore($theme)
   const designTokens = useStore($designTokens)
   const tabs = ['globals', ...Object.keys(components)]
@@ -103,7 +100,7 @@ export const Sandbox: React.FC<SandboxProps> = (props) => {
         <TabsPanes
           activePane={activeTab1}
           panes={[
-            { id: 'custom', content: <CustomThemeDownloader mappings={mappings} /> },
+            { id: 'custom', content: <CustomThemeDownloader /> },
             { id: 'tokens', content: tokensTab },
           ]}
         />
