@@ -1,0 +1,16 @@
+.Header {
+  width: 52%;
+  background-color: #fff;
+  padding: 10px;
+  position: fixed;
+  z-index: 5;
+  box-sizing: border-box;
+}
+
+.Header-ThemeSelector {
+  margin-right: 10px;
+}
+
+.Header-Share {
+  margin-right: 10px;
+}

@@ -7,7 +7,7 @@ import { Badge } from '@yandex/ui/Badge/desktop'
 import { Popup } from '@yandex/ui/Popup/desktop/bundle'
 
 import { isColor } from '../../utils/isColor'
-import { variablesChanged } from '../Sandbox/Sandbox.model'
+import { variablesChangedEvent } from '../../state/tokens'
 import { IconBack } from '../IconBack/IconBack'
 
 import { metricaGoal } from '../YaMetrika/YaMetrika'
@@ -43,7 +43,7 @@ export const TextinputField: React.FC<{
 
   const onClearClick = useCallback(() => {
     setVal(value)
-    variablesChanged({
+    variablesChangedEvent({
       path,
       name: label,
       value: value,
@@ -65,7 +65,7 @@ export const TextinputField: React.FC<{
       }
 
       setVal(colorValue)
-      variablesChanged({
+      variablesChangedEvent({
         path,
         name: label,
         value: colorValue,
@@ -78,7 +78,7 @@ export const TextinputField: React.FC<{
   const onChange = useCallback(
     (event) => {
       setVal(event.target.value)
-      variablesChanged({
+      variablesChangedEvent({
         path,
         name: label,
         value: event.target.value,
@@ -123,10 +123,16 @@ export const TextinputField: React.FC<{
             metricaGoal('change-tokens')
           }}
           // @ts-ignore
-          iconRight={isChanged && <IconBack onClick={() => {
-            onClearClick()
-            metricaGoal('clear-textinput')
-          }} />}
+          iconRight={
+            isChanged && (
+              <IconBack
+                onClick={() => {
+                  onClearClick()
+                  metricaGoal('clear-textinput')
+                }}
+              />
+            )
+          }
           view="default"
           size="s"
           style={{ width: 200, marginBottom: 8 }}
@@ -139,8 +145,8 @@ export const TextinputField: React.FC<{
             <div
               ref={anchorRef}
               onClick={() => {
-                handleClick();
-                metricaGoal('picker');
+                handleClick()
+                metricaGoal('picker')
               }}
               style={{
                 boxSizing: 'border-box',
@@ -153,7 +159,7 @@ export const TextinputField: React.FC<{
               }}
             />
             <Popup
-              direction='bottom-end'
+              direction="bottom-end"
               target="anchor"
               anchor={anchorRef}
               view="default"
@@ -161,10 +167,13 @@ export const TextinputField: React.FC<{
               scope={scopeRef}
               onClose={handleClose}
             >
-              <ChromePicker color={val} onChangeComplete={(event) => {
-                onColorChange(event)
-                metricaGoal('change-tokens')
-              }} />
+              <ChromePicker
+                color={val}
+                onChangeComplete={(event) => {
+                  onColorChange(event)
+                  metricaGoal('change-tokens')
+                }}
+              />
             </Popup>
           </div>
         )}
