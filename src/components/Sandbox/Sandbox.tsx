@@ -11,8 +11,8 @@ import { metricaGoal } from '../YaMetrika/YaMetrika'
 
 import { SandboxExample } from './SandboxExample/SandboxExample'
 import { CustomThemeDownloader } from './CustomThemeDownloader/CustomThemeDownloader'
-import { $designTokens } from '../../state/tokens'
-import { $theme } from '../../state/themes'
+import { $designTokens } from '../../model/tokens'
+import { $theme } from '../../model/themes'
 import { MappingsType, GlobalsType, ComponentsType } from '../../types'
 
 import './Sandbox.css'

@@ -8,7 +8,7 @@ import 'react-toastify/dist/ReactToastify.min.css'
 import { Header } from './components/Header'
 import { Sandbox } from './components/Sandbox/Sandbox'
 
-import { variablesInitializationEvent } from './state/tokens'
+import { variablesInitializationEvent } from './model/tokens'
 
 import './App.css'
 

@@ -5,7 +5,7 @@ import { TextareaWithAutoResize } from '@yandex/ui/Textarea/desktop/bundle'
 import { Button } from '@yandex/ui/Button/Button.bundle/desktop'
 import { Spacer } from '@yandex/ui/Spacer/desktop'
 
-import { variablesChangedBatchEvent } from '../../../state/tokens'
+import { variablesChangedBatchEvent } from '../../../model/tokens'
 import { downloadTheme } from '../../../api/downloadTheme'
 import { MappingsType, VariablesType } from '../../../types'
 
