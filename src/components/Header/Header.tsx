@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { ChangeEvent } from 'react'
 import { useStore } from 'effector-react'
 import { Select } from '@yandex/ui/Select/desktop/bundle'
 import { ListTile } from '@yandex/ui/ListTile/desktop'

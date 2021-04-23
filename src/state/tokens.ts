@@ -5,7 +5,8 @@ import { toast } from 'react-toastify'
 import { uploadTokens } from '../api/uploadTokens'
 import { downloadTokens } from '../api/downloadTokens'
 import { getQueryParameter, setQueryParameter } from '../utils/queryParameters'
-import { VariablesType } from '../types'
+import { VariablesType, ThemeNames } from '../types'
+import { $themeName, changeThemeEvent } from './themes'
 
 export const variablesInitializationEvent = createEvent()
 export const variablesChangedEvent = createEvent<VariablesType>()
@@ -35,9 +36,22 @@ $designTokens
     }
 
     const init = async () => {
-      const tokens = await downloadTokens(tokensHash)
-      variablesChangedBatchEvent(tokens)
-      updateTokensQueryParameterEvent(tokensHash)
+      try {
+        const response = await downloadTokens(tokensHash)
+
+        if (!response) {
+          throw new Error('No response')
+        }
+
+        const { tokens, theme } = response
+
+        changeThemeEvent(theme as ThemeNames)
+        variablesChangedBatchEvent(tokens)
+        updateTokensQueryParameterEvent(tokensHash)
+        toast.success('Тема успешно загружена')
+      } catch (err) {
+        toast.error('Не удалось загрузить тему, проверьте ссылку')
+      }
     }
 
     init()
@@ -67,7 +81,11 @@ $listDesignTokens.on(uploadTokensEvent, (tokens) => {
   const updateLink = async () => {
     loadingTokensEvent(true)
 
-    const tokensHash = await uploadTokens(tokens, $tokensQueryParameter.getState())
+    const tokensHash = await uploadTokens(
+      $themeName.getState(),
+      tokens,
+      $tokensQueryParameter.getState(),
+    )
     updateTokensQueryParameterEvent(tokensHash)
     copy(window.location.href)
     toast.success('Ссылка успешно скопирована в буфер обмена')

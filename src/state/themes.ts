@@ -12,9 +12,9 @@ import mappingsDataDefault from '../themes/presets/example/mappings.json'
 import mappingsDataInverse from '../themes/presets/example-inverse/mappings.json'
 import mappingsDataBrand from '../themes/presets/example-brand/mappings.json'
 
-import { ThemeType } from '../types'
+import { ThemeType, ThemeNames } from '../types'
 
-export const changeTheme = createEvent<'default' | 'inverse' | 'brand'>()
+export const changeThemeEvent = createEvent<ThemeNames>()
 
 export const $themes = createStore<Record<string, ThemeType>>({
   default: {
@@ -40,6 +40,6 @@ export const $theme = createStore<ThemeType>($themes.getState().default)
 
 export const $themeName = createStore<string>('default')
 
-$theme.on(changeTheme, (_, themeName) => $themes.getState()[themeName])
+$theme.on(changeThemeEvent, (_, themeName) => $themes.getState()[themeName])
 
-$themeName.on(changeTheme, (_, themeName) => themeName)
+$themeName.on(changeThemeEvent, (_, themeName) => themeName)
