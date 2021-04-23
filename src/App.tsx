@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
+import { useGate } from 'effector-react'
 import { configureRootTheme } from '@yandex/ui/Theme'
 import { theme } from '@yandex/ui/Theme/presets/default'
 
@@ -8,16 +9,14 @@ import 'react-toastify/dist/ReactToastify.min.css'
 import { Header } from './components/Header'
 import { Sandbox } from './components/Sandbox/Sandbox'
 
-import { variablesInitializationEvent } from './model/tokens'
+import { variablesInitializationGate } from './model/tokens'
 
 import './App.css'
 
 configureRootTheme({ theme })
 
 export default () => {
-  useEffect(() => {
-    variablesInitializationEvent()
-  }, [])
+  useGate(variablesInitializationGate)
 
   return (
     <div className="Site">

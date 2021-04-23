@@ -9,7 +9,7 @@ import { Share } from './Share'
 
 import { $themes, $themesNames, $themeName, changeThemeEvent } from '../../model/themes'
 
-import { ThemeNames } from '../../types'
+import { ThemeNamesType } from '../../types'
 
 import './Header.css'
 
@@ -24,7 +24,7 @@ export function Header() {
   }))
 
   const handleChange = (event: ChangeEvent<HTMLSelectElement>) =>
-    changeThemeEvent(event.target.value as ThemeNames)
+    changeThemeEvent(event.target.value as ThemeNamesType)
 
   return (
     <div className="Header">
