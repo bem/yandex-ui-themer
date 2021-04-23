@@ -12,7 +12,7 @@
     "@types/react-dom": "16.9.0",
     "@yandex/themekit": "1.6.2",
     "@yandex/ui": "3.10.8",
-    "copy-to-clipboard": "^3.3.1",
+    "copy-to-clipboard": "3.3.1",
     "deepmerge": "4.2.2",
     "effector": "21.6.0",
     "effector-react": "21.0.8",

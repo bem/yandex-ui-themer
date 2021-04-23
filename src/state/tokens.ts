@@ -4,13 +4,19 @@ import { toast } from 'react-toastify'
 
 import { uploadTokens } from '../api/uploadTokens'
 import { downloadTokens } from '../api/downloadTokens'
-import { getQueryParameter, setQueryParameter } from '../utils/queryParameters'
+import {
+  getQueryParameter,
+  setQueryParameter,
+  deleteQueryParameter,
+} from '../utils/queryParameters'
 import { VariablesType, ThemeNames } from '../types'
 import { $themeName, changeThemeEvent } from './themes'
 
 export const variablesInitializationEvent = createEvent()
 export const variablesChangedEvent = createEvent<VariablesType>()
 export const variablesChangedBatchEvent = createEvent<VariablesType[]>()
+
+export const resetEvent = createEvent()
 
 export const updateTokensQueryParameterEvent = createEvent<string>()
 
@@ -62,6 +68,7 @@ $designTokens
     tokens.forEach((v) => (ret[v.name] = v))
     return { ...state, ...ret }
   })
+  .on(resetEvent, () => ({}))
 
 // TODO: Удалять значение из стора если change=false.
 $cssVariables
@@ -71,6 +78,7 @@ $cssVariables
     tokens.forEach((v) => (ret[`--${v.name}`] = v.value))
     return { ...state, ...ret }
   })
+  .on(resetEvent, () => ({}))
 
 // При обновлении токенов сохранить их в Cloud и удалить предыдущий файл из Cloud
 $listDesignTokens.on(uploadTokensEvent, (tokens) => {
@@ -98,11 +106,16 @@ $listDesignTokens.on(uploadTokensEvent, (tokens) => {
 
 $loadingTokens.on(loadingTokensEvent, (_, payload) => payload)
 
-$tokensQueryParameter.on(updateTokensQueryParameterEvent, (state, tokens) => {
-  if (getQueryParameter('tokens') === tokens) {
-    return state
-  }
+$tokensQueryParameter
+  .on(updateTokensQueryParameterEvent, (state, tokens) => {
+    if (getQueryParameter('tokens') === tokens) {
+      return state
+    }
 
-  setQueryParameter('tokens', tokens)
-  return tokens
-})
+    setQueryParameter('tokens', tokens)
+    return tokens
+  })
+  .on(resetEvent, () => {
+    deleteQueryParameter('tokens')
+    return ''
+  })
