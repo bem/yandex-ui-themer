@@ -1,12 +1,9 @@
 import React, { useState, FC } from 'react'
 import { useStore } from 'effector-react'
-import { toast } from 'react-toastify'
 
 import { TextareaWithAutoResize } from '@yandex/ui/Textarea/desktop/bundle'
 import { Button } from '@yandex/ui/Button/Button.bundle/desktop'
 import { Spacer } from '@yandex/ui/Spacer/desktop'
-
-import { MappingsType } from '../../../types'
 
 import { uploadRawTokensEvent, uploadRawTokensLoading } from './model'
 
@@ -41,8 +38,6 @@ export const CustomThemeDownloader: FC = () => {
       Токены:
       <Spacer all={10} />
       <TextareaWithAutoResize
-        // state={error ? 'error' : undefined}
-        // hint={error}
         view="default"
         size="m"
         value={value}

@@ -31,6 +31,7 @@ export const SandboxExample: FC<any> = ({ includes, theme }) => {
     if (activeTab === 'css') {
       createCSS()
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activeTab, designTokens])
 
   const createCSS = () => {
