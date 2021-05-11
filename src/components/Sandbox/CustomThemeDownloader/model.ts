@@ -20,12 +20,12 @@ export const uploadRawTokensFx = attach({
       content,
       theme,
     } as UploadRawTokensFxPropsType),
-  effect: createEffect(async ({ content, theme }: UploadRawTokensFxPropsType) => {
-    return await downloadTheme(content, theme.mappings)
+  effect: createEffect(({ content, theme }: UploadRawTokensFxPropsType) => {
+    return downloadTheme(content, theme.mappings)
   }),
 })
 
-export const uploadRawTokensLoading = uploadRawTokensFx.pending
+export const $uploadRawTokensLoading = uploadRawTokensFx.pending
 
 uploadRawTokensFx.doneData.watch((tokens) => {
   variablesChangedBatchEvent(tokens)

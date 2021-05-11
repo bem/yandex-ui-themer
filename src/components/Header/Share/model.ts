@@ -14,28 +14,27 @@ type ShareTokensFxPropsType = {
   tokens: VariablesType[]
 }
 
-export const shareTokensEvent = createEvent<string>()
+export const shareTokensEvent = createEvent()
 
 export const shareTokensFx = attach({
   source: {
     themeName: $themeName,
     tokens: $listDesignTokens,
   },
-  mapParams: (_: any, { themeName, tokens }) =>
-    ({
-      themeName,
-      tokens,
-    } as ShareTokensFxPropsType),
-  effect: createEffect(async ({ themeName, tokens }: ShareTokensFxPropsType) => {
+  mapParams: (_: any, { themeName, tokens }) => ({
+    themeName,
+    tokens,
+  }),
+  effect: createEffect(({ themeName, tokens }: ShareTokensFxPropsType) => {
     if (tokens.length === 0) {
       return
     }
 
-    return await uploadTokens(themeName, tokens)
+    return uploadTokens(themeName, tokens)
   }),
 })
 
-export const shareTokensLoading = shareTokensFx.pending
+export const $shareTokensLoading = shareTokensFx.pending
 
 shareTokensFx.doneData.watch((tokensHash) => {
   updateTokensQueryParameterEvent(tokensHash)
