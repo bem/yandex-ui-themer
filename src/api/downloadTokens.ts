@@ -12,6 +12,11 @@ export const downloadTokens = async (tokensHash: string | null) => {
     }),
   })
 
-  const rawData = await response.json()
-  return JSON.parse(rawData) as { tokens: VariablesType[]; theme: string }
+  const json = await response.json()
+
+  if (!response.ok) {
+    throw new Error(json.errorMessage)
+  }
+
+  return JSON.parse(json) as { tokens: VariablesType[]; theme: string }
 }

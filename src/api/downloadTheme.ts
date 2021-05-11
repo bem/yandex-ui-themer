@@ -35,7 +35,7 @@ export const downloadTheme = async (content: any, mappings: MappingsType) => {
 
   const json = await response.json()
 
-  if (json.error) {
+  if (!response.ok) {
     throw new Error(json.error)
   }
 
