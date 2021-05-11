@@ -1,13 +1,11 @@
-import { createStore, createEvent, createEffect, forward, attach, Store } from 'effector'
+import { createStore, createEvent, createEffect, forward, Store } from 'effector'
 import { createGate } from 'effector-react'
-import copy from 'copy-to-clipboard'
 import { toast } from 'react-toastify'
 
-import { uploadTokens } from '../api/uploadTokens'
 import { downloadTokens } from '../api/downloadTokens'
 import { getQueryParameter } from '../utils/queryParameters'
-import { $themeName, changeThemeEvent } from './themes'
-import { $tokensQueryParameter, updateTokensQueryParameterEvent } from './query'
+import { changeThemeEvent } from './themes'
+import { updateTokensQueryParameterEvent } from './query'
 import { VariablesType, ThemeNamesType } from '../types'
 
 export const variablesInitializationEvent = createEvent()
