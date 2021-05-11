@@ -71,6 +71,8 @@ $cssVariables
   })
   .reset(variablesResetEvent)
 
+variablesResetEvent.watch(() => updateTokensQueryParameterEvent())
+
 forward({
   from: variablesInitializationGate.open,
   to: variablesInitializationFx,

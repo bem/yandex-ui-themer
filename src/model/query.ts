@@ -2,7 +2,7 @@ import { setQueryParameter, deleteQueryParameter } from '../utils/queryParameter
 
 export const TOKENS_QUERY_PARAMETER = 'tokens'
 
-export const updateTokensQueryParameterEvent = (tokens: string) => {
+export const updateTokensQueryParameterEvent = (tokens?: string) => {
   if (!tokens) {
     deleteQueryParameter(TOKENS_QUERY_PARAMETER)
     return

@@ -35,8 +35,13 @@ export const shareTokensFx = attach({
 })
 
 export const $shareTokensLoading = shareTokensFx.pending
+export const $shareTokensDisabled = $listDesignTokens.map((tokens) => tokens.length === 0)
 
 shareTokensFx.doneData.watch((tokensHash) => {
+  if (!tokensHash) {
+    return
+  }
+
   updateTokensQueryParameterEvent(tokensHash)
   copy(window.location.href)
   toast.success('Ссылка успешно скопирована в буфер обмена')
