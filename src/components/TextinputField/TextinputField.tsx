@@ -7,7 +7,7 @@ import { Badge } from '@yandex/ui/Badge/desktop'
 import { Popup } from '@yandex/ui/Popup/desktop/bundle'
 
 import { isColor } from '../../utils/isColor'
-import { variablesChangedEvent } from '../../state/tokens'
+import { variablesChangedEvent } from '../../model/tokens'
 import { IconBack } from '../IconBack/IconBack'
 
 import { metricaGoal } from '../YaMetrika/YaMetrika'

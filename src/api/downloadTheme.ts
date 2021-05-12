@@ -1,4 +1,4 @@
-import { MappingsType, VariablesType } from '../types'
+import { MappingsType } from '../types'
 
 export const themeboxConfig = {
   output: {
@@ -15,12 +15,7 @@ export const themeboxConfig = {
   },
 }
 
-export const downloadTheme = (
-  content: any,
-  mappings?: MappingsType,
-  onError?: (err: string) => void,
-  onSuccess?: (tokens: VariablesType[]) => void,
-) => {
+export const downloadTheme = async (content: any, mappings: MappingsType) => {
   const body = JSON.stringify({
     config: themeboxConfig,
     tokens: {
@@ -30,28 +25,27 @@ export const downloadTheme = (
     mappings,
   })
 
-  fetch('https://themebox.now.sh', {
+  const response = await fetch('https://themebox.now.sh', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
     body,
   })
-    .then((response) => response.json())
-    .then((response) => {
-      if (response.error) {
-        onError?.(response.error)
-        return
-      }
 
-      const res = JSON.parse(response.data[0].content)
-      const tokens = Object.entries(res).map(([_, item]: any) => ({
-        path: item.path,
-        name: item.name,
-        value: item.value,
-        changed: true,
-      }))
+  const json = await response.json()
 
-      onSuccess?.(tokens)
-    })
+  if (!response.ok) {
+    throw new Error(json.error)
+  }
+
+  const res = JSON.parse(json.data[0].content)
+  const tokens = Object.entries(res).map(([_, item]: any) => ({
+    path: item.path,
+    name: item.name,
+    value: item.value,
+    changed: true,
+  }))
+
+  return tokens
 }

@@ -65,4 +65,4 @@ export type VariablesType = {
 
 export type TokensHashType = string
 
-export type ThemeNames = 'default' | 'inverse' | 'brand'
+export type ThemeNamesType = 'default' | 'inverse' | 'brand'
