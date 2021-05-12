@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import { Tumbler } from '@yandex/ui/Tumbler/desktop/bundle';
+import React, { useState } from 'react'
+import { Tumbler } from '@yandex/ui/Tumbler/desktop/bundle'
 
-import { Headline } from '../../Headline/Headline';
+import { Headline } from '../../Headline'
 
 export const TumblerShowcase = () => {
   const [checked1, setChecked1] = useState(true)

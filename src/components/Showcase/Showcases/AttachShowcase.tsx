@@ -1,7 +1,7 @@
-import React from 'react';
-import { Attach } from '@yandex/ui/Attach/desktop/bundle';
+import React from 'react'
+import { Attach } from '@yandex/ui/Attach/desktop/bundle'
 
-import { Headline } from '../../Headline/Headline';
+import { Headline } from '../../Headline'
 
 export const AttachShowcase = () => {
   return (

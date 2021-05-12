@@ -1,7 +1,7 @@
-import React from 'react';
-import { UserPic } from '@yandex/ui/UserPic/desktop/bundle';
+import React from 'react'
+import { UserPic } from '@yandex/ui/UserPic/desktop/bundle'
 
-import { Headline } from '../../Headline/Headline';
+import { Headline } from '../../Headline'
 
 export const UserPicShowcase = () => {
   return (

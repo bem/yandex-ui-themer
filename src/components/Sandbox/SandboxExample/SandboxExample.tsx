@@ -8,8 +8,8 @@ import { TabsMenu } from '@yandex/ui/TabsMenu/TabsMenu.bundle/desktop'
 import { Tumbler } from '@yandex/ui/Tumbler/Tumbler.bundle/desktop'
 
 import { toDeepToken } from '../../../utils/toDeepToken'
-import { Showcase } from '../../Showcase/Showcase'
-import { metricaGoal } from '../../YaMetrika/YaMetrika'
+import { Showcase } from '../../Showcase'
+import { metricaGoal } from '../../YaMetrika'
 
 import { $cssVariables, $designTokens } from '../../../model/tokens'
 
@@ -24,6 +24,32 @@ export const SandboxExample: FC<any> = ({ includes, theme }) => {
   const [shownDiff, setDiff] = useState(true)
 
   useEffect(() => {
+    const createCSS = () => {
+      const a = Object.keys(cssVariables).reduce((acc: string, v: string) => {
+        if (designTokens[v.replace('--', '')].changed) {
+          acc += `  ${v}: ${cssVariables[v]};\n`
+        }
+        return acc
+      }, '')
+      const r = `:root {\n${a}}`
+
+      setCss(r)
+    }
+
+    const createYaml = () => {
+      const yml = Object.entries(designTokens).reduce((acc, value: any) => {
+        if (value[1].changed) {
+          acc.push(toDeepToken(value[1].path, { value: value[1].value }))
+        }
+        return acc
+      }, [] as any)
+
+      const c = deepmerge.all(yml)
+      const text = YAML.stringify(c)
+
+      setYml(text)
+    }
+
     if (activeTab === 'yml') {
       createYaml()
     }
@@ -31,34 +57,7 @@ export const SandboxExample: FC<any> = ({ includes, theme }) => {
     if (activeTab === 'css') {
       createCSS()
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [activeTab, designTokens])
-
-  const createCSS = () => {
-    const a = Object.keys(cssVariables).reduce((acc: string, v: string) => {
-      if (designTokens[v.replace('--', '')].changed) {
-        acc += `  ${v}: ${cssVariables[v]};\n`
-      }
-      return acc
-    }, '')
-    const r = `:root {\n${a}}`
-
-    setCss(r)
-  }
-
-  const createYaml = () => {
-    const yml = Object.entries(designTokens).reduce((acc, value: any) => {
-      if (value[1].changed) {
-        acc.push(toDeepToken(value[1].path, { value: value[1].value }))
-      }
-      return acc
-    }, [] as any)
-
-    const c = deepmerge.all(yml)
-    const text = YAML.stringify(c)
-
-    setYml(text)
-  }
+  }, [activeTab, designTokens, cssVariables])
 
   return (
     <div className="Sandbox-Examples">

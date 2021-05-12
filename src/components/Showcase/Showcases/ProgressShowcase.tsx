@@ -1,7 +1,7 @@
-import React from 'react';
-import { Progress } from '@yandex/ui/Progress/desktop/bundle';
+import React from 'react'
+import { Progress } from '@yandex/ui/Progress/desktop/bundle'
 
-import { Headline } from '../../Headline/Headline';
+import { Headline } from '../../Headline'
 
 export const ProgressShowcase = () => {
   return (

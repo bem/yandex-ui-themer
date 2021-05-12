@@ -1,7 +1,7 @@
-import React from 'react';
-import { Text } from '@yandex/ui/Text/desktop/bundle';
+import React from 'react'
+import { Text } from '@yandex/ui/Text/desktop/bundle'
 
-import { Headline } from '../../Headline/Headline';
+import { Headline } from '../../Headline'
 
 export const TextShowcase = () => {
   return (

@@ -1,14 +1,14 @@
-import React from 'react';
-import { Button as ButtonBase } from '@yandex/ui/Button';
-import { Textinput as TextinputBase, withHasClear } from '@yandex/ui/Textinput/desktop';
-import { Header, HeaderSearch, HeaderNav, HeaderNavItem } from '@yandex/ui/Header/desktop';
-import { withViewSearchArrow as withViewSearchArrowButton } from '@yandex/ui/Header/Button';
-import { withViewSearchArrow as withViewSearchArrowTextinput } from '@yandex/ui/Header/Textinput';
+import React from 'react'
+import { Button as ButtonBase } from '@yandex/ui/Button'
+import { Textinput as TextinputBase, withHasClear } from '@yandex/ui/Textinput/desktop'
+import { Header, HeaderSearch, HeaderNav, HeaderNavItem } from '@yandex/ui/Header/desktop'
+import { withViewSearchArrow as withViewSearchArrowButton } from '@yandex/ui/Header/Button'
+import { withViewSearchArrow as withViewSearchArrowTextinput } from '@yandex/ui/Header/Textinput'
 
-import { Headline } from '../../Headline/Headline';
+import { Headline } from '../../Headline'
 
-const SearchButton = withViewSearchArrowButton(ButtonBase);
-const SearchInput = withHasClear(withViewSearchArrowTextinput(TextinputBase));
+const SearchButton = withViewSearchArrowButton(ButtonBase)
+const SearchInput = withHasClear(withViewSearchArrowTextinput(TextinputBase))
 
 export const HeaderShowcase = () => {
   return (
@@ -28,11 +28,14 @@ export const HeaderShowcase = () => {
               <HeaderNavItem href="/"> Таб </HeaderNavItem>
               <HeaderNavItem href="/"> По </HeaderNavItem>
               <HeaderNavItem href="/"> Умолчанию </HeaderNavItem>
-              <HeaderNavItem href="/" active> Активный </HeaderNavItem>
+              <HeaderNavItem href="/" active>
+                {' '}
+                Активный{' '}
+              </HeaderNavItem>
             </HeaderNav>
           </HeaderSearch>
         </Header>
       </div>
     </>
-  );
+  )
 }

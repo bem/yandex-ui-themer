@@ -1,7 +1,7 @@
-import React from 'react';
-import { Spin } from '@yandex/ui/Spin/desktop/bundle';
+import React from 'react'
+import { Spin } from '@yandex/ui/Spin/desktop/bundle'
 
-import { Headline } from '../../Headline/Headline';
+import { Headline } from '../../Headline'
 
 export const SpinShowcase = () => {
   return (

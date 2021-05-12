@@ -1,9 +1,9 @@
-import React from 'react';
-import { Button } from '@yandex/ui/Button/Button.bundle/desktop';
-import { Icon } from '@yandex/ui/Icon/Icon.bundle/desktop';
-import { Text } from '@yandex/ui/Text/Text.bundle/desktop';
+import React from 'react'
+import { Button } from '@yandex/ui/Button/Button.bundle/desktop'
+import { Icon } from '@yandex/ui/Icon/Icon.bundle/desktop'
+import { Text } from '@yandex/ui/Text/Text.bundle/desktop'
 
-import { Headline } from '../../Headline/Headline';
+import { Headline } from '../../Headline'
 
 export const ButtonShowcase = () => {
   const view = ['default', 'action', 'pseudo', 'link', 'clear', 'raised']
