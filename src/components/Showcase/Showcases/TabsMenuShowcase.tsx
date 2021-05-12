@@ -1,7 +1,7 @@
-import React from 'react';
-import { TabsMenu } from '@yandex/ui/TabsMenu/desktop/bundle';
+import React from 'react'
+import { TabsMenu } from '@yandex/ui/TabsMenu/desktop/bundle'
 
-import { Headline } from '../../Headline/Headline';
+import { Headline } from '../../Headline'
 
 export const TabsMenuShowcase = () => {
   return (

@@ -1,8 +1,8 @@
-import React from 'react';
-import { MessageBox } from '@yandex/ui/MessageBox/desktop/bundle';
-import { Button } from '@yandex/ui/Button/desktop/bundle';
+import React from 'react'
+import { MessageBox } from '@yandex/ui/MessageBox/desktop/bundle'
+import { Button } from '@yandex/ui/Button/desktop/bundle'
 
-import { Headline } from '../../Headline/Headline';
+import { Headline } from '../../Headline'
 
 export const MessageBoxShowcase = () => {
   return (

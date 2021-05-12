@@ -1,16 +1,20 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react'
-import { ChromePicker } from 'react-color'
 import { Textinput } from '@yandex/ui/Textinput/desktop/bundle'
 import { ListTile } from '@yandex/ui/ListTile/desktop'
 import { Text } from '@yandex/ui/Text/bundle'
-import { Badge } from '@yandex/ui/Badge/desktop'
-import { Popup } from '@yandex/ui/Popup/desktop/bundle'
+import { cn } from '@bem-react/classname'
 
 import { isColor } from '../../utils/isColor'
 import { variablesChangedEvent } from '../../model/tokens'
-import { IconBack } from '../IconBack/IconBack'
+import { IconBack } from '../IconBack'
+import { ColorPicker } from './ColorPicker'
+import { Description } from './Description'
 
-import { metricaGoal } from '../YaMetrika/YaMetrika'
+import { metricaGoal } from '../YaMetrika'
+
+import './TextinputField.css'
+
+export const cnTextinputField = cn('TextinputField')
 
 export const TextinputField: React.FC<{
   label: string
@@ -21,10 +25,6 @@ export const TextinputField: React.FC<{
 }> = ({ label, value, path, description, customTokens }) => {
   const [val, setVal] = useState(customTokens)
 
-  const [visible, setVisible] = useState(false)
-  const scopeRef = useRef<HTMLDivElement>(null)
-  const anchorRef = useRef<HTMLDivElement>(null)
-
   const isColorValue = isColor(value)
   const isChanged = value !== val
 
@@ -33,15 +33,7 @@ export const TextinputField: React.FC<{
     setVal(customTokens || value)
   }, [value, customTokens])
 
-  const handleClick = useCallback(() => {
-    setVisible(!visible)
-  }, [visible])
-
-  const handleClose = useCallback(() => {
-    setVisible(false)
-  }, [])
-
-  const onClearClick = useCallback(() => {
+  const handleClearClick = useCallback(() => {
     setVal(value)
     variablesChangedEvent({
       path,
@@ -49,9 +41,10 @@ export const TextinputField: React.FC<{
       value: value,
       changed: false,
     })
+    metricaGoal('clear-textinput')
   }, [value, label, path])
 
-  const onColorChange = useCallback(
+  const handleColorChange = useCallback(
     (color) => {
       let colorValue = ''
 
@@ -75,7 +68,7 @@ export const TextinputField: React.FC<{
     [path, value, label],
   )
 
-  const onChange = useCallback(
+  const handleChange = useCallback(
     (event) => {
       setVal(event.target.value)
       variablesChangedEvent({
@@ -84,6 +77,7 @@ export const TextinputField: React.FC<{
         value: event.target.value,
         changed: event.target.value !== value,
       })
+      metricaGoal('change-tokens')
     },
     [path, value, label],
   )
@@ -94,89 +88,26 @@ export const TextinputField: React.FC<{
       rightSpace="m"
       alignItems="center"
       leading={
-        <div style={{ width: 300, display: 'inline-block' }}>
+        <div className={cnTextinputField('Label')}>
           <Text typography="control-m" color="secondary">
             {label}:{' '}
           </Text>
-          {description && (
-            <div className="Description-Wrapper">
-              <Badge
-                style={{ fontSize: '11px' }}
-                className="Description-Trigger"
-                content="?"
-                textColor="#fff"
-                color="#535353"
-              />
-              <span className="Description-Popover" style={{ fontSize: 14 }}>
-                {description}
-              </span>
-            </div>
-          )}
+          {description && <Description description={description} />}
         </div>
       }
     >
-      <div style={{ display: 'flex' }}>
+      <div className={cnTextinputField('Control')}>
         <Textinput
           debounceTimeout={500}
-          onChange={(event) => {
-            onChange(event)
-            metricaGoal('change-tokens')
-          }}
-          // @ts-ignore
-          iconRight={
-            isChanged && (
-              <IconBack
-                onClick={() => {
-                  onClearClick()
-                  metricaGoal('clear-textinput')
-                }}
-              />
-            )
-          }
+          onChange={handleChange}
+          iconRight={isChanged ? <IconBack onClick={handleClearClick} /> : <></>}
           view="default"
           size="s"
-          style={{ width: 200, marginBottom: 8 }}
           value={val}
-          // @ts-ignore
-          hint={isChanged && `Оригинальное значение - ${value}`}
+          hint={isChanged ? `Оригинальное значение - ${value}` : ''}
+          className={cnTextinputField('Input')}
         />
-        {isColorValue && (
-          <div style={{ position: 'relative' }} ref={scopeRef}>
-            <div
-              ref={anchorRef}
-              onClick={() => {
-                handleClick()
-                metricaGoal('picker')
-              }}
-              style={{
-                boxSizing: 'border-box',
-                background: val,
-                width: 32,
-                height: 32,
-                marginLeft: 8,
-                borderRadius: '50%',
-                border: '1px solid #d9d9d9',
-              }}
-            />
-            <Popup
-              direction="bottom-end"
-              target="anchor"
-              anchor={anchorRef}
-              view="default"
-              visible={visible}
-              scope={scopeRef}
-              onClose={handleClose}
-            >
-              <ChromePicker
-                color={val}
-                onChangeComplete={(event) => {
-                  onColorChange(event)
-                  metricaGoal('change-tokens')
-                }}
-              />
-            </Popup>
-          </div>
-        )}
+        {isColorValue && <ColorPicker color={val} onColorChange={handleColorChange} />}
       </div>
     </ListTile>
   )

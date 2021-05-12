@@ -5,11 +5,11 @@ import { TabsMenu } from '@yandex/ui/TabsMenu/TabsMenu.bundle/desktop'
 import { TabsPanes } from '@yandex/ui/TabsPanes/TabsPanes.bundle/desktop'
 import { useStore } from 'effector-react'
 
-import { TextinputField } from '../TextinputField/TextinputField'
-import { metricaGoal } from '../YaMetrika/YaMetrika'
+import { TextinputField } from '../TextinputField'
+import { metricaGoal } from '../YaMetrika'
 
-import { SandboxExample } from './SandboxExample/SandboxExample'
-import { CustomThemeDownloader } from './CustomThemeDownloader/CustomThemeDownloader'
+import { SandboxExample } from './SandboxExample'
+import { CustomThemeDownloader } from './CustomThemeDownloader'
 import { $designTokens } from '../../model/tokens'
 import { $theme } from '../../model/themes'
 

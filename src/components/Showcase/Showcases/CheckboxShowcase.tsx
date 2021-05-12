@@ -1,7 +1,7 @@
-import React from 'react';
-import { Checkbox } from '@yandex/ui/Checkbox/desktop/bundle';
+import React from 'react'
+import { Checkbox } from '@yandex/ui/Checkbox/desktop/bundle'
 
-import { Headline } from '../../Headline/Headline';
+import { Headline } from '../../Headline'
 
 export const CheckboxShowcase = () => {
   return (

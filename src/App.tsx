@@ -7,7 +7,7 @@ import { ToastContainer, Slide } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.min.css'
 
 import { Header } from './components/Header'
-import { Sandbox } from './components/Sandbox/Sandbox'
+import { Sandbox } from './components/Sandbox'
 
 import { variablesInitializationGate } from './model/tokens'
 

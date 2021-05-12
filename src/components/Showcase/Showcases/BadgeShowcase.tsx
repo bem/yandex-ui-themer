@@ -1,8 +1,8 @@
-import React from 'react';
-import { Badge } from '@yandex/ui/Badge';
-import { Button } from '@yandex/ui/Button/Button.bundle/desktop';
+import React from 'react'
+import { Badge } from '@yandex/ui/Badge'
+import { Button } from '@yandex/ui/Button/Button.bundle/desktop'
 
-import { Headline } from '../../Headline/Headline';
+import { Headline } from '../../Headline'
 
 const IconTwo = () => (
   <svg fill="#000000" xmlns="http://www.w3.org/2000/svg" width="20" height="20">
