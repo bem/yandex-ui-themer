@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback, useRef } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 import { Textinput } from '@yandex/ui/Textinput/desktop/bundle'
 import { ListTile } from '@yandex/ui/ListTile/desktop'
 import { Text } from '@yandex/ui/Text/bundle'
