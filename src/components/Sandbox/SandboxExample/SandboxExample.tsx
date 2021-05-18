@@ -8,7 +8,7 @@ import { Tumbler } from '@yandex/ui/Tumbler/Tumbler.bundle/desktop'
 import { Showcase } from '../../Showcase'
 import { metricaGoal } from '../../YaMetrika'
 
-import { $cssVariables } from '../../../model/tokens'
+import { $cssVariables } from '../../../model/cssVariables'
 import { $cssText, $yamlText } from './model'
 
 const JSX = 'JSX'
@@ -20,7 +20,7 @@ const tabsNames = [JSX, YAML, CSS]
 export const SandboxExample: FC<any> = ({ includes, theme }) => {
   const [activeTab, setActiveTab] = useState(JSX)
 
-  const cssVariables: Record<string, any> = useStore($cssVariables)
+  const cssVariables: Record<string, string> = useStore($cssVariables)
   const cssText = useStore($cssText)
   const yamlText = useStore($yamlText)
   const [shownDiff, setDiff] = useState(true)

@@ -11,6 +11,7 @@ export const themeboxConfig = {
           format: 'json/extended',
         },
       ],
+      actions: ['process-color'],
     },
   },
 }
@@ -25,7 +26,7 @@ export const downloadTheme = async (content: any, mappings: MappingsType) => {
     mappings,
   })
 
-  const response = await fetch('https://themebox.now.sh', {
+  const response = await fetch('https://themebox-d0tybigzs-yarastqt.vercel.app/', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

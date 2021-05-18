@@ -12,7 +12,12 @@ import mappingsDataDefault from '../themes/presets/example/mappings.json'
 import mappingsDataInverse from '../themes/presets/example-inverse/mappings.json'
 import mappingsDataBrand from '../themes/presets/example-brand/mappings.json'
 
-import { ThemeType, ThemeNamesType } from '../types'
+import { ThemeType, ThemeNamesType, TokensType } from '../types'
+
+const themeToAllTokens = (theme: TokensType) => ({
+  ...theme.globals,
+  ...Object.values(theme.components).reduce((acc, val) => ({ ...acc, ...val })),
+})
 
 export const changeThemeEvent = createEvent<ThemeNamesType>()
 
@@ -21,16 +26,19 @@ export const $themes = createStore<Record<string, ThemeType>>({
     tokens: stylesDataDefault,
     mappings: mappingsDataDefault,
     preset: themeDefault,
+    allTokens: themeToAllTokens(stylesDataDefault),
   },
   inverse: {
     tokens: stylesDataInverse,
     mappings: mappingsDataInverse,
     preset: themeInverse,
+    allTokens: themeToAllTokens(stylesDataInverse),
   },
   brand: {
     tokens: stylesDataBrand,
     mappings: mappingsDataBrand,
     preset: themeBrand,
+    allTokens: themeToAllTokens(stylesDataBrand),
   },
 })
 

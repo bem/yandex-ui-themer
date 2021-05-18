@@ -2,7 +2,8 @@ import { combine } from 'effector'
 import deepmerge from 'deepmerge'
 import YAML from 'yaml'
 
-import { $designTokens, $cssVariables } from '../../../model/tokens'
+import { $designTokens } from '../../../model/tokens'
+import { $cssVariables } from '../../../model/cssVariables'
 import { toDeepToken } from '../../../utils/toDeepToken'
 
 export const $cssText = combine(
