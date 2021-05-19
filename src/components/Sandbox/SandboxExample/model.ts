@@ -21,9 +21,9 @@ export const $cssText = combine(
 )
 
 export const $yamlText = combine({ designTokens: $designTokens }, ({ designTokens }) => {
-  const yml = Object.entries(designTokens).reduce((acc, value: any) => {
-    if (value[1].changed) {
-      acc.push(toDeepToken(value[1].path, { value: value[1].value }))
+  const yml = Object.entries(designTokens).reduce((acc, [_, { changed, path, value }]: any) => {
+    if (changed) {
+      acc.push(toDeepToken(path, { value: value.toString() }))
     }
     return acc
   }, [] as any)

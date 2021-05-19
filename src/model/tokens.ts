@@ -7,6 +7,7 @@ import { getQueryParameter } from '../utils/queryParameters'
 import { changeThemeEvent } from './themes'
 import { updateTokensQueryParameterEvent } from './query'
 import { VariablesType, ThemeNamesType, DesignTokensType, ListDesignTokensType } from '../types'
+import { transformTokens } from '../utils/transformers'
 
 export const variablesInitializationEvent = createEvent()
 export const variablesChangedEvent = createEvent<VariablesType>()
@@ -22,6 +23,26 @@ export const $designTokens = createStore<DesignTokensType>({})
 export const $listDesignTokens = $designTokens.map<ListDesignTokensType>((tokens) =>
   Object.values(tokens).map((token) => ({ ...token })),
 )
+
+/**
+ * Object for design tokens mappings storing
+ *
+ * @example
+ *
+ * {
+ *  'button-view-action-fill-color-base': 'button.viewAction.fillColor.base.value',
+ *  'button.viewAction.fillColor.base.value': 'button-view-action-fill-color-base'
+ * }
+ */
+export const $designTokensNamesMap = $designTokens.map((tokens) =>
+  Object.entries(tokens).reduce((acc, [name, { path }]) => {
+    const mappedName = [...path, 'value'].join('.')
+    return { ...acc, [name]: mappedName, [mappedName]: name }
+  }, {}),
+)
+
+export const $mappedDesignTokens = $designTokens.map(transformTokens)
+$mappedDesignTokens.watch((tokens) => console.log(tokens))
 
 export const variablesInitializationGate = createGate()
 
