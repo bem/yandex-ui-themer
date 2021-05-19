@@ -1,31 +1,58 @@
-import { attach, createEffect, createEvent, forward } from 'effector'
+import { attach, createStore, createEffect, createEvent, forward } from 'effector'
 import { toast } from 'react-toastify'
 
 import { $theme } from '../../../model/themes'
 import { variablesChangedBatchEvent } from '../../../model/tokens'
 import { downloadTheme } from '../../../api/downloadTheme'
 import { ThemeType } from '../../../types'
+import { toDotSeparatedString } from '../../../utils/transformers'
+import { PARAM_RE, BRACES_REMOVAL_RE } from '../../../utils/regex'
 
 type UploadRawTokensFxPropsType = {
-  content: string
   theme: ThemeType
+  tokens: string
 }
 
-export const uploadRawTokensEvent = createEvent<string>()
+export const uploadRawTokensEvent = createEvent()
+
+export const $tokensText = createStore<string>(`button:
+  viewAction:
+    fillColor:
+      base:
+        value: "#C728B3"
+      progress:
+        base:
+          value: "#C728B3"
+        process:
+          value: "#de1258"
+  viewDefault:
+    fillColor:
+      base:
+        value: "#ecb6ea"
+`)
+
+export const $dotSeparatedTokensText = $tokensText.map(toDotSeparatedString)
 
 export const uploadRawTokensFx = attach({
-  source: $theme,
-  mapParams: (content, theme) =>
+  source: {
+    theme: $theme,
+    tokens: $dotSeparatedTokensText,
+  },
+  mapParams: (_, { theme, tokens }) =>
     ({
-      content,
       theme,
+      tokens,
     } as UploadRawTokensFxPropsType),
-  effect: createEffect(({ content, theme }: UploadRawTokensFxPropsType) => {
-    return downloadTheme(content, theme.mappings)
+  effect: createEffect(({ tokens, theme: { mappings } }: UploadRawTokensFxPropsType) => {
+    return downloadTheme(tokens, mappings)
   }),
 })
 
 export const $uploadRawTokensLoading = uploadRawTokensFx.pending
+
+export const updateTokensEvent = createEvent<string>()
+
+$tokensText.on(updateTokensEvent, (_, payload) => payload)
 
 uploadRawTokensFx.doneData.watch((tokens) => {
   variablesChangedBatchEvent(tokens)

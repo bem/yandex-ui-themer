@@ -1,12 +1,11 @@
 import { ThemeType, DesignTokensType } from '../types'
 
+import { PARAM_RE, BRACES_REMOVAL_RE } from './regex'
+
 type ParamsType = {
   template: string
   token: string
 }
-
-const PARAM_RE = /({([a-zA-Z-.]+)})/g
-const TO_REMOVE_RE = /[{}]/g
 
 /**
  * Get parameters from string.
@@ -27,7 +26,7 @@ const extractParams = (value: string): ParamsType[] | undefined => {
   }
 
   return params.reduce<ParamsType[]>(
-    (acc, el) => [...acc, { template: el, token: el.replace(TO_REMOVE_RE, '') }],
+    (acc, el) => [...acc, { template: el, token: el.replace(BRACES_REMOVAL_RE, '') }],
     [],
   )
 }
