@@ -72,3 +72,8 @@ export type ThemeNamesType = 'default' | 'inverse' | 'brand'
 
 export type DesignTokensType = Record<string, VariablesType>
 export type ListDesignTokensType = VariablesType[]
+
+export type ParamsType = {
+  template: string
+  token: string
+}

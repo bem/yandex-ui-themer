@@ -1,7 +1,7 @@
 import cssColorFn from 'css-color-function'
 
-import { DesignTokensType } from '../types'
-import { COLOR_RE, PARAM_RE, BRACES_REMOVAL_RE } from './regex'
+import { COLOR_RE } from './constants'
+import { extractParams } from './resolveTokens'
 
 export type TokensType = Record<string, string>
 
@@ -15,31 +15,15 @@ export function transformColors(tokens: TokensType) {
   )
 }
 
-export const toDotSeparatedString = (value: string) => {
-  const matches = value.match(PARAM_RE)
+export function transformMappings(token: string, mappings: Record<string, string>) {
+  const params = extractParams(token)
 
-  if (!matches) {
-    return value
+  if (!params) {
+    return token
   }
 
-  const tokens = matches.map((match) => match.replace(BRACES_REMOVAL_RE, ''))
-
-  return tokens.reduce(
-    (acc, match) =>
-      acc.replace(match, [...match.replace(BRACES_REMOVAL_RE, '').split('-'), 'value'].join('.')),
-    value,
-  )
-}
-
-export function transformTokens(tokens: DesignTokensType) {
-  return Object.entries(tokens).reduce(
-    (acc, [key, token]) => ({
-      ...acc,
-      [key]: {
-        ...token,
-        value: toDotSeparatedString(token.value),
-      },
-    }),
-    {},
-  )
+  return params.reduce((acc, { token }) => {
+    const value = mappings[token] || token
+    return acc.replace(token, value)
+  }, token)
 }
