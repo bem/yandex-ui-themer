@@ -5,8 +5,6 @@ import { $theme } from '../../../model/themes'
 import { variablesChangedBatchEvent } from '../../../model/tokens'
 import { downloadTheme } from '../../../api/downloadTheme'
 import { ThemeType } from '../../../types'
-import { toDotSeparatedString } from '../../../utils/transformers'
-import { PARAM_RE, BRACES_REMOVAL_RE } from '../../../utils/regex'
 
 type UploadRawTokensFxPropsType = {
   theme: ThemeType
@@ -31,12 +29,10 @@ export const $tokensText = createStore<string>(`button:
         value: "#ecb6ea"
 `)
 
-export const $dotSeparatedTokensText = $tokensText.map(toDotSeparatedString)
-
 export const uploadRawTokensFx = attach({
   source: {
     theme: $theme,
-    tokens: $dotSeparatedTokensText,
+    tokens: $tokensText,
   },
   mapParams: (_, { theme, tokens }) =>
     ({
