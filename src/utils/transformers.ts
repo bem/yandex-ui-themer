@@ -9,7 +9,7 @@ export function transformColors(tokens: TokensType): TokensType {
   return Object.entries(tokens).reduce(
     (acc, [key, value]) => ({
       ...acc,
-      [key]: value.match(COLOR_RE) ? `"${cssColorFn.convert(value)}"` : value,
+      [key]: value.match(COLOR_RE) ? cssColorFn.convert(value) : value,
     }),
     {},
   )

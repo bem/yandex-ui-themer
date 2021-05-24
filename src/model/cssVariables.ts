@@ -3,19 +3,25 @@ import { toast } from 'react-toastify'
 
 import { $theme } from './themes'
 import { $designTokens } from './tokens'
+import { $invertedTokenMappings } from './mappings'
 
 import { resolveTokens } from '../utils/resolveTokens'
 import { transformColors } from '../utils/transformers'
 
-export const $resolvedTokens = combine($designTokens, $theme, (designTokens, theme) => {
-  try {
-    return resolveTokens(designTokens, theme)
-  } catch (e) {
-    toast.error(e.message)
-  }
+export const $resolvedTokens = combine(
+  $designTokens,
+  $theme,
+  $invertedTokenMappings,
+  (designTokens, theme, mappings) => {
+    try {
+      return resolveTokens(designTokens, mappings, theme)
+    } catch (e) {
+      toast.error(e.message)
+    }
 
-  return {}
-})
+    return {}
+  },
+)
 
 let memoCssVariables = {}
 export const $cssVariables = $resolvedTokens.map<Record<string, string>>((tokens) => {
