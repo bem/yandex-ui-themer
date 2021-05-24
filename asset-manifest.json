@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/yandex-ui-themer/static/css/main.96954e18.chunk.css",
-    "main.js": "/yandex-ui-themer/static/js/main.9a7d80b9.chunk.js",
-    "main.js.map": "/yandex-ui-themer/static/js/main.9a7d80b9.chunk.js.map",
+    "main.css": "/yandex-ui-themer/static/css/main.752489c1.chunk.css",
+    "main.js": "/yandex-ui-themer/static/js/main.6c6c97ee.chunk.js",
+    "main.js.map": "/yandex-ui-themer/static/js/main.6c6c97ee.chunk.js.map",
     "runtime-main.js": "/yandex-ui-themer/static/js/runtime-main.6f514940.js",
     "runtime-main.js.map": "/yandex-ui-themer/static/js/runtime-main.6f514940.js.map",
-    "static/css/2.8bcd0f3d.chunk.css": "/yandex-ui-themer/static/css/2.8bcd0f3d.chunk.css",
+    "static/css/2.afb013f0.chunk.css": "/yandex-ui-themer/static/css/2.afb013f0.chunk.css",
     "static/js/2.21b85cc4.chunk.js": "/yandex-ui-themer/static/js/2.21b85cc4.chunk.js",
     "static/js/2.21b85cc4.chunk.js.map": "/yandex-ui-themer/static/js/2.21b85cc4.chunk.js.map",
     "index.html": "/yandex-ui-themer/index.html",
-    "precache-manifest.9dd2688593b37b68a8e92fe3059e72d7.js": "/yandex-ui-themer/precache-manifest.9dd2688593b37b68a8e92fe3059e72d7.js",
+    "precache-manifest.ecac92630592d1f1dee3d57b64b07fce.js": "/yandex-ui-themer/precache-manifest.ecac92630592d1f1dee3d57b64b07fce.js",
     "service-worker.js": "/yandex-ui-themer/service-worker.js",
-    "static/css/2.8bcd0f3d.chunk.css.map": "/yandex-ui-themer/static/css/2.8bcd0f3d.chunk.css.map",
-    "static/css/main.96954e18.chunk.css.map": "/yandex-ui-themer/static/css/main.96954e18.chunk.css.map",
+    "static/css/2.afb013f0.chunk.css.map": "/yandex-ui-themer/static/css/2.afb013f0.chunk.css.map",
+    "static/css/main.752489c1.chunk.css.map": "/yandex-ui-themer/static/css/main.752489c1.chunk.css.map",
     "static/js/2.21b85cc4.chunk.js.LICENSE.txt": "/yandex-ui-themer/static/js/2.21b85cc4.chunk.js.LICENSE.txt",
     "static/media/Icon_type_arrow.css": "/yandex-ui-themer/static/media/arrow-b.a366267e.svg",
     "static/media/UserPic-Camera.css": "/yandex-ui-themer/static/media/camera.cb5d19c8.svg",
@@ -33,9 +33,9 @@
   },
   "entrypoints": [
     "static/js/runtime-main.6f514940.js",
-    "static/css/2.8bcd0f3d.chunk.css",
+    "static/css/2.afb013f0.chunk.css",
     "static/js/2.21b85cc4.chunk.js",
-    "static/css/main.96954e18.chunk.css",
-    "static/js/main.9a7d80b9.chunk.js"
+    "static/css/main.752489c1.chunk.css",
+    "static/js/main.6c6c97ee.chunk.js"
   ]
 }

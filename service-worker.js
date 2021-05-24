@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/yandex-ui-themer/precache-manifest.9dd2688593b37b68a8e92fe3059e72d7.js"
+  "/yandex-ui-themer/precache-manifest.ecac92630592d1f1dee3d57b64b07fce.js"
 );
 
 self.addEventListener('message', (event) => {
