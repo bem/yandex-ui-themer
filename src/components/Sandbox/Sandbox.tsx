@@ -11,7 +11,10 @@ import { metricaGoal } from '../YaMetrika'
 import { SandboxExample } from './SandboxExample'
 import { CustomThemeDownloader } from './CustomThemeDownloader'
 import { $designTokens } from '../../model/tokens'
+import { $invertedTokenMappings } from '../../model/mappings'
+import { $cssVariables, $resolvedTokens } from '../../model/cssVariables'
 import { $theme } from '../../model/themes'
+import { transformMappings } from '../../utils/transformers'
 
 import './Sandbox.css'
 
@@ -23,10 +26,15 @@ export const Sandbox: React.FC<SandboxProps> = (props) => {
     tokens: { globals, components },
   } = useStore($theme)
   const designTokens = useStore($designTokens)
+  const invertedTokenMappings = useStore($invertedTokenMappings)
+
+  const cssVariables = useStore($cssVariables)
+  const resolvedTokens = useStore($resolvedTokens)
   const tabs = ['globals', ...Object.keys(components)]
   const [activeTab, setActiveTab] = useState('globals')
   const [activeTab1, setActiveTab1] = useState('tokens')
   const values = activeTab === 'globals' ? globals : components[activeTab]
+  console.log(values)
   const [filter, setFilter] = useState('')
 
   const tokensTab = (
@@ -69,8 +77,13 @@ export const Sandbox: React.FC<SandboxProps> = (props) => {
           <TextinputField
             key={index}
             label={groupName}
-            value={groupTokens.value}
+            defaultValue={groupTokens.value}
             customTokens={(designTokens[groupName] || {}).value}
+            rawValue={transformMappings(
+              (designTokens[groupName] || {}).rawValue || '',
+              invertedTokenMappings,
+              true,
+            )}
             path={groupTokens.path}
             description={groupTokens.description}
           />

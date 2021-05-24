@@ -64,6 +64,7 @@ export type VariablesType = {
   path: string[]
   value: string
   changed: boolean
+  rawValue?: string
 }
 
 export type TokensHashType = string

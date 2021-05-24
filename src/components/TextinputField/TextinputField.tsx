@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react'
+import { useStore } from 'effector-react'
 import { Textinput } from '@yandex/ui/Textinput/desktop/bundle'
 import { ListTile } from '@yandex/ui/ListTile/desktop'
 import { Text } from '@yandex/ui/Text/bundle'
@@ -11,38 +12,45 @@ import { ColorPicker } from './ColorPicker'
 import { Description } from './Description'
 
 import { metricaGoal } from '../YaMetrika'
+import { $resolvedTokens } from '../../model/cssVariables'
 
 import './TextinputField.css'
+import { extractParams } from '../../utils/resolveTokens'
 
 export const cnTextinputField = cn('TextinputField')
 
 export const TextinputField: React.FC<{
   label: string
-  value: string
+  defaultValue: string
   path: string[]
   description: string
   customTokens: string
-}> = ({ label, value, path, description, customTokens }) => {
+  rawValue?: string
+}> = ({ label, defaultValue, path, description, customTokens, rawValue }) => {
+  const resolvedTokens = useStore($resolvedTokens)
   const [val, setVal] = useState(customTokens)
+  const token = resolvedTokens[label]
 
-  const isColorValue = isColor(value)
-  const isChanged = value !== val
+  const isColorValue = isColor(token) || isColor(defaultValue)
+  const colorValue = token || defaultValue
+  const isChanged = defaultValue !== val
 
   // Update internal value when showcase is changed.
   useEffect(() => {
-    setVal(customTokens || value)
-  }, [value, customTokens])
+    console.log(rawValue)
+    setVal(rawValue || customTokens || defaultValue)
+  }, [defaultValue, customTokens, rawValue])
 
   const handleClearClick = useCallback(() => {
-    setVal(value)
+    setVal(defaultValue)
     variablesChangedEvent({
       path,
       name: label,
-      value: value,
+      value: defaultValue,
       changed: false,
     })
     metricaGoal('clear-textinput')
-  }, [value, label, path])
+  }, [defaultValue, label, path])
 
   const handleColorChange = useCallback(
     (color) => {
@@ -62,10 +70,10 @@ export const TextinputField: React.FC<{
         path,
         name: label,
         value: colorValue,
-        changed: colorValue !== value,
+        changed: colorValue !== defaultValue,
       })
     },
-    [path, value, label],
+    [path, defaultValue, label],
   )
 
   const handleChange = useCallback(
@@ -75,11 +83,11 @@ export const TextinputField: React.FC<{
         path,
         name: label,
         value: event.target.value,
-        changed: event.target.value !== value,
+        changed: event.target.value !== defaultValue,
       })
       metricaGoal('change-tokens')
     },
-    [path, value, label],
+    [path, defaultValue, label],
   )
 
   return (
@@ -104,10 +112,10 @@ export const TextinputField: React.FC<{
           view="default"
           size="s"
           value={val}
-          hint={isChanged ? `Оригинальное значение - ${value}` : ''}
+          hint={isChanged ? `Оригинальное значение - ${defaultValue}` : ''}
           className={cnTextinputField('Input')}
         />
-        {isColorValue && <ColorPicker color={val} onColorChange={handleColorChange} />}
+        {isColorValue && <ColorPicker color={colorValue} onColorChange={handleColorChange} />}
       </div>
     </ListTile>
   )

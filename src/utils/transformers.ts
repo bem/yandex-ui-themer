@@ -1,11 +1,11 @@
 import cssColorFn from 'css-color-function'
 
-import { COLOR_RE } from './constants'
+import { COLOR_RE, PARAM_DASH_RE, PARAM_DOT_RE } from './constants'
 import { extractParams } from './resolveTokens'
 
 export type TokensType = Record<string, string>
 
-export function transformColors(tokens: TokensType) {
+export function transformColors(tokens: TokensType): TokensType {
   return Object.entries(tokens).reduce(
     (acc, [key, value]) => ({
       ...acc,
@@ -15,8 +15,13 @@ export function transformColors(tokens: TokensType) {
   )
 }
 
-export function transformMappings(token: string, mappings: Record<string, string>) {
-  const params = extractParams(token)
+export function transformMappings(
+  token: string,
+  mappings: Record<string, string>,
+  inverted: boolean = false,
+): string {
+  const template = !inverted ? PARAM_DASH_RE : PARAM_DOT_RE
+  const params = extractParams(token, template)
 
   if (!params) {
     return token
