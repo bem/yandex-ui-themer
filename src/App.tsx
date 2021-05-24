@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useGate } from 'effector-react'
 import { configureRootTheme } from '@yandex/ui/Theme'
 import { theme } from '@yandex/ui/Theme/presets/default'
@@ -17,6 +17,13 @@ configureRootTheme({ theme })
 
 export default () => {
   useGate(variablesInitializationGate)
+
+  useEffect(() => {
+    window.onbeforeunload = (e: BeforeUnloadEvent) => {
+      e.preventDefault()
+      return ''
+    }
+  }, [])
 
   return (
     <div className="Site">
