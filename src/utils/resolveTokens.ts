@@ -1,5 +1,5 @@
-import { ThemeType, DesignTokensType, ParamsType } from '../types'
-
+import { MappingsType, ThemeType, DesignTokensType, ParamsType } from '../types'
+import { transformMappings } from './transformers'
 import { PARAM_DASH_RE, BRACES_REMOVAL_RE } from './constants'
 
 /**
@@ -60,7 +60,11 @@ export const extractParams = (
  * };
  *
  */
-export function resolveTokens(tokens: DesignTokensType, theme: ThemeType): Record<string, string> {
+export function resolveTokens(
+  tokens: DesignTokensType,
+  mappings: MappingsType,
+  theme: ThemeType,
+): Record<string, string> {
   const resolved: Record<string, string> = {}
   const seen: Set<string> = new Set()
 
@@ -78,7 +82,7 @@ export function resolveTokens(tokens: DesignTokensType, theme: ThemeType): Recor
     // If we see token more than once, it means that there is cycle dependency in tokens
     // and we should terminate the algorithm
     if (seen.has(token)) {
-      throw new Error(`Cycle dependence. Token: '{token}'`)
+      throw new Error(`Cycle dependence. Token: '${token}'`)
     }
 
     seen.add(token)
@@ -105,7 +109,9 @@ export function resolveTokens(tokens: DesignTokensType, theme: ThemeType): Recor
   }
 
   for (let [token, { value }] of Object.entries(tokens)) {
-    resolved[token] = resolveToken(token, value)
+    // Convert all tokens to dash-sep format `(button-view-action)`
+    const mappedValue = transformMappings(value, mappings, true)
+    resolved[token] = resolveToken(token, mappedValue)
   }
 
   return resolved

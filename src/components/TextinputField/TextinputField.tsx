@@ -15,7 +15,6 @@ import { metricaGoal } from '../YaMetrika'
 import { $resolvedTokens } from '../../model/cssVariables'
 
 import './TextinputField.css'
-import { extractParams } from '../../utils/resolveTokens'
 
 export const cnTextinputField = cn('TextinputField')
 
@@ -37,7 +36,6 @@ export const TextinputField: React.FC<{
 
   // Update internal value when showcase is changed.
   useEffect(() => {
-    console.log(rawValue)
     setVal(rawValue || customTokens || defaultValue)
   }, [defaultValue, customTokens, rawValue])
 
