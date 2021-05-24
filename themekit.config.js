@@ -37,6 +37,11 @@ const componentsList = [
   "userPic",
 ]
 
+// List of components that should not be shown 
+const excludeComponentsList = [
+  "calendar",
+]
+
 Api.registerFormat({
   name: 'json/extended',
   formatter(dict) {
@@ -44,6 +49,10 @@ Api.registerFormat({
     const components = {};
 
     for (const prop of dict.allProperties) {
+      if (excludeComponentsList.includes(prop.path[0])) {
+        continue
+      }
+
       if (componentsList.includes(prop.path[0])) {
         if (components[prop.path[0]] === undefined) {
           components[prop.path[0]] = {}
