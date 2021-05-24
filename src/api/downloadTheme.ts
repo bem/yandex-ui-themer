@@ -26,7 +26,7 @@ export const downloadTheme = async (content: any, mappings: MappingsType) => {
     mappings,
   })
 
-  const response = await fetch('https://themebox-d0tybigzs-yarastqt.vercel.app/', {
+  const response = await fetch('https://themebox.now.sh', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -45,6 +45,7 @@ export const downloadTheme = async (content: any, mappings: MappingsType) => {
     path: item.path,
     name: item.name,
     value: item.value,
+    rawValue: item.rawValue,
     changed: true,
   }))
 

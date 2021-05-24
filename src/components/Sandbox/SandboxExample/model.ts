@@ -29,8 +29,13 @@ export const $yamlText = combine(
     const addedTokens = new Set<string>()
 
     const yml = Object.entries(designTokens).reduce(
-      (acc, [name, { changed, path, value }]: any) => {
+      (acc, [name, { changed, path, value, rawValue }]: any) => {
         addedTokens.add(name)
+
+        if (rawValue) {
+          acc.push(toDeepToken(path, { value: rawValue }))
+          return acc
+        }
 
         if (changed) {
           const mappedValue = transformMappings(value.toString(), mappings)

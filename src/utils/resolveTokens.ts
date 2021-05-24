@@ -1,6 +1,6 @@
 import { ThemeType, DesignTokensType, ParamsType } from '../types'
 
-import { PARAM_RE, BRACES_REMOVAL_RE } from './constants'
+import { PARAM_DASH_RE, BRACES_REMOVAL_RE } from './constants'
 
 /**
  * Get parameters from string.
@@ -13,8 +13,11 @@ import { PARAM_RE, BRACES_REMOVAL_RE } from './constants'
  * extractParams('{button-bg-color}') // [ { template: '{button-bg-color}', token: 'button-bg-color'} ]
  * extractParams('{width} {height}') // [ {template: '{width}', token: 'width'}, { template: '{height}', token: 'height'} ]
  */
-export const extractParams = (value: string): ParamsType[] | undefined => {
-  const params = value.match(PARAM_RE)
+export const extractParams = (
+  value: string,
+  template: RegExp = PARAM_DASH_RE,
+): ParamsType[] | undefined => {
+  const params = value.match(template)
 
   if (!params) {
     return

@@ -13,10 +13,12 @@ export const $resolvedTokens = combine($designTokens, $theme, (designTokens, the
   } catch (e) {
     toast.error(e.message)
   }
+
+  return {}
 })
 
 let memoCssVariables = {}
-export const $cssVariables = $resolvedTokens.map((tokens) => {
+export const $cssVariables = $resolvedTokens.map<Record<string, string>>((tokens) => {
   if (!tokens) {
     return memoCssVariables
   }
@@ -35,3 +37,5 @@ export const $cssVariables = $resolvedTokens.map((tokens) => {
 })
 
 $cssVariables.watch((variables) => console.log(variables))
+
+$resolvedTokens.watch((tokens) => console.log(tokens))
