@@ -23,15 +23,15 @@ export const $resolvedTokens = combine(
   },
 )
 
+export const $transformedTokens = $resolvedTokens.map(transformColors)
+
 let memoCssVariables = {}
-export const $cssVariables = $resolvedTokens.map<Record<string, string>>((tokens) => {
+export const $cssVariables = $transformedTokens.map<Record<string, string>>((tokens) => {
   if (!tokens) {
     return memoCssVariables
   }
 
-  const transformedTokens = transformColors(tokens)
-
-  memoCssVariables = Object.entries(transformedTokens).reduce(
+  memoCssVariables = Object.entries(tokens).reduce(
     (acc, [name, value]) => ({
       ...acc,
       [`--${name}`]: value,
