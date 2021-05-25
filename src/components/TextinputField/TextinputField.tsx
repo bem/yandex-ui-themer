@@ -12,7 +12,7 @@ import { ColorPicker } from './ColorPicker'
 import { Description } from './Description'
 
 import { metricaGoal } from '../YaMetrika'
-import { $resolvedTokens } from '../../model/cssVariables'
+import { $transformedTokens } from '../../model/cssVariables'
 
 import './TextinputField.css'
 
@@ -26,9 +26,9 @@ export const TextinputField: React.FC<{
   customTokens: string
   rawValue?: string
 }> = ({ label, defaultValue, path, description, customTokens, rawValue }) => {
-  const resolvedTokens = useStore($resolvedTokens)
+  const transformedTokens = useStore($transformedTokens)
   const [val, setVal] = useState(customTokens)
-  const token = resolvedTokens[label]
+  const token = transformedTokens[label]
 
   const isColorValue = isColor(token) || isColor(defaultValue)
   const colorValue = token || defaultValue
