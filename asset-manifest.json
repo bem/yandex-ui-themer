@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/yandex-ui-themer/static/css/main.752489c1.chunk.css",
-    "main.js": "/yandex-ui-themer/static/js/main.6c6c97ee.chunk.js",
-    "main.js.map": "/yandex-ui-themer/static/js/main.6c6c97ee.chunk.js.map",
+    "main.js": "/yandex-ui-themer/static/js/main.c22a27e3.chunk.js",
+    "main.js.map": "/yandex-ui-themer/static/js/main.c22a27e3.chunk.js.map",
     "runtime-main.js": "/yandex-ui-themer/static/js/runtime-main.6f514940.js",
     "runtime-main.js.map": "/yandex-ui-themer/static/js/runtime-main.6f514940.js.map",
     "static/css/2.afb013f0.chunk.css": "/yandex-ui-themer/static/css/2.afb013f0.chunk.css",
     "static/js/2.21b85cc4.chunk.js": "/yandex-ui-themer/static/js/2.21b85cc4.chunk.js",
     "static/js/2.21b85cc4.chunk.js.map": "/yandex-ui-themer/static/js/2.21b85cc4.chunk.js.map",
     "index.html": "/yandex-ui-themer/index.html",
-    "precache-manifest.ecac92630592d1f1dee3d57b64b07fce.js": "/yandex-ui-themer/precache-manifest.ecac92630592d1f1dee3d57b64b07fce.js",
+    "precache-manifest.67eda9a6789969f54b215b4387f3c0d6.js": "/yandex-ui-themer/precache-manifest.67eda9a6789969f54b215b4387f3c0d6.js",
     "service-worker.js": "/yandex-ui-themer/service-worker.js",
     "static/css/2.afb013f0.chunk.css.map": "/yandex-ui-themer/static/css/2.afb013f0.chunk.css.map",
     "static/css/main.752489c1.chunk.css.map": "/yandex-ui-themer/static/css/main.752489c1.chunk.css.map",
@@ -36,6 +36,6 @@
     "static/css/2.afb013f0.chunk.css",
     "static/js/2.21b85cc4.chunk.js",
     "static/css/main.752489c1.chunk.css",
-    "static/js/main.6c6c97ee.chunk.js"
+    "static/js/main.c22a27e3.chunk.js"
   ]
 }
