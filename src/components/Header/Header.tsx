@@ -3,18 +3,15 @@ import { useStore } from 'effector-react'
 import { Select } from '@yandex/ui/Select/desktop/bundle'
 import { ListTile } from '@yandex/ui/ListTile/desktop'
 import { Text } from '@yandex/ui/Text/bundle'
-import { cn } from '@bem-react/classname'
 
 import { Clear } from './Clear'
 import { Share } from './Share'
 
-import { $themes, $themesNames, $themeName, changeThemeEvent } from '../../model/themes'
+import { $themes, $themesNames, $themeName, themeChange } from '../../model/themes'
 
 import { ThemeNamesType } from '../../types'
 
 import './Header.css'
-
-export const cnHeader = cn('Header')
 
 export function Header() {
   const themes = useStore($themes)
@@ -27,10 +24,10 @@ export function Header() {
   }))
 
   const handleChange = (event: ChangeEvent<HTMLSelectElement>) =>
-    changeThemeEvent(event.target.value as ThemeNamesType)
+    themeChange(event.target.value as ThemeNamesType)
 
   return (
-    <div className={cnHeader()}>
+    <div className="Header">
       <ListTile
         leftSpace="m"
         rightSpace="m"
@@ -47,10 +44,10 @@ export function Header() {
           options={menuItems}
           value={themeName}
           onChange={handleChange}
-          className={cnHeader('ThemeSelector')}
+          className="Header-ThemeSelector"
         />
-        <Share className={cnHeader('Share')} />
-        <Clear className={cnHeader('Clear')} />
+        <Share className="Header-Share" />
+        <Clear className="Header-Clear" />
       </ListTile>
     </div>
   )

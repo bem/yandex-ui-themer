@@ -4,18 +4,16 @@ import { toast } from 'react-toastify'
 
 import { downloadTokens } from '../api/downloadTokens'
 import { getQueryParameter } from '../utils/queryParameters'
-import { changeThemeEvent } from './themes'
-import { updateTokensQueryParameterEvent } from './query'
+import { themeChange } from './themes'
+import { tokensQueryParameterUpdate } from './query'
 import { VariablesType, ThemeNamesType, DesignTokensType, ListDesignTokensType } from '../types'
 
-export const variablesInitializationEvent = createEvent()
-export const variablesChangedEvent = createEvent<VariablesType>()
-export const variablesChangedBatchEvent = createEvent<VariablesType[]>()
-export const variablesResetEvent = createEvent()
+export const variablesInitialization = createEvent()
+export const variablesChange = createEvent<VariablesType>()
+export const variablesChangeBatch = createEvent<VariablesType[]>()
+export const variablesReset = createEvent()
 
-export const uploadTokensEvent = createEvent()
-
-export const loadingTokensEvent = createEvent<boolean>()
+export const tokensUpload = createEvent()
 
 export const $designTokens = createStore<DesignTokensType>({})
 
@@ -25,7 +23,7 @@ export const $listDesignTokens = $designTokens.map<ListDesignTokensType>((tokens
 
 export const variablesInitializationGate = createGate()
 
-export const variablesInitializationFx = createEffect(async () => {
+export const initializeVariables = createEffect(async () => {
   const tokensHash = getQueryParameter('tokens')
 
   if (!tokensHash) {
@@ -41,9 +39,9 @@ export const variablesInitializationFx = createEffect(async () => {
 
     const { tokens, theme } = response
 
-    changeThemeEvent(theme as ThemeNamesType)
-    variablesChangedBatchEvent(tokens)
-    updateTokensQueryParameterEvent(tokensHash)
+    themeChange(theme as ThemeNamesType)
+    variablesChangeBatch(tokens)
+    tokensQueryParameterUpdate(tokensHash)
     toast.success('Тема успешно загружена')
   } catch (err) {
     toast.error('Не удалось загрузить тему, проверьте ссылку')
@@ -52,17 +50,17 @@ export const variablesInitializationFx = createEffect(async () => {
 
 // TODO: Удалять значение из стора если change=false.
 $designTokens
-  .on(variablesChangedEvent, (state, token) => ({ ...state, [token.name]: token }))
-  .on(variablesChangedBatchEvent, (state, tokens) => {
+  .on(variablesChange, (state, token) => ({ ...state, [token.name]: token }))
+  .on(variablesChangeBatch, (state, tokens) => {
     const ret: Record<string, any> = {}
     tokens.forEach((v) => (ret[v.name] = v))
     return { ...state, ...ret }
   })
-  .reset(variablesResetEvent)
+  .reset(variablesReset)
 
-variablesResetEvent.watch(() => updateTokensQueryParameterEvent())
+variablesReset.watch(() => tokensQueryParameterUpdate())
 
 forward({
   from: variablesInitializationGate.open,
-  to: variablesInitializationFx,
+  to: initializeVariables,
 })

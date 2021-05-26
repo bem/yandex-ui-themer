@@ -12,7 +12,6 @@ import { SandboxExample } from './SandboxExample'
 import { CustomThemeDownloader } from './CustomThemeDownloader'
 import { $designTokens } from '../../model/tokens'
 import { $invertedTokenMappings } from '../../model/mappings'
-import { $cssVariables, $resolvedTokens } from '../../model/cssVariables'
 import { $theme } from '../../model/themes'
 import { transformMappings } from '../../utils/transformers'
 
@@ -28,8 +27,6 @@ export const Sandbox: React.FC<SandboxProps> = (props) => {
   const designTokens = useStore($designTokens)
   const invertedTokenMappings = useStore($invertedTokenMappings)
 
-  const cssVariables = useStore($cssVariables)
-  const resolvedTokens = useStore($resolvedTokens)
   const tabs = ['globals', ...Object.keys(components)]
   const [activeTab, setActiveTab] = useState('globals')
   const [activeTab1, setActiveTab1] = useState('tokens')

@@ -2,7 +2,7 @@ import { attach, createStore, createEffect, createEvent, forward } from 'effecto
 import { toast } from 'react-toastify'
 
 import { $theme } from '../../../model/themes'
-import { variablesChangedBatchEvent } from '../../../model/tokens'
+import { variablesChangeBatch } from '../../../model/tokens'
 import { downloadTheme } from '../../../api/downloadTheme'
 import { ThemeType } from '../../../types'
 
@@ -11,7 +11,7 @@ type UploadRawTokensFxPropsType = {
   tokens: string
 }
 
-export const uploadRawTokensEvent = createEvent()
+export const rawTokensUpload = createEvent()
 
 export const $tokensText = createStore<string>(`button:
   viewAction:
@@ -46,18 +46,18 @@ export const uploadRawTokensFx = attach({
 
 export const $uploadRawTokensLoading = uploadRawTokensFx.pending
 
-export const updateTokensEvent = createEvent<string>()
+export const tokensUpdate = createEvent<string>()
 
-$tokensText.on(updateTokensEvent, (_, payload) => payload)
+$tokensText.on(tokensUpdate, (_, payload) => payload)
 
 uploadRawTokensFx.doneData.watch((tokens) => {
-  variablesChangedBatchEvent(tokens)
+  variablesChangeBatch(tokens)
   toast.success('Токены успешно загружены')
 })
 
 uploadRawTokensFx.failData.watch((error) => toast.error(error.message, { autoClose: 5000 }))
 
 forward({
-  from: uploadRawTokensEvent,
+  from: rawTokensUpload,
   to: uploadRawTokensFx,
 })

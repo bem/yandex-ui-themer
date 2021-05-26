@@ -19,7 +19,7 @@ const themeToAllTokens = (theme: TokensType) => ({
   ...Object.values(theme.components).reduce((acc, val) => ({ ...acc, ...val })),
 })
 
-export const changeThemeEvent = createEvent<ThemeNamesType>()
+export const themeChange = createEvent<ThemeNamesType>()
 
 export const $themes = createStore<Record<string, ThemeType>>({
   default: {
@@ -48,6 +48,6 @@ export const $theme = createStore<ThemeType>($themes.getState().default)
 
 export const $themeName = createStore<ThemeNamesType>('default')
 
-$theme.on(changeThemeEvent, (_, themeName) => $themes.getState()[themeName])
+$theme.on(themeChange, (_, themeName) => $themes.getState()[themeName])
 
-$themeName.on(changeThemeEvent, (_, themeName) => themeName)
+$themeName.on(themeChange, (_, themeName) => themeName)

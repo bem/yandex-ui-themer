@@ -3,10 +3,9 @@ import { useStore } from 'effector-react'
 import { Textinput } from '@yandex/ui/Textinput/desktop/bundle'
 import { ListTile } from '@yandex/ui/ListTile/desktop'
 import { Text } from '@yandex/ui/Text/bundle'
-import { cn } from '@bem-react/classname'
 
 import { isColor } from '../../utils/isColor'
-import { variablesChangedEvent } from '../../model/tokens'
+import { variablesChange } from '../../model/tokens'
 import { IconBack } from '../IconBack'
 import { ColorPicker } from './ColorPicker'
 import { Description } from './Description'
@@ -15,8 +14,6 @@ import { metricaGoal } from '../YaMetrika'
 import { $transformedTokens } from '../../model/cssVariables'
 
 import './TextinputField.css'
-
-export const cnTextinputField = cn('TextinputField')
 
 export const TextinputField: React.FC<{
   label: string
@@ -41,7 +38,7 @@ export const TextinputField: React.FC<{
 
   const handleClearClick = useCallback(() => {
     setVal(defaultValue)
-    variablesChangedEvent({
+    variablesChange({
       path,
       name: label,
       value: defaultValue,
@@ -64,7 +61,7 @@ export const TextinputField: React.FC<{
       }
 
       setVal(colorValue)
-      variablesChangedEvent({
+      variablesChange({
         path,
         name: label,
         value: colorValue,
@@ -77,7 +74,7 @@ export const TextinputField: React.FC<{
   const handleChange = useCallback(
     (event) => {
       setVal(event.target.value)
-      variablesChangedEvent({
+      variablesChange({
         path,
         name: label,
         value: event.target.value,
@@ -94,7 +91,7 @@ export const TextinputField: React.FC<{
       rightSpace="m"
       alignItems="center"
       leading={
-        <div className={cnTextinputField('Label')}>
+        <div className="TextinputField-Label">
           <Text typography="control-m" color="secondary">
             {label}:{' '}
           </Text>
@@ -102,7 +99,7 @@ export const TextinputField: React.FC<{
         </div>
       }
     >
-      <div className={cnTextinputField('Control')}>
+      <div className="TextinputField-Control">
         <Textinput
           debounceTimeout={500}
           onChange={handleChange}
@@ -111,7 +108,7 @@ export const TextinputField: React.FC<{
           size="s"
           value={val}
           hint={isChanged ? `Оригинальное значение - ${defaultValue}` : ''}
-          className={cnTextinputField('Input')}
+          className="TextinputField-Input"
         />
         {isColorValue && <ColorPicker color={colorValue} onColorChange={handleColorChange} />}
       </div>
