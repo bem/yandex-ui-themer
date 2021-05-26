@@ -2,7 +2,7 @@ import React, { FC } from 'react'
 import { Button, IButtonProps as ButtonProps } from '@yandex/ui/Button/desktop/bundle'
 import { useStore } from 'effector-react'
 
-import { shareTokensEvent, $shareTokensLoading, $shareTokensDisabled } from './model'
+import { tokensShare, $shareTokensLoading, $shareTokensDisabled } from './model'
 
 export const Share: FC<ButtonProps> = (props) => {
   const loading = useStore($shareTokensLoading)
@@ -13,7 +13,7 @@ export const Share: FC<ButtonProps> = (props) => {
       {...props}
       view="action"
       size="m"
-      onClick={shareTokensEvent}
+      onClick={tokensShare}
       progress={loading}
       disabled={disabled}
       data-testid="share-button"

@@ -1,7 +1,6 @@
 import React, { useState, useRef, useCallback, FC } from 'react'
 import { ChromePicker } from 'react-color'
 import { Popup } from '@yandex/ui/Popup/desktop/bundle'
-import { cn } from '@bem-react/classname'
 
 import { metricaGoal } from '../../YaMetrika'
 
@@ -11,8 +10,6 @@ export type ColorPickerProps = {
   color: string
   onColorChange: (color: string) => void
 }
-
-export const cnColorPicker = cn('ColorPicker')
 
 export const ColorPicker: FC<ColorPickerProps> = ({ color, onColorChange }) => {
   const [visible, setVisible] = useState(false)
@@ -38,11 +35,11 @@ export const ColorPicker: FC<ColorPickerProps> = ({ color, onColorChange }) => {
   )
 
   return (
-    <div ref={scopeRef} className={cnColorPicker()}>
+    <div ref={scopeRef} className="ColorPicker">
       <div
         ref={anchorRef}
         onClick={handleClick}
-        className={cnColorPicker('Preview')}
+        className="ColorPicker-Preview"
         style={{ background: color }}
       />
       <Popup

@@ -1,30 +1,21 @@
 import React, { FC, ChangeEvent } from 'react'
 import { useStore } from 'effector-react'
-import { cn } from '@bem-react/classname'
 
 import { TextareaWithAutoResize } from '@yandex/ui/Textarea/desktop/bundle'
 import { Button } from '@yandex/ui/Button/Button.bundle/desktop'
 import { Spacer } from '@yandex/ui/Spacer/desktop'
 
-import {
-  uploadRawTokensEvent,
-  $uploadRawTokensLoading,
-  $tokensText,
-  updateTokensEvent,
-} from './model'
-
-export const cnCustomThemeDownloader = cn('CustomThemeDownloader')
+import { rawTokensUpload, $uploadRawTokensLoading, $tokensText, tokensUpdate } from './model'
 
 export const CustomThemeDownloader: FC = () => {
   const progress = useStore($uploadRawTokensLoading)
   const tokens = useStore($tokensText)
 
-  const handleClick = () => uploadRawTokensEvent()
-  const handleChange = (event: ChangeEvent<HTMLTextAreaElement>) =>
-    updateTokensEvent(event.target.value)
+  const handleClick = () => rawTokensUpload()
+  const handleChange = (event: ChangeEvent<HTMLTextAreaElement>) => tokensUpdate(event.target.value)
 
   return (
-    <form className={cnCustomThemeDownloader()}>
+    <form className="CustomThemeDownloader">
       Токены:
       <Spacer all={10} />
       <TextareaWithAutoResize

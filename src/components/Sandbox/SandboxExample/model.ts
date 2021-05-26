@@ -11,11 +11,9 @@ import { transformMappings } from '../../../utils/transformers'
 import { extractParams } from '../../../utils/resolveTokens'
 import { ParamsType } from '../../../types'
 
-export const $cssText = combine({ cssVariables: $cssVariables }, ({ cssVariables }) => {
-  const cssText = Object.keys(cssVariables).reduce(
-    (acc: string, v: string) =>
-      //@ts-ignore
-      `${acc}  ${v}: ${cssVariables[v]};\n`,
+export const $cssText = $cssVariables.map((variables) => {
+  const cssText = Object.keys(variables).reduce(
+    (acc: string, v: string) => `${acc}  ${v}: ${variables[v]};\n`,
     '',
   )
   return `:root {\n${cssText}}`
