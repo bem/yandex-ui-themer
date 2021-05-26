@@ -34,7 +34,6 @@ export const Sandbox: React.FC<SandboxProps> = (props) => {
   const [activeTab, setActiveTab] = useState('globals')
   const [activeTab1, setActiveTab1] = useState('tokens')
   const values = activeTab === 'globals' ? globals : components[activeTab]
-  console.log(values)
   const [filter, setFilter] = useState('')
 
   const tokensTab = (

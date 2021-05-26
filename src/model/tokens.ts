@@ -61,7 +61,6 @@ $designTokens
   .reset(variablesResetEvent)
 
 variablesResetEvent.watch(() => updateTokensQueryParameterEvent())
-$designTokens.watch((tokens) => console.log(tokens))
 
 forward({
   from: variablesInitializationGate.open,
