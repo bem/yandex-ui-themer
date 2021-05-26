@@ -41,7 +41,3 @@ export const $cssVariables = $transformedTokens.map<Record<string, string>>((tok
 
   return memoCssVariables
 })
-
-$cssVariables.watch((variables) => console.log(variables))
-
-$resolvedTokens.watch((tokens) => console.log(tokens))

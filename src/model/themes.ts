@@ -51,5 +51,3 @@ export const $themeName = createStore<ThemeNamesType>('default')
 $theme.on(changeThemeEvent, (_, themeName) => $themes.getState()[themeName])
 
 $themeName.on(changeThemeEvent, (_, themeName) => themeName)
-
-$theme.watch((theme) => console.log(theme))
