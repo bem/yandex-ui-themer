@@ -27,7 +27,7 @@ export const $transformedTokens = $resolvedTokens.map(transformColors)
 
 let memoCssVariables = {}
 export const $cssVariables = $transformedTokens.map<Record<string, string>>((tokens) => {
-  if (!tokens) {
+  if (!Object.keys(tokens).length) {
     return memoCssVariables
   }
 
