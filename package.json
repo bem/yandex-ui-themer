@@ -35,6 +35,9 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
+    "test:e2e:dev": "npm-run-all --parallel start cy:open",
+    "test:e2e": "npm-run-all --parallel --race start cy:run",
+    "cy:open": "cypress open",
     "cy:run": "cypress run"
   },
   "eslintConfig": {
