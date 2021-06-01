@@ -12,7 +12,7 @@ describe('Sandbox', () => {
 
     cy.findByTestId('tokens-upload-button').click({ force: true })
 
-    cy.findByText('YML').click()
+    cy.findByText('YAML').click()
     cy.get('code').should('have.text', TOKENS)
 
     cy.findByText('CSS').click()
