@@ -42,9 +42,16 @@ export const CustomThemeDownloader: FC = () => {
         size="m"
         value={value}
         onChange={(event) => setValue(event.target.value)}
+        data-testid="tokens-textarea"
       />
       <Spacer all={10} />
-      <Button view="action" size="m" progress={progress} onClick={handleClick}>
+      <Button
+        view="action"
+        size="m"
+        progress={progress}
+        onClick={handleClick}
+        data-testid="tokens-upload-button"
+      >
         Загрузить
       </Button>
     </form>

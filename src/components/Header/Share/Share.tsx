@@ -16,6 +16,7 @@ export const Share: FC<ButtonProps> = (props) => {
       onClick={shareTokensEvent}
       progress={loading}
       disabled={disabled}
+      data-testid="share-button"
     >
       Поделиться
     </Button>
