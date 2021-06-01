@@ -1,7 +1,7 @@
-import React from 'react';
-import { Radiobox } from '@yandex/ui/Radiobox/desktop/bundle';
+import React from 'react'
+import { Radiobox } from '@yandex/ui/Radiobox/desktop/bundle'
 
-import { Headline } from '../../Headline/Headline';
+import { Headline } from '../../Headline'
 
 export const RadioboxShowcase = () => {
   const options = [

@@ -11,6 +11,7 @@ export const themeboxConfig = {
           format: 'json/extended',
         },
       ],
+      actions: ['process-color'],
     },
   },
 }
@@ -44,6 +45,7 @@ export const downloadTheme = async (content: any, mappings: MappingsType) => {
     path: item.path,
     name: item.name,
     value: item.value,
+    rawValue: item.rawValue,
     changed: true,
   }))
 

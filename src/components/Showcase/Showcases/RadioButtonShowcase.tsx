@@ -1,7 +1,7 @@
-import React from 'react';
-import { RadioButton } from '@yandex/ui/RadioButton/desktop/bundle';
+import React from 'react'
+import { RadioButton } from '@yandex/ui/RadioButton/desktop/bundle'
 
-import { Headline } from '../../Headline/Headline';
+import { Headline } from '../../Headline'
 
 export const RadioButtonShowcase = () => {
   const options = [

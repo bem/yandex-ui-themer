@@ -1,7 +1,7 @@
-import React from 'react';
-import { Divider } from '@yandex/ui/Divider';
+import React from 'react'
+import { Divider } from '@yandex/ui/Divider'
 
-import { Headline } from '../../Headline/Headline';
+import { Headline } from '../../Headline'
 
 export const DividerShowcase = () => {
   return (
@@ -9,7 +9,9 @@ export const DividerShowcase = () => {
       <Headline>Divider</Headline>
       <div className="Showcase-Item">
         <p>Content</p>
-        <Divider style={{ margin: '8px 0' }}><p>Section</p></Divider>
+        <Divider style={{ margin: '8px 0' }}>
+          <p>Section</p>
+        </Divider>
         <p>Content</p>
       </div>
     </>

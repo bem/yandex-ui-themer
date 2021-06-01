@@ -41,7 +41,7 @@ const componentsList = [
 import React from 'react';
 import { Component } from '@yandex/ui/Component/desktop/bundle';
 
-import { Headline } from '../../Headline/Headline';
+import { Headline } from '../../Headline';
 
 export const ComponentShowcase = () => {
     return (

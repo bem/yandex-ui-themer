@@ -5,13 +5,15 @@ import { TabsMenu } from '@yandex/ui/TabsMenu/TabsMenu.bundle/desktop'
 import { TabsPanes } from '@yandex/ui/TabsPanes/TabsPanes.bundle/desktop'
 import { useStore } from 'effector-react'
 
-import { TextinputField } from '../TextinputField/TextinputField'
-import { metricaGoal } from '../YaMetrika/YaMetrika'
+import { TextinputField } from '../TextinputField'
+import { metricaGoal } from '../YaMetrika'
 
-import { SandboxExample } from './SandboxExample/SandboxExample'
-import { CustomThemeDownloader } from './CustomThemeDownloader/CustomThemeDownloader'
+import { SandboxExample } from './SandboxExample'
+import { CustomThemeDownloader } from './CustomThemeDownloader'
 import { $designTokens } from '../../model/tokens'
+import { $invertedTokenMappings } from '../../model/mappings'
 import { $theme } from '../../model/themes'
+import { transformMappings } from '../../utils/transformers'
 
 import './Sandbox.css'
 
@@ -23,6 +25,8 @@ export const Sandbox: React.FC<SandboxProps> = (props) => {
     tokens: { globals, components },
   } = useStore($theme)
   const designTokens = useStore($designTokens)
+  const invertedTokenMappings = useStore($invertedTokenMappings)
+
   const tabs = ['globals', ...Object.keys(components)]
   const [activeTab, setActiveTab] = useState('globals')
   const [activeTab1, setActiveTab1] = useState('tokens')
@@ -69,8 +73,13 @@ export const Sandbox: React.FC<SandboxProps> = (props) => {
           <TextinputField
             key={index}
             label={groupName}
-            value={groupTokens.value}
+            defaultValue={groupTokens.value}
             customTokens={(designTokens[groupName] || {}).value}
+            rawValue={transformMappings(
+              (designTokens[groupName] || {}).rawValue || '',
+              invertedTokenMappings,
+              true,
+            )}
             path={groupTokens.path}
             description={groupTokens.description}
           />

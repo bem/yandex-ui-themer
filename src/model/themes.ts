@@ -12,25 +12,33 @@ import mappingsDataDefault from '../themes/presets/example/mappings.json'
 import mappingsDataInverse from '../themes/presets/example-inverse/mappings.json'
 import mappingsDataBrand from '../themes/presets/example-brand/mappings.json'
 
-import { ThemeType, ThemeNamesType } from '../types'
+import { ThemeType, ThemeNamesType, TokensType } from '../types'
 
-export const changeThemeEvent = createEvent<ThemeNamesType>()
+const themeToAllTokens = (theme: TokensType) => ({
+  ...theme.globals,
+  ...Object.values(theme.components).reduce((acc, val) => ({ ...acc, ...val })),
+})
+
+export const themeChange = createEvent<ThemeNamesType>()
 
 export const $themes = createStore<Record<string, ThemeType>>({
   default: {
     tokens: stylesDataDefault,
     mappings: mappingsDataDefault,
     preset: themeDefault,
+    allTokens: themeToAllTokens(stylesDataDefault),
   },
   inverse: {
     tokens: stylesDataInverse,
     mappings: mappingsDataInverse,
     preset: themeInverse,
+    allTokens: themeToAllTokens(stylesDataInverse),
   },
   brand: {
     tokens: stylesDataBrand,
     mappings: mappingsDataBrand,
     preset: themeBrand,
+    allTokens: themeToAllTokens(stylesDataBrand),
   },
 })
 
@@ -40,6 +48,6 @@ export const $theme = createStore<ThemeType>($themes.getState().default)
 
 export const $themeName = createStore<ThemeNamesType>('default')
 
-$theme.on(changeThemeEvent, (_, themeName) => $themes.getState()[themeName])
+$theme.on(themeChange, (_, themeName) => $themes.getState()[themeName])
 
-$themeName.on(changeThemeEvent, (_, themeName) => themeName)
+$themeName.on(themeChange, (_, themeName) => themeName)

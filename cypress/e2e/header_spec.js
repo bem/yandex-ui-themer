@@ -46,7 +46,7 @@ describe('Share', () => {
   it('Should load theme', () => {
     cy.visit(SHARED_THEME_PATH)
 
-    cy.findByText('YML').click()
+    cy.findByText('YAML').click()
     cy.get('code').should('have.text', TOKENS)
 
     cy.findByText('CSS').click()

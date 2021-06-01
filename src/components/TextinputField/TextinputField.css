@@ -1,0 +1,13 @@
+.TextinputField-Label {
+  display: inline-block;
+  width: 300px;
+}
+
+.TextinputField-Control {
+  display: flex;
+}
+
+.TextinputField-Input {
+  width: 90%;
+  margin-bottom: 8px;
+}

@@ -6,6 +6,8 @@ export type TokenInfoType = {
   description?: string
 }
 
+export type TokenRecordType = Record<string, TokenInfoType>
+
 /**
  * @example
  * {
@@ -21,7 +23,7 @@ export type TokenInfoType = {
  *  }
  * }
  */
-export type GlobalsType = Record<string, TokenInfoType>
+export type GlobalsType = TokenRecordType
 
 /**
  * @example
@@ -40,7 +42,7 @@ export type GlobalsType = Record<string, TokenInfoType>
  *  }
  * }
  */
-export type ComponentsType = Record<string, Record<string, TokenInfoType>>
+export type ComponentsType = Record<string, TokenRecordType>
 
 export type TokensType = {
   globals: GlobalsType
@@ -53,6 +55,7 @@ export type ThemeType = {
   tokens: TokensType
   preset: Theme
   mappings: MappingsType
+  allTokens: TokenRecordType
   name?: string
 }
 
@@ -61,8 +64,17 @@ export type VariablesType = {
   path: string[]
   value: string
   changed: boolean
+  rawValue?: string
 }
 
 export type TokensHashType = string
 
 export type ThemeNamesType = 'default' | 'inverse' | 'brand'
+
+export type DesignTokensType = Record<string, VariablesType>
+export type ListDesignTokensType = VariablesType[]
+
+export type ParamsType = {
+  template: string
+  token: string
+}

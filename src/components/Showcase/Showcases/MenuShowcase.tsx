@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import { Menu } from '@yandex/ui/Menu/desktop/bundle';
+import React, { useState } from 'react'
+import { Menu } from '@yandex/ui/Menu/desktop/bundle'
 
-import { Headline } from '../../Headline/Headline';
+import { Headline } from '../../Headline'
 
 export const MenuShowcase = () => {
   const items = [

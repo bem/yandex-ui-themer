@@ -7,7 +7,7 @@ import { Text } from '@yandex/ui/Text/bundle'
 import { Clear } from './Clear'
 import { Share } from './Share'
 
-import { $themes, $themesNames, $themeName, changeThemeEvent } from '../../model/themes'
+import { $themes, $themesNames, $themeName, themeChange } from '../../model/themes'
 
 import { ThemeNamesType } from '../../types'
 
@@ -18,13 +18,13 @@ export function Header() {
   const themeName = useStore($themeName)
   const themesNames = useStore($themesNames)
 
-  const menuItems = themesNames.map((val) => ({
-    value: val,
-    content: themes[val].name || val,
+  const menuItems = themesNames.map((value) => ({
+    value,
+    content: themes[value].name || value,
   }))
 
   const handleChange = (event: ChangeEvent<HTMLSelectElement>) =>
-    changeThemeEvent(event.target.value as ThemeNamesType)
+    themeChange(event.target.value as ThemeNamesType)
 
   return (
     <div className="Header">

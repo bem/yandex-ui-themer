@@ -4,7 +4,7 @@ import { toast } from 'react-toastify'
 
 import { $themeName } from '../../../model/themes'
 import { $listDesignTokens } from '../../../model/tokens'
-import { updateTokensQueryParameterEvent } from '../../../model/query'
+import { tokensQueryParameterUpdate } from '../../../model/query'
 import { uploadTokens } from '../../../api/uploadTokens'
 
 import { ThemeNamesType, VariablesType } from '../../../types'
@@ -14,9 +14,9 @@ type ShareTokensFxPropsType = {
   tokens: VariablesType[]
 }
 
-export const shareTokensEvent = createEvent()
+export const tokensShare = createEvent()
 
-export const shareTokensFx = attach({
+export const shareTokens = attach({
   source: {
     themeName: $themeName,
     tokens: $listDesignTokens,
@@ -34,22 +34,22 @@ export const shareTokensFx = attach({
   }),
 })
 
-export const $shareTokensLoading = shareTokensFx.pending
+export const $shareTokensLoading = shareTokens.pending
 export const $shareTokensDisabled = $listDesignTokens.map((tokens) => tokens.length === 0)
 
-shareTokensFx.doneData.watch((tokensHash) => {
+shareTokens.doneData.watch((tokensHash) => {
   if (!tokensHash) {
     return
   }
 
-  updateTokensQueryParameterEvent(tokensHash)
+  tokensQueryParameterUpdate(tokensHash)
   copy(window.location.href)
   toast.success('Ссылка успешно скопирована в буфер обмена')
 })
 
-shareTokensFx.failData.watch((error) => toast.error(error, { autoClose: 5000 }))
+shareTokens.failData.watch((error) => toast.error(error, { autoClose: 5000 }))
 
 forward({
-  from: shareTokensEvent,
-  to: shareTokensFx,
+  from: tokensShare,
+  to: shareTokens,
 })
