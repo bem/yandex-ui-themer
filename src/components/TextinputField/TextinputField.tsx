@@ -28,7 +28,7 @@ export const TextinputField: React.FC<{
   const token = transformedTokens[label]
 
   const isColorValue = isColor(token) || isColor(defaultValue)
-  const colorValue = token || defaultValue
+  const colorValue = typeof token === 'string' ? token : defaultValue
   const isChanged = defaultValue !== val
 
   // Update internal value when showcase is changed.
