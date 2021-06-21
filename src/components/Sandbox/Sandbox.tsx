@@ -74,7 +74,7 @@ export const Sandbox: React.FC<SandboxProps> = (props) => {
             key={index}
             label={groupName}
             defaultValue={groupTokens.value}
-            customTokens={(designTokens[groupName] || {}).value}
+            customTokens={designTokens[groupName]?.value || ''}
             rawValue={transformMappings(
               (designTokens[groupName] || {}).rawValue || '',
               invertedTokenMappings,
