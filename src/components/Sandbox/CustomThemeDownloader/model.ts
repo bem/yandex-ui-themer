@@ -26,7 +26,7 @@ export const $tokensText = createStore<string>(`button:
   viewDefault:
     fillColor:
       base:
-        value: "#ecb6ea"
+        value: "color({button.viewAction.fillColor.base.value} a(20%))"
 `)
 
 export const uploadRawTokensFx = attach({
