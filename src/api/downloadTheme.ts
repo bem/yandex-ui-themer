@@ -1,4 +1,6 @@
 import { MappingsType } from '../types'
+import { build } from '@yandex/themekit/lib/core/build'
+import { parseContent } from '@yandex/themekit/lib/core/parseContent'
 
 export const themeboxConfig = {
   output: {
@@ -17,35 +19,24 @@ export const themeboxConfig = {
 }
 
 export const downloadTheme = async (content: any, mappings: MappingsType) => {
-  const body = JSON.stringify({
-    config: themeboxConfig,
-    tokens: {
-      language: 'yaml',
-      content: content,
+  const res = await build([
+    {
+      mapper: mappings,
+      whitepaper: {},
+      entry: 'browser',
+      platform: 'desktop',
+      properties: parseContent(content, 'yaml') as object,
+      ...themeboxConfig,
     },
-    mappings,
-  })
+  ])
 
-  const response = await fetch('https://themebox.now.sh', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body,
-  })
+  const properties = res['css'].dictionary.allProperties
 
-  const json = await response.json()
-
-  if (!response.ok) {
-    throw new Error(json.error)
-  }
-
-  const res = JSON.parse(json.data[0].content)
-  const tokens = Object.entries(res).map(([_, item]: any) => ({
+  const tokens = Object.entries(properties).map(([_, item]: any) => ({
     path: item.path,
     name: item.name,
     value: item.value,
-    rawValue: item.rawValue,
+    rawValue: item.original.value,
     changed: true,
   }))
 
