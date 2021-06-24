@@ -5,13 +5,13 @@ import { ListTile } from '@yandex/ui/ListTile/desktop'
 import { Text } from '@yandex/ui/Text/bundle'
 
 import { isColor } from '../../utils/isColor'
-import { variablesChange } from '../../model/tokens'
+import { variablesChange } from '../../model/designTokens'
 import { IconBack } from '../IconBack'
 import { ColorPicker } from './ColorPicker'
 import { Description } from './Description'
 
 import { metricaGoal } from '../YaMetrika'
-import { $transformedTokens } from '../../model/cssVariables'
+import { $resolvedTokens } from '../../model/resolvedTokens'
 
 import './TextinputField.css'
 
@@ -23,9 +23,9 @@ export const TextinputField: React.FC<{
   customTokens: string
   rawValue?: string
 }> = ({ label, defaultValue, path, description, customTokens, rawValue }) => {
-  const transformedTokens = useStore($transformedTokens)
+  const resolvedTokens = useStore($resolvedTokens)
   const [val, setVal] = useState(customTokens)
-  const token = transformedTokens[label]
+  const token = resolvedTokens[label]?.value
 
   const isColorValue = isColor(token) || isColor(defaultValue)
   const colorValue = typeof token === 'string' ? token : defaultValue

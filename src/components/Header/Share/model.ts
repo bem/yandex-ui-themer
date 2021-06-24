@@ -3,7 +3,7 @@ import copy from 'copy-to-clipboard'
 import { toast } from 'react-toastify'
 
 import { $themeName } from '../../../model/themes'
-import { $listDesignTokens } from '../../../model/tokens'
+import { $listDesignTokens } from '../../../model/designTokens'
 import { tokensQueryParameterUpdate } from '../../../model/query'
 import { uploadTokens } from '../../../api/uploadTokens'
 

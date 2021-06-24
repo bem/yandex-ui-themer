@@ -10,7 +10,7 @@ import { metricaGoal } from '../YaMetrika'
 
 import { SandboxExample } from './SandboxExample'
 import { CustomThemeDownloader } from './CustomThemeDownloader'
-import { $designTokens } from '../../model/tokens'
+import { $designTokens } from '../../model/designTokens'
 import { $invertedTokenMappings } from '../../model/mappings'
 import { $theme } from '../../model/themes'
 import { transformMappings } from '../../utils/transformers'

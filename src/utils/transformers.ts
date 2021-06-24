@@ -1,20 +1,8 @@
-import cssColorFn from 'css-color-function'
-
-import { COLOR_RE, PARAM_DASH_RE, PARAM_DOT_RE } from './constants'
-import { extractParams } from './resolveTokens'
+import { PARAM_DASH_RE, PARAM_DOT_RE } from './constants'
+import { extractParams } from './extractParams'
 import { MappingsType } from '../types'
 
 export type TokensType = Record<string, string>
-
-export function transformColors(tokens: TokensType): TokensType {
-  return Object.entries(tokens).reduce(
-    (acc, [key, value]) => ({
-      ...acc,
-      [key]: value.match(COLOR_RE) ? cssColorFn.convert(value) : value,
-    }),
-    {},
-  )
-}
 
 export function transformMappings(
   token: string,
