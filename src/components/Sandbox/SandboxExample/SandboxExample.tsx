@@ -8,8 +8,8 @@ import { Tumbler } from '@yandex/ui/Tumbler/Tumbler.bundle/desktop'
 import { Showcase } from '../../Showcase'
 import { metricaGoal } from '../../YaMetrika'
 
-import { $cssVariables } from '../../../model/cssVariables'
-import { $cssText, $yamlText } from './model'
+import { $cssText, $cssVariables } from '../../../model/css'
+import { $yamlText } from '../../../model/yaml'
 
 const JSX = 'JSX'
 const YAML = 'YAML'

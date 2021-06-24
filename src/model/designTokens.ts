@@ -1,4 +1,4 @@
-import { createStore, createEvent, createEffect, forward } from 'effector'
+import { createStore, createEvent, createEffect, forward, combine, Store } from 'effector'
 import { createGate } from 'effector-react'
 import { toast } from 'react-toastify'
 
@@ -7,6 +7,8 @@ import { getQueryParameter } from '../utils/queryParameters'
 import { themeChange } from './themes'
 import { tokensQueryParameterUpdate } from './query'
 import { VariablesType, ThemeNamesType, DesignTokensType, ListDesignTokensType } from '../types'
+import { transformMappings } from '../utils/transformers'
+import { $tokenMappings } from './mappings'
 
 export const variablesInitialization = createEvent()
 export const variablesChange = createEvent<VariablesType>()
@@ -19,6 +21,22 @@ export const $designTokens = createStore<DesignTokensType>({})
 
 export const $listDesignTokens = $designTokens.map<ListDesignTokensType>((tokens) =>
   Object.values(tokens).map((token) => ({ ...token })),
+)
+
+export const $dotSepDesignTokens: Store<DesignTokensType> = combine(
+  $designTokens,
+  $tokenMappings,
+  (designTokens, mappings) =>
+    Object.entries(designTokens).reduce(
+      (acc, [name, { value, ...token }]) => ({
+        ...acc,
+        [name]: {
+          ...token,
+          value: transformMappings(value, mappings),
+        },
+      }),
+      {},
+    ),
 )
 
 export const variablesInitializationGate = createGate()

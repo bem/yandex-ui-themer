@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
 import { Button, IButtonProps as ButtonProps } from '@yandex/ui/Button/desktop/bundle'
 
-import { variablesReset } from '../../../model/tokens'
+import { variablesReset } from '../../../model/designTokens'
 
 export const Clear: FC<ButtonProps> = (props) => {
   return (
