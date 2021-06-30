@@ -9,7 +9,7 @@ import 'react-toastify/dist/ReactToastify.min.css'
 import { Header } from './components/Header'
 import { Sandbox } from './components/Sandbox'
 
-import { variablesInitializationGate } from './model/tokens'
+import { variablesInitializationGate } from './model/designTokens'
 
 import './App.css'
 

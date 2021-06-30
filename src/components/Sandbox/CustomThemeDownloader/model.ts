@@ -2,7 +2,7 @@ import { attach, createStore, createEffect, createEvent, forward } from 'effecto
 import { toast } from 'react-toastify'
 
 import { $theme } from '../../../model/themes'
-import { variablesChangeBatch } from '../../../model/tokens'
+import { variablesChangeBatch } from '../../../model/designTokens'
 import { downloadTheme } from '../../../api/downloadTheme'
 import { ThemeType } from '../../../types'
 
