@@ -11,11 +11,9 @@ export const $resolvedTokens = createStore<DesignTokensType>({})
 const resolvedTokensUpdate = createEvent<VariablesType[]>()
 
 $resolvedTokens
-  .on(resolvedTokensUpdate, (state, tokens) => {
-    const ret: Record<string, any> = {}
-    tokens.forEach((v) => (ret[v.name] = v))
-    return { ...state, ...ret }
-  })
+  .on(resolvedTokensUpdate, (_, tokens) =>
+    tokens.reduce((acc, token) => ({ ...acc, [token.name]: token }), {}),
+  )
   .reset(variablesReset)
 
 export const resolveTokensFx = createEffect(
