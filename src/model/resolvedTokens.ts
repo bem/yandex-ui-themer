@@ -4,7 +4,7 @@ import { downloadTheme } from '../api/downloadTheme'
 import { variablesReset } from './designTokens'
 import { $yamlText } from './yaml'
 import { DesignTokensType, VariablesType, MappingsType } from '../types'
-import { $invertedTokenMappings } from './mappings'
+import { $theme } from './themes'
 
 export const $resolvedTokens = createStore<DesignTokensType>({})
 
@@ -24,8 +24,8 @@ export const resolveTokensFx = createEffect(
 
 export const resolveTokensAttach = attach({
   effect: resolveTokensFx,
-  source: $invertedTokenMappings,
-  mapParams: (content: string, mappings: MappingsType) => ({
+  source: $theme,
+  mapParams: (content: string, { mappings }) => ({
     content,
     mappings,
   }),
