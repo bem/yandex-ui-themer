@@ -3,6 +3,7 @@ import { Select } from '@yandex/ui/Select/Select.bundle/desktop'
 import { Textinput } from '@yandex/ui/Textinput/Textinput.bundle/desktop'
 import { TabsMenu } from '@yandex/ui/TabsMenu/TabsMenu.bundle/desktop'
 import { TabsPanes } from '@yandex/ui/TabsPanes/TabsPanes.bundle/desktop'
+import { Button } from '@yandex/ui/Button/desktop/bundle'
 import { useStore } from 'effector-react'
 
 import { TextinputField } from '../TextinputField'
@@ -51,6 +52,11 @@ export const Sandbox: React.FC<SandboxProps> = (props) => {
             setActiveTab(event.target.value)
             metricaGoal('select')
           }}
+          renderTrigger={({ children, ...props }) => (
+            <Button {...props} data-testid="tokens-select">
+              {children}
+            </Button>
+          )}
           value={activeTab}
           options={tabs.map((tab) => ({ value: tab, content: tab }))}
         />

@@ -109,6 +109,7 @@ export const TextinputField: React.FC<{
           value={val}
           hint={isChanged ? `Оригинальное значение - ${defaultValue}` : ''}
           className="TextinputField-Input"
+          data-testid={label}
         />
         {isColorValue && <ColorPicker color={colorValue} onColorChange={handleColorChange} />}
       </div>
