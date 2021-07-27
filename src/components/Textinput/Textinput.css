@@ -1,0 +1,24 @@
+.Textinput {
+  display: flex;
+  align-items: center;
+  height: 32px;
+}
+
+.Textinput .Textinput-Label {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 11px;
+  line-height: 16px;
+
+  margin-left: 18px;
+}
+
+.Textinput.Textinput_has_tip .Textinput-Label {
+  margin-left: 0px;
+}
+
+.Textinput .Textinput-TipIcon {
+  margin-right: 6px;
+  cursor: pointer;
+}

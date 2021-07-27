@@ -1,4 +1,4 @@
-.Showcase {
+.Overview {
     background-color: var(--color-essential);
     padding: 10px;
     /* background-image: linear-gradient(45deg,#f9f9fa 25%,transparent 0),linear-gradient(135deg,#f9f9fa 25%,transparent 0),linear-gradient(45deg,transparent 75%,#f9f9fa 0),linear-gradient(135deg,transparent 75%,#f9f9fa 0);
@@ -6,17 +6,17 @@
     background-size: 20px 20px; */
 }
 
-.Showcase-Item {
+.Overview-Item {
     white-space: nowrap;
     margin: 20px 0;
 }
 
-.Showcase-Item :not(.ButtonGroup) .Button2,
-.Showcase-Item .Checkbox,
-.Showcase-Item .Radiobox-Radio {
+.Overview-Item :not(.ButtonGroup) .Button2,
+.Overview-Item .Checkbox,
+.Overview-Item .Radiobox-Radio {
     margin-right: 10px;
 }
 
-.Showcase p {
+.Overview p {
     color: var(--color-typo-primary);
 }

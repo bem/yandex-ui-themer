@@ -1,0 +1,22 @@
+.ComponentsPage {
+  display: flex;
+}
+
+.ComponentsPage-Panels {
+  width: 180px;
+  /* Убираем высоту Header'а и Divider'а */
+  height: calc(100vh - 41px);
+  overflow-y: scroll;
+}
+
+.ComponentsPage-Showcase {
+  background: rgba(247, 248, 250, 1);
+  flex: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ComponentsPage-Playground {
+  width: 316px;
+}

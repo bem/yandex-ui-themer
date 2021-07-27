@@ -1,54 +1,24 @@
-import React, { ChangeEvent } from 'react'
-import { useStore } from 'effector-react'
-import { Select } from '@yandex/ui/Select/desktop/bundle'
-import { ListTile } from '@yandex/ui/ListTile/desktop'
-import { Text } from '@yandex/ui/Text/bundle'
+import React, { FC } from 'react'
 
-import { Clear } from './Clear'
-import { Share } from './Share'
-
-import { $themes, $themesNames, $themeName, themeChange } from '../../model/themes'
-
-import { ThemeNamesType } from '../../types'
+import { TabsMenu } from '../../lib/lego/TabsMenu'
 
 import './Header.css'
 
-export function Header() {
-  const themes = useStore($themes)
-  const themeName = useStore($themeName)
-  const themesNames = useStore($themesNames)
+export type ActiveTabType = 'components' | 'tokens'
 
-  const menuItems = themesNames.map((value) => ({
-    value,
-    content: themes[value].name || value,
-  }))
-
-  const handleChange = (event: ChangeEvent<HTMLSelectElement>) =>
-    themeChange(event.target.value as ThemeNamesType)
-
-  return (
-    <div className="Header">
-      <ListTile
-        leftSpace="m"
-        rightSpace="m"
-        alignItems="center"
-        leading={
-          <Text typography="control-m" color="secondary">
-            Тема из пресетов @yandex/ui:
-          </Text>
-        }
-      >
-        <Select
-          size="m"
-          view="default"
-          options={menuItems}
-          value={themeName}
-          onChange={handleChange}
-          className="Header-ThemeSelector"
-        />
-        <Share className="Header-Share" />
-        <Clear className="Header-Clear" />
-      </ListTile>
-    </div>
-  )
+export type HeaderProps = {
+  activeTab: ActiveTabType
+  setActiveTab: (newActiveTab: ActiveTabType) => void
 }
+
+export const Header: FC<HeaderProps> = ({ activeTab, setActiveTab }) => (
+  <div className="Header">
+    <TabsMenu
+      activeTab={activeTab}
+      tabs={[
+        { id: 'components', onClick: () => setActiveTab('components'), content: 'Components' },
+        { id: 'tokens', onClick: () => setActiveTab('tokens'), content: 'Design Tokens' },
+      ]}
+    />
+  </div>
+)

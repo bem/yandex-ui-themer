@@ -1,0 +1,28 @@
+.Panel {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  padding-left: 16px;
+  font-family: Inter;
+}
+
+.Panel:hover {
+  background-color: rgba(218, 235, 247, 1);
+  cursor: pointer;
+}
+
+.Panel_active {
+  background-color: rgba(218, 235, 247, 1);
+}
+
+.Panel-Icon {
+  margin-right: 10.5px;
+}
+
+.Panel-Label {
+  text-transform: capitalize;
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 16px;
+  color: rgba(123, 97, 255, 1);
+}

@@ -5,7 +5,7 @@ import { cnTheme } from '@yandex/ui/Theme'
 import { TabsMenu } from '@yandex/ui/TabsMenu/TabsMenu.bundle/desktop'
 import { Tumbler } from '@yandex/ui/Tumbler/Tumbler.bundle/desktop'
 
-import { Showcase } from '../../Showcase'
+import { Overview } from '../../Overview'
 import { metricaGoal } from '../../YaMetrika'
 
 import { $cssText, $cssVariables } from '../../../model/css'
@@ -64,7 +64,7 @@ export const SandboxExample: FC<any> = ({ includes, theme }) => {
               className={cnTheme(theme, ['Sandbox-ContentWrapper'])}
               style={shownDiff ? cssVariables : {}}
             >
-              {activeTab === JSX && <Showcase includes={includes} />}
+              {activeTab === JSX && <Overview includes={includes} />}
               {activeTab === CSS && (
                 <div className="Sandbox-ContentWrapper-YML">
                   <pre>
