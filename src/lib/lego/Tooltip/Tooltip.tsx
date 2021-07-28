@@ -9,27 +9,25 @@ import {
 // _size
 import { withSizeS } from '@yandex/ui/Tooltip/_size/Tooltip_size_s'
 // _view
-import { withViewDefault } from '@yandex/ui/Tooltip/_view/Tooltip_view_default'
-
-import './Tooltip_view_default.css'
+import { withViewFigma } from './_view/Tooltip_view_figma'
 
 export * from '@yandex/ui/Tooltip/Tooltip@desktop'
 
-const enhance = compose(withViewDefault, withSizeS)
+const enhance = compose(withViewFigma, withSizeS)
 
 export const Tooltip = enhance(TooltipDesktop)
 export const TooltipStateful = enhance(TooltipStatefulDesktop)
 
 Tooltip.defaultProps = {
   hasTail: true,
-  view: 'default',
+  view: 'figma',
   size: 's',
   direction: 'left',
 }
 
 TooltipStateful.defaultProps = {
   hasTail: true,
-  view: 'default',
+  view: 'figma',
   size: 's',
   direction: 'left',
 }

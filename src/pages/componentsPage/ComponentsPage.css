@@ -2,19 +2,22 @@
   display: flex;
 }
 
-.ComponentsPage-Panels {
-  width: 180px;
+.ComponentsPage-Panels, .ComponentsPage-Showcase, .ComponentsPage-Playground {
   /* Убираем высоту Header'а и Divider'а */
   height: calc(100vh - 41px);
   overflow-y: scroll;
 }
 
+.ComponentsPage-Panels {
+  width: 180px;
+}
+
 .ComponentsPage-Showcase {
   background: rgba(247, 248, 250, 1);
-  flex: auto;
-  display: flex;
+  flex: 1;
   align-items: center;
   justify-content: center;
+  overflow-x: hidden;
 }
 
 .ComponentsPage-Playground {

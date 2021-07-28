@@ -31,7 +31,7 @@ export const ComponentsPage = () => {
         activePanel={selectedComponent}
         onPanelSelect={handlePanelSelection}
       />
-      <Showcase className={cnComponentsPage('Showcase')} />
+      <Showcase className={cnComponentsPage('Showcase')} component={selectedComponent} />
       <Playground className={cnComponentsPage('Playground')} />
     </div>
   )

@@ -3,7 +3,7 @@ import { Button } from '@yandex/ui/Button/Button.bundle/desktop'
 import { Icon } from '@yandex/ui/Icon/Icon.bundle/desktop'
 import { Text } from '@yandex/ui/Text/Text.bundle/desktop'
 
-import { Headline } from '../../../pages/componentsPage/components/Showcase/Showcases/Overview/Headline'
+import { Headline } from '../Headline'
 
 export const ButtonShowcase = () => {
   const view = ['default', 'action', 'pseudo', 'link', 'clear', 'raised']

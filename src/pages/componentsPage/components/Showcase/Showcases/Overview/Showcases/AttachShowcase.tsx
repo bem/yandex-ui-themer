@@ -1,7 +1,7 @@
 import React from 'react'
 import { Attach } from '@yandex/ui/Attach/desktop/bundle'
 
-import { Headline } from '../../../pages/componentsPage/components/Showcase/Showcases/Overview/Headline'
+import { Headline } from '../Headline'
 
 export const AttachShowcase = () => {
   return (

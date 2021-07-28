@@ -2,7 +2,7 @@ import React from 'react'
 import { MessageBox } from '@yandex/ui/MessageBox/desktop/bundle'
 import { Button } from '@yandex/ui/Button/desktop/bundle'
 
-import { Headline } from '../../../pages/componentsPage/components/Showcase/Showcases/Overview/Headline'
+import { Headline } from '../Headline'
 
 export const MessageBoxShowcase = () => {
   return (

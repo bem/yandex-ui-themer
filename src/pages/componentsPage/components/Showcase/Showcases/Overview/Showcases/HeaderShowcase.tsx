@@ -5,7 +5,7 @@ import { Header, HeaderSearch, HeaderNav, HeaderNavItem } from '@yandex/ui/Heade
 import { withViewSearchArrow as withViewSearchArrowButton } from '@yandex/ui/Header/Button'
 import { withViewSearchArrow as withViewSearchArrowTextinput } from '@yandex/ui/Header/Textinput'
 
-import { Headline } from '../../../pages/componentsPage/components/Showcase/Showcases/Overview/Headline'
+import { Headline } from '../Headline'
 
 const SearchButton = withViewSearchArrowButton(ButtonBase)
 const SearchInput = withHasClear(withViewSearchArrowTextinput(TextinputBase))

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Divider } from '@yandex/ui/Divider'
 
-import { Headline } from '../../../pages/componentsPage/components/Showcase/Showcases/Overview/Headline'
+import { Headline } from '../Headline'
 
 export const DividerShowcase = () => {
   return (

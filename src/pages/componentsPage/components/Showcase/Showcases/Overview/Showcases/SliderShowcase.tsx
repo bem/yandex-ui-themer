@@ -1,7 +1,7 @@
 import React from 'react'
 import { Slider, useSliderState } from '@yandex/ui/Slider/desktop/bundle'
 
-import { Headline } from '../../../pages/componentsPage/components/Showcase/Showcases/Overview/Headline'
+import { Headline } from '../Headline'
 
 export const SliderShowcase = () => {
   const state1 = useSliderState({ value: [20] })

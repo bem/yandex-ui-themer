@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Textarea } from '@yandex/ui/Textarea/desktop/bundle'
 
-import { Headline } from '../../../pages/componentsPage/components/Showcase/Showcases/Overview/Headline'
+import { Headline } from '../Headline'
 
 export const TextareaShowcase = () => {
   const [value1, setValue1] = useState('')

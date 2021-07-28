@@ -8,23 +8,21 @@ import { withLayoutHoriz } from '@yandex/ui/TabsMenu/_layout/TabsMenu_layout_hor
 import { withSizeM } from '@yandex/ui/TabsMenu/_size/TabsMenu_size_m'
 import { withSizeS } from '@yandex/ui/TabsMenu/_size/TabsMenu_size_s'
 // _view
-import { withViewDefault } from '@yandex/ui/TabsMenu/_view/TabsMenu_view_default@desktop'
+import { withViewFigma } from './_view/TabsMenu_view_figma'
 // _adaptive
 import { withAdaptive } from '@yandex/ui/TabsMenu/_adaptive/TabsMenu_adaptive@desktop'
-
-import './TabsMenu_view_default@desktop.css'
 
 export * from '@yandex/ui/TabsMenu/desktop/bundle'
 
 export const TabsMenu = compose(
   withLayoutHoriz,
-  withViewDefault,
+  withViewFigma,
   withAdaptive,
   composeU(withSizeM, withSizeS),
 )(TabsMenuCommon)
 
 TabsMenu.defaultProps = {
-  view: 'default',
+  view: 'figma',
   layout: 'horiz',
   size: 'm',
 }

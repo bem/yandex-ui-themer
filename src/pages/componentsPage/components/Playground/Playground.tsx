@@ -33,6 +33,7 @@ export const Playground: FC<PlaygroundProps> = ({ className }) => {
           .map(() => (
             <Textinput label="blabla" tip="it is used for blabla" />
           ))}
+        <Textinput label="blabla" />
       </div>
     </div>
   )

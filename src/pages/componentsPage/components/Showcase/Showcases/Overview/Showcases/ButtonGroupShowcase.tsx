@@ -2,7 +2,7 @@ import React from 'react'
 import { Button } from '@yandex/ui/Button/Button.bundle/desktop'
 import { ButtonGroup } from '@yandex/ui/ButtonGroup/desktop/bundle'
 
-import { Headline } from '../../../pages/componentsPage/components/Showcase/Showcases/Overview/Headline'
+import { Headline } from '../Headline'
 
 export const ButtonGroupShowcase = () => {
   const gaps = [undefined, 's', 'm', 'l', 'xl'] as ('s' | 'm' | 'l' | 'xl')[]

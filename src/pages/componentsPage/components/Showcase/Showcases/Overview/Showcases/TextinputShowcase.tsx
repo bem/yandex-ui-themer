@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Textinput } from '@yandex/ui/Textinput/desktop/bundle'
 
-import { Headline } from '../../../pages/componentsPage/components/Showcase/Showcases/Overview/Headline'
+import { Headline } from '../Headline'
 
 export const TextinputShowcase = () => {
   const [value1, setValue1] = useState('')

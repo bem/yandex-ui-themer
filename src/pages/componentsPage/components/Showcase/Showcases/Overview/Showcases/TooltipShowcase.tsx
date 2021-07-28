@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react'
 import { Tooltip } from '@yandex/ui/Tooltip/desktop/bundle'
 import { Button } from '@yandex/ui/Button/desktop/bundle'
 
-import { Headline } from '../../../pages/componentsPage/components/Showcase/Showcases/Overview/Headline'
+import { Headline } from '../Headline'
 
 export const TooltipShowcase = () => {
   const [visible1, setVisible1] = useState(true)
