@@ -1,0 +1,16 @@
+.Panels .Panels-Content {
+	height: calc(100% - 41px);
+  overflow-y: scroll;
+}
+
+.Panels .Panels-Input .input-field {
+	height: 40px;
+}
+
+.Panels .Panels-Input .icon {
+	top: 4px;
+}
+
+.Panels .Panels-Input .input-field {
+	border: none;
+}

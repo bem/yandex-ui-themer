@@ -1,34 +1,55 @@
-import React, { FC, ReactNode, useRef } from 'react'
-import { cn } from '@bem-react/classname'
+import React, { ChangeEvent, FC } from 'react'
+import { Select, Input, Item, Switch } from 'react-figma-components'
 
-import { TipIcon } from '../../icons'
-import { TooltipStateful } from '../../lib/lego/Tooltip'
+import { TextinputBase, TextinputBaseProps, cnTextinput } from '.'
 
-import './Textinput.css'
-
-const cnTextinput = cn('Textinput')
-
-export type TextinputProps = {
-  label: string
-  children?: ReactNode
-  className?: string
-  tip?: string
+export type TextinputProps = TextinputBaseProps & {
+  type: 'select' | 'boolean' | 'text'
+  options?: Array<{
+    value: string
+    label: string
+  }>
+  value?: string
+  onChange?: (event: ChangeEvent) => void
 }
 
-export const Textinput: FC<TextinputProps> = ({ children, className, tip, label }) => {
-  const iconRef = useRef<SVGSVGElement>(null)
+export const Textinput: FC<TextinputProps> = ({
+  value,
+  type,
+  options = [],
+  onChange,
+  ...restProps
+}) => {
+  let Component: FC
+
+  if (type === 'select' && options.length === 0) {
+    throw new Error('select type should have options prop')
+  }
+
+  switch (type) {
+    case 'select':
+      Component = Select
+      break
+    case 'boolean':
+      Component = Switch
+      break
+    case 'text':
+      Component = Input
+      break
+    default:
+      throw new Error('component type is not defined')
+  }
 
   return (
-    <div className={cnTextinput({ has_tip: Boolean(tip) }, [className])}>
-      {tip && (
-        <TooltipStateful content={tip}>
-          <span>
-            <TipIcon className={cnTextinput('TipIcon')} />
-          </span>
-        </TooltipStateful>
-      )}
-      <span className={cnTextinput('Label')}>{label}</span>
-      <div className={cnTextinput('Body')}>{children}</div>
-    </div>
+    <TextinputBase {...restProps} className={cnTextinput({ [`type_${type}`]: Boolean(type) })}>
+      {
+        // @ts-ignore
+        <Component onChange={onChange} value={value}>
+          {type === 'select'
+            ? options.map(({ value, label }) => <Item value={value}>{label}</Item>)
+            : null}
+        </Component>
+      }
+    </TextinputBase>
   )
 }

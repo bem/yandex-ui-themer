@@ -5,7 +5,6 @@
 .ComponentsPage-Panels, .ComponentsPage-Showcase, .ComponentsPage-Playground {
   /* Убираем высоту Header'а и Divider'а */
   height: calc(100vh - 41px);
-  overflow-y: scroll;
 }
 
 .ComponentsPage-Panels {

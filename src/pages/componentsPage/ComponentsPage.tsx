@@ -8,6 +8,7 @@ import './ComponentsPage.css'
 import { Panels } from './components/Panels'
 import { Playground } from './components/Playground'
 import { Showcase } from './components/Showcase'
+import { $component, componentChange } from './model'
 
 const cnComponentsPage = cn('ComponentsPage')
 
@@ -16,11 +17,11 @@ export const ComponentsPage = () => {
     preset,
     tokens: { globals, components },
   } = useStore($theme)
-  const [selectedComponent, setSelectedComponent] = useState('overview')
+  const component = useStore($component)
 
   const panels = ['overview', ...Object.keys(components)]
   const handlePanelSelection = (panel: string) => {
-    setSelectedComponent(panel)
+    componentChange(panel)
   }
 
   return (
@@ -28,10 +29,10 @@ export const ComponentsPage = () => {
       <Panels
         className={cnComponentsPage('Panels')}
         panels={panels}
-        activePanel={selectedComponent}
+        activePanel={component}
         onPanelSelect={handlePanelSelection}
       />
-      <Showcase className={cnComponentsPage('Showcase')} component={selectedComponent} />
+      <Showcase className={cnComponentsPage('Showcase')} />
       <Playground className={cnComponentsPage('Playground')} />
     </div>
   )

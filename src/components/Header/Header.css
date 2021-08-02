@@ -2,5 +2,41 @@
   display: flex;
   align-items: center;
   height: 40px;
-  padding-left: 16px;
+  padding: 0 16px;
+  justify-content: space-between;
+}
+
+.Header-Controls {
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0.005em;
+}
+
+.Header-Controls .Control {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.3);
+  transition: color 0.2s ease;
+}
+
+.Header-Controls .Control:hover {
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.Header-Controls .Control .Reset-Icon {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+  transition: fill 0.2s ease;
+}
+
+.Header-Controls .Control .Reset-Icon path {
+  fill: rgba(0, 0, 0, 0.3);
+}
+
+.Header-Controls .Control:hover .Reset-Icon path {
+  fill: rgba(0, 0, 0, 0.8);
 }

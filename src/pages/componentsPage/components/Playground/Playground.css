@@ -1,14 +1,78 @@
+.Playground {
+  display: flex;
+  flex-direction: column;
+}
+
 .Playground-Header {
   display: flex;
   align-items: center;
   height: 40px;
-  padding-left: 16px;
+  padding: 0 16px;
 	flex-shrink: 0;
 }
 
 .Playground-Body {
 	padding: 26px 0 26px 18px;
-  /* Убираем 2 высоты Header'а и Divider'а и padding сверху */
-	height: calc(100vh - 26px * 2 - 41px * 2);
 	overflow-y: scroll;
+  overflow-x: hidden;
+  flex: 1 1 100px;
 }
+
+.Playground-Footer {
+  display: flex;
+  align-items: top;
+  flex-direction: column;
+  padding: 16px;
+  padding-left: 24px;
+  height: 48px;
+
+  font-size: 11px;
+  line-height: 16px;
+  transition: height 0.2s ease;
+}
+
+.Playground-Footer .switch {
+  /* switch занимает height: 100% по дефолту */
+  height: 16px;
+}
+
+.Playground-Footer-Text > p {
+  margin: 0;
+  margin-bottom: 8px;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.Playground-Footer-Text > p:last-child {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.Playground-Footer .Playground-Footer-Header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.3);
+
+  font-family: Inter;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.005em;
+  text-align: left;
+}
+
+.Playground-Footer.Playground-Footer_active {
+  height: 140px;
+}
+
+.Playground-Footer.Playground-Footer_active .Playground-Footer-Header {
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.Playground-Footer .Playground-Footer-Buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* .Playground-Footer */
