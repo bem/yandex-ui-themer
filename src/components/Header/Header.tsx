@@ -6,7 +6,7 @@ import { Controls } from './Controls'
 
 import './Header.css'
 
-export type ActiveTabType = 'components' | 'tokens'
+export type ActiveTabType = 'components' | 'changes'
 
 export type HeaderProps = {
   activeTab: ActiveTabType
@@ -22,7 +22,7 @@ export const Header: FC<HeaderProps> = ({ activeTab, setActiveTab }) => {
         activeTab={activeTab}
         tabs={[
           { id: 'components', onClick: () => setActiveTab('components'), content: 'Components' },
-          { id: 'tokens', onClick: () => setActiveTab('tokens'), content: 'Design Tokens' },
+          { id: 'changes', onClick: () => setActiveTab('changes'), content: 'Changes' },
         ]}
       />
       <Controls className={cnHeader('Controls')} />

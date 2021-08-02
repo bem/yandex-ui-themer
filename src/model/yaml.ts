@@ -13,6 +13,10 @@ import { $dotSepDesignTokens } from './designTokens'
 export const $yamlText = combine(
   { designTokens: $dotSepDesignTokens, mappings: $invertedTokenMappings, theme: $theme },
   ({ designTokens, mappings, theme: { allTokens } }) => {
+    if (Object.keys(designTokens).length === 0) {
+      return ''
+    }
+
     // Make object for yaml from designTokens
     const yml = Object.values(designTokens).reduce((acc, { changed, path, value, rawValue }) => {
       if (rawValue) {

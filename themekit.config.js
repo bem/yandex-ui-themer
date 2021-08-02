@@ -42,6 +42,18 @@ const excludeComponentsList = [
   "calendar",
 ]
 
+const isColor = (value) => {
+  return Boolean(String(value).match(/^(#|hsla?|rgba?)/))
+}
+
+const getType = (value) => {
+  if (isColor(value)) {
+    return 'color'
+  } else {
+    return 'text'
+  }
+}
+
 Api.registerFormat({
   name: 'json/extended',
   formatter(dict) {
@@ -57,12 +69,14 @@ Api.registerFormat({
         if (components[prop.path[0]] === undefined) {
           components[prop.path[0]] = {}
         }
+
         components[prop.path[0]] = {
           ...components[prop.path[0]],
           [prop.name]: {
             value: prop.value,
             path: prop.path,
             description: prop.comment,
+            type: getType(prop.value)
           }
         }
       } else {
@@ -70,6 +84,7 @@ Api.registerFormat({
           value: prop.value,
           path: prop.path,
           description: prop.comment,
+          type: getType(prop.value)
         }
       }
     }

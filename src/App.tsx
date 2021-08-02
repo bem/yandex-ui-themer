@@ -11,6 +11,7 @@ import { Header, ActiveTabType } from './components/Header'
 import { Divider } from './lib/lego/Divider'
 
 import { ComponentsPage } from './pages/componentsPage'
+import { ChangesPage } from './pages/changesPage'
 
 import { variablesInitializationGate } from './model/designTokens'
 
@@ -38,7 +39,7 @@ export default () => {
         activePane={activeTab}
         panes={[
           { id: 'components', content: <ComponentsPage /> },
-          { id: 'tokens', content: 'Картинки content' },
+          { id: 'changes', content: <ChangesPage /> },
         ]}
       />
     </div>
