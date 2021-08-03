@@ -1,11 +1,14 @@
 import { useStore } from 'effector-react'
-import React, { FC, useState } from 'react'
+import React, { FC } from 'react'
+
 import { TextinputField } from '../../../../components/TextinputField'
 import { $designTokens } from '../../../../model/designTokens'
 import { $invertedTokenMappings } from '../../../../model/mappings'
 import { $theme } from '../../../../model/themes'
 import { transformMappings } from '../../../../utils/transformers'
 import { $component } from '../../model'
+
+import { mockTokens } from './mockTokens'
 
 export type TokensProps = {}
 
@@ -17,9 +20,8 @@ export const Tokens: FC<TokensProps> = () => {
   const designTokens = useStore($designTokens)
   const invertedTokenMappings = useStore($invertedTokenMappings)
 
-  const values = component === 'overview' ? globals : components[component]
-
-  console.log(values)
+  // const values = component === 'overview' ? globals : components[component]
+  const values = mockTokens
 
   return (
     <>
