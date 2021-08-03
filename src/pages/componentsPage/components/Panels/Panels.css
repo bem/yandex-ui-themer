@@ -14,3 +14,18 @@
 .Panels .Panels-Input .input-field {
 	border: none;
 }
+
+.Panels .Panels-Content .disclosure-label {
+	font-size: 11px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: 16px;
+	letter-spacing: 0.005em;
+
+	text-transform: capitalize;
+}
+
+.Panels .Panels-Disclosure .disclosure-content {
+	padding: 0;
+	pointer-events: all;
+}

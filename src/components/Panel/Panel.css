@@ -1,8 +1,8 @@
 .Panel {
   display: flex;
   align-items: center;
-  height: 40px;
-  padding-left: 16px;
+  height: 32px;
+  padding-left: 18.5px;
   font-family: Inter;
 }
 
