@@ -32,15 +32,9 @@ export const Showcase: FC<ShowcaseProps> = ({ className }) => {
         {/* @ts-ignore  */}
         {Showcases[component]?.()}
       </div>
-      <SunIconButton
-        dark={dark}
-        onClick={handleSunIconClick}
-        onPress={handleSunIconClick}
-        className="Showcase-SunIcon"
-      />
+      <SunIconButton dark={dark} onPress={handleSunIconClick} className="Showcase-SunIcon" />
       <EyeIconButton
         dark={dark}
-        onClick={handleEyeIconClick}
         onPress={handleEyeIconClick}
         close={!showDiff}
         className="Showcase-EyeIcon"

@@ -1,6 +1,7 @@
 import React, { FC, HTMLProps, useRef } from 'react'
 import { useButton, UseButtonProps } from 'web-platform-alpha'
 import { cn } from '@bem-react/classname'
+import { TooltipStateful } from '../../lib/lego/Tooltip'
 
 import './IconButtonBase.css'
 
@@ -10,6 +11,11 @@ export type IconButtonBaseProps = HTMLProps<HTMLButtonElement> &
      * @default false
      */
     dark?: boolean
+
+    /**
+     * Tip for tooltip
+     */
+    tip?: string
   }
 
 export const cnIconButtonBase = cn('IconButtonBase')
@@ -18,14 +24,17 @@ export const IconButtonBase: FC<IconButtonBaseProps> = ({
   className,
   children,
   dark,
+  tip,
   ...props
 }) => {
   const ref = useRef(null)
   const { buttonProps } = useButton(props, ref)
 
   return (
-    <button {...buttonProps} ref={ref} className={cnIconButtonBase({ dark }, [className])}>
-      {children}
-    </button>
+    <TooltipStateful content={tip}>
+      <button {...buttonProps} ref={ref} className={cnIconButtonBase({ dark }, [className])}>
+        {children}
+      </button>
+    </TooltipStateful>
   )
 }

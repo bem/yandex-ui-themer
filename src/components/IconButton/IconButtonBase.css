@@ -13,6 +13,8 @@
 	border: 0.5px solid #000000;
 
 	z-index: 9999;
+
+	cursor: pointer;
 }
 
 .IconButtonBase_dark {

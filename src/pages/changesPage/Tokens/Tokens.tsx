@@ -65,10 +65,10 @@ export const Tokens: FC<TokensProps> = (props) => {
         >
           Share Theme
         </Button>
-        <Button view="secondary" onClick={handleUploadClick} onPress={handleUploadClick}>
+        <Button view="secondary" onPress={handleUploadClick}>
           Upload Theme
         </Button>
-        <Button view="primary" onClick={handlePushToCanvasClick} onPress={handlePushToCanvasClick}>
+        <Button view="primary" onPress={handlePushToCanvasClick}>
           Push all to canvas
         </Button>
       </div>

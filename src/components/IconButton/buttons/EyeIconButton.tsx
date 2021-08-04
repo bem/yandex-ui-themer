@@ -9,7 +9,7 @@ export const EyeIconButton: FC<IconButtonBaseProps & { close?: boolean }> = ({
   ...props
 }) => {
   return (
-    <IconButtonBase dark={dark} {...props}>
+    <IconButtonBase dark={dark} tip={close ? 'Show changes' : 'Hide changes'} {...props}>
       {close ? (
         <CloseEyeIcon type={dark ? 'black' : 'white'} className={cnIconButtonBase('Icon')} />
       ) : (
