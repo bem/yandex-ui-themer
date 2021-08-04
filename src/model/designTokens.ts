@@ -60,9 +60,9 @@ export const initializeVariables = createEffect(async () => {
     themeChange(theme as ThemeNamesType)
     variablesChangeBatch(tokens)
     tokensQueryParameterUpdate(tokensHash)
-    toast.success('Тема успешно загружена')
+    toast.success('Theme successfully downloaded')
   } catch (err) {
-    toast.error('Не удалось загрузить тему, проверьте ссылку')
+    toast.error("Couldn't download the Theme")
   }
 })
 
@@ -76,7 +76,10 @@ $designTokens
   })
   .reset(variablesReset)
 
-variablesReset.watch(() => tokensQueryParameterUpdate())
+variablesReset.watch(() => {
+  toast.success('All changes reset')
+  tokensQueryParameterUpdate()
+})
 
 forward({
   from: variablesInitializationGate.open,

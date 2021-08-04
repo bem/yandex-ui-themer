@@ -4,6 +4,7 @@ import { Button, Switch, Textarea } from 'react-figma-components'
 import { $cssText } from '../../../model/css'
 
 import { rawTokensUpload, tokensUpdate, $tokensText } from '../../../model/tokensText'
+import { tokensShare, $shareTokensDisabled } from '../../../model/share-tokens'
 
 import './Tokens.css'
 
@@ -13,6 +14,7 @@ export const Tokens: FC<TokensProps> = (props) => {
   const [format, setFormat] = useState<'yaml' | 'css'>('yaml')
   const tokensText = useStore($tokensText)
   const cssText = useStore($cssText)
+  const shareDisabled = useStore($shareTokensDisabled)
 
   const handleSwitchChange = () =>
     setFormat((format) => {
@@ -52,8 +54,16 @@ export const Tokens: FC<TokensProps> = (props) => {
         placeholder="Tokens"
       />
       <div className="Tokens-Buttons">
-        <Button view="tertiary">Share Theme</Button>
-        <Button view="secondary" onClick={handleUploadClick}>
+        <Button
+          view="tertiary"
+          onClick={tokensShare}
+          disabled={shareDisabled}
+          onPress={tokensShare}
+          data-testid="share=button"
+        >
+          Share Theme
+        </Button>
+        <Button view="secondary" onClick={handleUploadClick} onPress={handleUploadClick}>
           Upload Theme
         </Button>
       </div>

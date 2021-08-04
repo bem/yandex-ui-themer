@@ -40,7 +40,7 @@ $tokensText.on(tokensUpdate, (_, payload) => payload)
 
 uploadRawTokensFx.doneData.watch((tokens) => {
   variablesChangeBatch(tokens)
-  toast.success('Токены успешно загружены')
+  toast.success('Tokens successfully uploaded')
 })
 
 uploadRawTokensFx.failData.watch((error) => toast.error(error.message, { autoClose: 5000 }))
