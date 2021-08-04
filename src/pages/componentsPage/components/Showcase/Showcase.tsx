@@ -1,26 +1,44 @@
+import React, { useState, FC } from 'react'
 import { useStore } from 'effector-react'
-import React, { FC } from 'react'
 import { cnTheme } from '@yandex/ui/Theme'
 
 import { $cssVariables } from '../../../../model/css'
 
 import { Showcases } from './Showcases'
 import { $theme } from '../../../../model/themes'
+import { $dark, darkToggle } from '../../../../model/dark'
 import { $component } from '../../model'
+
+import { EyeIconButton, SunIconButton } from '../../../../components/IconButton'
 
 export type ShowcaseProps = {
   className: string
 }
 
 export const Showcase: FC<ShowcaseProps> = ({ className }) => {
+  const [showDiff, setShowDiff] = useState(true)
+
   const { preset } = useStore($theme)
   const cssVariables = useStore($cssVariables)
   const component = useStore($component)
+  const dark = useStore($dark)
+
+  const handleSunIconClick = darkToggle
+  const handleEyeIconClick = () => setShowDiff((prev) => !prev)
 
   return (
-    <div className={cnTheme(preset, [className])} style={cssVariables}>
-      {/* @ts-ignore  */}
-      {Showcases[component]?.()}
+    <div className={cnTheme({ ...preset, dark }, [className])} style={showDiff ? cssVariables : {}}>
+      <div className="Showcase-Content">
+        {/* @ts-ignore  */}
+        {Showcases[component]?.()}
+      </div>
+      <SunIconButton dark={dark} onClick={handleSunIconClick} className="Showcase-SunIcon" />
+      <EyeIconButton
+        dark={dark}
+        onClick={handleEyeIconClick}
+        close={!showDiff}
+        className="Showcase-EyeIcon"
+      />
     </div>
   )
 }

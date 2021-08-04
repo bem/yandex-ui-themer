@@ -25,6 +25,7 @@
     "react-scripts": "3.4.1",
     "react-toastify": "7.0.3",
     "typescript": "4.2.4",
+    "web-platform-alpha": "0.0.1-alpha.9",
     "yaml": "1.10.0"
   },
   "scripts": {

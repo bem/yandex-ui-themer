@@ -1,8 +1,9 @@
 .ComponentsPage {
   display: flex;
+  position: relative;
 }
 
-.ComponentsPage-Panels, .ComponentsPage-Showcase, .ComponentsPage-Playground {
+.ComponentsPage-Panels, .ComponentsPage-Playground, .Showcase-Content {
   /* Убираем высоту Header'а и Divider'а */
   height: calc(100vh - 41px);
 }
@@ -14,11 +15,31 @@
 .ComponentsPage-Showcase {
   background: rgba(247, 248, 250, 1);
   flex: 1;
+  position: relative;
+}
+
+.Showcase-Content {
   align-items: center;
   justify-content: center;
   overflow-x: hidden;
 }
 
+.Theme_dark.ComponentsPage-Showcase {
+  background: #272733;
+}
+
 .ComponentsPage-Playground {
   width: 400px;
+}
+
+.ComponentsPage-Showcase .Showcase-SunIcon {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+
+.ComponentsPage-Showcase .Showcase-EyeIcon {
+  position: absolute;
+  top: 45px;
+  right: 8px;
 }

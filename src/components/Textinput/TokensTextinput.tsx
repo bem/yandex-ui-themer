@@ -7,10 +7,10 @@ export const cnTokensTextinput = cn('TokensTextinput')
 
 export type TokensTextinputProps = TextinputBaseProps & {}
 
-export const TokensTextinput: FC<TokensTextinputProps> = ({ ...restProps }) => {
+export const TokensTextinput: FC<TokensTextinputProps> = ({ ...props }) => {
   return (
     <div className={cnTokensTextinput()}>
-      <TextinputBase {...restProps} />
+      <TextinputBase {...props} />
     </div>
   )
 }

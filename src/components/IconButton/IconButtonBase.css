@@ -1,0 +1,21 @@
+.IconButtonBase {
+	width: 28px;
+	height: 28px;
+
+	box-sizing: border-box;
+	box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.15);
+	border-radius: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	background: #222222;
+	border: 0.5px solid #000000;
+
+	z-index: 9999;
+}
+
+.IconButtonBase_dark {
+	background: #FFFFFF;
+	border: 0.5px solid #FFFFFF;
+}

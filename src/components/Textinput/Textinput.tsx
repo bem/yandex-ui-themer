@@ -18,7 +18,7 @@ export const Textinput: FC<TextinputProps> = ({
   type,
   options = [],
   onChange,
-  ...restProps
+  ...props
 }) => {
   let Component: FC
 
@@ -41,7 +41,7 @@ export const Textinput: FC<TextinputProps> = ({
   }
 
   return (
-    <TextinputBase {...restProps} className={cnTextinput({ [`type_${type}`]: Boolean(type) })}>
+    <TextinputBase {...props} className={cnTextinput({ [`type_${type}`]: Boolean(type) })}>
       {
         // @ts-ignore
         <Component onChange={onChange} value={value}>
