@@ -22,7 +22,11 @@ export const Header: FC<HeaderProps> = ({ activeTab, setActiveTab }) => {
         activeTab={activeTab}
         tabs={[
           { id: 'components', onClick: () => setActiveTab('components'), content: 'Components' },
-          { id: 'changes', onClick: () => setActiveTab('changes'), content: 'Changes' },
+          {
+            id: 'changes',
+            onClick: () => setActiveTab('changes'),
+            content: 'Changes',
+          },
         ]}
       />
       <Controls className={cnHeader('Controls')} />

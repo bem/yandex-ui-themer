@@ -49,6 +49,6 @@
   padding-top: 16px;
 }
 
-.Tokens .Tokens-Buttons :first-child {
+.Tokens .Tokens-Buttons :not(:last-child) {
   margin-right: 20px;
 }

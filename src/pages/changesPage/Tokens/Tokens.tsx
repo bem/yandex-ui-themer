@@ -36,6 +36,8 @@ export const Tokens: FC<TokensProps> = (props) => {
     rawTokensUpload()
   }
 
+  const handlePushToCanvasClick = () => {}
+
   return (
     <div className="Tokens">
       <div className="Tokens-Header">
@@ -65,6 +67,9 @@ export const Tokens: FC<TokensProps> = (props) => {
         </Button>
         <Button view="secondary" onClick={handleUploadClick} onPress={handleUploadClick}>
           Upload Theme
+        </Button>
+        <Button view="primary" onClick={handlePushToCanvasClick} onPress={handlePushToCanvasClick}>
+          Push all to canvas
         </Button>
       </div>
     </div>
