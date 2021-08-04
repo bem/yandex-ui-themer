@@ -14,7 +14,7 @@ export const TextinputShowcase = () => {
   return (
     <>
       <Headline>Textinput</Headline>
-      <div className="Showcase-Item" style={{ whiteSpace: 'normal' }}>
+      <div className="Showcase-Item" style={{ whiteSpace: 'normal', width: 320 }}>
         <div style={{ padding: 4 }}>
           <Textinput
             hasClear

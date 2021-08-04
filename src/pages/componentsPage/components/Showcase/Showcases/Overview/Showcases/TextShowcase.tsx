@@ -8,7 +8,7 @@ export const TextShowcase = () => {
     <>
       <Headline>Text</Headline>
       <div className="Showcase-Item">
-        <Text as="div">
+        <Text as="div" style={{ whiteSpace: 'normal' }}>
           Миссия Яндекса — помогать людям решать задачи и достигать своих целей в жизни.
         </Text>
       </div>

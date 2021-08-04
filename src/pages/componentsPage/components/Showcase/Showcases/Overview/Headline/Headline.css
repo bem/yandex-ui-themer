@@ -1,0 +1,9 @@
+.Headline {
+  font-family: YS Text;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0em;
+  font-feature-settings: 'pnum' on, 'lnum' on;
+  color: #000000;
+  font-weight: 600;
+}

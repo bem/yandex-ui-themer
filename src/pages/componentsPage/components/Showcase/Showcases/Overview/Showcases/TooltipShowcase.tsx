@@ -24,7 +24,7 @@ export const TooltipShowcase = () => {
       <Headline>Tooltip</Headline>
       <div className="Showcase-Item">
         <div style={{ position: 'relative', display: 'flex', height: 96 }} ref={scopeRef}>
-          <div style={{ marginLeft: 32, marginRight: 32 }}>
+          <div style={{ marginRight: 32 }}>
             <Button
               innerRef={anchorRef1}
               size="m"
@@ -34,7 +34,7 @@ export const TooltipShowcase = () => {
               Target
             </Button>
           </div>
-          <div style={{ marginLeft: 32, marginRight: 32 }}>
+          <div style={{ marginRight: 32 }}>
             <Button
               innerRef={anchorRef2}
               size="m"
@@ -44,7 +44,7 @@ export const TooltipShowcase = () => {
               Target
             </Button>
           </div>
-          <div style={{ marginLeft: 32, marginRight: 32 }}>
+          <div style={{ marginRight: 32 }}>
             <Button
               innerRef={anchorRef3}
               size="m"
@@ -91,7 +91,7 @@ export const TooltipShowcase = () => {
       </div>
       <div className="Showcase-Item">
         <div style={{ position: 'relative', display: 'flex', height: 96 }} ref={scopeRef}>
-          <div style={{ marginLeft: 32, marginRight: 32 }}>
+          <div style={{ marginRight: 32 }}>
             <Button
               innerRef={anchorRef4}
               size="m"
@@ -101,7 +101,7 @@ export const TooltipShowcase = () => {
               Target
             </Button>
           </div>
-          <div style={{ marginLeft: 32, marginRight: 32 }}>
+          <div style={{ marginRight: 32 }}>
             <Button
               innerRef={anchorRef5}
               size="m"
@@ -111,7 +111,7 @@ export const TooltipShowcase = () => {
               Target
             </Button>
           </div>
-          <div style={{ marginLeft: 32, marginRight: 32 }}>
+          <div style={{ marginRight: 32 }}>
             <Button
               innerRef={anchorRef6}
               size="m"

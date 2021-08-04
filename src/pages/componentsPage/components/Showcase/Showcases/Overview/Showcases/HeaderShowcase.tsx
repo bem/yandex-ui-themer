@@ -29,8 +29,7 @@ export const HeaderShowcase = () => {
               <HeaderNavItem href="/"> По </HeaderNavItem>
               <HeaderNavItem href="/"> Умолчанию </HeaderNavItem>
               <HeaderNavItem href="/" active>
-                {' '}
-                Активный{' '}
+                Активный
               </HeaderNavItem>
             </HeaderNav>
           </HeaderSearch>

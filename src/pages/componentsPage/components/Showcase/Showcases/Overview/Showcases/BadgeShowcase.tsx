@@ -16,7 +16,7 @@ export const BadgeShowcase = () => {
       <Headline>Badge</Headline>
       <div
         className="Showcase-Item"
-        style={{ display: 'flex', justifyContent: 'space-between', width: 300 }}
+        style={{ display: 'flex', justifyContent: 'space-between', width: 250 }}
       >
         <Badge />
 

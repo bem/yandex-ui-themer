@@ -8,13 +8,17 @@ export const AttachShowcase = () => {
     <>
       <Headline>Attach</Headline>
       <div className="Showcase-Item">
-        <Attach size="l" view="default">
+        <Attach size="s" view="default">
           Select file
         </Attach>
+      </div>
+      <div className="Showcase-Item">
         <Attach size="m" view="default">
           Select file
         </Attach>
-        <Attach size="s" view="default">
+      </div>
+      <div className="Showcase-Item">
+        <Attach size="l" view="default">
           Select file
         </Attach>
       </div>
