@@ -18,11 +18,13 @@
   flex: 1 1 100px;
 }
 
+/* .Playground-Footer */
+
 .Playground-Footer {
   display: flex;
   align-items: top;
   flex-direction: column;
-  padding: 16px;
+  padding: 10px;
   padding-left: 24px;
   height: 48px;
 
@@ -75,4 +77,16 @@
   justify-content: space-between;
 }
 
-/* .Playground-Footer */
+.Playground-Footer_active .Playground-Footer-Header,
+.Playground-Footer_active .Playground-Footer-Header-Title {
+  cursor: default;
+}
+
+.Playground-Footer .Playground-Footer-Header-Button .icon {
+  cursor: pointer;
+}
+
+.Playground-Footer .Playground-Footer-Header-Button:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 2px;
+}

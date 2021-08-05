@@ -1,7 +1,7 @@
-import React, { useState, FC, useEffect } from 'react'
+import React, { useState, FC, useEffect, MouseEvent } from 'react'
 import { useStore } from 'effector-react'
 import { cn } from '@bem-react/classname'
-import { Button } from 'react-figma-components'
+import { Icon, Button } from 'react-figma-components'
 
 import { TabsMenu } from '../../../../lib/lego/TabsMenu'
 import { Divider } from '../../../../lib/lego/Divider'
@@ -26,7 +26,10 @@ export const Playground: FC<PlaygroundProps> = ({ className }) => {
   const combine = useStore($isCombine)
   const [activeTab, setActiveTab] = useState('tokens')
 
-  const handleCombineChange = () => isCombineChange()
+  const handleCombineChange = (e: MouseEvent<HTMLDivElement>) => {
+    e.stopPropagation()
+    isCombineChange()
+  }
 
   useEffect(() => {
     setActiveTab(component === 'overview' ? 'tokens' : 'settings')
@@ -64,11 +67,15 @@ export const Playground: FC<PlaygroundProps> = ({ className }) => {
           <div className={cnPlayground('Footer', { active: combine })}>
             <div
               className={cnPlayground('Footer-Header')}
-              onClick={() => !combine && handleCombineChange()}
+              onClick={(e) => !combine && handleCombineChange(e)}
             >
               <div className={cnPlayground('Footer-Header-Title')}>Combine mode </div>
-              <div onClick={handleCombineChange} className={cnPlayground('Footer-Header-Button')}>
-                {combine ? '-' : '+'}
+              <div className={cnPlayground('Footer-Header-Button')}>
+                <Icon
+                  name={combine ? 'minus' : 'plus'}
+                  color={combine ? 'black' : 'black3'}
+                  onClick={handleCombineChange}
+                />
               </div>
             </div>
             {combine && (
