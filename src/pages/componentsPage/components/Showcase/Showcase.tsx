@@ -1,4 +1,4 @@
-import React, { useState, FC } from 'react'
+import React, { useState, FC, createElement } from 'react'
 import { useStore } from 'effector-react'
 import { cnTheme } from '@yandex/ui/Theme'
 
@@ -30,7 +30,7 @@ export const Showcase: FC<ShowcaseProps> = ({ className }) => {
     <div className={cnTheme({ ...preset, dark }, [className])} style={showDiff ? cssVariables : {}}>
       <div className="Showcase-Content">
         {/* @ts-ignore */}
-        {Showcases[component]?.()}
+        {Showcases[component] && createElement(Showcases[component])}
       </div>
       <SunIconButton dark={dark} onPress={handleSunIconClick} className="Showcase-SunIcon" />
       <EyeIconButton
