@@ -1,4 +1,4 @@
-import React, { useState, FC } from 'react'
+import React from 'react'
 import { useStore } from 'effector-react'
 import { cn } from '@bem-react/classname'
 
@@ -7,17 +7,18 @@ import { $theme } from '../../model/themes'
 import './ComponentsPage.css'
 import { Panels } from './components/Panels'
 import { Playground } from './components/Playground'
+import { TokenEditor } from './components/TokenEditor'
 import { Showcase } from './components/Showcase'
-import { $component, componentChange } from './model'
+import { $component, $tokenPresent, componentChange } from './model'
 
 const cnComponentsPage = cn('ComponentsPage')
 
 export const ComponentsPage = () => {
   const {
-    preset,
-    tokens: { globals, components },
+    tokens: { components },
   } = useStore($theme)
   const component = useStore($component)
+  const showTokenEditor = useStore($tokenPresent)
 
   const panels = ['overview', ...Object.keys(components)]
   const handlePanelSelection = (panel: string) => {
@@ -33,7 +34,11 @@ export const ComponentsPage = () => {
         onPanelSelect={handlePanelSelection}
       />
       <Showcase className={cnComponentsPage('Showcase')} />
-      <Playground className={cnComponentsPage('Playground')} />
+      {showTokenEditor ? (
+        <TokenEditor className={cnComponentsPage('TokenEditor')} />
+      ) : (
+        <Playground className={cnComponentsPage('Playground')} />
+      )}
     </div>
   )
 }

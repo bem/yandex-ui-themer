@@ -58,7 +58,9 @@ export const Overview: React.FC<any> = (props) => {
 
   return (
     <div className={`Overview ${dark && 'Overview_dark'}`}>
-      {Object.values(componentsMap).map((component) => createElement(component))}
+      {Object.entries(componentsMap).map(([componentName, component]) =>
+        createElement(component, { key: componentName }),
+      )}
     </div>
   )
 }

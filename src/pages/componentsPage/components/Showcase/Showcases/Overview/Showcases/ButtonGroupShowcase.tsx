@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { Button } from '@yandex/ui/Button/Button.bundle/desktop'
 import { ButtonGroup } from '@yandex/ui/ButtonGroup/desktop/bundle'
 
@@ -13,7 +13,7 @@ export const ButtonGroupShowcase = () => {
       <Headline>ButtonGroup</Headline>
       <div className="Showcase-Item">
         {gaps.map((gap, index) => (
-          <>
+          <Fragment key={`${gap}-${index}`}>
             {index !== 0 && (
               <>
                 {' '}
@@ -32,14 +32,14 @@ export const ButtonGroupShowcase = () => {
                 Button 3
               </Button>
             </ButtonGroup>
-          </>
+          </Fragment>
         ))}
 
         {pins.map((pin) => (
-          <>
+          <Fragment key={`${pin}`}>
             <br /> <br />
             <p> Pin: {pin} </p>
-            <ButtonGroup pin={pin}>
+            <ButtonGroup pin={pin} key={pin}>
               <Button view="default" size="m">
                 Button 1
               </Button>
@@ -47,7 +47,7 @@ export const ButtonGroupShowcase = () => {
                 Button 2
               </Button>
             </ButtonGroup>
-          </>
+          </Fragment>
         ))}
       </div>
     </>

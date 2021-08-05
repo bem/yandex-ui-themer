@@ -65,6 +65,7 @@ export const Panels: FC<PanelsProps> = ({ className, panels, activePanel, onPane
               checked={sections[index]}
               onChange={() => handleSectionChange(index)}
               className="Panels-Disclosure"
+              key={section}
             >
               {components
                 .filter((component) => includes(component, search))

@@ -1,7 +1,5 @@
-import React, { CSSProperties } from 'react'
+import React, { Fragment } from 'react'
 import { Button } from '@yandex/ui/Button/Button.bundle/desktop'
-import { Icon } from '@yandex/ui/Icon/Icon.bundle/desktop'
-import { Text } from '@yandex/ui/Text/Text.bundle/desktop'
 
 import { Headline } from '../Headline'
 
@@ -13,12 +11,12 @@ export const ButtonShowcase = () => {
     <>
       <Headline>Button</Headline>
       {view.map((view: any) => (
-        <>
+        <Fragment key={view}>
           <p>View: {view}</p>
           <div className="Showcase-Item" style={{ display: 'flex', width: 250 }}>
             <div style={{ display: 'flex', flexDirection: 'column', flexBasis: '50%' }}>
               {size.map((size: any) => (
-                <div style={{ marginBottom: 16 }}>
+                <div style={{ marginBottom: 16 }} key={`${view}-${size}`}>
                   <Button view={view} size={size}>
                     Button
                   </Button>
@@ -44,7 +42,7 @@ export const ButtonShowcase = () => {
               </div>
             </div>
           </div>
-        </>
+        </Fragment>
       ))}
     </>
   )

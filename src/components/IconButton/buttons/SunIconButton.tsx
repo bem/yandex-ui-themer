@@ -4,8 +4,11 @@ import { IconButtonBase, cnIconButtonBase, IconButtonBaseProps } from '../IconBu
 import { SunIcon } from '../../../icons'
 
 export const SunIconButton: FC<IconButtonBaseProps> = ({ dark, ...props }) => {
+  const type = dark ? 'black' : 'white'
+  const tip = dark ? 'Lighten background' : 'Darkent background'
+
   return (
-    <IconButtonBase dark={dark} tip={dark ? 'Lighten background' : 'Darken background'} {...props}>
+    <IconButtonBase dark={dark} tip={tip} {...props}>
       <SunIcon type={dark ? 'black' : 'white'} className={cnIconButtonBase('Icon')} />
     </IconButtonBase>
   )

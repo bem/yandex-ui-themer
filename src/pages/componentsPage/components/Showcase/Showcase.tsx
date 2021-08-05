@@ -29,7 +29,7 @@ export const Showcase: FC<ShowcaseProps> = ({ className }) => {
   return (
     <div className={cnTheme({ ...preset, dark }, [className])} style={showDiff ? cssVariables : {}}>
       <div className="Showcase-Content">
-        {/* @ts-ignore  */}
+        {/* @ts-ignore */}
         {Showcases[component]?.()}
       </div>
       <SunIconButton dark={dark} onPress={handleSunIconClick} className="Showcase-SunIcon" />
