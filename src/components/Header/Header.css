@@ -40,3 +40,19 @@
 .Header-Controls .Control:hover .Reset-Icon path {
   fill: rgba(0, 0, 0, 0.8);
 }
+
+.Header .Header-Changes {
+  position: relative;
+}
+
+.Header .Header-Changes.Header-Changes_notify::after {
+  position: absolute;
+  content: '';
+  top: 2px;
+  right: -6px;
+  width: 4px;
+  height: 4px;
+  background: rgba(0, 0, 0, 0.8);
+  border: 2px solid #FFFFFF;
+  border-radius: 99px;
+}

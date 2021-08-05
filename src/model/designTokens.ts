@@ -15,6 +15,9 @@ export const variablesChange = createEvent<VariablesType>()
 export const variablesChangeBatch = createEvent<VariablesType[]>()
 export const variablesReset = createEvent()
 
+// Ивент который говорит о том, что пользователь открыл страница с изменениями (Changes)
+export const isVariablesChangedReset = createEvent()
+
 export const tokensUpload = createEvent()
 
 export const $designTokens = createStore<DesignTokensType>({})
@@ -38,6 +41,8 @@ export const $dotSepDesignTokens: Store<DesignTokensType> = combine(
       {},
     ),
 )
+
+export const $isVariablesChanged = createStore(false)
 
 export const variablesInitializationGate = createGate()
 
@@ -75,6 +80,8 @@ $designTokens
     return { ...state, ...ret }
   })
   .reset(variablesReset)
+
+$isVariablesChanged.on(variablesChange, () => true).reset(isVariablesChangedReset)
 
 variablesReset.watch(() => {
   toast.success('All changes reset')

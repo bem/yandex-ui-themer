@@ -2,23 +2,27 @@
 	background-color: white;
 }
 
-.TabsMenu.TabsMenu_view_figma .TabsMenu-Tab {
+.TabsMenu.TabsMenu_view_figma .TabsMenu-Tab,
+.TabsMenu.TabsMenu_view_figma .TabsMenu-Tab > * {
 	font-size: 11px;
 	line-height: 16px;
 	font-family: Inter;
 }
 
-.TabsMenu.TabsMenu_view_figma .TabsMenu-Tab_active {
+.TabsMenu.TabsMenu_view_figma .TabsMenu-Tab_active,
+.TabsMenu.TabsMenu_view_figma .TabsMenu-Tab_active > * {
 	font-weight: 600;
 	color: rgba(0, 0, 0, 0.8);
 }
 
-.TabsMenu.TabsMenu_view_figma .TabsMenu-Tab:hover {
+.TabsMenu.TabsMenu_view_figma .TabsMenu-Tab:hover,
+.TabsMenu.TabsMenu_view_figma .TabsMenu-Tab:hover > * {
 	color: rgba(0, 0, 0, 0.8);
 	transition: color 0.2s ease;
 }
 
-.TabsMenu.TabsMenu_view_figma :not(.TabsMenu-Tab_active) {
+.TabsMenu.TabsMenu_view_figma > :not(.TabsMenu-Tab_active),
+.TabsMenu.TabsMenu_view_figma > :not(.TabsMenu-Tab_active) > * {
 	font-weight: 500;
 	color: rgba(0, 0, 0, 0.3);
 }
