@@ -23,3 +23,7 @@
 .Overview p {
     color: var(--color-typo-primary);
 }
+
+.Overview.Overview_dark p {
+    color: white;
+}

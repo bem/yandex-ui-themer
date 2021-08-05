@@ -1,4 +1,7 @@
 import React, { createElement, ComponentType } from 'react'
+import { useStore } from 'effector-react'
+
+import { $dark } from '../../../../../../model/dark'
 
 import { AttachShowcase } from './Showcases/AttachShowcase'
 import { BadgeShowcase } from './Showcases/BadgeShowcase'
@@ -51,8 +54,10 @@ const componentsMap: Record<string, ComponentType> = {
 }
 
 export const Overview: React.FC<any> = (props) => {
+  const dark = useStore($dark)
+
   return (
-    <div className="Overview">
+    <div className={`Overview ${dark && 'Overview_dark'}`}>
       {Object.values(componentsMap).map((component) => createElement(component))}
     </div>
   )

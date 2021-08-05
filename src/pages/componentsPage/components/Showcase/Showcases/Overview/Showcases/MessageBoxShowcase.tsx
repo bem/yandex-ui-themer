@@ -9,7 +9,7 @@ export const MessageBoxShowcase = () => {
     <>
       <Headline>MessageBox</Headline>
       <div className="Showcase-Item">
-        <div style={{ backgroundColor: '#fff', padding: '16px' }}>
+        <div style={{ marginBottom: '16px' }}>
           <MessageBox
             onClose={() => null}
             view="default"
@@ -28,7 +28,7 @@ export const MessageBoxShowcase = () => {
             Новая почта с классными темами!
           </MessageBox>
         </div>
-        <div style={{ backgroundColor: '#000', padding: '16px' }}>
+        <div style={{ marginBottom: '16px' }}>
           <MessageBox
             onClose={() => null}
             view="inverse"
@@ -47,7 +47,7 @@ export const MessageBoxShowcase = () => {
             Новая почта с классными темами!
           </MessageBox>
         </div>
-        <div style={{ backgroundColor: '#fff', padding: '16px' }}>
+        <div style={{ marginBottom: '16px' }}>
           <MessageBox
             onClose={() => null}
             view="promo"
