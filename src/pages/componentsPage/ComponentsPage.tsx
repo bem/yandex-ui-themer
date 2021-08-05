@@ -34,7 +34,7 @@ export const ComponentsPage = () => {
         onPanelSelect={handlePanelSelection}
       />
       <Showcase className={cnComponentsPage('Showcase')} />
-      {showTokenEditor ? (
+      {!showTokenEditor ? (
         <TokenEditor className={cnComponentsPage('TokenEditor')} />
       ) : (
         <Playground className={cnComponentsPage('Playground')} />

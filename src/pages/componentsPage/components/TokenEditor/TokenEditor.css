@@ -1,0 +1,74 @@
+.TokenEditor {
+  display: flex;
+  flex-direction: column;
+}
+
+.TokenEditor-Header {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 40px;
+  padding: 0 16px;
+
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 16px;
+
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.TokenEditor .TokenEditor-CloseIcon {
+  cursor: pointer;
+}
+
+.TokenEditor .TokenEditor-Description {
+  padding: 8px;
+}
+
+.TokenEditor .TokenEditor-Description :first-child {
+  margin-bottom: 8px;
+}
+
+/* Обводка вокруг input теряется */
+.TokenEditor .TokenEditor-Description input {
+  border: 1px solid var(--black1);
+}
+
+.TokenEditor .TokenEditor-Controls {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+}
+
+.TokenEditor .TokenEditor-Switch {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-weight: normal;
+}
+
+.TokenEditor .TokenEditor-Switch .switch {
+  padding: 0;
+  padding-left: 42px;
+}
+
+.TokenEditor .TokenEditor-Switch > span:first-of-type {
+  margin-right: 4px;
+}
+
+.TokenEditor .TokenEditor-Switch > span:last-of-type {
+  padding-top: 4px;
+}
+
+.TokenEditor .TokenEditor-Controls .TokenEditor-Input {
+  flex: 1 1 auto;
+}
+
+.TokenEditor .TokenEditor-Actions {
+  display: flex;
+  justify-content: flex-end;
+  padding: 17px;
+}

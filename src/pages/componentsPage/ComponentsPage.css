@@ -28,7 +28,7 @@
   background: #272733;
 }
 
-.ComponentsPage-Playground {
+.ComponentsPage-Playground, .ComponentsPage-TokenEditor {
   width: 400px;
 }
 
