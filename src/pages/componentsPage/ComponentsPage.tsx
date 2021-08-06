@@ -9,7 +9,7 @@ import { Panels } from './components/Panels'
 import { Playground } from './components/Playground'
 import { TokenEditor } from './components/TokenEditor'
 import { Showcase } from './components/Showcase'
-import { $component, $tokenPresent, componentChange } from './model'
+import { $component, $tokenPresent, componentChange, tokenChange } from './model'
 
 const cnComponentsPage = cn('ComponentsPage')
 
@@ -34,11 +34,9 @@ export const ComponentsPage = () => {
         onPanelSelect={handlePanelSelection}
       />
       <Showcase className={cnComponentsPage('Showcase')} />
-      {!showTokenEditor ? (
-        <TokenEditor className={cnComponentsPage('TokenEditor')} />
-      ) : (
-        <Playground className={cnComponentsPage('Playground')} />
-      )}
+      <Playground className={cnComponentsPage('Playground')} />
+      {/* <button onClick={() => tokenChange('token-name')}>Token Editor</button> */}
+      {showTokenEditor && <TokenEditor className={cnComponentsPage('TokenEditor')} />}
     </div>
   )
 }

@@ -34,12 +34,12 @@
 
 .ComponentsPage-Showcase .Showcase-SunIcon {
   position: absolute;
-  top: 8px;
-  right: 8px;
+  top: 18px;
+  right: 18px;
 }
 
 .ComponentsPage-Showcase .Showcase-EyeIcon {
   position: absolute;
-  top: 45px;
-  right: 8px;
+  top: 55px;
+  right: 18px;
 }

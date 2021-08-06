@@ -2,6 +2,7 @@ import { useStore } from 'effector-react'
 import React, { ChangeEvent, FC, useState } from 'react'
 import { Button, Switch, Textarea } from 'react-figma-components'
 import { $cssText } from '../../../model/css'
+import { $isFigma } from '../../../model/view'
 
 import { rawTokensUpload, tokensUpdate, $tokensText } from '../../../model/tokensText'
 import { tokensShare, $shareTokensDisabled } from '../../../model/share-tokens'
@@ -14,6 +15,7 @@ export const Tokens: FC<TokensProps> = (props) => {
   const [format, setFormat] = useState<'yaml' | 'css'>('yaml')
   const tokensText = useStore($tokensText)
   const cssText = useStore($cssText)
+  const isFigma = useStore($isFigma)
   const shareDisabled = useStore($shareTokensDisabled)
 
   const handleSwitchChange = () =>
@@ -68,9 +70,11 @@ export const Tokens: FC<TokensProps> = (props) => {
         <Button view="secondary" onPress={handleUploadClick}>
           Upload Theme
         </Button>
-        <Button view="primary" onPress={handlePushToCanvasClick}>
-          Push all to canvas
-        </Button>
+        {isFigma && (
+          <Button view="primary" onPress={handlePushToCanvasClick}>
+            Push all to canvas
+          </Button>
+        )}
       </div>
     </div>
   )

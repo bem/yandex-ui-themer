@@ -4,7 +4,7 @@ import { configureRootTheme } from '@yandex/ui/Theme'
 import { TabsPanes } from '@yandex/ui/TabsPanes/desktop/bundle'
 import { theme } from '@yandex/ui/Theme/presets/default'
 
-import { ToastContainer, Zoom, cssTransition } from 'react-toastify'
+import { ToastContainer, cssTransition } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.min.css'
 import 'animate.css'
 import '@fontsource/inter'
@@ -16,6 +16,7 @@ import { ComponentsPage } from './pages/componentsPage'
 import { ChangesPage } from './pages/changesPage'
 
 import { variablesInitializationGate } from './model/designTokens'
+import { viewInitializationGate } from './model/view'
 
 import './App.css'
 import './Toastify.css'
@@ -31,6 +32,7 @@ export default () => {
   const [activeTab, setActiveTab] = useState<ActiveTabType>('components')
 
   useGate(variablesInitializationGate)
+  useGate(viewInitializationGate)
 
   // useEffect(() => {
   //   window.onbeforeunload = (e: BeforeUnloadEvent) => {

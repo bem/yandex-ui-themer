@@ -1,6 +1,12 @@
 .TokenEditor {
+  position: absolute;
+  top: 0px;
+  right: 0px;
   display: flex;
   flex-direction: column;
+  background-color: white;
+  height: calc(100vh - 41px);
+  z-index: 1000;
 }
 
 .TokenEditor-Header {
