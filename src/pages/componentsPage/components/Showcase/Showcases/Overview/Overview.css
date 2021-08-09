@@ -10,7 +10,7 @@
 
 .Showcase-Item {
     white-space: nowrap;
-    margin: 20px 0;
+    margin: 15px 0 40px 0;
     width: auto;
 }
 
@@ -26,4 +26,12 @@
 
 .Overview.Overview_dark p {
     color: white;
+}
+
+.Overview:not(.Overview_figma) {
+    width: 616px;
+}
+
+.Showcase-Item.Showcase-Attach > * {
+    margin-right: 24px;
 }

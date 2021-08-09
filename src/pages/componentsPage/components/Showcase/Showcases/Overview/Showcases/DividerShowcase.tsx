@@ -8,7 +8,7 @@ export const DividerShowcase = () => {
     <>
       <Headline>Divider</Headline>
       <div className="Showcase-Item">
-        <Divider style={{ margin: '8px 0', width: 350 }}>
+        <Divider style={{ margin: '8px 0' }}>
           <p>Section</p>
         </Divider>
       </div>

@@ -9,7 +9,7 @@ export const TextareaShowcase = () => {
   return (
     <>
       <Headline>Textarea</Headline>
-      <div className="Showcase-Item" style={{ width: 320 }}>
+      <div className="Showcase-Item">
         <Textarea
           hasClear
           size="m"
