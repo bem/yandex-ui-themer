@@ -4,9 +4,8 @@
 
 .ColorPicker-Preview{
   box-sizing: border-box;
-  width: 32px;
-  height: 32px;
-  margin-left: 8px;
+  width: 18px;
+  height: 18px;
   border-radius: 50%;
   border: 1px solid #d9d9d9;
 }

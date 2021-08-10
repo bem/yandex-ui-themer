@@ -51,7 +51,7 @@ export const Playground: FC<PlaygroundProps> = ({ className }) => {
             onClick: () => setActiveTab('tokens'),
             content: component === 'overview' ? 'Global Tokens' : 'Design Tokens',
           },
-          { id: 'code', onClick: () => setActiveTab('code'), content: 'Code' },
+          // { id: 'code', onClick: () => setActiveTab('code'), content: 'Code' },
         ]}
         className={cnPlayground('Header')}
       />

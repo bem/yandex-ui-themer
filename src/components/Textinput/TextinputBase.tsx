@@ -18,16 +18,16 @@ export type TextinputBaseProps = {
 export const TextinputBase: FC<TextinputBaseProps> = ({ children, className, tip, label }) => {
   return (
     <div className={cnTextinput({ has_tip: Boolean(tip) }, [className])}>
-      <TooltipStateful content={tip}>
-        <div className={cnTextinput('Tip')}>
-          {tip && (
+      <div className={cnTextinput('Tip')}>
+        {tip && (
+          <TooltipStateful content={tip}>
             <span>
               <TipIcon className={cnTextinput('TipIcon')} />
             </span>
-          )}
-          <span className={cnTextinput('Label')}>{label}</span>
-        </div>
-      </TooltipStateful>
+          </TooltipStateful>
+        )}
+        <span className={cnTextinput('Label')}>{label}</span>
+      </div>
       <div className={cnTextinput('Body')}>{children}</div>
     </div>
   )

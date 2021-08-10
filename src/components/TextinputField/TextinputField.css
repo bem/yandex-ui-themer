@@ -5,9 +5,9 @@
 
 .TextinputField-Control {
   display: flex;
+  align-items: center;
 }
 
 .TextinputField-Input {
   width: 90%;
-  margin-bottom: 8px;
 }

@@ -20,8 +20,8 @@ export const Tokens: FC<TokensProps> = () => {
   const designTokens = useStore($designTokens)
   const invertedTokenMappings = useStore($invertedTokenMappings)
 
-  // const values = component === 'overview' ? globals : components[component]
-  const values = mockTokens
+  const values = component === 'overview' ? globals : components[component]
+  // const values = mockTokens
 
   return (
     <>

@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useCallback } from 'react'
 import { useStore } from 'effector-react'
-import { Textinput } from '@yandex/ui/Textinput/desktop/bundle'
-import { ListTile } from '@yandex/ui/ListTile/desktop'
-import { Text } from '@yandex/ui/Text/bundle'
+import { withDebounceInput } from '@yandex/ui/withDebounceInput'
+import { Input } from 'react-figma-components'
 
 import { isColor } from '../../utils/isColor'
 import { variablesChange } from '../../model/designTokens'
+import { TextinputBase } from '../Textinput'
 import { IconBack } from '../IconBack'
 import { ColorPicker } from './ColorPicker'
 import { Description } from './Description'
@@ -14,6 +14,8 @@ import { metricaGoal } from '../YaMetrika'
 import { $resolvedTokens } from '../../model/resolvedTokens'
 
 import './TextinputField.css'
+
+const DebouncedInput = withDebounceInput(Input)
 
 export const TextinputField: React.FC<{
   label: string
@@ -24,20 +26,20 @@ export const TextinputField: React.FC<{
   rawValue?: string
 }> = ({ label, defaultValue, path, description, customTokens, rawValue }) => {
   const resolvedTokens = useStore($resolvedTokens)
-  const [val, setVal] = useState(customTokens)
+  const [value, setValue] = useState(customTokens)
   const token = resolvedTokens[label]?.value
 
   const isColorValue = isColor(token) || isColor(defaultValue)
   const colorValue = typeof token === 'string' ? token : defaultValue
-  const isChanged = defaultValue !== val
+  const isChanged = defaultValue !== value
 
   // Update internal value when showcase is changed.
   useEffect(() => {
-    setVal(rawValue || customTokens || defaultValue)
+    setValue(rawValue || customTokens || defaultValue)
   }, [defaultValue, customTokens, rawValue])
 
   const handleClearClick = useCallback(() => {
-    setVal(defaultValue)
+    setValue(defaultValue)
     variablesChange({
       path,
       name: label,
@@ -60,7 +62,7 @@ export const TextinputField: React.FC<{
         colorValue = color.hex
       }
 
-      setVal(colorValue)
+      setValue(colorValue)
       variablesChange({
         path,
         name: label,
@@ -73,7 +75,7 @@ export const TextinputField: React.FC<{
 
   const handleChange = useCallback(
     (event) => {
-      setVal(event.target.value)
+      setValue(event.target.value)
       variablesChange({
         path,
         name: label,
@@ -86,33 +88,47 @@ export const TextinputField: React.FC<{
   )
 
   return (
-    <ListTile
-      leftSpace="m"
-      rightSpace="m"
-      alignItems="center"
-      leading={
-        <div className="TextinputField-Label">
-          <Text typography="control-m" color="secondary">
-            {label}:{' '}
-          </Text>
-          {description && <Description description={description} />}
-        </div>
-      }
-    >
+    // <ListTile
+    //   leftSpace="m"
+    //   rightSpace="m"
+    //   alignItems="center"
+    //   leading={
+    //     <div className="TextinputField-Label">
+    //       <Text typography="control-m" color="secondary">
+    //         {label}:{' '}
+    //       </Text>
+    //       {description && <Description description={description} />}
+    //     </div>
+    //   }
+    // >
+    //   <div className="TextinputField-Control">
+    //     <Textinput
+    //       debounceTimeout={500}
+    //       onChange={handleChange}
+    //       iconRight={isChanged ? <IconBack onClick={handleClearClick} /> : <></>}
+    //       view="default"
+    //       size="s"
+    //       value={val}
+    //       hint={isChanged ? `Оригинальное значение - ${defaultValue}` : ''}
+    //       className="TextinputField-Input"
+    //       data-testid={label}
+    //     />
+    //     {isColorValue && <ColorPicker color={colorValue} onColorChange={handleColorChange} />}
+    //   </div>
+    // </ListTile>
+    <TextinputBase label={label} tip={description}>
       <div className="TextinputField-Control">
-        <Textinput
-          debounceTimeout={500}
-          onChange={handleChange}
-          iconRight={isChanged ? <IconBack onClick={handleClearClick} /> : <></>}
-          view="default"
-          size="s"
-          value={val}
-          hint={isChanged ? `Оригинальное значение - ${defaultValue}` : ''}
-          className="TextinputField-Input"
-          data-testid={label}
-        />
         {isColorValue && <ColorPicker color={colorValue} onColorChange={handleColorChange} />}
+        <DebouncedInput
+          onChange={handleChange}
+          value={value}
+          debounceTimeout={500}
+          forceNotifyByEnter
+          forceNotifyOnBlur
+          data-testid={label}
+          className="TextinputField-Input"
+        />
       </div>
-    </ListTile>
+    </TextinputBase>
   )
 }
