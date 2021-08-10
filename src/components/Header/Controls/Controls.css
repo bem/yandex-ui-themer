@@ -1,0 +1,33 @@
+.Reset-Modal {
+	width: 300px;
+	padding: 16px;
+}
+
+.Reset-Modal .Title {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 25px;
+
+	font-family: Inter;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 11px;
+	line-height: 16px;
+
+	letter-spacing: 0.005em;
+}
+
+.Reset-Modal .CloseIcon {
+  cursor: pointer;
+}
+
+.Reset-Modal .Buttons {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+}
+
+.Reset-Modal .Buttons :first-child {
+	margin-right: 8px;
+}
