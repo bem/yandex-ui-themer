@@ -10,7 +10,7 @@ import { Settings } from './Settings'
 import { Tokens } from './Tokens'
 import { Code } from './Code'
 
-import { $component } from '../../model'
+import { $component, $activeTab, activeTabChange } from '../../model'
 import { $isCombine, isCombineChange, isCombineReset } from '../../../../model/combine'
 
 import './Playground.css'
@@ -24,7 +24,7 @@ export type PlaygroundProps = {
 export const Playground: FC<PlaygroundProps> = ({ className }) => {
   const component = useStore($component)
   const combine = useStore($isCombine)
-  const [activeTab, setActiveTab] = useState('tokens')
+  const activeTab = useStore($activeTab)
 
   const handleCombineChange = (e: MouseEvent<HTMLDivElement>) => {
     e.stopPropagation()
@@ -32,7 +32,9 @@ export const Playground: FC<PlaygroundProps> = ({ className }) => {
   }
 
   useEffect(() => {
-    setActiveTab(component === 'overview' ? 'tokens' : 'settings')
+    if (component === 'overview') {
+      activeTabChange('tokens')
+    }
   }, [component])
 
   useEffect(() => isCombineReset, [component, activeTab])
@@ -44,11 +46,11 @@ export const Playground: FC<PlaygroundProps> = ({ className }) => {
         tabs={[
           // Overview page should not have settings tab
           ...(component !== 'overview'
-            ? [{ id: 'settings', onClick: () => setActiveTab('settings'), content: 'Settings' }]
+            ? [{ id: 'settings', onClick: () => activeTabChange('settings'), content: 'Settings' }]
             : []),
           {
             id: 'tokens',
-            onClick: () => setActiveTab('tokens'),
+            onClick: () => activeTabChange('tokens'),
             content: component === 'overview' ? 'Global Tokens' : 'Design Tokens',
           },
           // { id: 'code', onClick: () => setActiveTab('code'), content: 'Code' },

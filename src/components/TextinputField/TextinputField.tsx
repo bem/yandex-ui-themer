@@ -5,7 +5,7 @@ import { Input } from 'react-figma-components'
 
 import { isColor } from '../../utils/isColor'
 import { variablesChange } from '../../model/designTokens'
-import { TextinputBase } from '../Textinput'
+import { TextinputBase, cnTextinput } from '../Textinput'
 import { IconBack } from '../IconBack'
 import { ColorPicker } from './ColorPicker'
 import { Description } from './Description'
@@ -116,7 +116,11 @@ export const TextinputField: React.FC<{
     //     {isColorValue && <ColorPicker color={colorValue} onColorChange={handleColorChange} />}
     //   </div>
     // </ListTile>
-    <TextinputBase label={label} tip={description}>
+    <TextinputBase
+      label={label}
+      tip={description}
+      className={cnTextinput({ has_color: isColorValue })}
+    >
       <div className="TextinputField-Control">
         {isColorValue && <ColorPicker color={colorValue} onColorChange={handleColorChange} />}
         <DebouncedInput

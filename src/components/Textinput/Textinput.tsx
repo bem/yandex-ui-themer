@@ -46,7 +46,11 @@ export const Textinput: FC<TextinputProps> = ({
         // @ts-ignore
         <Component onChange={onChange} value={value}>
           {type === 'select'
-            ? options.map(({ value, label }) => <Item value={value}>{label}</Item>)
+            ? options.map(({ value, label }) => (
+                <Item value={value} key={`${label}-${value}`}>
+                  {label}
+                </Item>
+              ))
             : null}
         </Component>
       }

@@ -11,3 +11,7 @@
 .TextinputField-Input {
   width: 90%;
 }
+
+.Textinput_has_color .Textinput-Body {
+  margin-left: 8px;
+}

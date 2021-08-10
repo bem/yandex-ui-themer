@@ -81,7 +81,10 @@ $designTokens
   })
   .reset(variablesReset)
 
-$isVariablesChanged.on(variablesChange, () => true).reset(isVariablesChangedReset)
+$isVariablesChanged
+  .on(variablesChange, () => true)
+  .reset(isVariablesChangedReset)
+  .reset(variablesReset)
 
 variablesReset.watch(() => {
   toast.success('All changes reset')

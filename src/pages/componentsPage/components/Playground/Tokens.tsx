@@ -27,7 +27,7 @@ export const Tokens: FC<TokensProps> = () => {
     <>
       {Object.entries(values).map(([groupName, groupTokens]: any, index) => (
         <TextinputField
-          key={index}
+          key={groupName}
           label={groupName}
           defaultValue={groupTokens.value}
           customTokens={designTokens[groupName]?.value || ''}

@@ -45,10 +45,10 @@ export const Controls: FC<ControlsProps> = (props) => {
             <Icon name="close" color="black" onClick={handleClose} className="CloseIcon" />
           </div>
           <div className="Buttons">
-            <Button view="secondary" onClick={handleClose}>
+            <Button view="secondary" onPress={handleClose}>
               Cancel
             </Button>
-            <Button view="primary" destructive onClick={handleSubmit}>
+            <Button view="primary" destructive onPress={handleSubmit}>
               Reset changes
             </Button>
           </div>

@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react'
+import React, { FC, Fragment, useState } from 'react'
 import { Input, Icon, Disclosure } from 'react-figma-components'
 import { cn } from '@bem-react/classname'
 
@@ -56,7 +56,7 @@ export const Panels: FC<PanelsProps> = ({ className, panels, activePanel, onPane
 
         {Object.entries(panelsTree).map(([section, components], index) => {
           if (!components.some((component) => includes(component, search))) {
-            return <></>
+            return <Fragment key={section} />
           }
 
           return (
