@@ -2,10 +2,17 @@
   position: relative;
 }
 
-.ColorPicker-Preview{
+.ColorPicker-Preview {
   box-sizing: border-box;
   width: 18px;
   height: 18px;
-  border-radius: 50%;
   border: 1px solid #d9d9d9;
+}
+
+.ColorPicker-Preview.ColorPicker-Preview_shape_circle {
+  border-radius: 50%;
+}
+
+.ColorPicker-Preview.ColorPicker-Preview_shape_square {
+  border-radius: 2px;
 }

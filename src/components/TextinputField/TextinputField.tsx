@@ -4,11 +4,10 @@ import { withDebounceInput } from '@yandex/ui/withDebounceInput'
 import { Input } from 'react-figma-components'
 
 import { isColor } from '../../utils/isColor'
+import { getType } from '../../utils/tokenType'
 import { variablesChange } from '../../model/designTokens'
 import { TextinputBase, cnTextinput } from '../Textinput'
-import { IconBack } from '../IconBack'
 import { ColorPicker } from './ColorPicker'
-import { Description } from './Description'
 
 import { metricaGoal } from '../YaMetrika'
 import { $resolvedTokens } from '../../model/resolvedTokens'
@@ -32,6 +31,7 @@ export const TextinputField: React.FC<{
   const isColorValue = isColor(token) || isColor(defaultValue)
   const colorValue = typeof token === 'string' ? token : defaultValue
   const isChanged = defaultValue !== value
+  const type = getType(value)
 
   // Update internal value when showcase is changed.
   useEffect(() => {
@@ -45,6 +45,7 @@ export const TextinputField: React.FC<{
       name: label,
       value: defaultValue,
       changed: false,
+      type: getType(defaultValue),
     })
     metricaGoal('clear-textinput')
   }, [defaultValue, label, path])
@@ -68,6 +69,7 @@ export const TextinputField: React.FC<{
         name: label,
         value: colorValue,
         changed: colorValue !== defaultValue,
+        type: 'color',
       })
     },
     [path, defaultValue, label],
@@ -81,6 +83,7 @@ export const TextinputField: React.FC<{
         name: label,
         value: event.target.value,
         changed: event.target.value !== defaultValue,
+        type: getType(event.target.value),
       })
       metricaGoal('change-tokens')
     },
@@ -88,41 +91,19 @@ export const TextinputField: React.FC<{
   )
 
   return (
-    // <ListTile
-    //   leftSpace="m"
-    //   rightSpace="m"
-    //   alignItems="center"
-    //   leading={
-    //     <div className="TextinputField-Label">
-    //       <Text typography="control-m" color="secondary">
-    //         {label}:{' '}
-    //       </Text>
-    //       {description && <Description description={description} />}
-    //     </div>
-    //   }
-    // >
-    //   <div className="TextinputField-Control">
-    //     <Textinput
-    //       debounceTimeout={500}
-    //       onChange={handleChange}
-    //       iconRight={isChanged ? <IconBack onClick={handleClearClick} /> : <></>}
-    //       view="default"
-    //       size="s"
-    //       value={val}
-    //       hint={isChanged ? `Оригинальное значение - ${defaultValue}` : ''}
-    //       className="TextinputField-Input"
-    //       data-testid={label}
-    //     />
-    //     {isColorValue && <ColorPicker color={colorValue} onColorChange={handleColorChange} />}
-    //   </div>
-    // </ListTile>
     <TextinputBase
       label={label}
       tip={description}
       className={cnTextinput({ has_color: isColorValue })}
     >
       <div className="TextinputField-Control">
-        {isColorValue && <ColorPicker color={colorValue} onColorChange={handleColorChange} />}
+        {isColorValue && (
+          <ColorPicker
+            color={colorValue}
+            onColorChange={handleColorChange}
+            shape={type === 'link' ? 'circle' : 'square'}
+          />
+        )}
         <DebouncedInput
           onChange={handleChange}
           value={value}

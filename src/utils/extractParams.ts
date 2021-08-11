@@ -27,3 +27,8 @@ export const extractParams = (
     [],
   )
 }
+
+export const hasParams = (value: string, template: RegExp = PARAM_DASH_RE): boolean => {
+  const params = value.match(template)
+  return Boolean(params)
+}

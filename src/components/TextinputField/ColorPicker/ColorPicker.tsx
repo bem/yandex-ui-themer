@@ -9,9 +9,10 @@ import './ColorPicker.css'
 export type ColorPickerProps = {
   color: string
   onColorChange: (color: string) => void
+  shape?: 'circle' | 'square'
 }
 
-export const ColorPicker: FC<ColorPickerProps> = ({ color, onColorChange }) => {
+export const ColorPicker: FC<ColorPickerProps> = ({ color, onColorChange, shape = 'circle' }) => {
   const [visible, setVisible] = useState(false)
 
   const scopeRef = useRef<HTMLDivElement>(null)
@@ -39,7 +40,7 @@ export const ColorPicker: FC<ColorPickerProps> = ({ color, onColorChange }) => {
       <div
         ref={anchorRef}
         onClick={handleClick}
-        className="ColorPicker-Preview"
+        className={`ColorPicker-Preview ColorPicker-Preview_shape_${shape}`}
         style={{ background: color }}
       />
       <Popup

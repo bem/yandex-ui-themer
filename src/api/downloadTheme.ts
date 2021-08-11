@@ -2,6 +2,8 @@ import { ListDesignTokensType, MappingsType } from '../types'
 import { build } from '@yandex/themekit/lib/core/build'
 import { parseContent } from '@yandex/themekit/lib/core/parseContent'
 
+import { getType } from '../utils/tokenType'
+
 export const themeboxConfig = {
   output: {
     css: {
@@ -38,6 +40,7 @@ export const downloadTheme = async (content: any, mappings: MappingsType) => {
     value: item.value,
     rawValue: item.original.value,
     changed: true,
+    type: getType(item.value),
   }))
 
   return tokens

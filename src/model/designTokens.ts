@@ -95,3 +95,5 @@ forward({
   from: variablesInitializationGate.open,
   to: initializeVariables,
 })
+
+$designTokens.watch(console.log)

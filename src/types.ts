@@ -65,6 +65,7 @@ export type VariablesType = {
   value: string
   changed: boolean
   rawValue?: string
+  type: 'color' | 'link' | 'text'
 }
 
 export type TokensHashType = string
