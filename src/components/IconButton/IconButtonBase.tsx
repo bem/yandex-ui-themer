@@ -31,7 +31,7 @@ export const IconButtonBase: FC<IconButtonBaseProps> = ({
   const { buttonProps } = useButton(props, ref)
 
   return (
-    <TooltipStateful content={tip}>
+    <TooltipStateful content={tip} dark={dark}>
       <button {...buttonProps} ref={ref} className={cnIconButtonBase({ dark }, [className])}>
         {children}
       </button>

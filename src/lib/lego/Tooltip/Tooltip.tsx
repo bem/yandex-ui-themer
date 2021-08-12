@@ -11,9 +11,11 @@ import { withSizeS } from '@yandex/ui/Tooltip/_size/Tooltip_size_s'
 // _view
 import { withViewFigma } from './_view/Tooltip_view_figma'
 
+import { withDark } from './_dark/Tooltip_dark'
+
 export * from '@yandex/ui/Tooltip/Tooltip@desktop'
 
-const enhance = compose(withViewFigma, withSizeS)
+const enhance = compose(withViewFigma, withDark, withSizeS)
 
 export const Tooltip = enhance(TooltipDesktop)
 export const TooltipStateful = enhance(TooltipStatefulDesktop)

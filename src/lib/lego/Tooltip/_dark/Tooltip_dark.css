@@ -1,0 +1,15 @@
+.Tooltip_dark.Popup2_view_default {
+  background: none;
+  box-shadow: none;
+  color: black;
+}
+
+.Tooltip_dark .Tooltip-Backdrop::before {
+  border-radius: 2px;
+  background-color: rgba(255, 255, 255, 1);
+  box-shadow: var(--tooltip-view-figma-shadow);
+}
+
+.Tooltip.Tooltip_dark .Popup2-TailFill {
+  fill: rgba(255, 255, 255, 1);
+}
