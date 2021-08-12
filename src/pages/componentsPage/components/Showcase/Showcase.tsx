@@ -27,18 +27,21 @@ export const Showcase: FC<ShowcaseProps> = ({ className }) => {
   const handleEyeIconClick = () => setShowDiff((prev) => !prev)
 
   return (
-    <div className={cnTheme({ ...preset, dark }, [className])} style={showDiff ? cssVariables : {}}>
-      <div className="Showcase-Content">
+    <>
+      <div
+        className={cnTheme({ ...preset, dark }, [className])}
+        style={showDiff ? cssVariables : {}}
+      >
         {/* @ts-ignore */}
         {Showcases[component] && createElement(Showcases[component])}
       </div>
-      <SunIconButton dark={dark} onPress={handleSunIconClick} className="Showcase-SunIcon" />
+      <SunIconButton dark={dark} onPress={handleSunIconClick} className="SunIcon" />
       <EyeIconButton
         dark={dark}
         onPress={handleEyeIconClick}
         close={!showDiff}
-        className="Showcase-EyeIcon"
+        className="EyeIcon"
       />
-    </div>
+    </>
   )
 }
