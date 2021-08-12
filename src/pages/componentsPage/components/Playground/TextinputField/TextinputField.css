@@ -1,6 +1,6 @@
-.TextinputField-Label {
+.Textinput .Textinput-Label {
   display: inline-block;
-  width: 300px;
+  width: 90px;
 }
 
 .TextinputField-Control {
@@ -26,17 +26,43 @@
   padding-left: 7px;
 }
 
-.TextinputField-Control .Textinput_type_link span {
-  margin-left: 8px;
+.TextinputField-Control .Textinput-BreakIcon {
+  margin-left: auto;
 }
 
 .TextinputField-Control.isHovered .Textinput_type_link {
   background: rgba(0, 0, 0, 0.0588235);
+  border-radius: 2px;
 }
+
 .TextinputField-Control .ColorPicker {
   margin-right: 8px;
 }
 
 .TextinputField-Control .Textinput-Hex {
-  width: 60px;
+  width: 55px;
+  height: 32px;
+  line-height: 32px;
+}
+
+.TextinputField-Control .Textinput-Alpha {
+  text-align: center;
+  width: 40px;
+}
+
+.Textinput.Textinput_type_color {
+  border: 1px solid white;
+  border-radius: 2px;
+}
+
+.TextinputField-Control.isHovered .Textinput.Textinput_type_color {
+  border: 1px solid rgba(0, 0, 0, 0.0588235);
+}
+
+.Textinput.Textinput_type_color .Textinput-Hex {
+  border-right: 1px solid white;
+}
+
+.TextinputField-Control.isHovered .Textinput.Textinput_type_color .Textinput-Hex {
+  border-right: 1px solid rgba(0, 0, 0, 0.0588235);
 }
