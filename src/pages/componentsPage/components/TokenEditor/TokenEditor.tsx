@@ -32,7 +32,7 @@ export const TokenEditor: FC<TokenEditorProps> = ({ className, ...props }) => {
       <Divider />
       <div className={cnTokenEditor('Description')}>
         <Input value={token} readOnly />
-        <Textarea />
+        <Textarea readOnly />
       </div>
       <Divider />
       <div className={cnTokenEditor('Controls')}>

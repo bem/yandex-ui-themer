@@ -1,7 +1,7 @@
 import { useStore } from 'effector-react'
 import React, { FC } from 'react'
 
-import { TextinputField } from '../../../../components/TextinputField'
+import { TextinputField } from './TextinputField'
 import { $designTokens } from '../../../../model/designTokens'
 import { $invertedTokenMappings } from '../../../../model/mappings'
 import { $theme } from '../../../../model/themes'

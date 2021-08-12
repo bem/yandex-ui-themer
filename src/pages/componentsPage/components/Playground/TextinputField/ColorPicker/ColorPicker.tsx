@@ -2,7 +2,7 @@ import React, { useState, useRef, useCallback, FC } from 'react'
 import { ChromePicker } from 'react-color'
 import { Popup } from '@yandex/ui/Popup/desktop/bundle'
 
-import { metricaGoal } from '../../YaMetrika'
+import { metricaGoal } from '../../../../../../components/YaMetrika'
 
 import './ColorPicker.css'
 

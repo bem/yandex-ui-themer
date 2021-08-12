@@ -1,4 +1,4 @@
-import { isColor } from '../utils/isColor'
+import { isColor } from './color'
 import { hasParams } from '../utils/extractParams'
 
 export const getType = (token: string) => {

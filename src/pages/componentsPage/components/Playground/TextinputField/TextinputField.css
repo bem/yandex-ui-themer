@@ -1,0 +1,35 @@
+.TextinputField-Label {
+  display: inline-block;
+  width: 300px;
+}
+
+.TextinputField-Control {
+  display: flex;
+  align-items: center;
+
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 11px;
+  line-height: 16px;
+
+  letter-spacing: 0.005em;
+}
+
+.TextinputField-Input {
+  width: 90%;
+}
+
+
+.TextinputField-Control .Textinput_type_link,
+.TextinputField-Control .Textinput_type_color {
+  padding-left: 7px;
+}
+
+.TextinputField-Control .Textinput_type_link span {
+  margin-left: 8px;
+}
+
+.TextinputField-Control.isHovered .Textinput_type_link {
+  background: rgba(0, 0, 0, 0.0588235);
+}

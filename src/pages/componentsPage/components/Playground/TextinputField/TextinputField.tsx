@@ -1,18 +1,20 @@
 import React, { useState, useEffect, useCallback } from 'react'
 import { useStore } from 'effector-react'
 import { withDebounceInput } from '@yandex/ui/withDebounceInput'
-import { Input } from 'react-figma-components'
+import { Input, IconButton } from 'react-figma-components'
+import { useHover } from 'web-platform-alpha'
 
-import { isColor } from '../../utils/isColor'
-import { getType } from '../../utils/tokenType'
-import { variablesChange } from '../../model/designTokens'
-import { TextinputBase, cnTextinput } from '../Textinput'
+import { isColor, convertColorObj, toHEXA } from '../../../../../utils/color'
+import { getType } from '../../../../../utils/tokenType'
+import { variablesChange } from '../../../../../model/designTokens'
+import { TextinputBase, cnTextinput } from '../../../../../components/Textinput'
 import { ColorPicker } from './ColorPicker'
 
-import { metricaGoal } from '../YaMetrika'
-import { $resolvedTokens } from '../../model/resolvedTokens'
+import { metricaGoal } from '../../../../../components/YaMetrika'
+import { $resolvedTokens } from '../../../../../model/resolvedTokens'
 
 import './TextinputField.css'
+import { tokenChange } from '../../../model'
 
 const DebouncedInput = withDebounceInput(Input)
 
@@ -24,12 +26,14 @@ export const TextinputField: React.FC<{
   customTokens: string
   rawValue?: string
 }> = ({ label, defaultValue, path, description, customTokens, rawValue }) => {
+  const { isHovered, hoverProps } = useHover({ disabled: false })
   const resolvedTokens = useStore($resolvedTokens)
   const [value, setValue] = useState(customTokens)
   const token = resolvedTokens[label]?.value
 
   const isColorValue = isColor(token) || isColor(defaultValue)
   const colorValue = typeof token === 'string' ? token : defaultValue
+  const [hex, alpha] = toHEXA(colorValue)
   const isChanged = defaultValue !== value
   const type = getType(value)
 
@@ -52,16 +56,7 @@ export const TextinputField: React.FC<{
 
   const handleColorChange = useCallback(
     (color) => {
-      let colorValue = ''
-
-      // TODO: Move to util.
-      if (color.source === 'rgb') {
-        colorValue = `rgba(${color.rgb.r}, ${color.rgb.g}, ${color.rgb.b}, ${color.rgb.a})`
-      } else if (color.source === 'hsl') {
-        colorValue = `hsla(${color.hsl.h}, ${color.hsl.s}, ${color.hsl.l}, ${color.hsl.a})`
-      } else {
-        colorValue = color.hex
-      }
+      const colorValue = convertColorObj(color)
 
       setValue(colorValue)
       variablesChange({
@@ -90,29 +85,47 @@ export const TextinputField: React.FC<{
     [path, defaultValue, label],
   )
 
+  const handleLink = (token: string) => {
+    tokenChange(token)
+  }
+
   return (
     <TextinputBase
       label={label}
       tip={description}
       className={cnTextinput({ has_color: isColorValue })}
     >
-      <div className="TextinputField-Control">
-        {isColorValue && (
-          <ColorPicker
-            color={colorValue}
-            onColorChange={handleColorChange}
-            shape={type === 'link' ? 'circle' : 'square'}
-          />
+      <div className={`TextinputField-Control ${isHovered ? 'isHovered' : ''}`} {...hoverProps}>
+        {type === 'link' && (
+          <div className={cnTextinput({ type_link: true })}>
+            {isColorValue && (
+              <ColorPicker color={colorValue} onColorChange={handleColorChange} shape="circle" />
+            )}
+            <span>{label}</span>
+            {isHovered && <IconButton name="break" onPress={() => handleLink(label)} />}
+          </div>
         )}
-        <DebouncedInput
-          onChange={handleChange}
-          value={value}
-          debounceTimeout={500}
-          forceNotifyByEnter
-          forceNotifyOnBlur
-          data-testid={label}
-          className="TextinputField-Input"
-        />
+        {type === 'color' && (
+          <div className={cnTextinput({ type_color: true })}>
+            <ColorPicker color={colorValue} onColorChange={handleColorChange} shape="square" />
+            <span>{hex}</span>
+            <span>{alpha}</span>
+            {isHovered && <IconButton name="break" onPress={() => handleLink(label)} />}
+          </div>
+        )}
+        {type === 'text' && (
+          <div className={cnTextinput({ type_text: true })}>
+            <DebouncedInput
+              onChange={handleChange}
+              value={value}
+              debounceTimeout={500}
+              forceNotifyByEnter
+              forceNotifyOnBlur
+              data-testid={label}
+              className="TextinputField-Input"
+            />
+          </div>
+        )}
       </div>
     </TextinputBase>
   )
