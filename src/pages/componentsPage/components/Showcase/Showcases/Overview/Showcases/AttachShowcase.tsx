@@ -1,9 +1,12 @@
 import React from 'react'
-import { Attach } from '@yandex/ui/Attach/desktop/bundle'
 import { useStore } from 'effector-react'
 
 import { $isFigma } from '../../../../../../../model/view'
 import { Headline } from '../Headline'
+
+import { getWrappedComponent } from '../../../../../../../utils/getWrappedComponent';
+
+const Attach = getWrappedComponent('Attach');
 
 export const AttachShowcase = () => {
   const isFigma = useStore($isFigma)

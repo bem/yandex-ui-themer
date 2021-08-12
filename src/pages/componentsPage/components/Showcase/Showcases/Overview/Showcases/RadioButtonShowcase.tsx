@@ -1,7 +1,10 @@
 import React from 'react'
-import { RadioButton } from '@yandex/ui/RadioButton/desktop/bundle'
 
 import { Headline } from '../Headline'
+
+import { getWrappedComponent } from '../../../../../../../utils/getWrappedComponent';
+
+const RadioButton = getWrappedComponent('RadioButton');
 
 export const RadioButtonShowcase = () => {
   const options = [

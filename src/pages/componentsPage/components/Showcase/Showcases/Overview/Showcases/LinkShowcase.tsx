@@ -1,7 +1,10 @@
 import React from 'react'
-import { Link } from '@yandex/ui/Link/desktop/bundle'
 
 import { Headline } from '../Headline'
+
+import { getWrappedComponent } from '../../../../../../../utils/getWrappedComponent';
+
+const Link = getWrappedComponent('Link');
 
 export const LinkShowcase = () => {
   return (

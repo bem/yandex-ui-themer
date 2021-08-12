@@ -1,7 +1,10 @@
 import React, { useState } from 'react'
-import { Tumbler } from '@yandex/ui/Tumbler/desktop/bundle'
 
 import { Headline } from '../Headline'
+
+import { getWrappedComponent } from '../../../../../../../utils/getWrappedComponent';
+
+const Tumbler = getWrappedComponent('Tumbler');
 
 export const TumblerShowcase = () => {
   const [checked1, setChecked1] = useState(true)

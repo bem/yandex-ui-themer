@@ -1,7 +1,10 @@
 import React from 'react'
-import { Spin } from '@yandex/ui/Spin/desktop/bundle'
 
 import { Headline } from '../Headline'
+
+import { getWrappedComponent } from '../../../../../../../utils/getWrappedComponent';
+
+const Spin = getWrappedComponent('Spin');
 
 export const SpinShowcase = () => {
   return (

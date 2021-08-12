@@ -1,7 +1,10 @@
 import React from 'react'
-import { Text } from '@yandex/ui/Text/desktop/bundle'
 
 import { Headline } from '../Headline'
+
+import { getWrappedComponent } from '../../../../../../../utils/getWrappedComponent';
+
+const Text = getWrappedComponent('Text');
 
 export const TextShowcase = () => {
   return (

@@ -1,7 +1,10 @@
 import React, { useState } from 'react'
-import { Menu } from '@yandex/ui/Menu/desktop/bundle'
 
 import { Headline } from '../Headline'
+
+import { getWrappedComponent } from '../../../../../../../utils/getWrappedComponent';
+
+const Menu = getWrappedComponent('Menu');
 
 export const MenuShowcase = () => {
   const items = [

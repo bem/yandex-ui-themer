@@ -1,7 +1,10 @@
 import React, { useState } from 'react'
-import { Textarea } from '@yandex/ui/Textarea/desktop/bundle'
 
 import { Headline } from '../Headline'
+
+import { getWrappedComponent } from '../../../../../../../utils/getWrappedComponent';
+
+const Textarea = getWrappedComponent('Textarea');
 
 export const TextareaShowcase = () => {
   const [value1, setValue1] = useState('')
