@@ -8,7 +8,7 @@ import './ColorPicker.css'
 
 export type ColorPickerProps = {
   color: string
-  onColorChange: (color: string) => void
+  onColorChange?: (color: string) => void
   shape?: 'circle' | 'square'
 }
 
@@ -19,9 +19,13 @@ export const ColorPicker: FC<ColorPickerProps> = ({ color, onColorChange, shape 
   const anchorRef = useRef<HTMLDivElement>(null)
 
   const handleClick = useCallback(() => {
+    if (!onColorChange) {
+      return
+    }
+
     setVisible(true)
     metricaGoal('picker')
-  }, [])
+  }, [onColorChange])
 
   const handleClose = useCallback(() => {
     setVisible(false)
@@ -29,7 +33,7 @@ export const ColorPicker: FC<ColorPickerProps> = ({ color, onColorChange, shape 
 
   const handleColorChange = useCallback(
     (event) => {
-      onColorChange(event)
+      onColorChange?.(event)
       metricaGoal('change-tokens')
     },
     [onColorChange],

@@ -33,3 +33,10 @@
 .TextinputField-Control.isHovered .Textinput_type_link {
   background: rgba(0, 0, 0, 0.0588235);
 }
+.TextinputField-Control .ColorPicker {
+  margin-right: 8px;
+}
+
+.TextinputField-Control .Textinput-Hex {
+  width: 60px;
+}

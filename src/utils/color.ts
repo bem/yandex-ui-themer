@@ -1,5 +1,3 @@
-import { TupleType } from 'typescript'
-
 type Color =
   | { source: 'rgb'; rgb: { r: number; g: number; b: number; a: number } }
   | { source: 'hsl'; hsl: { h: number; s: number; l: number; a: number } }
@@ -19,12 +17,11 @@ function hslToHex(h: number, s: number, l: number) {
       .toString(16)
       .padStart(2, '0') // convert to Hex and prefix "0" if needed
   }
-  return `#${f(0)}${f(8)}${f(4)}`
+  return `${f(0)}${f(8)}${f(4)}`
 }
 
 function rgbToHex(r: number, g: number, b: number) {
   return (
-    '#' +
     (r | (1 << 8)).toString(16).slice(1) +
     (g | (1 << 8)).toString(16).slice(1) +
     (b | (1 << 8)).toString(16).slice(1)
@@ -68,14 +65,22 @@ export function toHEXA(color: string) {
     hex = _color.match(/rgb/) ? rgbToHex(a1, a2, a3) : hslToHex(a1, a2, a3)
     a = alpha ?? 1
   } else {
-    if (_color.length === 9) {
+    let fullForm = _color.slice(1)
+    if (_color.length === 4 || _color.length === 5) {
+      const r = _color[1],
+        g = _color[2],
+        b = _color[3]
+      fullForm = r + r + g + g + b + b + (_color.length === 5 ? color[4] + color[4] : '')
+    }
+
+    if (fullForm.length === 9) {
       // _______ <- color part
       // #FFFFFF00
       //        -- <- alpha part
-      hex = _color.slice(0, -2)
-      a = parseInt(_color.slice(_color.length - 2, _color.length), 16)
+      hex = fullForm.slice(0, -2)
+      a = parseInt(fullForm.slice(fullForm.length - 2, fullForm.length), 16)
     } else {
-      hex = _color
+      hex = fullForm
       a = 1
     }
   }

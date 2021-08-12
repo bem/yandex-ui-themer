@@ -98,9 +98,7 @@ export const TextinputField: React.FC<{
       <div className={`TextinputField-Control ${isHovered ? 'isHovered' : ''}`} {...hoverProps}>
         {type === 'link' && (
           <div className={cnTextinput({ type_link: true })}>
-            {isColorValue && (
-              <ColorPicker color={colorValue} onColorChange={handleColorChange} shape="circle" />
-            )}
+            {isColorValue && <ColorPicker color={colorValue} shape="circle" />}
             <span>{label}</span>
             {isHovered && <IconButton name="break" onPress={() => handleLink(label)} />}
           </div>
@@ -108,8 +106,8 @@ export const TextinputField: React.FC<{
         {type === 'color' && (
           <div className={cnTextinput({ type_color: true })}>
             <ColorPicker color={colorValue} onColorChange={handleColorChange} shape="square" />
-            <span>{hex}</span>
-            <span>{alpha}</span>
+            <span className="Textinput-Hex">{hex}</span>
+            <span className="Textinput-Alpha">{alpha}</span>
             {isHovered && <IconButton name="break" onPress={() => handleLink(label)} />}
           </div>
         )}

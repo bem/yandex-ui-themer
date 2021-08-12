@@ -16,7 +16,7 @@ export const extractParams = (
   value: string,
   template: RegExp = PARAM_DASH_RE,
 ): ParamsType[] | undefined => {
-  const params = value.match(template)
+  const params = String(value).match(template)
 
   if (!params) {
     return
