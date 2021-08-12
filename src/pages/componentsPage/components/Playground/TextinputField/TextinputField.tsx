@@ -9,6 +9,8 @@ import { getType } from '../../../../../utils/tokenType'
 import { variablesChange } from '../../../../../model/designTokens'
 import { TextinputBase, cnTextinput } from '../../../../../components/Textinput'
 import { ColorPicker } from './ColorPicker'
+import { TextinputPrevious } from './TextinputPrevious'
+import { BackIcon } from '../../../../../icons'
 
 import { metricaGoal } from '../../../../../components/YaMetrika'
 import { $resolvedTokens } from '../../../../../model/resolvedTokens'
@@ -90,53 +92,59 @@ export const TextinputField: React.FC<{
   }
 
   return (
-    <TextinputBase
-      label={label}
-      tip={description}
-      className={cnTextinput({ has_color: isColorValue })}
-    >
-      <div className={`TextinputField-Control ${isHovered ? 'isHovered' : ''}`} {...hoverProps}>
-        {type === 'link' && (
-          <div className={cnTextinput({ type_link: true })}>
-            {isColorValue && <ColorPicker color={colorValue} shape="circle" />}
-            <span>{label}</span>
-            {isHovered && (
-              <IconButton
-                name="break"
-                onPress={() => handleLink(label)}
-                className="Textinput-BreakIcon"
+    <>
+      <TextinputBase
+        label={label}
+        tip={description}
+        className={cnTextinput({ has_color: isColorValue })}
+      >
+        <div className={`TextinputField-Control ${isHovered ? 'isHovered' : ''}`} {...hoverProps}>
+          {type === 'link' && (
+            <div className={cnTextinput({ type_link: true })}>
+              {isColorValue && <ColorPicker color={colorValue} shape="circle" />}
+              <span>{label}</span>
+              {isHovered && (
+                <IconButton
+                  name="break"
+                  onPress={() => handleLink(label)}
+                  className="Textinput-BreakIcon"
+                />
+              )}
+            </div>
+          )}
+          {type === 'color' && (
+            <>
+              <div className={cnTextinput({ type_color: true })}>
+                <ColorPicker color={colorValue} onColorChange={handleColorChange} shape="square" />
+                <span className="Textinput-Hex">{hex}</span>
+                <span className="Textinput-Alpha">{alpha}</span>
+                {isHovered && (
+                  <IconButton
+                    name="hyperlink"
+                    onPress={() => handleLink(label)}
+                    className="Textinput-BreakIcon"
+                  />
+                )}
+              </div>
+              {isChanged && <BackIcon className="Textinput-Back" />}
+            </>
+          )}
+          {type === 'text' && (
+            <div className={cnTextinput({ type_text: true })}>
+              <DebouncedInput
+                onChange={handleChange}
+                value={value}
+                debounceTimeout={500}
+                forceNotifyByEnter
+                forceNotifyOnBlur
+                data-testid={label}
+                className="TextinputField-Input"
               />
-            )}
-          </div>
-        )}
-        {type === 'color' && (
-          <div className={cnTextinput({ type_color: true })}>
-            <ColorPicker color={colorValue} onColorChange={handleColorChange} shape="square" />
-            <span className="Textinput-Hex">{hex}</span>
-            <span className="Textinput-Alpha">{alpha}</span>
-            {isHovered && (
-              <IconButton
-                name="hyperlink"
-                onPress={() => handleLink(label)}
-                className="Textinput-BreakIcon"
-              />
-            )}
-          </div>
-        )}
-        {type === 'text' && (
-          <div className={cnTextinput({ type_text: true })}>
-            <DebouncedInput
-              onChange={handleChange}
-              value={value}
-              debounceTimeout={500}
-              forceNotifyByEnter
-              forceNotifyOnBlur
-              data-testid={label}
-              className="TextinputField-Input"
-            />
-          </div>
-        )}
-      </div>
-    </TextinputBase>
+            </div>
+          )}
+        </div>
+      </TextinputBase>
+      {type === 'color' && isChanged && <TextinputPrevious color={defaultValue} />}
+    </>
   )
 }

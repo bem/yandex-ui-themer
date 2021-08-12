@@ -20,10 +20,18 @@
   width: 90%;
 }
 
+.Textinput_type_color {
+  cursor: pointer;
+}
+
 
 .TextinputField-Control .Textinput_type_link,
 .TextinputField-Control .Textinput_type_color {
   padding-left: 7px;
+}
+
+.Textinput_type_color .Textinput-BreakIcon {
+  margin-left: auto;
 }
 
 .TextinputField-Control .Textinput-BreakIcon {
