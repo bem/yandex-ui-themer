@@ -17,7 +17,7 @@
 .Showcase-Item :not(.ButtonGroup) .Button2,
 .Showcase-Item .Checkbox,
 .Showcase-Item .Radiobox-Radio {
-    margin-right: 10px;
+    /* margin-right: 10px; */
 }
 
 .Overview p {

@@ -1,9 +1,11 @@
 import React, { Fragment } from 'react'
-import { Button } from '@yandex/ui/Button/Button.bundle/desktop'
 import { useStore } from 'effector-react'
+import { getWrappedComponent } from '../../../../../../../utils/getWrappedComponent';
 
 import { $isFigma } from '../../../../../../../model/view'
 import { Headline } from '../Headline'
+
+const Button = getWrappedComponent('Button');
 
 export const ButtonShowcase = () => {
   const isFigma = useStore($isFigma)

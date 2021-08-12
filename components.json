@@ -1,0 +1,1130 @@
+[
+    {
+      "block": "Attach",
+      "props": [
+        {
+          "name": "children",
+          "description": "Содержимое кнопки",
+          "optional": true,
+          "type": "children",
+          "options": false
+        }
+      ]
+    },
+    {
+      "block": "Badge",
+      "props": [
+        {
+          "name": "color",
+          "description": "Цвет заливки блока",
+          "optional": true,
+          "type": "string",
+          "options": false
+        },
+        {
+          "name": "textColor",
+          "description": "Цвет текста блока",
+          "optional": true,
+          "type": "string",
+          "options": false
+        },
+        {
+          "name": "outlineColor",
+          "description": "Цвет обводки блока",
+          "optional": true,
+          "type": "string",
+          "options": false
+        }
+      ]
+    },
+    {
+      "block": "Button",
+      "props": [
+        {
+          "name": "checked",
+          "description": "Кнопка нажата",
+          "optional": true,
+          "type": "boolean",
+          "options": false
+        },
+        {
+          "name": "progress",
+          "description": "Стилевое оформление для визуального выделения прогресса",
+          "optional": true,
+          "type": "boolean",
+          "options": false
+        },
+        {
+          "name": "children",
+          "description": "Текст кнопки.",
+          "optional": true,
+          "type": "children",
+          "options": false
+        },
+        {
+          "name": "disabled",
+          "description": "Неактивное состояние кнопки.\nСостояние, при котором кнопка отображается, но недоступна для действий пользователя",
+          "optional": true,
+          "type": "boolean",
+          "options": false
+        },
+        {
+          "name": "pin",
+          "description": "Форма кнопки",
+          "optional": true,
+          "type": "set",
+          "options": [
+            "clear-circle",
+            "clear-clear",
+            "clear-round",
+            "round-brick",
+            "round-clear",
+            "brick-brick",
+            "brick-circle",
+            "brick-clear",
+            "brick-round",
+            "circle-brick",
+            "circle-circle",
+            "circle-clear",
+            "clear-brick"
+          ]
+        },
+        {
+          "name": "size",
+          "description": "Размер кнопки",
+          "optional": true,
+          "type": "set",
+          "options": [
+            "s",
+            "l",
+            "m"
+          ]
+        },
+        {
+          "name": "width",
+          "description": "Ширина кнопки",
+          "optional": true,
+          "type": "set",
+          "options": [
+            "auto",
+            "max"
+          ]
+        },
+        {
+          "name": "view",
+          "description": "Внешний вид кнопки",
+          "optional": true,
+          "type": "set",
+          "options": [
+            "link",
+            "action",
+            "clear",
+            "pseudo",
+            "raised",
+            "default"
+          ]
+        }
+      ]
+    },
+    {
+      "block": "ButtonGroup",
+      "props": [
+        {
+          "name": "children",
+          "description": "Дочерние компоненты",
+          "optional": true,
+          "type": "children",
+          "options": false
+        },
+        {
+          "name": "disabled",
+          "description": "Доступ на изменение компонента",
+          "optional": true,
+          "type": "boolean",
+          "options": false
+        },
+        {
+          "name": "vertical",
+          "description": "Вертикальное направление кнопок",
+          "optional": true,
+          "type": "boolean",
+          "options": false
+        },
+        {
+          "name": "gap",
+          "description": "Расстояние между кнопками\nВертикальное позиционирование кнопока",
+          "optional": true,
+          "type": "set",
+          "options": [
+            "s",
+            "m",
+            "l",
+            "xl"
+          ]
+        },
+        {
+          "name": "pin",
+          "description": "Пины для кнопок\nВертикальное позиционирование кнопока",
+          "optional": true,
+          "type": "set",
+          "options": [
+            "circle",
+            "round"
+          ]
+        }
+      ]
+    },
+    {
+      "block": "Checkbox",
+      "props": [
+        {
+          "name": "focused",
+          "description": "Состояние фокуса на компоненте",
+          "optional": true,
+          "type": "boolean",
+          "options": false
+        },
+        {
+          "name": "disabled",
+          "description": "Неактивное состояние компонента.\nСостояние, при котором компонент отображается, но недоступен для действий пользователя",
+          "optional": true,
+          "type": "boolean",
+          "options": false
+        },
+        {
+          "name": "pressed",
+          "description": "Состояние нажатия на компоненте",
+          "optional": true,
+          "type": "boolean",
+          "options": false
+        },
+        {
+          "name": "hovered",
+          "description": "Состояние, которое возникает при наведении на компонент курсором",
+          "optional": true,
+          "type": "boolean",
+          "options": false
+        },
+        {
+          "name": "view",
+          "description": "Внешний вид чекбокса\nВнешний вид переключателя",
+          "optional": true,
+          "type": "set",
+          "options": [
+            "default",
+            "outline"
+          ]
+        },
+        {
+          "name": "checked",
+          "description": "Состояние переключателя: включен или выключен",
+          "optional": true,
+          "type": "boolean",
+          "options": false
+        },
+        {
+          "name": "lines",
+          "description": "Отображение лэйбла в несколько строк\nОтображение лэйбла в одну строку",
+          "optional": true,
+          "type": "set",
+          "options": [
+            "multi",
+            "one"
+          ]
+        },
+        {
+          "name": "size",
+          "description": "Размер переключателя",
+          "optional": true,
+          "type": "set",
+          "options": [
+            "s",
+            "m"
+          ]
+        }
+      ]
+    },
+    {
+      "block": "Divider",
+      "props": [
+        {
+          "name": "children",
+          "description": "Текст по центру",
+          "optional": true,
+          "type": "children",
+          "options": false
+        },
+        {
+          "name": "size",
+          "description": "Высота разделителя в пикселях",
+          "optional": true,
+          "type": "number",
+          "options": false
+        },
+        {
+          "name": "color",
+          "description": "Цвет разделителя",
+          "optional": true,
+          "type": "string",
+          "options": false
+        }
+      ]
+    },
+    {
+      "block": "Drawer",
+      "props": [
+        {
+          "name": "nested",
+          "description": "Меняет внешний вид для режима \"шторка внутри шторки\".",
+          "optional": true,
+          "type": "boolean",
+          "options": false
+        },
+        {
+          "name": "direction",
+          "description": "Направление, откуда появляется шторка.",
+          "optional": true,
+          "type": "set",
+          "options": [
+            "bottom",
+            "left",
+            "right"
+          ]
+        },
+        {
+          "name": "maxSize",
+          "description": "Максимальный размер шторки (ширина или высота в зависимости от direction).\nПринимает любое валидное CSS значение.",
+          "optional": true,
+          "type": "string",
+          "options": false
+        },
+        {
+          "name": "visible",
+          "description": "Делает попап видимым",
+          "optional": true,
+          "type": "boolean",
+          "options": false
+        }
+      ]
+    },
+    {
+      "block": "Dropdown"
+    },
+    {
+      "block": "Header",
+      "props": []
+    },
+    {
+      "block": "Icon",
+      "props": [
+        {
+          "name": "children",
+          "description": "Контент иконки",
+          "optional": true,
+          "type": "children",
+          "options": false
+        }
+      ]
+    },
+    {
+      "block": "Image"
+    },
+    {
+      "block": "LayerManager",
+      "props": [
+        {
+          "name": "children",
+          "description": "Содержимое слоя",
+          "optional": true,
+          "type": "children",
+          "options": false
+        }
+      ]
+    },
+    {
+      "block": "Link",
+      "props": [
+        {
+          "name": "disabled",
+          "description": "Выключение интерактивности ссылки.\nСостояние, при котором ссылка отображается, но недоступна для действий пользователя",
+          "optional": true,
+          "type": "boolean",
+          "options": false
+        },
+        {
+          "name": "children",
+          "description": "Содержимое ссылки",
+          "optional": true,
+          "type": "children",
+          "options": false
+        },
+        {
+          "name": "pseudo",
+          "description": "Псевдоссылка",
+          "optional": true,
+          "type": "boolean",
+          "options": false
+        },
+        {
+          "name": "view",
+          "description": "Внешний вид ссылки",
+          "optional": true,
+          "type": "set",
+          "options": [
+            "default"
+          ]
+        }
+      ]
+    },
+    {
+      "block": "ListTile",
+      "props": [
+        {
+          "name": "children",
+          "description": "Основной контент компонента",
+          "optional": true,
+          "type": "children",
+          "options": false
+        }
+      ]
+    },
+    {
+      "block": "Menu",
+      "props": [
+        {
+          "name": "children",
+          "description": "Список пунктов меню в виде JSX",
+          "optional": true,
+          "type": "children",
+          "options": false
+        },
+        {
+          "name": "view",
+          "description": "Стилевое оформление меню\nВнешний вид меню",
+          "optional": true,
+          "type": "set",
+          "options": [
+            "default"
+          ]
+        },
+        {
+          "name": "focused",
+          "description": "Состояние фокуса на меню. Необходимо для активации клавиатурной навигации",
+          "optional": true,
+          "type": "boolean",
+          "options": false
+        },
+        {
+          "name": "disabled",
+          "description": "Неактивное состояние компонента.\nСостояние, при котором меню отображается, но недоступно для действий пользователя",
+          "optional": true,
+          "type": "boolean",
+          "options": false
+        }
+      ]
+    },
+    {
+      "block": "MessageBox",
+      "props": [
+        {
+          "name": "opaque",
+          "description": "Делает фон непрозрачным",
+          "optional": true,
+          "type": "boolean",
+          "options": false
+        },
+        {
+          "name": "hasClose",
+          "description": "Флаг для включения/выключения элемента close.",
+          "optional": true,
+          "type": "boolean",
+          "options": false
+        },
+        {
+          "name": "layout",
+          "description": "Раскладка компонента",
+          "optional": true,
+          "type": "set",
+          "options": [
+            "tooltip",
+            "plain",
+            "functional"
+          ]
+        },
+        {
+          "name": "hasTail",
+          "description": "Включает/отключает хвостик у компонента",
+          "optional": true,
+          "type": "boolean",
+          "options": false
+        },
+        {
+          "name": "view",
+          "description": "Модификатор, отвечающий за внешний вид компонента.",
+          "optional": true,
+          "type": "set",
+          "options": [
+            "default",
+            "promo",
+            "inverse"
+          ]
+        },
+        {
+          "name": "size",
+          "description": "размер компонента\nРазмер компонента",
+          "optional": true,
+          "type": "set",
+          "options": [
+            "s",
+            "l",
+            "m"
+          ]
+        }
+      ]
+    },
+    {
+      "block": "Modal",
+      "props": [
+        {
+          "name": "contentVerticalAlign",
+          "description": "Выравнивание контента по вертикали",
+          "optional": true,
+          "type": "set",
+          "options": [
+            "top",
+            "middle",
+            "bottom"
+          ]
+        }
+      ]
+    },
+    {
+      "block": "Popup",
+      "props": [
+        {
+          "name": "hasTail",
+          "description": "Включает/отключает хвостик у попапа",
+          "optional": true,
+          "type": "boolean",
+          "options": false
+        },
+        {
+          "name": "visible",
+          "description": "Делает попап видимым",
+          "optional": true,
+          "type": "boolean",
+          "options": false
+        },
+        {
+          "name": "children",
+          "description": "Содержимое попапа",
+          "optional": true,
+          "type": "children",
+          "options": false
+        }
+      ]
+    },
+    {
+      "block": "Portal",
+      "props": [
+        {
+          "name": "children",
+          "description": "Содержимое портала",
+          "optional": true,
+          "type": "children",
+          "options": false
+        }
+      ]
+    },
+    {
+      "block": "Progress",
+      "props": [
+        {
+          "name": "maxValue",
+          "description": "Максимальное допустимое значение прогресс бара",
+          "optional": true,
+          "type": "number",
+          "options": false
+        },
+        {
+          "name": "value",
+          "description": "Доля загрузки прогресс бара от 0 до maxValue",
+          "optional": true,
+          "type": "number",
+          "options": false
+        },
+        {
+          "name": "timing",
+          "description": "Способ CSS-анимации при изменении ширины полосы загрузки",
+          "optional": true,
+          "type": "set",
+          "options": [
+            "linear"
+          ]
+        }
+      ]
+    },
+    {
+      "block": "RadioButton",
+      "props": []
+    },
+    {
+      "block": "Radiobox",
+      "props": [
+        {
+          "name": "disabled",
+          "description": "Неактивное состояние всей группы переключателей",
+          "optional": true,
+          "type": "boolean",
+          "options": false
+        },
+        {
+          "name": "children",
+          "description": "Набор переключателей c использованием `Radio` элемента\n\nМожет быть использовано вместо `options`",
+          "optional": true,
+          "type": "children",
+          "options": false
+        },
+        {
+          "name": "value",
+          "description": "Текущее выбранное значение в группе",
+          "optional": true,
+          "type": "string",
+          "options": false
+        }
+      ]
+    },
+    {
+      "block": "Select",
+      "props": [
+        {
+          "name": "placeholder",
+          "description": "Вспомогательный текст внутри компонента. Отображается, когда значение не выбрано.",
+          "optional": true,
+          "type": "string",
+          "options": false
+        },
+        {
+          "name": "size",
+          "description": "Размер компонента.",
+          "optional": true,
+          "type": "string",
+          "options": false
+        },
+        {
+          "name": "view",
+          "description": "Внешний вид компонента.",
+          "optional": true,
+          "type": "string",
+          "options": false
+        },
+        {
+          "name": "showAlwaysPlaceholder",
+          "description": "Показывать всегда значение из свойства `placeholder` вне зависимости от выбранного значения.",
+          "optional": true,
+          "type": "boolean",
+          "options": false
+        },
+        {
+          "name": "checkable",
+          "description": "Включает/отключает модификатор `checked` на кнопке селекта.",
+          "optional": true,
+          "type": "boolean",
+          "options": false
+        }
+      ]
+    },
+    {
+      "block": "Showcase",
+      "props": []
+    },
+    {
+      "block": "Slider",
+      "props": [
+        {
+          "name": "disabled",
+          "description": "Неактивное состояние слайдера",
+          "optional": true,
+          "type": "boolean",
+          "options": false
+        },
+        {
+          "name": "min",
+          "description": "Минимальное число, которое можно выбрать на слайдере\n\nМожет быть как положительным, так и отрицательным числом",
+          "optional": true,
+          "type": "number",
+          "options": false
+        },
+        {
+          "name": "max",
+          "description": "Максимальное число, которое можно выбрать на слайдере\n\nДолжен быть только положительным числом",
+          "optional": true,
+          "type": "number",
+          "options": false
+        },
+        {
+          "name": "step",
+          "description": "Шаг, который делает бегунок за одно обновление\n\nДолжен быть больше 0 и делиться на (max - min)",
+          "optional": true,
+          "type": "number",
+          "options": false
+        },
+        {
+          "name": "filled",
+          "description": "Отображает индикатор выбранного диапазона",
+          "optional": true,
+          "type": "boolean",
+          "options": false
+        },
+        {
+          "name": "reverse",
+          "description": "Отображает слайдер в противоположном направлении",
+          "optional": true,
+          "type": "boolean",
+          "options": false
+        },
+        {
+          "name": "vertical",
+          "description": "Устанавливает слайдер в вертикальную ориентацию",
+          "optional": true,
+          "type": "boolean",
+          "options": false
+        },
+        {
+          "name": "showTicks",
+          "description": "Показывает метки на треке",
+          "optional": true,
+          "type": "boolean",
+          "options": false
+        },
+        {
+          "name": "showTickValues",
+          "description": "Отображает значения на метках трека\n\nПо умолчанию показывает только минимальное и максимальное значения",
+          "optional": true,
+          "type": "boolean",
+          "options": false
+        }
+      ]
+    },
+    {
+      "block": "Spacer",
+      "props": []
+    },
+    {
+      "block": "Spin",
+      "props": [
+        {
+          "name": "progress",
+          "description": "Видимость индикатора загрузки.",
+          "optional": true,
+          "type": "boolean",
+          "options": false
+        },
+        {
+          "name": "size",
+          "description": "Размер индикатора загрузки.",
+          "optional": true,
+          "type": "set",
+          "options": [
+            "s",
+            "l",
+            "m",
+            "xs",
+            "xxs"
+          ]
+        },
+        {
+          "name": "view",
+          "description": "Внешний вид индикатора загрузки.",
+          "optional": true,
+          "type": "set",
+          "options": [
+            "default"
+          ]
+        }
+      ]
+    },
+    {
+      "block": "TabsMenu",
+      "props": [
+        {
+          "name": "activeTab",
+          "description": "Идентификатор активного пункта меню.",
+          "optional": true,
+          "type": "string",
+          "options": false
+        },
+        {
+          "name": "orientation",
+          "description": "Расположение пунктов меню (используется для доступности).",
+          "optional": true,
+          "type": "set",
+          "options": [
+            "horizontal",
+            "vertical"
+          ]
+        }
+      ]
+    },
+    {
+      "block": "TabsPanes",
+      "props": []
+    },
+    {
+      "block": "Text",
+      "props": [
+        {
+          "name": "children",
+          "description": "Основной контент",
+          "optional": true,
+          "type": "children",
+          "options": false
+        },
+        {
+          "name": "maxLines",
+          "description": "Максимальное количество строк текста (работает в связке с overflow)",
+          "optional": true,
+          "type": "number",
+          "options": false
+        },
+        {
+          "name": "typography",
+          "description": "Задает типографику текста в компоненте.\nТипографика текста",
+          "optional": true,
+          "type": "set",
+          "options": [
+            "display-xl",
+            "display-l",
+            "display-m",
+            "display-s",
+            "headline-xl",
+            "headline-l",
+            "headline-m",
+            "headline-s",
+            "headline-xs",
+            "subheader-xl",
+            "subheader-l",
+            "subheader-m",
+            "... 21 more ...",
+            "control-xxl"
+          ]
+        }
+      ]
+    },
+    {
+      "block": "Textarea",
+      "props": [
+        {
+          "name": "focused",
+          "description": "Состояние фокуса на компоненте",
+          "optional": true,
+          "type": "boolean",
+          "options": false
+        },
+        {
+          "name": "pressed",
+          "description": "Состояние нажатия на компоненте",
+          "optional": true,
+          "type": "boolean",
+          "options": false
+        },
+        {
+          "name": "disabled",
+          "description": "Неактивное состояние компонента.\nСостояние, при котором компонент отображается, но недоступен для действий пользователя",
+          "optional": true,
+          "type": "boolean",
+          "options": false
+        },
+        {
+          "name": "hovered",
+          "description": "Состояние, которое возникает при наведении на компонент курсором",
+          "optional": true,
+          "type": "boolean",
+          "options": false
+        },
+        {
+          "name": "hint",
+          "description": "Текст-подсказка, появляющаяся после компонента.\nМожет иметь различное визуальное оформление в зависимости от свойства `state`.",
+          "optional": true,
+          "type": "string",
+          "options": false
+        },
+        {
+          "name": "state",
+          "description": "Визуальное состояние компонента.\nМожет использоваться при проверке формы на корректность.",
+          "optional": true,
+          "type": "set",
+          "options": [
+            "error"
+          ]
+        },
+        {
+          "name": "placeholder",
+          "description": "Плейсхолдер",
+          "optional": true,
+          "type": "string",
+          "options": false
+        },
+        {
+          "name": "cols",
+          "description": "HTML-атрибут `cols`",
+          "optional": true,
+          "type": "number",
+          "options": false
+        },
+        {
+          "name": "rows",
+          "description": "HTML-атрибут `rows`",
+          "optional": true,
+          "type": "number",
+          "options": false
+        },
+        {
+          "name": "value",
+          "description": "Значение контрола",
+          "optional": true,
+          "type": "string",
+          "options": false
+        },
+        {
+          "name": "maxLength",
+          "description": "Максимальное количество символов которое можно ввести в текстовое поле",
+          "optional": true,
+          "type": "number",
+          "options": false
+        },
+        {
+          "name": "readOnly",
+          "description": "Запрещает изменять значение в текстовом поле",
+          "optional": true,
+          "type": "boolean",
+          "options": false
+        },
+        {
+          "name": "hasClear",
+          "description": "Наличие крестика для очистки текстового поля.",
+          "optional": true,
+          "type": "boolean",
+          "options": false
+        },
+        {
+          "name": "view",
+          "description": "Внешний вид области текста.",
+          "optional": true,
+          "type": "set",
+          "options": [
+            "default"
+          ]
+        },
+        {
+          "name": "size",
+          "description": "Размер текстового поля.",
+          "optional": true,
+          "type": "set",
+          "options": [
+            "s",
+            "m"
+          ]
+        }
+      ]
+    },
+    {
+      "block": "Textinput",
+      "props": [
+        {
+          "name": "focused",
+          "description": "Состояние фокуса на компоненте",
+          "optional": true,
+          "type": "boolean",
+          "options": false
+        },
+        {
+          "name": "pressed",
+          "description": "Состояние нажатия на компоненте",
+          "optional": true,
+          "type": "boolean",
+          "options": false
+        },
+        {
+          "name": "hint",
+          "description": "Текст-подсказка, появляющаяся после компонента.\nМожет иметь различное визуальное оформление в зависимости от свойства `state`.",
+          "optional": true,
+          "type": "string",
+          "options": false
+        },
+        {
+          "name": "state",
+          "description": "Визуальное состояние компонента.\nМожет использоваться при проверке формы на корректность.",
+          "optional": true,
+          "type": "set",
+          "options": [
+            "error"
+          ]
+        },
+        {
+          "name": "size",
+          "description": "Размер текстового поля.",
+          "optional": true,
+          "type": "set",
+          "options": [
+            "s",
+            "m"
+          ]
+        },
+        {
+          "name": "pin",
+          "description": "Форма текстового поля.",
+          "optional": true,
+          "type": "set",
+          "options": [
+            "round-brick",
+            "round-clear",
+            "round-round",
+            "brick-brick",
+            "brick-clear",
+            "brick-round",
+            "clear-brick",
+            "clear-clear",
+            "clear-round"
+          ]
+        },
+        {
+          "name": "view",
+          "description": "Внешний вид текстового поля.",
+          "optional": true,
+          "type": "set",
+          "options": [
+            "default",
+            "material"
+          ]
+        },
+        {
+          "name": "label",
+          "description": "Текст метки, который отображается как плавающая метка или заполнитель\nРаботает с view=material",
+          "optional": true,
+          "type": "string",
+          "options": false
+        },
+        {
+          "name": "variant",
+          "description": "Вариант внешнего вида компонента",
+          "optional": true,
+          "type": "set",
+          "options": [
+            "filled",
+            "outlined"
+          ]
+        },
+        {
+          "name": "hasClear",
+          "description": "Наличие крестика для очистки текстового поля.",
+          "optional": true,
+          "type": "boolean",
+          "options": false
+        }
+      ]
+    },
+    {
+      "block": "Theme"
+    },
+    {
+      "block": "Tooltip",
+      "props": [
+        {
+          "name": "hasTail",
+          "description": "Включает/отключает хвостик у попапа",
+          "optional": true,
+          "type": "boolean",
+          "options": false
+        },
+        {
+          "name": "visible",
+          "description": "Делает попап видимым",
+          "optional": true,
+          "type": "boolean",
+          "options": false
+        },
+        {
+          "name": "state",
+          "description": "Визуальное состояние подсказки",
+          "optional": true,
+          "type": "set",
+          "options": [
+            "warning",
+            "alert",
+            "success"
+          ]
+        },
+        {
+          "name": "view",
+          "description": "Стилевое оформление тултипа.",
+          "optional": true,
+          "type": "set",
+          "options": [
+            "default"
+          ]
+        },
+        {
+          "name": "size",
+          "description": "Размер тултипа.",
+          "optional": true,
+          "type": "set",
+          "options": [
+            "s",
+            "m",
+            "l"
+          ]
+        }
+      ]
+    },
+    {
+      "block": "Tumbler",
+      "props": [
+        {
+          "name": "checked",
+          "description": "Состояние переключателя",
+          "optional": false,
+          "type": "boolean",
+          "options": false
+        },
+        {
+          "name": "disabled",
+          "description": "Неактивное состояние переключателя",
+          "optional": true,
+          "type": "boolean",
+          "options": false
+        },
+        {
+          "name": "required",
+          "description": "Устанавливает в компоненте обязательное состояние",
+          "optional": true,
+          "type": "boolean",
+          "options": false
+        },
+        {
+          "name": "size",
+          "description": "Размер переключателя",
+          "optional": true,
+          "type": "set",
+          "options": [
+            "s",
+            "m",
+            "l"
+          ]
+        },
+        {
+          "name": "view",
+          "description": "Внешний вид переключателя",
+          "optional": true,
+          "type": "set",
+          "options": [
+            "default"
+          ]
+        }
+      ]
+    },
+    {
+      "block": "UserPic",
+      "props": []
+    }
+  ]

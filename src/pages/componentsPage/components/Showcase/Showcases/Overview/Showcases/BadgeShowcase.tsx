@@ -1,8 +1,11 @@
 import React from 'react'
-import { Badge } from '@yandex/ui/Badge'
 import { Button } from '@yandex/ui/Button/Button.bundle/desktop'
 
 import { Headline } from '../Headline'
+
+import { getWrappedComponent } from '../../../../../../../utils/getWrappedComponent';
+
+const Badge = getWrappedComponent('Badge');
 
 const IconTwo = () => (
   <svg fill="#000000" xmlns="http://www.w3.org/2000/svg" width="20" height="20">

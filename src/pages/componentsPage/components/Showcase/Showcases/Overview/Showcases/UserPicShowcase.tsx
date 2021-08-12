@@ -1,7 +1,10 @@
 import React from 'react'
-import { UserPic } from '@yandex/ui/UserPic/desktop/bundle'
 
 import { Headline } from '../Headline'
+
+import { getWrappedComponent } from '../../../../../../../utils/getWrappedComponent';
+
+const UserPic = getWrappedComponent('UserPic');
 
 export const UserPicShowcase = () => {
   return (

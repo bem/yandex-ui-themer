@@ -1,7 +1,10 @@
 import React, { useState } from 'react'
-import { Textinput } from '@yandex/ui/Textinput/desktop/bundle'
 
 import { Headline } from '../Headline'
+
+import { getWrappedComponent } from '../../../../../../../utils/getWrappedComponent';
+
+const Textinput = getWrappedComponent('Textinput');
 
 export const TextinputShowcase = () => {
   const [value1, setValue1] = useState('')

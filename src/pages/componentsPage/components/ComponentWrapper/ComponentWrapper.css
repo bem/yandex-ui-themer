@@ -1,0 +1,8 @@
+.ComponentWrapper {
+    display: inline-block;
+}
+
+.ComponentWrapper-Element {
+    display: inline-block;
+    pointer-events: none;
+}

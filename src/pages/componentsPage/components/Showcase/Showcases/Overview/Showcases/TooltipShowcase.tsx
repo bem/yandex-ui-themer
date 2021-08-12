@@ -1,8 +1,11 @@
 import React, { useState, useRef } from 'react'
-import { Tooltip } from '@yandex/ui/Tooltip/desktop/bundle'
 import { Button } from '@yandex/ui/Button/desktop/bundle'
 
 import { Headline } from '../Headline'
+
+import { getWrappedComponent } from '../../../../../../../utils/getWrappedComponent';
+
+const Tooltip = getWrappedComponent('Tooltip');
 
 export const TooltipShowcase = () => {
   const [visible1, setVisible1] = useState(true)

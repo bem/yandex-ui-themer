@@ -1,7 +1,10 @@
 import React from 'react'
-import { Divider } from '@yandex/ui/Divider'
 
 import { Headline } from '../Headline'
+
+import { getWrappedComponent } from '../../../../../../../utils/getWrappedComponent';
+
+const Divider = getWrappedComponent('Divider');
 
 export const DividerShowcase = () => {
   return (

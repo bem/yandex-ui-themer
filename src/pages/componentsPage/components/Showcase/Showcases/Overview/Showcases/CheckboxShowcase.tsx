@@ -1,10 +1,13 @@
 import React from 'react'
-import { Checkbox } from '@yandex/ui/Checkbox/desktop/bundle'
 import { useStore } from 'effector-react'
 
 import { $isFigma } from '../../../../../../../model/view'
 import { Headline } from '../Headline'
 import { Fragment } from 'react'
+
+import { getWrappedComponent } from '../../../../../../../utils/getWrappedComponent';
+
+const Checkbox = getWrappedComponent('Checkbox');
 
 export const CheckboxShowcase = () => {
   const isFigma = useStore($isFigma)

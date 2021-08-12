@@ -1,7 +1,10 @@
 import React from 'react'
-import { TabsMenu } from '@yandex/ui/TabsMenu/desktop/bundle'
 
 import { Headline } from '../Headline'
+
+import { getWrappedComponent } from '../../../../../../../utils/getWrappedComponent';
+
+const TabsMenu = getWrappedComponent('TabsMenu');
 
 export const TabsMenuShowcase = () => {
   return (
