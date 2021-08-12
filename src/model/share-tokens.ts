@@ -3,7 +3,7 @@ import copy from 'copy-to-clipboard'
 import { toast } from 'react-toastify'
 
 import { $themeName } from './themes'
-import { $listDesignTokens } from './designTokens'
+import { $hasTokens, $listDesignTokens } from './designTokens'
 import { tokensQueryParameterUpdate } from './query'
 import { uploadTokens } from '../api/uploadTokens'
 
@@ -35,7 +35,7 @@ export const shareTokens = attach({
 })
 
 export const $shareTokensLoading = shareTokens.pending
-export const $shareTokensDisabled = $listDesignTokens.map((tokens) => tokens.length === 0)
+export const $shareTokensDisabled = $hasTokens.map((hasTokens) => !hasTokens)
 
 shareTokens.doneData.watch((tokensHash) => {
   if (!tokensHash) {

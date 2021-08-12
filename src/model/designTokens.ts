@@ -22,6 +22,8 @@ export const tokensUpload = createEvent()
 
 export const $designTokens = createStore<DesignTokensType>({})
 
+export const $hasTokens = $designTokens.map((tokens) => Object.keys(tokens).length !== 0)
+
 export const $listDesignTokens = $designTokens.map<ListDesignTokensType>((tokens) =>
   Object.values(tokens).map((token) => ({ ...token })),
 )
