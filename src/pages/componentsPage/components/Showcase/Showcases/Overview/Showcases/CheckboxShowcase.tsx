@@ -5,9 +5,9 @@ import { $isFigma } from '../../../../../../../model/view'
 import { Headline } from '../Headline'
 import { Fragment } from 'react'
 
-import { getWrappedComponent } from '../../../../../../../utils/getWrappedComponent';
+import { getWrappedComponent } from '../../../../../../../utils/getWrappedComponent'
 
-const Checkbox = getWrappedComponent('Checkbox');
+const Checkbox = getWrappedComponent('Checkbox')
 
 export const CheckboxShowcase = () => {
   const isFigma = useStore($isFigma)
@@ -32,7 +32,13 @@ export const CheckboxShowcase = () => {
                 }}
               >
                 {size.map((size: any) => (
-                  <div style={{ marginBottom: 16, marginRight: 20 }} key={`${view}-${size}`}>
+                  <div
+                    style={{
+                      marginBottom: 16,
+                      marginRight: 20,
+                    }}
+                    key={`${view}-${size}`}
+                  >
                     <Checkbox view={view} size={size} label="Label" />
                   </div>
                 ))}
@@ -45,13 +51,28 @@ export const CheckboxShowcase = () => {
                   flexDirection: isFigma ? 'column' : 'row',
                 }}
               >
-                <div style={{ marginBottom: 16, marginRight: 20 }}>
+                <div
+                  style={{
+                    marginBottom: 16,
+                    marginRight: 20,
+                  }}
+                >
                   <Checkbox view={view} size="s" label="Label" disabled />
                 </div>
-                <div style={{ marginBottom: 16, marginRight: 20 }}>
+                <div
+                  style={{
+                    marginBottom: 16,
+                    marginRight: 20,
+                  }}
+                >
                   <Checkbox view={view} size="m" label="Label" indeterminate />
                 </div>
-                <div style={{ marginBottom: 16, marginRight: 20 }}>
+                <div
+                  style={{
+                    marginBottom: 16,
+                    marginRight: 20,
+                  }}
+                >
                   <Checkbox view={view} size="m" label="Label" checked />
                 </div>
               </div>

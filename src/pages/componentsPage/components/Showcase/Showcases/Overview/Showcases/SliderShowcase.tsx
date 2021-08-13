@@ -3,9 +3,9 @@ import { useSliderState } from '@yandex/ui/Slider/desktop/bundle'
 
 import { Headline } from '../Headline'
 
-import { getWrappedComponent } from '../../../../../../../utils/getWrappedComponent';
+import { getWrappedComponent } from '../../../../../../../utils/getWrappedComponent'
 
-const Slider = getWrappedComponent('Slider');
+const Slider = getWrappedComponent('Slider')
 
 export const SliderShowcase = () => {
   const state1 = useSliderState({ value: [20] })

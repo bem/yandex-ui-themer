@@ -2,9 +2,9 @@ import React from 'react'
 
 import { Headline } from '../Headline'
 
-import { getWrappedComponent } from '../../../../../../../utils/getWrappedComponent';
+import { getWrappedComponent } from '../../../../../../../utils/getWrappedComponent'
 
-const UserPic = getWrappedComponent('UserPic');
+const UserPic = getWrappedComponent('UserPic')
 
 export const UserPicShowcase = () => {
   return (

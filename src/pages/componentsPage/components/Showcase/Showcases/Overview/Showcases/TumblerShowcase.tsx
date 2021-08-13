@@ -2,9 +2,9 @@ import React, { useState } from 'react'
 
 import { Headline } from '../Headline'
 
-import { getWrappedComponent } from '../../../../../../../utils/getWrappedComponent';
+import { getWrappedComponent } from '../../../../../../../utils/getWrappedComponent'
 
-const Tumbler = getWrappedComponent('Tumbler');
+const Tumbler = getWrappedComponent('Tumbler')
 
 export const TumblerShowcase = () => {
   const [checked1, setChecked1] = useState(true)

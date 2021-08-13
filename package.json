@@ -18,7 +18,7 @@
     "deepmerge": "4.2.2",
     "effector": "21.6.0",
     "effector-react": "21.0.8",
-    "html-figma": "file:../html-to-figma/build/html-figma-0.1.2.tgz",
+    "html-figma": "file:../html-to-figma/build/html-figma-0.2.0.tgz",
     "react": "16.13.1",
     "react-color": "2.18.1",
     "react-dom": "16.13.1",
@@ -47,10 +47,6 @@
   },
   "eslintConfig": {
     "extends": "react-app"
-  },
-  "prettier": {
-    "singleQuote": true,
-    "tabWidth": 4
   },
   "browserslist": {
     "production": [

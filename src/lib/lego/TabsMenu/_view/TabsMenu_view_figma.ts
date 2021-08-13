@@ -13,4 +13,6 @@ export type TabsMenuViewFigmaProps = {
  * Модификатор, отвечающий за внешний вид тултипа.
  * @param {TabsMenuViewFigmaProps} props
  */
-export const withViewFigma = withBemMod<TabsMenuViewFigmaProps>('TabsMenu', { view: 'figma' })
+export const withViewFigma = withBemMod<TabsMenuViewFigmaProps>('TabsMenu', {
+  view: 'figma',
+})

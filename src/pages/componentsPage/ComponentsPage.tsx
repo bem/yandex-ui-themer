@@ -9,7 +9,7 @@ import { Panels } from './components/Panels'
 import { Playground } from './components/Playground'
 import { TokenEditor } from './components/TokenEditor'
 import { Showcase } from './components/Showcase'
-import { $component, $tokenPresent, componentChange, tokenChange } from './model'
+import { $component, $tokenPresent, componentChange } from './model'
 
 const cnComponentsPage = cn('ComponentsPage')
 

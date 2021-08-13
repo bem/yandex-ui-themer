@@ -3,9 +3,9 @@ import { Button } from '@yandex/ui/Button/Button.bundle/desktop'
 
 import { Headline } from '../Headline'
 
-import { getWrappedComponent } from '../../../../../../../utils/getWrappedComponent';
+import { getWrappedComponent } from '../../../../../../../utils/getWrappedComponent'
 
-const ButtonGroup = getWrappedComponent('ButtonGroup');
+const ButtonGroup = getWrappedComponent('ButtonGroup')
 
 export const ButtonGroupShowcase = () => {
   const gaps = [undefined, 's', 'm', 'l', 'xl'] as ('s' | 'm' | 'l' | 'xl')[]

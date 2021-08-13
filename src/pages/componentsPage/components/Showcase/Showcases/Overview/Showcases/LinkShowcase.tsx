@@ -2,9 +2,9 @@ import React from 'react'
 
 import { Headline } from '../Headline'
 
-import { getWrappedComponent } from '../../../../../../../utils/getWrappedComponent';
+import { getWrappedComponent } from '../../../../../../../utils/getWrappedComponent'
 
-const Link = getWrappedComponent('Link');
+const Link = getWrappedComponent('Link')
 
 export const LinkShowcase = () => {
   return (

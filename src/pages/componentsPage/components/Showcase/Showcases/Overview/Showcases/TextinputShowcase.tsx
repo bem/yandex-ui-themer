@@ -2,9 +2,9 @@ import React, { useState } from 'react'
 
 import { Headline } from '../Headline'
 
-import { getWrappedComponent } from '../../../../../../../utils/getWrappedComponent';
+import { getWrappedComponent } from '../../../../../../../utils/getWrappedComponent'
 
-const Textinput = getWrappedComponent('Textinput');
+const Textinput = getWrappedComponent('Textinput')
 
 export const TextinputShowcase = () => {
   const [value1, setValue1] = useState('')

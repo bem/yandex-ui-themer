@@ -3,9 +3,9 @@ import { Button } from '@yandex/ui/Button/desktop/bundle'
 
 import { Headline } from '../Headline'
 
-import { getWrappedComponent } from '../../../../../../../utils/getWrappedComponent';
+import { getWrappedComponent } from '../../../../../../../utils/getWrappedComponent'
 
-const MessageBox = getWrappedComponent('MessageBox');
+const MessageBox = getWrappedComponent('MessageBox')
 
 export const MessageBoxShowcase = () => {
   return (

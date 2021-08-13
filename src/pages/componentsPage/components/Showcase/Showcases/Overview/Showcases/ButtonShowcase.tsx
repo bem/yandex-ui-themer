@@ -1,11 +1,11 @@
 import React, { Fragment } from 'react'
 import { useStore } from 'effector-react'
-import { getWrappedComponent } from '../../../../../../../utils/getWrappedComponent';
+import { getWrappedComponent } from '../../../../../../../utils/getWrappedComponent'
 
 import { $isFigma } from '../../../../../../../model/view'
 import { Headline } from '../Headline'
 
-const Button = getWrappedComponent('Button');
+const Button = getWrappedComponent('Button')
 
 export const ButtonShowcase = () => {
   const isFigma = useStore($isFigma)
@@ -18,7 +18,14 @@ export const ButtonShowcase = () => {
       {view.map((view: any) => (
         <Fragment key={view}>
           <p>View: {view}</p>
-          <div className="Showcase-Item" style={{ display: 'flex', width: 250, marginBottom: 30 }}>
+          <div
+            className="Showcase-Item"
+            style={{
+              display: 'flex',
+              width: 250,
+              marginBottom: 30,
+            }}
+          >
             <div
               style={{
                 display: 'flex',

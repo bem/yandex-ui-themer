@@ -2,9 +2,9 @@ import React, { useState } from 'react'
 
 import { Headline } from '../Headline'
 
-import { getWrappedComponent } from '../../../../../../../utils/getWrappedComponent';
+import { getWrappedComponent } from '../../../../../../../utils/getWrappedComponent'
 
-const Textarea = getWrappedComponent('Textarea');
+const Textarea = getWrappedComponent('Textarea')
 
 export const TextareaShowcase = () => {
   const [value1, setValue1] = useState('')

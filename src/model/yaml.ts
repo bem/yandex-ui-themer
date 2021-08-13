@@ -11,7 +11,11 @@ import { $theme } from './themes'
 import { $dotSepDesignTokens } from './designTokens'
 
 export const $yamlText = combine(
-  { designTokens: $dotSepDesignTokens, mappings: $invertedTokenMappings, theme: $theme },
+  {
+    designTokens: $dotSepDesignTokens,
+    mappings: $invertedTokenMappings,
+    theme: $theme,
+  },
   ({ designTokens, mappings, theme: { allTokens } }) => {
     if (Object.keys(designTokens).length === 0) {
       return ''

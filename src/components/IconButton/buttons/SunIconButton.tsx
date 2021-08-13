@@ -9,7 +9,7 @@ export const SunIconButton: FC<IconButtonBaseProps> = ({ dark, ...props }) => {
 
   return (
     <IconButtonBase dark={dark} tip={tip} {...props}>
-      <SunIcon type={dark ? 'black' : 'white'} className={cnIconButtonBase('Icon')} />
+      <SunIcon type={type} className={cnIconButtonBase('Icon')} />
     </IconButtonBase>
   )
 }

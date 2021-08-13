@@ -16,7 +16,10 @@ import { ThemeType, ThemeNamesType, TokensType } from '../types'
 
 const themeToAllTokens = (theme: TokensType) => ({
   ...theme.globals,
-  ...Object.values(theme.components).reduce((acc, val) => ({ ...acc, ...val })),
+  ...Object.values(theme.components).reduce((acc, val) => ({
+    ...acc,
+    ...val,
+  })),
 })
 
 export const themeChange = createEvent<ThemeNamesType>()

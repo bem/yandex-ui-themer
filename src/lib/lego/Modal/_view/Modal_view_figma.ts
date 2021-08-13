@@ -13,4 +13,6 @@ export type ModalViewFigmaProps = {
  * Модификатор, отвечающий за внешний вид модала.
  * @param {ModalViewFigmaProps} props
  */
-export const withViewFigma = withBemMod<ModalViewFigmaProps>('Modal', { view: 'figma' })
+export const withViewFigma = withBemMod<ModalViewFigmaProps>('Modal', {
+  view: 'figma',
+})

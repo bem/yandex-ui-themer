@@ -1,4 +1,4 @@
-import { attach, createStore, createEffect, createEvent, forward } from 'effector'
+import { attach, createEffect, createEvent, forward } from 'effector'
 import { toast } from 'react-toastify'
 
 import { $theme } from './themes'

@@ -2,9 +2,9 @@ import React from 'react'
 
 import { Headline } from '../Headline'
 
-import { getWrappedComponent } from '../../../../../../../utils/getWrappedComponent';
+import { getWrappedComponent } from '../../../../../../../utils/getWrappedComponent'
 
-const RadioButton = getWrappedComponent('RadioButton');
+const RadioButton = getWrappedComponent('RadioButton')
 
 export const RadioButtonShowcase = () => {
   const options = [

@@ -2,9 +2,9 @@ import React, { useState } from 'react'
 
 import { Headline } from '../Headline'
 
-import { getWrappedComponent } from '../../../../../../../utils/getWrappedComponent';
+import { getWrappedComponent } from '../../../../../../../utils/getWrappedComponent'
 
-const Menu = getWrappedComponent('Menu');
+const Menu = getWrappedComponent('Menu')
 
 export const MenuShowcase = () => {
   const items = [

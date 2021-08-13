@@ -3,9 +3,9 @@ import { Button } from '@yandex/ui/Button/Button.bundle/desktop'
 
 import { Headline } from '../Headline'
 
-import { getWrappedComponent } from '../../../../../../../utils/getWrappedComponent';
+import { getWrappedComponent } from '../../../../../../../utils/getWrappedComponent'
 
-const Badge = getWrappedComponent('Badge');
+const Badge = getWrappedComponent('Badge')
 
 const IconTwo = () => (
   <svg fill="#000000" xmlns="http://www.w3.org/2000/svg" width="20" height="20">
@@ -19,7 +19,11 @@ export const BadgeShowcase = () => {
       <Headline>Badge</Headline>
       <div
         className="Showcase-Item"
-        style={{ display: 'flex', justifyContent: 'space-between', width: 250 }}
+        style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          width: 250,
+        }}
       >
         <Badge />
 

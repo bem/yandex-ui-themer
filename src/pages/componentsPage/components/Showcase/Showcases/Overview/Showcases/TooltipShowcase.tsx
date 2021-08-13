@@ -3,9 +3,9 @@ import { Button } from '@yandex/ui/Button/desktop/bundle'
 
 import { Headline } from '../Headline'
 
-import { getWrappedComponent } from '../../../../../../../utils/getWrappedComponent';
+import { getWrappedComponent } from '../../../../../../../utils/getWrappedComponent'
 
-const Tooltip = getWrappedComponent('Tooltip');
+const Tooltip = getWrappedComponent('Tooltip')
 
 export const TooltipShowcase = () => {
   const [visible1, setVisible1] = useState(true)
@@ -26,7 +26,14 @@ export const TooltipShowcase = () => {
     <>
       <Headline>Tooltip</Headline>
       <div className="Showcase-Item">
-        <div style={{ position: 'relative', display: 'flex', height: 96 }} ref={scopeRef}>
+        <div
+          style={{
+            position: 'relative',
+            display: 'flex',
+            height: 96,
+          }}
+          ref={scopeRef}
+        >
           <div style={{ marginRight: 32 }}>
             <Button
               innerRef={anchorRef1}
@@ -93,7 +100,14 @@ export const TooltipShowcase = () => {
         </div>
       </div>
       <div className="Showcase-Item">
-        <div style={{ position: 'relative', display: 'flex', height: 96 }} ref={scopeRef}>
+        <div
+          style={{
+            position: 'relative',
+            display: 'flex',
+            height: 96,
+          }}
+          ref={scopeRef}
+        >
           <div style={{ marginRight: 32 }}>
             <Button
               innerRef={anchorRef4}

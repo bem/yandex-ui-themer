@@ -25,12 +25,20 @@ export const Header: FC<HeaderProps> = ({ activeTab, setActiveTab }) => {
       <TabsMenu
         activeTab={activeTab}
         tabs={[
-          { id: 'components', onClick: () => setActiveTab('components'), content: 'Components' },
+          {
+            id: 'components',
+            onClick: () => setActiveTab('components'),
+            content: 'Components',
+          },
           {
             id: 'changes',
             onClick: () => setActiveTab('changes'),
             content: (
-              <div className={cnHeader('Changes', { notify: showChangesNotification })}>
+              <div
+                className={cnHeader('Changes', {
+                  notify: showChangesNotification,
+                })}
+              >
                 Changes
               </div>
             ),

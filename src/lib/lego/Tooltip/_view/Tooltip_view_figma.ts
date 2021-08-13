@@ -13,4 +13,6 @@ export type TooltipViewFigmaProps = {
  * Модификатор, отвечающий за внешний вид тултипа.
  * @param {TooltipViewFigmaProps} props
  */
-export const withViewFigma = withBemMod<TooltipViewFigmaProps>('Tooltip', { view: 'figma' })
+export const withViewFigma = withBemMod<TooltipViewFigmaProps>('Tooltip', {
+  view: 'figma',
+})

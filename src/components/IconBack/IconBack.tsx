@@ -5,10 +5,10 @@ import './IconBack.css'
 
 export const cnIconBack = cn('IconBack')
 
-export const IconBack: FC<{ onClick: MouseEventHandler<HTMLSpanElement>; className?: string }> = ({
-  onClick,
-  className,
-}) => (
+export const IconBack: FC<{
+  onClick: MouseEventHandler<HTMLSpanElement>
+  className?: string
+}> = ({ onClick, className }) => (
   <span onClick={onClick} className={cnIconBack(null, [className])}>
     <svg width="16" height="16" viewBox="0 0 24 24">
       <path

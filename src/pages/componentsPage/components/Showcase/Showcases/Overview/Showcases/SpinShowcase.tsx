@@ -2,9 +2,9 @@ import React from 'react'
 
 import { Headline } from '../Headline'
 
-import { getWrappedComponent } from '../../../../../../../utils/getWrappedComponent';
+import { getWrappedComponent } from '../../../../../../../utils/getWrappedComponent'
 
-const Spin = getWrappedComponent('Spin');
+const Spin = getWrappedComponent('Spin')
 
 export const SpinShowcase = () => {
   return (

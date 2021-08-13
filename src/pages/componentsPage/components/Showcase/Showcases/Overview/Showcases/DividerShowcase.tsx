@@ -2,9 +2,9 @@ import React from 'react'
 
 import { Headline } from '../Headline'
 
-import { getWrappedComponent } from '../../../../../../../utils/getWrappedComponent';
+import { getWrappedComponent } from '../../../../../../../utils/getWrappedComponent'
 
-const Divider = getWrappedComponent('Divider');
+const Divider = getWrappedComponent('Divider')
 
 export const DividerShowcase = () => {
   return (

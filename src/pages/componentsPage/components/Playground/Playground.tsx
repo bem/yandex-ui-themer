@@ -46,7 +46,13 @@ export const Playground: FC<PlaygroundProps> = ({ className }) => {
         tabs={[
           // Overview page should not have settings tab
           ...(component !== 'overview'
-            ? [{ id: 'settings', onClick: () => activeTabChange('settings'), content: 'Settings' }]
+            ? [
+                {
+                  id: 'settings',
+                  onClick: () => activeTabChange('settings'),
+                  content: 'Settings',
+                },
+              ]
             : []),
           {
             id: 'tokens',
