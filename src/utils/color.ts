@@ -28,6 +28,10 @@ function rgbToHex(r: number, g: number, b: number) {
   )
 }
 
+function clamp(number: number, min: number, max: number) {
+  return Math.max(Math.min(number, max), min)
+}
+
 export function convertColorObj(color: Color): string {
   let colorValue = ''
 
@@ -73,7 +77,7 @@ export function toHEXA(color: string) {
       fullForm = r + r + g + g + b + b + (_color.length === 5 ? color[4] + color[4] : '')
     }
 
-    if (fullForm.length === 9) {
+    if (fullForm.length === 8) {
       // _______ <- color part
       // #FFFFFF00
       //        -- <- alpha part
@@ -85,5 +89,10 @@ export function toHEXA(color: string) {
     }
   }
 
+  a = clamp(a, 0, 1)
   return [hex.toUpperCase(), `${Math.round(a * 100)}%`]
+}
+
+export function combineHexAndAlpha(hex: string, alpha: string): string {
+  return '#' + hex + clamp(Number(alpha), 0, 100).toString(16).padStart(2, '0')
 }

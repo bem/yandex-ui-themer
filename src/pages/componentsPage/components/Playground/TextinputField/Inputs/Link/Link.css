@@ -1,0 +1,11 @@
+.Textinput.Textinput_type_link {
+	
+}
+
+.Textinput.Textinput_type_link .Textinput-BreakIcon {
+	display: hidden;
+}
+
+.Textinput.Textinput_type_link:hover .Textinput-BreakIcon {
+	display: block;
+}

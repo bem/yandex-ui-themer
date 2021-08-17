@@ -13,11 +13,18 @@ export type TextinputBaseProps = {
   children?: ReactNode
   className?: string
   tip?: string
+  onClick?: () => void
 }
 
-export const TextinputBase: FC<TextinputBaseProps> = ({ children, className, tip, label }) => {
+export const TextinputBase: FC<TextinputBaseProps> = ({
+  children,
+  className,
+  tip,
+  label,
+  onClick,
+}) => {
   return (
-    <div className={cnTextinput({ has_tip: Boolean(tip) }, [className])}>
+    <div className={cnTextinput({ has_tip: Boolean(tip) }, [className])} onClick={onClick}>
       <div className={cnTextinput('Tip')}>
         {tip && (
           <TooltipStateful content={tip}>

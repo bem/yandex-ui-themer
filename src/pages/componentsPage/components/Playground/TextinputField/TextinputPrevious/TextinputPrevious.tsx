@@ -10,13 +10,19 @@ export const cnTextinputPrevious = cn('TextinputPrevious')
 
 export type TextinputPreviousProps = Omit<TextinputBaseProps, 'label'> & {
   color: string
+  handleClick: () => void
 }
 
-export const TextinputPrevious: FC<TextinputPreviousProps> = ({ color, ...props }) => {
+export const TextinputPrevious: FC<TextinputPreviousProps> = ({ color, handleClick, ...props }) => {
   const [hex, alpha] = toHEXA(color)
 
   return (
-    <TextinputBase label="initial value" className={cnTextinputPrevious()}>
+    <TextinputBase
+      label="initial value"
+      className={cnTextinputPrevious()}
+      onClick={handleClick}
+      {...props}
+    >
       <div className={cnTextinputPrevious('Body')}>
         <span className={cnTextinputPrevious('Hex')}>{hex}</span>
         <span className={cnTextinputPrevious('Alpha')}>{alpha}</span>
