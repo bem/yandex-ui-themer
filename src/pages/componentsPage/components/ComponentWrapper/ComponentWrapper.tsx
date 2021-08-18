@@ -1,10 +1,10 @@
 import React, { createElement, useRef } from 'react'
 import { cn } from '@bem-react/classname'
 
-import './ComponentWrapper.css'
-import { useDragToFigma } from '../../../../hooks/dragToFigma'
-import { AllComponentsNames } from '../../../../utils/getComponentByName'
-import { allComponents } from '../../../../utils/allComponents'
+
+import './ComponentWrapper.css';
+import { useDragToFigma } from '../../../../hooks/dragToFigma';
+import { AllComponentsNames, getComponentByName } from '../../../../utils/getComponentByName';
 
 const cnComponentWrapper = cn('ComponentWrapper')
 
@@ -13,7 +13,7 @@ export const ComponentWrapper: React.FC<{
   props: unknown
 }> = React.forwardRef((props, ref) => {
   const { __name, ...componentProps } = props
-  const component = allComponents[__name]
+  const component = getComponentByName(__name);
   const componentRef = useRef<HTMLElement>(null)
   const dragRef = useRef(null)
 

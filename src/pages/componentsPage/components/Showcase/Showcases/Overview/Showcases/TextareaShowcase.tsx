@@ -18,6 +18,7 @@ export const TextareaShowcase = () => {
           size="m"
           view="default"
           value={value1}
+          // @ts-expect-error
           onChange={(event) => setValue1(event.target.value)}
           onClearClick={() => setValue1('')}
         />
@@ -28,6 +29,7 @@ export const TextareaShowcase = () => {
           size="s"
           view="default"
           value={value1}
+          // @ts-expect-error
           onChange={(event) => setValue1(event.target.value)}
           onClearClick={() => setValue1('')}
         />
@@ -38,6 +40,7 @@ export const TextareaShowcase = () => {
           size="s"
           view="default"
           value={value1}
+          // @ts-expect-error
           onChange={(event) => setValue1(event.target.value)}
           onClearClick={() => setValue1('')}
           state="error"

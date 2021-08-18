@@ -5,7 +5,7 @@ import { Headline } from '../Headline'
 
 import { getWrappedComponent } from '../../../../../../../utils/getWrappedComponent'
 
-const Slider = getWrappedComponent('Slider')
+// const Slider = getWrappedComponent('Slider');
 
 export const SliderShowcase = () => {
   const state1 = useSliderState({ value: [20] })
@@ -26,7 +26,7 @@ export const SliderShowcase = () => {
   return (
     <>
       <Headline>Slider</Headline>
-      <Slider view="default" {...state1} />
+      {/* <Slider view="default" {...state1} />
       <Slider view="default" {...state2} />
       <Slider filled view="default" {...state3} />
       <Slider filled view="default" {...state4} />
@@ -35,7 +35,7 @@ export const SliderShowcase = () => {
       <Slider filled step={25} view="default" {...state7} />
       <Slider filled step={25} view="default" {...state8} />
       <Slider filled step={20} showTicks showTickValues view="default" {...state9} />
-      <Slider filled showTicks showTickValues step={20} view="default" {...state10} />
+      <Slider filled showTicks showTickValues step={20} view="default" {...state10} /> */}
     </>
   )
 }

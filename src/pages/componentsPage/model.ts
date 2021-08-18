@@ -8,6 +8,7 @@ import { toHEXA } from '../../utils/color'
 import { extractParams } from '../../utils/extractParams'
 import { getType } from '../../utils/tokenType'
 import { transformMappings } from '../../utils/transformers'
+import { getComponentMetaByName } from '../../utils/getComponentByName';
 
 export type TokenBase = {
   label: string
@@ -35,17 +36,46 @@ export type TokenType = TokenBase &
       }
   )
 
-export const componentChange = createEvent<string>()
-export const tokenChange = createEvent<string>()
-export const tokenReset = createEvent()
-export const activeTabChange = createEvent<string>()
+
+export const componentChange = createEvent<string>();
+export const tokenChange = createEvent<string>();
+export const tokenReset = createEvent();
+export const activeTabChange = createEvent<string>();
+export const currentPropsChange = createEvent<{
+    name: string;
+    value: unknown;
+}>();
+
+export interface Prop {
+    name: string;
+    description: string;
+    type: {
+        required: boolean;
+        name: 'node' | 'boolean' | 'string' | 'number' | 'enum' | 'array' | 'object' 
+    };
+    options?: string[];
+    defaultValue: unknown;
+}
+interface IComponent {
+    block: string;
+    props: Prop[];
+}
+
+interface ComponentState {
+    allProps: Record<string, Prop>;
+    currentProps: Record<string, unknown>;
+}
 
 // Current selected component to be shown
-export const $component = createStore<string>('overview')
+export const $component = createStore<string>('overview');
+export const $componentProps = createStore<ComponentState>({
+    allProps: {},
+    currentProps: {},
+});
 
 // Current selected token to be edited
-export const $token = createStore<string>('')
-export const $tokenPresent = $token.map((token) => token.length > 0)
+export const $token = createStore<string>('');
+export const $tokenPresent = $token.map((token) => token.length > 0);
 
 // Tokens of the component
 export const $tokens = combine(
@@ -116,10 +146,28 @@ export const $tokens = combine(
 )
 
 // Current tab to show
-export const $activeTab = createStore<string>('')
+export const $activeTab = createStore<string>('');
 
-$component.on(componentChange, (_, component) => component)
+$component.on(componentChange, (_, component) => component);
+$componentProps.on(componentChange, (_, component) => {
+    // @ts-expect-error
+    const currentComponent = getComponentMetaByName(component);
 
-$token.on(tokenChange, (_, token) => token).reset(tokenReset)
+    return {
+        allProps: currentComponent.argTypes,
+        currentProps: currentComponent.args
+    };
+});
+$componentProps.on(
+    currentPropsChange,
+    ({ allProps, currentProps }, newProp) => {
+        const newState = { ...currentProps };
+        newState[newProp.name] = newProp.value;
 
-$activeTab.on(activeTabChange, (_, activeTab) => activeTab)
+        return { allProps, currentProps: newState };
+    }
+);
+
+$token.on(tokenChange, (_, token) => token).reset(tokenReset);
+
+$activeTab.on(activeTabChange, (_, activeTab) => activeTab);

@@ -4,8 +4,8 @@ import { cn } from '@bem-react/classname'
 
 import { Panel } from '../../../../components/Panel'
 import { Divider } from '../../../../lib/lego/Divider'
-
-import { panelsTree } from './constants'
+import  * as allComponents from '@yandex-lego/components/figma';
+// import { panelsTree } from './constants'
 
 import './Panels.css'
 
@@ -17,6 +17,8 @@ export type PanelsProps = {
   activePanel: string
   onPanelSelect: (panel: string) => void
 }
+
+const panelsTree = { components: Object.keys(allComponents) }
 
 // By default all disclosures are open
 const defaultSections = Array(Object.keys(panelsTree).length).fill(true)

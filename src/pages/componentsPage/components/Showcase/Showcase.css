@@ -1,0 +1,10 @@
+.Showcase-Preview {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.ShowcaseFrame {
+    border: 0;
+}

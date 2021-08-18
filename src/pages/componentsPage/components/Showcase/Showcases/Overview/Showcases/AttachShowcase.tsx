@@ -6,7 +6,7 @@ import { Headline } from '../Headline'
 
 import { getWrappedComponent } from '../../../../../../../utils/getWrappedComponent'
 
-const Attach = getWrappedComponent('Attach')
+// const Attach = getWrappedComponent('Attach');
 
 export const AttachShowcase = () => {
   const isFigma = useStore($isFigma)
@@ -16,7 +16,7 @@ export const AttachShowcase = () => {
       <Headline>Attach</Headline>
       {isFigma ? (
         <>
-          <div className="Showcase-Item">
+          {/* <div className="Showcase-Item">
             <Attach size="s" view="default">
               Select file
             </Attach>
@@ -30,11 +30,11 @@ export const AttachShowcase = () => {
             <Attach size="l" view="default">
               Select file
             </Attach>
-          </div>
+          </div> */}
         </>
       ) : (
         <>
-          <div className="Showcase-Item Showcase-Attach">
+          {/* <div className="Showcase-Item Showcase-Attach">
             <Attach size="s" view="default">
               Select file
             </Attach>
@@ -44,7 +44,7 @@ export const AttachShowcase = () => {
             <Attach size="l" view="default">
               Select file
             </Attach>
-          </div>
+          </div> */}
         </>
       )}
     </>

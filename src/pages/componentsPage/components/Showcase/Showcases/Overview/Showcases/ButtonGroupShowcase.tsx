@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import { Button } from '@yandex/ui/Button/Button.bundle/desktop'
+import { Button } from '@yandex/ui/Button/desktop/bundle'
 
 import { Headline } from '../Headline'
 
@@ -24,7 +24,7 @@ export const ButtonGroupShowcase = () => {
               </>
             )}
             <p> Gap: {gap || 'no gap'} </p>
-            <ButtonGroup gap={gap}>
+            {/* <ButtonGroup gap={gap}>
               <Button view="default" size="m">
                 Button 1
               </Button>
@@ -34,7 +34,7 @@ export const ButtonGroupShowcase = () => {
               <Button view="default" size="m">
                 Button 3
               </Button>
-            </ButtonGroup>
+            </ButtonGroup> */}
           </Fragment>
         ))}
 
@@ -42,14 +42,14 @@ export const ButtonGroupShowcase = () => {
           <Fragment key={`${pin}`}>
             <br /> <br />
             <p> Pin: {pin} </p>
-            <ButtonGroup pin={pin} key={pin}>
+            {/* <ButtonGroup pin={pin} key={pin}>
               <Button view="default" size="m">
                 Button 1
               </Button>
               <Button view="default" size="m">
                 Button 2
               </Button>
-            </ButtonGroup>
+            </ButtonGroup> */}
           </Fragment>
         ))}
       </div>

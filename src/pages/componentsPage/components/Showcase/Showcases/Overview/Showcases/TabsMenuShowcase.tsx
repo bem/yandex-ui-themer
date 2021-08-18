@@ -4,14 +4,14 @@ import { Headline } from '../Headline'
 
 import { getWrappedComponent } from '../../../../../../../utils/getWrappedComponent'
 
-const TabsMenu = getWrappedComponent('TabsMenu')
+// const TabsMenu = getWrappedComponent('TabsMenu');
 
 export const TabsMenuShowcase = () => {
   return (
     <>
       <Headline>TabsMenu</Headline>
       <div className="Showcase-Item">
-        <TabsMenu
+        {/* <TabsMenu
           size="m"
           view="default"
           layout="horiz"
@@ -34,7 +34,7 @@ export const TabsMenuShowcase = () => {
             { id: 'video', content: 'Видео' },
           ]}
           activeTab={'search'}
-        />
+        /> */}
       </div>
     </>
   )

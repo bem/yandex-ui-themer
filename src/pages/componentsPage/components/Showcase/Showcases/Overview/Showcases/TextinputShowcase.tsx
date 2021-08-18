@@ -24,6 +24,7 @@ export const TextinputShowcase = () => {
             size="m"
             view="default"
             value={value1}
+            // @ts-expect-error
             onChange={(event) => setValue1(event.target.value)}
             onClearClick={() => setValue1('')}
           />
@@ -34,6 +35,8 @@ export const TextinputShowcase = () => {
             size="s"
             view="default"
             value={value2}
+            // @ts-expect-error
+
             onChange={(event) => setValue2(event.target.value)}
             onClearClick={() => setValue2('')}
           />
@@ -44,6 +47,8 @@ export const TextinputShowcase = () => {
             size="s"
             view="default"
             value={value3}
+            // @ts-expect-error
+
             onChange={(event) => setValue3(event.target.value)}
             onClearClick={() => setValue3('')}
             state="error"
@@ -58,6 +63,8 @@ export const TextinputShowcase = () => {
           label="Label"
           view="material"
           value={value4}
+            // @ts-expect-error
+
           onChange={(event) => setValue4(event.target.value)}
           onClearClick={() => setValue4('')}
         />
@@ -69,6 +76,8 @@ export const TextinputShowcase = () => {
           size="m"
           view="material"
           value={value5}
+            // @ts-expect-error
+
           onChange={(event) => setValue5(event.target.value)}
           onClearClick={() => setValue5('')}
         />
@@ -80,6 +89,8 @@ export const TextinputShowcase = () => {
           size="m"
           view="material"
           value={value6}
+            // @ts-expect-error
+
           onChange={(event) => setValue6(event.target.value)}
           onClearClick={() => setValue6('')}
           state="error"

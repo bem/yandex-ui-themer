@@ -5,13 +5,13 @@ import { Headline } from '../Headline'
 
 import { getWrappedComponent } from '../../../../../../../utils/getWrappedComponent'
 
-const MessageBox = getWrappedComponent('MessageBox')
+// const MessageBox = getWrappedComponent('MessageBox');
 
 export const MessageBoxShowcase = () => {
   return (
     <>
       <Headline>MessageBox</Headline>
-      <div className="Showcase-Item">
+      {/* <div className="Showcase-Item">
         <div style={{ marginBottom: '16px' }}>
           <MessageBox
             onClose={() => null}
@@ -66,7 +66,7 @@ export const MessageBoxShowcase = () => {
             Новая почта с классными темами!
           </MessageBox>
         </div>
-      </div>
+      </div> */}
     </>
   )
 }

@@ -1,51 +1,44 @@
-import React, { FC } from 'react'
+import React, { FC, useCallback } from 'react';
 
-import { Textinput } from '../../../../components/Textinput'
+import { Textinput } from '../../../../components/Textinput';
+import { $componentProps, Prop, currentPropsChange } from '../../model';
 
-export type SettingsProps = {}
+import { useStore } from 'effector-react';
+
+export type SettingsProps = {};
+
+export type SettingsItemProps = {
+    prop: Prop;
+    value: unknown;
+    onChange: ({ name, value }: { name: string; value: unknown }) => void;
+};
 
 export const Settings: FC<SettingsProps> = () => {
-  return (
-    <>
-      <Textinput
-        label="size"
-        tip="размер кнопки"
-        type="select"
-        options={[
-          { value: 's', label: 's' },
-          { value: 'm', label: 'm' },
-        ]}
-      />
-      <Textinput label="content" tip="содержимое кнопки" type="text" />
-      <Textinput
-        label="view"
-        tip="внешний вид кнопки"
-        type="select"
-        options={[
-          { value: 'ks', label: 's' },
-          { value: 'm', label: 'm' },
-        ]}
-      />
-      <Textinput
-        label="state"
-        tip="состояние кнопки"
-        type="select"
-        options={[
-          { value: 's', label: 's' },
-          { value: 'm', label: 'm' },
-        ]}
-      />
+    const { allProps, currentProps } = useStore($componentProps);
 
-      <Textinput
-        label="pin"
-        tip="форма кнопки"
-        type="select"
-        options={[
-          { value: 's', label: 's' },
-          { value: 'm', label: 'm' },
-        ]}
-      />
-      <Textinput label="check" tip="выбранная кнопка" type="boolean" />
-    </>
-  )
-}
+    const onChangeProp = useCallback((value: unknown, name) => {
+        currentPropsChange({ name, value });
+    }, []);
+
+    return (
+        <>
+            {Object.keys(allProps).map((name) => {
+                const prop = allProps[name];
+                const required = prop.type.required;
+                const type = prop.type.name;
+                
+                return (
+                    <Textinput
+                        key={name}
+                        label={prop.name}
+                        tip={prop.description}
+                        type={type}
+                        value={currentProps[prop.name] as string}
+                        onChange={onChangeProp}
+                        options={prop.options}
+                    />
+                );
+            })}
+        </>
+    );
+};

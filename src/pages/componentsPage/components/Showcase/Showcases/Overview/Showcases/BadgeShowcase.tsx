@@ -1,11 +1,11 @@
 import React from 'react'
-import { Button } from '@yandex/ui/Button/Button.bundle/desktop'
+import { Button } from '@yandex/ui/Button/desktop/bundle'
 
 import { Headline } from '../Headline'
 
 import { getWrappedComponent } from '../../../../../../../utils/getWrappedComponent'
 
-const Badge = getWrappedComponent('Badge')
+// const Badge = getWrappedComponent('Badge');
 
 const IconTwo = () => (
   <svg fill="#000000" xmlns="http://www.w3.org/2000/svg" width="20" height="20">
@@ -25,7 +25,7 @@ export const BadgeShowcase = () => {
           width: 250,
         }}
       >
-        <Badge />
+        {/* <Badge />
 
         <Badge content="?" />
 
@@ -36,7 +36,7 @@ export const BadgeShowcase = () => {
         <Button view="default" size="m">
           Закладка
           <Badge color="#0679ff" outlineColor="#0679ff" content={5} style={{ marginLeft: 5 }} />
-        </Button>
+        </Button> */}
       </div>
     </>
   )
