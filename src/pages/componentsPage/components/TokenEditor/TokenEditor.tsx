@@ -5,7 +5,7 @@ import { Button, Icon, Input, Switch, Textarea } from 'react-figma-components'
 
 import { Divider } from '../../../../lib/lego/Divider'
 import { TooltipStateful } from '../../../../lib/lego/Tooltip'
-import { $token, tokenReset } from '../../model'
+import { $selectedToken, closeEditor } from './model'
 import { TipIcon } from '../../../../icons'
 import './TokenEditor.css'
 
@@ -16,7 +16,7 @@ export type TokenEditorProps = {
 }
 
 export const TokenEditor: FC<TokenEditorProps> = ({ className, ...props }) => {
-  const token = useStore($token)
+  const { token, description } = useStore($selectedToken)
 
   return (
     <div className={cnTokenEditor(null, [className])} {...props}>
@@ -25,14 +25,14 @@ export const TokenEditor: FC<TokenEditorProps> = ({ className, ...props }) => {
         <Icon
           name="close"
           color="black"
-          onClick={tokenReset}
+          onClick={closeEditor}
           className={cnTokenEditor('CloseIcon')}
         />
       </div>
       <Divider />
       <div className={cnTokenEditor('Description')}>
         <Input value={token} readOnly />
-        <Textarea readOnly />
+        {description && <Textarea value={description} readOnly />}
       </div>
       <Divider />
       <div className={cnTokenEditor('Controls')}>
@@ -41,7 +41,7 @@ export const TokenEditor: FC<TokenEditorProps> = ({ className, ...props }) => {
           <div className={cnTokenEditor('Switch')}>
             <Switch />
             <span>Inheritance</span>
-            <TooltipStateful content="You can use formulas in “color{} h{} s{} l{} a{}” format ">
+            <TooltipStateful content="You can use formulas in “color(value h() s() l() a())” format ">
               <span>
                 <TipIcon className="" />
               </span>

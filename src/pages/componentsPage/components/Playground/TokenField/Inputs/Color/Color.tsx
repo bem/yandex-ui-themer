@@ -20,13 +20,12 @@ export type ColorProps = TokenType & {
 const DebounceInput = withDebounceInput(Input)
 
 export const Color: FC<ColorProps> = ({
-  label,
   handleLink,
   handleColorChange,
   color,
   hex,
   alpha,
-  changed,
+  name,
 }) => {
   const [_hex, setHex] = useState(hex)
   const [_alpha, setAlpha] = useState(alpha)
@@ -66,7 +65,7 @@ export const Color: FC<ColorProps> = ({
     [handleColorChangeDebounced],
   )
 
-  const handleLinkHandler = useCallback(() => handleLink(label), [label, handleLink])
+  const handleLinkHandler = useCallback(() => handleLink(name), [name, handleLink])
   const hexChangeHandler = useCallback((event) => handleInputChange(event.target.value, _alpha), [
     _alpha,
     handleInputChange,
