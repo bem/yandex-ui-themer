@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import { Button, IButtonProps as ButtonProps } from '@yandex/ui/Button/desktop/bundle'
+import { Button, IButtonProps as ButtonProps } from '@yandex-lego/components/Button/desktop/bundle'
 
 import { variablesReset } from '../../../model/designTokens'
 

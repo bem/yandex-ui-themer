@@ -1,6 +1,6 @@
 import React, { useState, FC, createElement, useEffect } from 'react';
 import { useStore } from 'effector-react';
-import { cnTheme } from '@yandex/ui/Theme';
+import { cnTheme } from '@yandex-lego/components/Theme';
 
 import { useRef } from 'react';
 import { cn } from '@bem-react/classname';

@@ -4,16 +4,16 @@ import { compose } from '@bem-react/core'
 import {
   Tooltip as TooltipDesktop,
   TooltipStateful as TooltipStatefulDesktop,
-} from '@yandex/ui/Tooltip/Tooltip@desktop'
+} from '@yandex-lego/components/Tooltip/Tooltip@desktop'
 
 // _size
-import { withSizeS } from '@yandex/ui/Tooltip/_size/Tooltip_size_s'
+import { withSizeS } from '@yandex-lego/components/Tooltip/_size/Tooltip_size_s'
 // _view
 import { withViewFigma } from './_view/Tooltip_view_figma'
 
 import { withDark } from './_dark/Tooltip_dark'
 
-export * from '@yandex/ui/Tooltip/Tooltip@desktop'
+export * from '@yandex-lego/components/Tooltip/Tooltip@desktop'
 
 const enhance = compose(withViewFigma, withDark, withSizeS)
 

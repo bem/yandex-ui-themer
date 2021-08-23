@@ -1,5 +1,5 @@
 import React from 'react'
-import { useSliderState } from '@yandex/ui/Slider/desktop/bundle'
+import { useSliderState } from '@yandex-lego/components/Slider/desktop/bundle'
 
 import { Headline } from '../Headline'
 

@@ -2,16 +2,14 @@ import { createStore, createEvent, combine } from 'effector'
 
 import groupBy from 'lodash.groupby'
 
-import { $designTokens } from '../../model/designTokens'
-import { $invertedTokenMappings } from '../../model/mappings'
-import { $resolvedTokens } from '../../model/resolvedTokens'
-import { $theme } from '../../model/themes'
-import { toHEXA } from '../../utils/color'
-import { extractParams } from '../../utils/extractParams'
-import { getType } from '../../utils/tokenType'
-import { transformMappings } from '../../utils/transformers'
-import { getComponentMetaByName } from '../../utils/getComponentByName'
-import { DesignTokensType } from '../../types'
+import { $designTokens } from './designTokens'
+import { $invertedTokenMappings } from './mappings'
+import { $resolvedTokens } from './resolvedTokens'
+import { $theme } from './themes'
+import { toHEXA } from '../utils/color'
+import { extractParams } from '../utils/extractParams'
+import { getType } from '../utils/tokenType'
+import { transformMappings } from '../utils/transformers'
 
 export type TokenBase = {
   label: string
@@ -48,10 +46,6 @@ export const currentPropsChange = createEvent<{
   name: string
   value: unknown
 }>()
-export const currentCombinedPropsChange = createEvent<{
-    name: string
-    value: unknown
-  }>()
 
 export interface Prop {
   name: string
@@ -69,17 +63,15 @@ interface IComponent {
 }
 
 interface ComponentState {
-  allProps: Prop[]
+  allProps: Record<string, Prop>
   currentProps: Record<string, unknown>
-  currentCombinedProps: Record<string, unknown>
 }
 
 // Current selected component to be shown
 export const $component = createStore<string>('overview')
 export const $componentProps = createStore<ComponentState>({
-  allProps: [],
+  allProps: {},
   currentProps: {},
-  currentCombinedProps: {}
 })
 
 // Current selected token to be edited
@@ -172,35 +164,3 @@ export const $tokens = combine(
     })
   },
 )
-
-// Current tab to show
-export const $activeTab = createStore<string>('')
-
-$component.on(componentChange, (_, component) => component)
-$componentProps.on(componentChange, (_, component) => {
-  // @ts-expect-error
-  const currentComponent = getComponentMetaByName(component)
-    console.log(currentComponent);
-  return {
-    allProps: currentComponent.argTypes,
-    currentProps: currentComponent.args,
-    currentCombinedProps: {}
-  }
-})
-$componentProps.on(currentPropsChange, ({ allProps, currentProps, currentCombinedProps }, newProp) => {
-  const newState = { ...currentProps }
-  newState[newProp.name] = newProp.value
-
-  return { allProps, currentProps: newState, currentCombinedProps }
-})
-
-$componentProps.on(currentCombinedPropsChange, ({ allProps, currentProps, currentCombinedProps }, newProp) => {
-    const newState = { ...currentCombinedProps }
-    newState[newProp.name] = newProp.value
-  
-    return { allProps, currentCombinedProps: newState, currentProps }
-  });
-
-$token.on(tokenChange, (_, token) => token).reset(tokenReset)
-
-$activeTab.on(activeTabChange, (_, activeTab) => activeTab)

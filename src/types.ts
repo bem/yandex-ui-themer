@@ -1,4 +1,4 @@
-import { Theme } from '@yandex/ui/Theme'
+import { Theme } from '@yandex-lego/components/Theme'
 
 export type TokenInfoType = {
   value: string | number

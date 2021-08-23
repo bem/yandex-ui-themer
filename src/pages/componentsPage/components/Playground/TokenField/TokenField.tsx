@@ -1,4 +1,4 @@
-import React, { useCallback, FC } from 'react'
+import React, { useCallback, FC, useMemo } from 'react'
 
 import { TextinputBase } from '../../../../../components/Textinput'
 import { metricaGoal } from '../../../../../components/YaMetrika'
@@ -6,6 +6,7 @@ import { variablesChange } from '../../../../../model/designTokens'
 import { tokenChange, TokenType } from '../../../model'
 import { Text, Color, Link } from './Inputs'
 import { TextinputPrevious } from './TextinputPrevious'
+import { throttle } from 'lodash';
 
 export type TextinputProps = TokenType & {}
 
@@ -53,18 +54,17 @@ export const TextinputField: FC<TextinputProps> = (props) => {
     })
   }, [defaultValue, label, path])
 
-  let inner
-  switch (props.type) {
-    case 'text':
-      inner = <Text handleChange={handleTextChange} {...props} />
-      break
-    case 'color':
-      inner = <Color handleLink={handleLink} handleColorChange={handleColorChange} {...props} />
-      break
-    case 'link':
-      inner = <Link handleLink={handleLink} {...props} />
-      break
-  }
+  const inner = useMemo(() => {
+    switch (props.type) {
+        case 'text':
+          return <Text handleChange={handleTextChange} {...props} />
+        case 'color':
+          return <Color handleLink={handleLink} handleColorChange={handleColorChange} {...props} />
+        case 'link':
+          return <Link handleLink={handleLink} {...props} />
+      }
+      // @ts-expect-error
+  }, [props.type, props.defaultValue, props.color, props.colorValue, props.value]);
 
   return (
     <>

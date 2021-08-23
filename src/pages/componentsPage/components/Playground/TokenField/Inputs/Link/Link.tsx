@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import { cnTextinput } from '@yandex/ui/Textinput/Textinput'
+import { cnTextinput } from '@yandex-lego/components/Textinput/Textinput'
 import { IconButton } from 'react-figma-components'
 
 import { ColorPicker } from '../../ColorPicker'

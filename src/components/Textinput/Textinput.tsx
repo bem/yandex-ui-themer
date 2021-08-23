@@ -16,6 +16,7 @@ export type TextinputProps = TextinputBaseProps & {
         | 'text'
         | 'children';
     options?: string[];
+    multiple?: boolean;
     value?: string;
     onChange?: (value: string | boolean | string[], label: string) => void;
 };
@@ -23,6 +24,7 @@ export type TextinputProps = TextinputBaseProps & {
 export const Textinput: FC<TextinputProps> = ({
     value,
     type,
+    multiple = false,
     options = [],
     onChange = () => {},
     label,
@@ -32,7 +34,9 @@ export const Textinput: FC<TextinputProps> = ({
 
     const onChangeSelectHandler = useCallback(
         (v) => {
-            onChange(v[0]?.value, label);
+            console.log(v);
+            // @ts-expect-error
+            onChange(v?.map(({ value }) => value), label);
         },
         [onChange, label]
     );
@@ -52,7 +56,7 @@ export const Textinput: FC<TextinputProps> = ({
     switch (type) {
         case 'select':
         case 'enum':
-            const selected = options.find((v) => v === value);
+            const selected = options.filter((v) => value?.includes(v)).map((v) => ({ option: v, value: v }));
             const optionsMapped = options.map((o) => ({
                 value: o,
                 label: o,
@@ -60,7 +64,7 @@ export const Textinput: FC<TextinputProps> = ({
             optionsMapped.unshift({ value: '-1', label: '--' });
 
             Component = (
-                <Select onChange={onChangeSelectHandler} selected={[{ option: selected, value: selected, }]}>
+                <Select multiple={multiple} onChange={onChangeSelectHandler} selected={selected}>
                     {optionsMapped.map(({ value, label }) => (
                         <Item value={value} key={`${label}-${value}`}>
                             {label}

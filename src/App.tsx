@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { useGate } from 'effector-react'
-import { configureRootTheme } from '@yandex/ui/Theme'
-import { TabsPanes } from '@yandex/ui/TabsPanes/desktop/bundle'
-import { theme } from '@yandex/ui/Theme/presets/default'
+import { configureRootTheme } from '@yandex-lego/components/Theme'
+import { TabsPanes } from '@yandex-lego/components/TabsPanes/desktop/bundle'
+import { theme } from '@yandex-lego/components/Theme/presets/default'
 
 import { ToastContainer, cssTransition } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.min.css'

@@ -9,3 +9,7 @@
 .Textinput.Textinput_type_link:hover .Textinput-BreakIcon {
 	display: block;
 }
+
+.Textinput .icon-button {
+    background: none;
+}

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Divider as DividerBase } from '@yandex/ui/Divider'
+import { Divider as DividerBase } from '@yandex-lego/components/Divider'
 
 import './Divider.css'
 

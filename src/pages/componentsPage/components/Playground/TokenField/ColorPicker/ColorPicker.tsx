@@ -1,6 +1,6 @@
-import React, { useState, useRef, useCallback, FC } from 'react'
+import React, { useState, useRef, useCallback, FC, useMemo } from 'react'
 import { ChromePicker } from 'react-color'
-import { Popup } from '@yandex/ui/Popup/desktop/bundle'
+import { Popup } from '@yandex-lego/components/Popup/desktop/bundle'
 
 import { metricaGoal } from '../../../../../../components/YaMetrika'
 
@@ -8,24 +8,24 @@ import './ColorPicker.css'
 
 export type ColorPickerProps = {
   color: string
-  onColorChange?: (color: string) => void
+  onChange?: (color: string) => void
   shape?: 'circle' | 'square'
 }
 
-export const ColorPicker: FC<ColorPickerProps> = ({ color, onColorChange, shape = 'circle' }) => {
+export const ColorPicker: FC<ColorPickerProps> = ({ color, onChange, shape = 'circle' }) => {
   const [visible, setVisible] = useState(false)
 
   const scopeRef = useRef<HTMLDivElement>(null)
   const anchorRef = useRef<HTMLDivElement>(null)
 
   const handleClick = useCallback(() => {
-    if (!onColorChange) {
+    if (!onChange) {
       return
     }
 
     setVisible(true)
     metricaGoal('picker')
-  }, [onColorChange])
+  }, [onChange])
 
   const handleClose = useCallback(() => {
     setVisible(false)
@@ -33,11 +33,13 @@ export const ColorPicker: FC<ColorPickerProps> = ({ color, onColorChange, shape 
 
   const handleColorChange = useCallback(
     (event) => {
-      onColorChange?.(event)
+      onChange?.(event)
       metricaGoal('change-tokens')
     },
-    [onColorChange],
+    [onChange],
   )
+
+  const backgroundColorStyle = useMemo(() => ({ background: color }), [color])
 
   return (
     <div ref={scopeRef} className="ColorPicker">
@@ -45,7 +47,7 @@ export const ColorPicker: FC<ColorPickerProps> = ({ color, onColorChange, shape 
         ref={anchorRef}
         onClick={handleClick}
         className={`ColorPicker-Preview ColorPicker-Preview_shape_${shape}`}
-        style={{ background: color }}
+        style={backgroundColorStyle}
       />
       <Popup
         direction="bottom-end"
@@ -56,7 +58,7 @@ export const ColorPicker: FC<ColorPickerProps> = ({ color, onColorChange, shape 
         scope={scopeRef}
         onClose={handleClose}
       >
-        <ChromePicker color={color} onChangeComplete={handleColorChange} />
+        <ChromePicker color={color} onChange={handleColorChange} />
       </Popup>
     </div>
   )

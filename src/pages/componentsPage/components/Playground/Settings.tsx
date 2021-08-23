@@ -1,11 +1,13 @@
 import React, { FC, useCallback } from 'react';
 
 import { Textinput } from '../../../../components/Textinput';
-import { $componentProps, Prop, currentPropsChange } from '../../model';
+import { $componentProps, Prop, currentPropsChange, currentCombinedPropsChange } from '../../model';
 
 import { useStore } from 'effector-react';
 
-export type SettingsProps = {};
+export type SettingsProps = {
+    combine: boolean;
+};
 
 export type SettingsItemProps = {
     prop: Prop;
@@ -13,27 +15,31 @@ export type SettingsItemProps = {
     onChange: ({ name, value }: { name: string; value: unknown }) => void;
 };
 
-export const Settings: FC<SettingsProps> = () => {
-    const { allProps, currentProps } = useStore($componentProps);
-
+export const Settings: FC<SettingsProps> = ({ combine }) => {
+    const { allProps, currentProps, currentCombinedProps } = useStore($componentProps);
     const onChangeProp = useCallback((value: unknown, name) => {
-        currentPropsChange({ name, value });
-    }, []);
+        const handler = combine ? currentCombinedPropsChange : currentPropsChange;
+        console.log(value);
+        handler({ name, value });
+    }, [combine]);
+
+    const props = combine ? { ...currentProps, ...currentCombinedProps } : currentProps;
 
     return (
         <>
-            {Object.keys(allProps).map((name) => {
-                const prop = allProps[name];
+            {allProps.map((prop) => {
                 const required = prop.type.required;
                 const type = prop.type.name;
-                
+                const name = prop.name;
+                console.log(name, props[prop.name]);
                 return (
                     <Textinput
                         key={name}
+                        multiple={combine}
                         label={prop.name}
                         tip={prop.description}
                         type={type}
-                        value={currentProps[prop.name] as string}
+                        value={props[prop.name] as string}
                         onChange={onChangeProp}
                         options={prop.options}
                     />

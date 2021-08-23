@@ -1,9 +1,9 @@
 import React from 'react'
-import { Button as ButtonBase } from '@yandex/ui/Button'
-import { Textinput as TextinputBase, withHasClear } from '@yandex/ui/Textinput/desktop'
-import { Header, HeaderSearch, HeaderNav, HeaderNavItem } from '@yandex/ui/Header/desktop'
-import { withViewSearchArrow as withViewSearchArrowButton } from '@yandex/ui/Header/Button'
-import { withViewSearchArrow as withViewSearchArrowTextinput } from '@yandex/ui/Header/Textinput'
+import { Button as ButtonBase } from '@yandex-lego/components/Button'
+import { Textinput as TextinputBase, withHasClear } from '@yandex-lego/components/Textinput/desktop'
+import { Header, HeaderSearch, HeaderNav, HeaderNavItem } from '@yandex-lego/components/Header/desktop'
+import { withViewSearchArrow as withViewSearchArrowButton } from '@yandex-lego/components/Header/Button'
+import { withViewSearchArrow as withViewSearchArrowTextinput } from '@yandex-lego/components/Header/Textinput'
 
 import { Headline } from '../Headline'
 

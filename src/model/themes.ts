@@ -1,8 +1,8 @@
 import { createStore, createEvent } from 'effector'
 
-import { theme as themeDefault } from '@yandex/ui/Theme/presets/default'
-import { theme as themeInverse } from '@yandex/ui/Theme/presets/inverse'
-import { theme as themeBrand } from '@yandex/ui/Theme/presets/brand'
+import { theme as themeDefault } from '@yandex-lego/components/Theme/presets/default'
+import { theme as themeInverse } from '@yandex-lego/components/Theme/presets/inverse'
+import { theme as themeBrand } from '@yandex-lego/components/Theme/presets/brand'
 
 import stylesDataDefault from '../themes/presets/example/root.json'
 import stylesDataInverse from '../themes/presets/example-inverse/root.json'

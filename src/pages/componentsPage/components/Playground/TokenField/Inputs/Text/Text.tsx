@@ -1,5 +1,5 @@
 import React, { ChangeEventHandler, FC } from 'react'
-import { withDebounceInput } from '@yandex/ui/withDebounceInput'
+import { withDebounceInput } from '@yandex-lego/components/withDebounceInput'
 import { Input } from 'react-figma-components'
 
 import { TokenBase } from '../../../../../model'

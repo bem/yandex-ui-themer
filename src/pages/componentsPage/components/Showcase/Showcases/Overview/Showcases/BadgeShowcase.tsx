@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button } from '@yandex/ui/Button/desktop/bundle'
+import { Button } from '@yandex-lego/components/Button/desktop/bundle'
 
 import { Headline } from '../Headline'
 

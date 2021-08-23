@@ -12,8 +12,8 @@
 }
 
 .Playground-Body {
-	padding: 26px 16px 26px 18px;
-	overflow-y: scroll;
+  padding: 26px 16px 26px 18px;
+  overflow-y: scroll;
   overflow-x: hidden;
   flex: 1 1 100px;
 }

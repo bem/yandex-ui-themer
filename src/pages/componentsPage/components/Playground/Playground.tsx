@@ -7,7 +7,7 @@ import { TabsMenu } from '../../../../lib/lego/TabsMenu'
 import { Divider } from '../../../../lib/lego/Divider'
 
 import { Settings } from './Settings'
-import { Tokens } from './Tokens'
+import { Tokens } from './Tokens/Tokens'
 import { Code } from './Code'
 
 import { $component, $activeTab, activeTabChange } from '../../model'
@@ -65,7 +65,7 @@ export const Playground: FC<PlaygroundProps> = ({ className }) => {
       />
       <Divider />
       <div className={cnPlayground('Body')}>
-        {component !== 'overview' && activeTab === 'settings' && <Settings />}
+        {component !== 'overview' && activeTab === 'settings' && <Settings combine={combine} />}
         {activeTab === 'tokens' && <Tokens />}
         {activeTab === 'code' && <Code />}
       </div>
