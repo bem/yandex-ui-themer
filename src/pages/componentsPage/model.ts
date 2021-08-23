@@ -49,9 +49,9 @@ export const currentPropsChange = createEvent<{
   value: unknown
 }>()
 export const currentCombinedPropsChange = createEvent<{
-    name: string
-    value: unknown
-  }>()
+  name: string
+  value: unknown
+}>()
 
 export interface Prop {
   name: string
@@ -79,7 +79,7 @@ export const $component = createStore<string>('overview')
 export const $componentProps = createStore<ComponentState>({
   allProps: [],
   currentProps: {},
-  currentCombinedProps: {}
+  currentCombinedProps: {},
 })
 
 // Current selected token to be edited
@@ -87,7 +87,7 @@ export const $token = createStore<string>('')
 export const $tokenPresent = $token.map((token) => token.length > 0)
 
 const getTokenGroups = (name: string) => {
-  const parts = name.split('-');
+  const parts = name.split('-')
 
   return parts.map((_, index) => parts.slice(0, index + 1).join('-')).reverse()
 }
@@ -168,7 +168,7 @@ export const $tokens = combine(
     }, {})
 
     return groupBy(preparedTokens, ({ groups }) => {
-        return groups.find(group => groupsCount[group] >= 3) || groups[0];
+      return groups.find((group) => groupsCount[group] >= 3) || groups[0]
     })
   },
 )
@@ -180,26 +180,32 @@ $component.on(componentChange, (_, component) => component)
 $componentProps.on(componentChange, (_, component) => {
   // @ts-expect-error
   const currentComponent = getComponentMetaByName(component)
-    console.log(currentComponent);
+  console.log(currentComponent)
   return {
     allProps: currentComponent.argTypes,
     currentProps: currentComponent.args,
-    currentCombinedProps: {}
+    currentCombinedProps: {},
   }
 })
-$componentProps.on(currentPropsChange, ({ allProps, currentProps, currentCombinedProps }, newProp) => {
-  const newState = { ...currentProps }
-  newState[newProp.name] = newProp.value
+$componentProps.on(
+  currentPropsChange,
+  ({ allProps, currentProps, currentCombinedProps }, newProp) => {
+    const newState = { ...currentProps }
+    newState[newProp.name] = newProp.value
 
-  return { allProps, currentProps: newState, currentCombinedProps }
-})
+    return { allProps, currentProps: newState, currentCombinedProps }
+  },
+)
 
-$componentProps.on(currentCombinedPropsChange, ({ allProps, currentProps, currentCombinedProps }, newProp) => {
+$componentProps.on(
+  currentCombinedPropsChange,
+  ({ allProps, currentProps, currentCombinedProps }, newProp) => {
     const newState = { ...currentCombinedProps }
     newState[newProp.name] = newProp.value
-  
+
     return { allProps, currentCombinedProps: newState, currentProps }
-  });
+  },
+)
 
 $token.on(tokenChange, (_, token) => token).reset(tokenReset)
 
