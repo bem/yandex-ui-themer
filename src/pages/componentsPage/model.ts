@@ -11,7 +11,6 @@ import { extractParams } from '../../utils/extractParams'
 import { getType } from '../../utils/tokenType'
 import { transformMappings } from '../../utils/transformers'
 import { getComponentMetaByName } from '../../utils/getComponentByName'
-import { DesignTokensType } from '../../types'
 
 export type TokenBase = {
   label: string
@@ -21,6 +20,7 @@ export type TokenBase = {
   defaultValue: string
   rawValue: string
   changed: boolean
+  name: string
 }
 
 export type TokenType = TokenBase &
@@ -151,6 +151,7 @@ export const $tokens = combine(
         ...token,
         ...resultToken,
         label: tokenName,
+        name: tokenName,
         groups: getTokenGroups(tokenName),
         type,
         defaultValue: token.value,

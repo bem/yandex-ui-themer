@@ -3,6 +3,11 @@
     padding: 16px;
     margin: 0 -16px;
 }
+
+.Tokens-Section:last-of-type {
+    border-bottom: none;
+}
+
 .Tokens-Section:first-child {
     margin-top: -26px;
 }

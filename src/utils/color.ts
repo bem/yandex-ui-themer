@@ -82,7 +82,7 @@ export function toHEXA(color: string) {
       // #FFFFFF00
       //        -- <- alpha part
       hex = fullForm.slice(0, -2)
-      a = parseInt(fullForm.slice(fullForm.length - 2, fullForm.length), 16)
+      a = parseInt(fullForm.slice(fullForm.length - 2, fullForm.length), 16) / 100
     } else {
       hex = fullForm
       a = 1

@@ -22,10 +22,10 @@ export const $yamlText = combine(
     }
 
     // Make object for yaml from designTokens
-    const yml = Object.values(designTokens).reduce((acc, { changed, path, value, rawValue }) => {
+    const yml = Object.values(designTokens).reduce((acc, { path, value, rawValue }) => {
       if (rawValue) {
         acc.push(toDeepToken(path, { value: rawValue }))
-      } else if (changed) {
+      } else {
         acc.push(toDeepToken(path, { value }))
       }
 

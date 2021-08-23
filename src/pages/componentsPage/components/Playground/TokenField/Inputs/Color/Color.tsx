@@ -9,6 +9,8 @@ import { ColorPicker } from '../../ColorPicker'
 import { TokenType } from '../../../../../model'
 import { combineHexAndAlpha } from '../../../../../../../utils/color'
 
+import './Color.css'
+
 export type ColorProps = TokenType & {
   handleLink: (token: string) => void
   handleColorChange: (color: string) => void
@@ -28,9 +30,11 @@ export const Color: FC<ColorProps> = ({
 }) => {
   const [_hex, setHex] = useState(hex)
   const [_alpha, setAlpha] = useState(alpha)
-  const [_color, setColor] = useState(color);
+  const [_color, setColor] = useState(color)
 
-  const handleColorChangeDebounced = useCallback(debounce(handleColorChange, 100), [handleColorChange]);
+  const handleColorChangeDebounced = useCallback(debounce(handleColorChange, 100), [
+    handleColorChange,
+  ])
 
   useEffect(() => {
     if (hex) {
@@ -40,30 +44,42 @@ export const Color: FC<ColorProps> = ({
       setAlpha(alpha)
     }
     if (color) {
-        setAlpha(color);
+      setColor(color)
     }
   }, [hex, alpha, color])
 
-  const handleInputChange = useCallback((hex: string, alpha: string) => {
-    const color = combineHexAndAlpha(hex, alpha.replace('%', ''))
-    handleColorChange(color)
-  }, [handleColorChange])
+  const handleInputChange = useCallback(
+    (hex: string, alpha: string) => {
+      const color = combineHexAndAlpha(hex, alpha.replace('%', ''))
+      handleColorChange(color)
+    },
+    [handleColorChange],
+  )
 
-  const _handleColorChange = useCallback((color: any) => {
-    const _color = convertColorObj(color);
+  const _handleColorChange = useCallback(
+    (color: any) => {
+      const _color = convertColorObj(color)
 
-    setColor(_color);
-    handleColorChangeDebounced(_color);
-  }, [handleColorChangeDebounced]);
+      setColor(_color)
+      handleColorChangeDebounced(_color)
+    },
+    [handleColorChangeDebounced],
+  )
 
-  const handleLinkHandler = useCallback(() => handleLink(label), [label, handleLink]);
-  const hexChangeHandler = useCallback((event) => handleInputChange(event.target.value, _alpha), [_alpha, handleInputChange]);
-  const alphaChangeHandler = useCallback((event) => handleInputChange(_hex, event.target.value), [_hex, handleInputChange]);
+  const handleLinkHandler = useCallback(() => handleLink(label), [label, handleLink])
+  const hexChangeHandler = useCallback((event) => handleInputChange(event.target.value, _alpha), [
+    _alpha,
+    handleInputChange,
+  ])
+  const alphaChangeHandler = useCallback((event) => handleInputChange(_hex, event.target.value), [
+    _hex,
+    handleInputChange,
+  ])
 
   return (
     <>
       <div className={cnTextinput({ type_color: true })}>
-        <ColorPicker color={_color} onChange={_handleColorChange} />
+        <ColorPicker color={_color} onChange={_handleColorChange} className="Textinput-Picker" />
         <DebounceInput
           className="Textinput-Hex"
           value={_hex}
@@ -78,11 +94,7 @@ export const Color: FC<ColorProps> = ({
           onChange={alphaChangeHandler}
           maxLength={4}
         />
-        <IconButton
-          name="hyperlink"
-          onPress={handleLinkHandler}
-          className="Textinput-BreakIcon"
-        />
+        <IconButton name="hyperlink" onPress={handleLinkHandler} className="Textinput-BreakIcon" />
       </div>
     </>
   )

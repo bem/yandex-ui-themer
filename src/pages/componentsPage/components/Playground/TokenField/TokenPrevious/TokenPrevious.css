@@ -1,0 +1,42 @@
+.TokenPrevious {
+  margin-bottom: 2px;
+}
+
+.TokenPrevious-Body {
+  display: flex;
+  align-items: center;
+}
+
+.TokenPrevious .Textinput-Label {
+  font-weight: 500;
+}
+
+.TokenPrevious:hover .Textinput-Label,
+.TokenPrevious:hover .TokenPrevious-Body .TokenPrevious-Hex,
+.TokenPrevious:hover .TokenPrevious-Body .TokenPrevious-Alpha {
+  color: black;
+  cursor: pointer;
+}
+
+.TokenPrevious .Textinput-Label,
+.TokenPrevious-Body .TokenPrevious-Hex,
+.TokenPrevious-Body .TokenPrevious-Alpha {
+  font-family: Inter;
+  font-style: normal;
+  font-size: 11px;
+  line-height: 16px;
+
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.005em;
+
+  color: rgba(0, 0, 0, 0.301961);
+}
+
+.TokenPrevious-Body .TokenPrevious-Hex {
+  padding-left: 31px;
+}
+
+.TokenPrevious-Body .TokenPrevious-Alpha {
+  padding-left: 21px;
+}

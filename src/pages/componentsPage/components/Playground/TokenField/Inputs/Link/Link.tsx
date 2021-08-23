@@ -15,7 +15,7 @@ export type LinkProps = TokenType & {
 export const Link: FC<LinkProps> = ({ label, link, isColor, colorValue, handleLink }) => {
   return (
     <div className={cnTextinput({ type_link: true })}>
-      {isColor && <ColorPicker color={colorValue} shape="circle" />}
+      {isColor && <ColorPicker color={colorValue} shape="circle" className="Textinput-Picker" />}
       <span>{link}</span>
       <IconButton name="break" onPress={() => handleLink(label)} className="Textinput-BreakIcon" />
     </div>

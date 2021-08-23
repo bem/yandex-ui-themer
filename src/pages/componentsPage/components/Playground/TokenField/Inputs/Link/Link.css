@@ -1,15 +1,31 @@
 .Textinput.Textinput_type_link {
-	
+  font-size: 11px;
+  line-height: 16px;
+
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.005em;
+
+  color: rgba(0, 0, 0, 0.8);
 }
 
 .Textinput.Textinput_type_link .Textinput-BreakIcon {
-	display: hidden;
+  visibility: hidden;
+  margin-left: auto;
 }
 
 .Textinput.Textinput_type_link:hover .Textinput-BreakIcon {
-	display: block;
+  visibility: visible;
 }
 
-.Textinput .icon-button {
-    background: none;
+.Textinput.Textinput_type_link .icon-button .icon {
+  cursor: pointer;
+}
+
+.Textinput.Textinput_type_link:hover {
+  background: #f0f0f0;
+}
+
+.Textinput.Textinput_type_link .Textinput-Picker {
+  padding: 6px;
 }

@@ -10,9 +10,15 @@ export type ColorPickerProps = {
   color: string
   onChange?: (color: string) => void
   shape?: 'circle' | 'square'
+  className?: string
 }
 
-export const ColorPicker: FC<ColorPickerProps> = ({ color, onChange, shape = 'circle' }) => {
+export const ColorPicker: FC<ColorPickerProps> = ({
+  color,
+  onChange,
+  shape = 'circle',
+  className,
+}) => {
   const [visible, setVisible] = useState(false)
 
   const scopeRef = useRef<HTMLDivElement>(null)
@@ -42,7 +48,7 @@ export const ColorPicker: FC<ColorPickerProps> = ({ color, onChange, shape = 'ci
   const backgroundColorStyle = useMemo(() => ({ background: color }), [color])
 
   return (
-    <div ref={scopeRef} className="ColorPicker">
+    <div ref={scopeRef} className={`ColorPicker ${className ? className : ''}`}>
       <div
         ref={anchorRef}
         onClick={handleClick}

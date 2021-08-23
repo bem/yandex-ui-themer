@@ -5,39 +5,38 @@ import { metricaGoal } from '../../../../../components/YaMetrika'
 import { variablesChange } from '../../../../../model/designTokens'
 import { tokenChange, TokenType } from '../../../model'
 import { Text, Color, Link } from './Inputs'
-import { TextinputPrevious } from './TextinputPrevious'
-import { throttle } from 'lodash';
+import { TokenPrevious } from './TokenPrevious'
 
-export type TextinputProps = TokenType & {}
+export type TokenProps = TokenType & {}
 
-export const TextinputField: FC<TextinputProps> = (props) => {
-  const { label, description, type, path, defaultValue, changed } = props
+export const TokenField: FC<TokenProps> = (props) => {
+  const { label, description, type, path, defaultValue, changed, name } = props
 
   const handleTextChange = useCallback(
     (event) => {
       variablesChange({
         path,
-        name: label,
+        name,
         value: event.target.value,
         changed: event.target.value !== defaultValue,
         type,
       })
       metricaGoal('change-tokens')
     },
-    [defaultValue, label, path, type],
+    [defaultValue, path, type, name],
   )
 
   const handleColorChange = useCallback(
     (color) => {
       variablesChange({
         path,
-        name: label,
+        name,
         value: color,
         changed: color !== defaultValue,
         type: 'color',
       })
     },
-    [defaultValue, label, path],
+    [defaultValue, path, name],
   )
 
   const handleLink = (token: string) => {
@@ -47,24 +46,24 @@ export const TextinputField: FC<TextinputProps> = (props) => {
   const handleClear = useCallback(() => {
     variablesChange({
       path,
-      name: label,
+      name,
       value: defaultValue,
       changed: false,
       type: 'color',
     })
-  }, [defaultValue, label, path])
+  }, [defaultValue, name, path])
 
   const inner = useMemo(() => {
     switch (props.type) {
-        case 'text':
-          return <Text handleChange={handleTextChange} {...props} />
-        case 'color':
-          return <Color handleLink={handleLink} handleColorChange={handleColorChange} {...props} />
-        case 'link':
-          return <Link handleLink={handleLink} {...props} />
-      }
-      // @ts-expect-error
-  }, [props.type, props.defaultValue, props.color, props.colorValue, props.value]);
+      case 'text':
+        return <Text handleChange={handleTextChange} {...props} />
+      case 'color':
+        return <Color handleLink={handleLink} handleColorChange={handleColorChange} {...props} />
+      case 'link':
+        return <Link handleLink={handleLink} {...props} />
+    }
+    // @ts-expect-error
+  }, [props.type, props.color, props.colorValue, props.value])
 
   return (
     <>
@@ -72,7 +71,7 @@ export const TextinputField: FC<TextinputProps> = (props) => {
         {inner}
       </TextinputBase>
       {type === 'color' && changed && (
-        <TextinputPrevious color={defaultValue} handleClick={handleClear} />
+        <TokenPrevious color={defaultValue} handleClick={handleClear} />
       )}
     </>
   )
