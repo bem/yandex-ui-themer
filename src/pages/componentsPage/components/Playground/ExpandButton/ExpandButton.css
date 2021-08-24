@@ -1,0 +1,36 @@
+.ExpandButton {
+  all: unset;
+  display: flex;
+  align-items: center;
+}
+
+.ExpandButton:hover {
+  cursor: pointer;
+}
+
+.ExpandButton-Icon {
+  margin-left: -10.5px;
+  fill-opacity: 0.301961;
+}
+
+.ExpandButton:hover .ExpandButton-Icon path,
+.ExpandButton:focus .ExpandButton-Icon path{
+  fill-opacity: 1;
+}
+
+.ExpandButton-Text {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 11px;
+  line-height: 16px;
+
+  letter-spacing: 0.005em;
+
+  color: rgba(0, 0, 0, 0.301961);
+}
+
+.ExpandButton:hover .ExpandButton-Text,
+.ExpandButton:focus .ExpandButton-Text {
+  color: black;
+}

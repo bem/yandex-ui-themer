@@ -1,5 +1,6 @@
 export * from './BackIcon'
 export * from './CloseEyeIcon'
+export * from './EllipsesIcon'
 export * from './UnionIcon'
 export * from './TipIcon'
 export * from './TrashIcon'
