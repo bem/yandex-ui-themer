@@ -1,12 +1,14 @@
 .Panel {
+  all: unset;
   display: flex;
   align-items: center;
   height: 32px;
   padding-left: 23.5px;
   font-family: Inter;
+  width: 100%;
 }
 
-.Panel:hover {
+.Panel:hover, .Panel:focus {
   background-color: rgba(218, 235, 247, 1);
   cursor: pointer;
 }

@@ -1,4 +1,4 @@
-import React, { ChangeEventHandler, FC } from 'react'
+import React, { ChangeEventHandler, FC, FocusEventHandler } from 'react'
 import { withDebounceInput } from '@yandex-lego/components/withDebounceInput'
 import { Input } from 'react-figma-components'
 
@@ -13,10 +13,15 @@ export type TextProps = TokenBase & {
 const DebounceInput = withDebounceInput(Input)
 
 export const Text: FC<TextProps> = ({ label, value, handleChange }) => {
+  const selectTextOnFocus: FocusEventHandler = (event) => {
+    // @ts-ignore
+    event.target.setSelectionRange(0, event.target.value.length)
+  }
   return (
     <div className={cnTextinput({ type_text: true })}>
       <DebounceInput
         onChange={handleChange}
+        onFocus={selectTextOnFocus}
         value={value}
         debounceTimeout={500}
         forceNotifyByEnter

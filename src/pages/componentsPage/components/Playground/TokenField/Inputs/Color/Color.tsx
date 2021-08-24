@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState, useCallback } from 'react'
+import React, { FC, useEffect, useState, useCallback, FocusEventHandler } from 'react'
 import { cnTextinput } from '@yandex-lego/components/Textinput/Textinput'
 import { withDebounceInput } from '@yandex-lego/components/withDebounceInput'
 import { IconButton, Input } from 'react-figma-components'
@@ -75,6 +75,11 @@ export const Color: FC<ColorProps> = ({
     handleInputChange,
   ])
 
+  const selectTextOnFocus: FocusEventHandler = (event) => {
+    // @ts-ignore
+    event.target.setSelectionRange(0, event.target.value.length)
+  }
+
   return (
     <>
       <div className={cnTextinput({ type_color: true })}>
@@ -85,6 +90,7 @@ export const Color: FC<ColorProps> = ({
           debounceTimeout={500}
           onChange={hexChangeHandler}
           maxLength={6}
+          onFocus={selectTextOnFocus}
         />
         <DebounceInput
           className="Textinput-Alpha"
@@ -92,6 +98,7 @@ export const Color: FC<ColorProps> = ({
           debounceTimeout={500}
           onChange={alphaChangeHandler}
           maxLength={4}
+          onFocus={selectTextOnFocus}
         />
         <IconButton name="hyperlink" onPress={handleLinkHandler} className="Textinput-BreakIcon" />
       </div>
