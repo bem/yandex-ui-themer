@@ -15,7 +15,7 @@ module.exports = (env, argv) => {
     const frameUrl =
         argv.mode === 'production'
             ? publicPath
-            : 'http://localhost:3000/';
+            : 'http://localhost:3000/?figma=true';
 
     return {
         mode: argv.mode === 'production' ? 'production' : 'development',

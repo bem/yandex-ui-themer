@@ -19,7 +19,7 @@ export const Settings: FC<SettingsProps> = ({ combine }) => {
     const { allProps, currentProps, currentCombinedProps } = useStore($componentProps);
     const onChangeProp = useCallback((value: unknown, name) => {
         const handler = combine ? currentCombinedPropsChange : currentPropsChange;
-        console.log(value);
+
         handler({ name, value });
     }, [combine]);
 
@@ -31,7 +31,7 @@ export const Settings: FC<SettingsProps> = ({ combine }) => {
                 const required = prop.type.required;
                 const type = prop.type.name;
                 const name = prop.name;
-                console.log(name, props[prop.name]);
+
                 return (
                     <Textinput
                         key={name}

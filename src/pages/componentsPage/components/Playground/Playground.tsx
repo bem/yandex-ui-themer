@@ -1,4 +1,4 @@
-import React, { useState, FC, useEffect, MouseEvent } from 'react'
+import React, { useState, FC, useEffect, MouseEvent, useCallback } from 'react'
 import { useStore } from 'effector-react'
 import { cn } from '@bem-react/classname'
 import { Icon, Button } from 'react-figma-components'
@@ -7,13 +7,15 @@ import { TabsMenu } from '../../../../lib/lego/TabsMenu'
 import { Divider } from '../../../../lib/lego/Divider'
 
 import { Settings } from './Settings'
-import { Tokens } from './Tokens/Tokens'
+import { Tokens } from '../../../../components/Tokens/Tokens'
 import { Code } from './Code'
 
-import { $component, $activeTab, activeTabChange } from '../../model'
+import { $component, $activeTab, activeTabChange, $componentProps } from '../../model'
 import { $isCombine, isCombineChange, isCombineReset } from '../../../../model/combine'
 
 import './Playground.css'
+import { getVariantsFromProps } from '../../../../utils/combinations'
+import { rendererVariantsMessage } from '../../../../utils/figma'
 
 const cnPlayground = cn('Playground')
 
@@ -25,6 +27,7 @@ export const Playground: FC<PlaygroundProps> = ({ className }) => {
   const component = useStore($component)
   const combine = useStore($isCombine)
   const activeTab = useStore($activeTab)
+  const { currentProps, currentCombinedProps } = useStore($componentProps)
 
   const handleCombineChange = (e: MouseEvent<HTMLDivElement>) => {
     e.stopPropagation()
@@ -38,6 +41,16 @@ export const Playground: FC<PlaygroundProps> = ({ className }) => {
   }, [component])
 
   useEffect(() => isCombineReset, [component, activeTab])
+
+  const combineVariantsHandler = useCallback(() => {
+    const combinedVariants = getVariantsFromProps(currentProps, currentCombinedProps);
+
+    const blocks = combinedVariants?.flat();
+    const componentNormalizedName = component[0].toUpperCase() + component.slice(1)
+
+    rendererVariantsMessage(blocks.map(props => ({ name: componentNormalizedName, props })));
+
+  }, [component, currentCombinedProps, currentProps]);
 
   return (
     <div className={cnPlayground(null, [className])}>
@@ -96,7 +109,7 @@ export const Playground: FC<PlaygroundProps> = ({ className }) => {
                   <Button view="secondary" disabled={!combine}>
                     Reset Selection
                   </Button>
-                  <Button view="primary" disabled={!combine}>
+                  <Button view="primary" disabled={!combine} onClick={combineVariantsHandler}>
                     Generate Variants
                   </Button>
                 </div>

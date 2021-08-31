@@ -1,3 +1,4 @@
+import { rendererSyncThemeMessage } from '../utils/figma';
 import { $resolvedTokens } from './resolvedTokens'
 
 export const $cssVariables = $resolvedTokens.map<Record<string, string>>((tokens) => {
@@ -9,6 +10,10 @@ export const $cssVariables = $resolvedTokens.map<Record<string, string>>((tokens
     {},
   )
 })
+
+$cssVariables.watch(state => {
+    rendererSyncThemeMessage(state);
+});
 
 export const $cssText = $cssVariables.map((variables) => {
   const cssText = Object.keys(variables).reduce(

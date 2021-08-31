@@ -1,0 +1,231 @@
+.TokenApply {
+    font-family: Inter, Sans-serif;
+    color: rgb(51, 51, 51);
+}
+
+.TokenApply-Name,
+.TokenApply-GroupName {
+    font-size: 11px;
+    padding: 0 16px;
+    font-weight: 600;
+    text-transform: capitalize;
+    margin: 0;
+    line-height: 32px;
+}
+
+.TokenApply-Description {
+    color: rgb(131, 131, 131);
+    text-transform: none;
+    line-height: 20px;
+    font-size: 10px;
+    margin-top: -10px;
+}
+
+.TokenApply-Group {
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgb(229, 229, 229);
+}
+
+.TokenApply-Name {
+    text-transform: uppercase;
+    line-height: 32px;
+    border-bottom: 1px solid rgb(229, 229, 229);
+}
+
+.TokenApply-ValueButton {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    box-sizing: border-box;
+    border: 1px solid transparent;
+    padding: 6px;
+    border-radius: 2px;
+    height: 32px;
+    box-sizing: border-box;
+    font-size: 11px;
+}
+
+.TokenApply-ValueButton_icon {
+    width: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.TokenApply-ValueButton:hover {
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+.TokenApply-ValueButton:active,
+.TokenApply-ValueButton_active, .TokenApply-ValueButton_active:hover {
+    border-color: rgba(0, 0, 0, 0.3);
+}
+.TokenApply-ValueButton:active {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.TokenApply-ValueButton_checked {
+    background-color: #18a0fb;
+}
+
+.TokenApply-Values {
+    padding: 0 16px;
+    display: flex;
+}
+
+.TokenApply-fill,
+.TokenApply-border {
+    width: 16px;
+    height: 16px;
+}
+
+.TokenApply-border {
+    box-sizing: border-box;
+    border: 2px solid;
+}
+
+.TokenApply-sizing {
+    line-height: 16px;
+    font-size: 11px;
+}
+
+.TokenApply-sizingLabel {
+    vertical-align: top;
+    width: 14px;
+    height: 16px;
+    display: inline-block;
+    text-align: left;
+    color: rgb(179, 179, 179);
+}
+
+.TokenApply-paddingContainer {
+    display: grid;
+    grid-template-areas:
+        'left top right'
+        'left all right'
+        'left bottom right';
+    grid-template-rows: 24px 24px 24px;
+    grid-template-columns: 24px 24px 24px;
+}
+
+.TokenApply-paddingLeft,
+.TokenApply-paddingRight,
+.TokenApply-paddingTop,
+.TokenApply-paddingBottom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    height: 24px;
+}
+
+.TokenApply-paddingLeft {
+    grid-area: left;
+    margin: 24px 0;
+}
+
+.TokenApply-paddingRight {
+    grid-area: right;
+    margin: 24px 0;
+}
+
+.TokenApply-paddingTop {
+    grid-area: top;
+}
+
+.TokenApply-paddingBottom {
+    grid-area: bottom;
+}
+
+.TokenApply-paddingAll {
+    font-size: 9px;
+    grid-area: all;
+    /* border: 1px solid rgba(0, 0, 0, 0.1); */
+    padding: 0;
+    height: 24px;
+}
+
+.TokenApply-borderRadius {
+    position: relative;
+    display: inline-block;
+}
+
+.TokenApply-borderRadiusTopLeft,
+.TokenApply-borderRadiusTopRight,
+.TokenApply-borderRadiusBottomLeft,
+.TokenApply-borderRadiusBottomRight {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    position: absolute;
+    width: 24px;
+    height: 24px;
+}
+
+.TokenApply-borderRadiusTopLeft {
+    left: 0;
+    top: 0;
+}
+
+.TokenApply-borderRadiusTopRight {
+    right: 0;
+    top: 0;
+}
+
+.TokenApply-borderRadiusBottomRight {
+    right: 0;
+    bottom: 0;
+}
+
+.TokenApply-borderRadiusBottomLeft {
+    left: 0;
+    bottom: 0;
+}
+
+.TokenApply-borderRadiusTrigger {
+}
+
+.TokenApply-borderRadiusContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.TokenApply-borderRadiusAll {
+    font-size: 9px;
+    padding: 0;
+    width: 24px;
+    height: 24px;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.TokenApply-borderRadiusAll:before {
+    border: 1px solid rgba(0, 0, 0, 1);
+    border-radius: 3px;
+    content: "";
+    display: block;
+    width: 12px;
+    height: 12px;
+    box-sizing: border-box;
+}
+
+.TokenApply-MiniPopup {
+    z-index: 999;
+    background-color: #fff;
+    display: none;
+    position: absolute;
+    width: 72px;
+    height: 72px;
+    border-radius: 3px;
+    box-shadow: 0px 2px 14px rgba(0,0,0,0.15),0px 0px 0px 0.5px rgba(0,0,0,0.2);
+}
+
+.TokenApply-MiniPopup_visible {
+    display: block;
+}

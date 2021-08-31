@@ -1,18 +1,18 @@
-import React, { FC, useEffect } from 'react'
+import React, { FC, useCallback, useEffect, useState } from 'react';
 
-import { Tokens } from './Tokens'
-import { isVariablesChangedReset } from '../../model/designTokens'
+import { Tokens } from './Tokens';
+import { isVariablesChangedReset } from '../../model/designTokens';
 
-import './ChangesPage.css'
+import './ChangesPage.css';
 
-export type ChangesPageProps = {}
+export type ChangesPageProps = {};
 
 export const ChangesPage: FC<ChangesPageProps> = () => {
-  useEffect(isVariablesChangedReset, [])
+    useEffect(isVariablesChangedReset, []);
 
-  return (
-    <div className="ChangesPage">
-      <Tokens />
-    </div>
-  )
-}
+    return (
+        <div className="ChangesPage">
+            <Tokens />
+        </div>
+    );
+};

@@ -1,5 +1,5 @@
 {
-    "name": "html-to-figma DEV-plugin",
+    "name": "ThemeConstructor",
     "id": "962455453431179906",
     "api": "1.0.0",
     "main": "./figma.js",

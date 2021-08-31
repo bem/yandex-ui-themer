@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useGate } from 'effector-react'
 import { configureRootTheme } from '@yandex-lego/components/Theme'
 import { TabsPanes } from '@yandex-lego/components/TabsPanes/desktop/bundle'
@@ -20,6 +20,8 @@ import { viewInitializationGate } from './model/view'
 
 import './App.css'
 import './Toastify.css'
+import { FigmaMessageEvent, FigmaMessageType } from './FigmaMessageType'
+import { setCurrentNodes } from './model/figma'
 
 configureRootTheme({ theme })
 
@@ -27,6 +29,7 @@ const Fade = cssTransition({
   enter: 'animate__animated animate__fadeIn',
   exit: 'animate__animated animate__fadeOut',
 })
+
 
 export default () => {
   const [activeTab, setActiveTab] = useState<ActiveTabType>('components')
@@ -41,10 +44,25 @@ export default () => {
   //   }
   // }, [])
 
+  useEffect(() => {
+    const pluginMessageListener = function(e: FigmaMessageEvent) {
+        const data = e.data;
+        switch (data.type) {
+            case FigmaMessageType.SELECT_NODE:
+                setCurrentNodes(data.data.nodes);
+                return;
+        }
+    };
+    window.addEventListener('message', pluginMessageListener);
+
+    return () => {
+        window.removeEventListener('message', pluginMessageListener)
+    }
+  }, [])
+
   return (
     <div className="Site">
       <Header activeTab={activeTab} setActiveTab={setActiveTab} />
-      <Divider />
       <TabsPanes
         activePane={activeTab}
         panes={[
@@ -52,6 +70,7 @@ export default () => {
           { id: 'changes', content: <ChangesPage /> },
         ]}
       />
+      <iframe id="renderer-frame" title="componentRenderer" src="/?componentRenderer=true" />
       <ToastContainer
         transition={Fade}
         autoClose={2000}

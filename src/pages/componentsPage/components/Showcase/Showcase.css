@@ -3,6 +3,13 @@
     height: 100%;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.Showcase-PreviewRow {
+    display: flex;
+    gap: 4px;
 }
 
 .ShowcaseFrame {

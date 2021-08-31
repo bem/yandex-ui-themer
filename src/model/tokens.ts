@@ -1,4 +1,4 @@
-import { createStore, createEvent, combine } from 'effector'
+import { createStore, combine } from 'effector'
 
 import groupBy from 'lodash.groupby'
 
@@ -10,6 +10,7 @@ import { toHEXA } from '../utils/color'
 import { extractParams } from '../utils/extractParams'
 import { getType } from '../utils/tokenType'
 import { transformMappings } from '../utils/transformers'
+import lodashMerge from 'lodash.merge';
 
 export type TokenBase = {
   label: string
@@ -19,6 +20,7 @@ export type TokenBase = {
   defaultValue: string
   rawValue: string
   changed: boolean
+  name: string
 }
 
 export type TokenType = TokenBase &
@@ -38,41 +40,8 @@ export type TokenType = TokenBase &
       }
   )
 
-export const componentChange = createEvent<string>()
-export const tokenChange = createEvent<string>()
-export const tokenReset = createEvent()
-export const activeTabChange = createEvent<string>()
-export const currentPropsChange = createEvent<{
-  name: string
-  value: unknown
-}>()
-
-export interface Prop {
-  name: string
-  description: string
-  type: {
-    required: boolean
-    name: 'node' | 'boolean' | 'string' | 'number' | 'enum' | 'array' | 'object'
-  }
-  options?: string[]
-  defaultValue: unknown
-}
-interface IComponent {
-  block: string
-  props: Prop[]
-}
-
-interface ComponentState {
-  allProps: Record<string, Prop>
-  currentProps: Record<string, unknown>
-}
-
 // Current selected component to be shown
 export const $component = createStore<string>('overview')
-export const $componentProps = createStore<ComponentState>({
-  allProps: {},
-  currentProps: {},
-})
 
 // Current selected token to be edited
 export const $token = createStore<string>('')
@@ -103,8 +72,9 @@ export const $tokens = combine(
     selectedComponent,
   }) => {
     const tokens = selectedComponent === 'overview' ? globals : components[selectedComponent]
+    const mergedTokens = lodashMerge(tokens, resolvedChanges);
 
-    const preparedTokens = Object.entries(tokens).map<TokenType>(([tokenName, token]) => {
+    return Object.entries(mergedTokens).map<TokenType>(([tokenName, token]) => {
       // Initial type of the token
       const baseType = getType(String(token.value))
       const tokenChanged = typeof resolvedChanges[tokenName]?.value !== 'undefined'
@@ -150,17 +120,26 @@ export const $tokens = combine(
         changed,
       }
     })
-
-    const groupsCount = preparedTokens.reduce<Record<string, number>>((res, { label, groups }) => {
-      for (const group of groups) {
-        res[group] = res[group] ? res[group] + 1 : 1
-      }
-
-      return res
-    }, {})
-
-    return groupBy(preparedTokens, ({ groups }) => {
-        return groups.find(group => groupsCount[group] >= 3) || groups[0];
-    })
   },
 )
+
+export const $tokensGrouped = combine(
+    {
+      tokens: $tokens,
+    },
+    ({
+        tokens,
+    }) => {
+      const groupsCount = tokens.reduce<Record<string, number>>((res, { label, groups }) => {
+        for (const group of groups) {
+          res[group] = res[group] ? res[group] + 1 : 1
+        }
+  
+        return res
+      }, {})
+  
+      return groupBy(tokens, ({ groups }) => {
+          return groups.find(group => groupsCount[group] >= 3) || groups[0];
+      })
+    },
+  )

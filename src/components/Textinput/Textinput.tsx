@@ -34,11 +34,11 @@ export const Textinput: FC<TextinputProps> = ({
 
     const onChangeSelectHandler = useCallback(
         (v) => {
-            console.log(v);
             // @ts-expect-error
-            onChange(v?.map(({ value }) => value), label);
+            const value = v?.map(({ value }) => value);
+            onChange(multiple ? value : value[0], label);
         },
-        [onChange, label]
+        [onChange, label, multiple]
     );
     const onChangeCheckHandler = useCallback(
         (v) => {
@@ -56,11 +56,13 @@ export const Textinput: FC<TextinputProps> = ({
     switch (type) {
         case 'select':
         case 'enum':
-            const selected = options.filter((v) => value?.includes(v)).map((v) => ({ option: v, value: v }));
             const optionsMapped = options.map((o) => ({
                 value: o,
                 label: o,
+                option: o
             }));
+            const selected = optionsMapped.filter((v) => value?.includes(v.value));
+            // @ts-expect-error
             optionsMapped.unshift({ value: '-1', label: '--' });
 
             Component = (

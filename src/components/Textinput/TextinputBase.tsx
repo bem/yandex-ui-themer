@@ -1,4 +1,4 @@
-import React, { FC, ReactNode } from 'react'
+import React, { FC, ReactNode, Ref } from 'react'
 import { cn } from '@bem-react/classname'
 
 import { TipIcon } from '../../icons'
@@ -10,10 +10,12 @@ export const cnTextinput = cn('Textinput')
 
 export type TextinputBaseProps = {
   label: string
+  labelRef?: Ref<HTMLElement>;
   children?: ReactNode
   className?: string
   tip?: string
   onClick?: () => void
+  onLabelClick?: () => void
 }
 
 export const TextinputBase: FC<TextinputBaseProps> = ({
@@ -21,7 +23,9 @@ export const TextinputBase: FC<TextinputBaseProps> = ({
   className,
   tip,
   label,
+  labelRef,
   onClick,
+  onLabelClick,
 }) => {
   return (
     <div className={cnTextinput({ has_tip: Boolean(tip) }, [className])} onClick={onClick}>
@@ -33,7 +37,7 @@ export const TextinputBase: FC<TextinputBaseProps> = ({
             </span>
           </TooltipStateful>
         )}
-        <span className={cnTextinput('Label')}>{label}</span>
+        <span onClick={onLabelClick} ref={labelRef} className={cnTextinput('Label')}>{label}</span>
       </div>
       <div className={cnTextinput('Body')}>{children}</div>
     </div>

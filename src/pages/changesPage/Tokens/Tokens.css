@@ -1,54 +1,66 @@
 .Tokens {
-  display: flex;
-  flex-direction: column;
-  /* Убираем высоту Header'а и Divider'а */
-  height: calc(100vh - 41px);
-  padding: 13px 16px 16px 16px;
+    display: flex;
+    flex-direction: column;
+    /* Убираем высоту Header'а и Divider'а */
+    padding: 13px 16px 48px 16px;
 }
 
 .Tokens .Tokens-Header {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
 
-  font-family: Inter;
-  font-size: 11px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 16px;
-  letter-spacing: 0.005em;
-  text-align: left;
+    font-family: Inter;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: 0.005em;
+    text-align: left;
+    gap: 24px;
+    margin-bottom: 12px;
+}
 
-  margin-bottom: 12px;
+.Tokens .Tokens-HeaderItem {
+    display: flex;
+    align-items: center;
 }
 
 .Tokens .Tokens-Header span:first-child {
-  margin-right: 12px;
+    margin-right: 12px;
 }
 
 .Tokens .Tokens-Header .Tokens-Switch {
-  padding: 0;
-  padding-left: 42px;
+    padding: 0;
+    padding-left: 42px;
 }
 
 .Tokens .Tokens-Textinput {
-  flex: 1 1 100px;
-  font-family: Inter;
-  font-size: 11px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 16px;
-  letter-spacing: 0.005em;
-  text-align: left;
+    flex: 1 1 100px;
+    font-family: Inter;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: 0.005em;
+    text-align: left;
 }
 
 .Tokens .Tokens-Buttons {
-  flex: 0;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  padding-top: 16px;
+    border-top: 1px solid #ccc;
+    flex: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-right: 16px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
 }
 
 .Tokens .Tokens-Buttons :not(:last-child) {
-  margin-right: 20px;
+    margin-right: 20px;
 }

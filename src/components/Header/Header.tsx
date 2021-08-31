@@ -39,7 +39,7 @@ export const Header: FC<HeaderProps> = ({ activeTab, setActiveTab }) => {
                   notify: showChangesNotification,
                 })}
               >
-                Changes
+                Design Tokens
               </div>
             ),
           },
